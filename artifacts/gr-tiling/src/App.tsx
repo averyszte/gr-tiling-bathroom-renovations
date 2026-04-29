@@ -1,0 +1,57 @@
+import { useState } from "react";
+import { Switch, Route, Router as WouterRouter } from "wouter";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { Toaster } from "@/components/ui/toaster";
+import { TooltipProvider } from "@/components/ui/tooltip";
+import NotFound from "@/pages/not-found";
+
+import { Header, Footer } from "@/components/Layout";
+import { QuoteModal } from "@/components/QuoteModal";
+import HomePage from "@/pages/HomePage";
+import ThankYouPage from "@/pages/ThankYouPage";
+import PlaceholderPage from "@/pages/PlaceholderPage";
+
+const queryClient = new QueryClient();
+
+function AppLayout({ openQuote }: { openQuote: () => void }) {
+  const HomePageWithProps = () => <HomePage openQuote={openQuote} />;
+  const ServicesPage = () => <PlaceholderPage title="Services" />;
+  const TilingServicesPage = () => <PlaceholderPage title="Tiling Services" />;
+  const AboutPage = () => <PlaceholderPage title="About Us" />;
+  const ContactPage = () => <PlaceholderPage title="Contact" />;
+
+  return (
+    <div className="flex min-h-[100dvh] flex-col">
+      <Header openQuote={openQuote} />
+      <Switch>
+        <Route path="/" component={HomePageWithProps} />
+        <Route path="/services" component={ServicesPage} />
+        <Route path="/services/tiling-services" component={TilingServicesPage} />
+        <Route path="/about" component={AboutPage} />
+        <Route path="/contact" component={ContactPage} />
+        <Route path="/thank-you" component={ThankYouPage} />
+        <Route component={NotFound} />
+      </Switch>
+      <Footer />
+    </div>
+  );
+}
+
+function App() {
+  const [quoteModalOpen, setQuoteModalOpen] = useState(false);
+  const openQuote = () => setQuoteModalOpen(true);
+
+  return (
+    <QueryClientProvider client={queryClient}>
+      <TooltipProvider>
+        <WouterRouter base={import.meta.env.BASE_URL.replace(/\/$/, "")}>
+          <AppLayout openQuote={openQuote} />
+        </WouterRouter>
+        <Toaster />
+        <QuoteModal isOpen={quoteModalOpen} setIsOpen={setQuoteModalOpen} />
+      </TooltipProvider>
+    </QueryClientProvider>
+  );
+}
+
+export default App;

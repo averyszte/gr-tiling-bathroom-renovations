@@ -1,0 +1,98 @@
+uploads = []
+outputs = []
+
+[[generated]]
+id = "rkqAe5YNr7RbTjzE0nUWg"
+uri = "file://artifacts/gr-tiling/public/images/hero-bathroom-1.png"
+type = "image"
+title = "hero bathroom 1"
+
+[[generated]]
+id = "FMjiapjQjcnrTIkBGUfxW"
+uri = "file://artifacts/gr-tiling/public/images/hero-bathroom-2.png"
+type = "image"
+title = "hero bathroom 2"
+
+[[generated]]
+id = "Y0_CKcLeM500xrKS4IKLd"
+uri = "file://artifacts/gr-tiling/public/images/gallery-1.png"
+type = "image"
+title = "gallery 1"
+
+[[generated]]
+id = "5X-ft7RDKFc-Vqe4F0PfV"
+uri = "file://artifacts/gr-tiling/public/images/gallery-2.png"
+type = "image"
+title = "gallery 2"
+
+[[generated]]
+id = "2mLgwND8BchVrSB_B1aTO"
+uri = "file://artifacts/gr-tiling/public/images/gallery-3.png"
+type = "image"
+title = "gallery 3"
+
+[[generated]]
+id = "5Hk6Qlo4gA1kljoryzMm6"
+uri = "file://artifacts/gr-tiling/public/images/gallery-4.png"
+type = "image"
+title = "gallery 4"
+
+[[generated]]
+id = "vYb2O76EYnQuXYN4TTD7O"
+uri = "file://artifacts/gr-tiling/public/images/gallery-5.png"
+type = "image"
+title = "gallery 5"
+
+[[generated]]
+id = "N81L2V7OHxFJsPP1JmHt3"
+uri = "file://artifacts/gr-tiling/public/images/gallery-6.png"
+type = "image"
+title = "gallery 6"
+
+[[generated]]
+id = "SmysvgYlEkMsZDESnwaSZ"
+uri = "file://artifacts/gr-tiling/public/images/banner-1.png"
+type = "image"
+title = "banner 1"
+
+[[generated]]
+id = "2xe7ysfQhOc9z_xzRk8pV"
+uri = "file://artifacts/gr-tiling/public/images/banner-2.png"
+type = "image"
+title = "banner 2"
+
+[[generated]]
+id = "lWRxuQyLyfv9VFhxlFWSB"
+uri = "file://artifacts/gr-tiling/public/images/banner-3.png"
+type = "image"
+title = "banner 3"
+
+[[generated]]
+id = "WFK7P8fWRTYTsaO93bfPf"
+uri = "file://artifacts/gr-tiling/public/images/banner-4.png"
+type = "image"
+title = "banner 4"
+
+[[generated]]
+id = "KaM6_0bV0JHOmxwnKbtrn"
+uri = "file://artifacts/gr-tiling/public/images/banner-5.png"
+type = "image"
+title = "banner 5"
+
+[[generated]]
+id = "B3zI394mpiWe-JaepCFg8"
+uri = "file://artifacts/gr-tiling/public/images/banner-6.png"
+type = "image"
+title = "banner 6"
+
+[[generated]]
+id = "rqen-xo4OW8V7Ko37VY-Q"
+uri = "file://artifacts/gr-tiling/public/images/banner-7.png"
+type = "image"
+title = "banner 7"
+
+[[generated]]
+id = "pcAG5kY-VYnnZY-qEv0tN"
+uri = "file://artifacts/gr-tiling/public/images/banner-8.png"
+type = "image"
+title = "banner 8"

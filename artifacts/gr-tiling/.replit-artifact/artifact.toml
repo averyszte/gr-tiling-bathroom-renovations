@@ -1,0 +1,31 @@
+kind = "web"
+previewPath = "/"
+title = "GR Tiling & Bathroom Renovations"
+version = "1.0.0"
+id = "artifacts/gr-tiling"
+router = "path"
+
+[[integratedSkills]]
+name = "react-vite"
+version = "1.0.0"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 21667
+
+[services.development]
+run = "pnpm --filter @workspace/gr-tiling run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/gr-tiling", "run", "build" ]
+publicDir = "artifacts/gr-tiling/dist/public"
+serve = "static"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "21667"
+BASE_PATH = "/"
