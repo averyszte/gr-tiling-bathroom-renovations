@@ -260,14 +260,21 @@ export default function HomePage({ openQuote }: { openQuote: () => void }) {
 
           {/* Desktop Accordion Gallery */}
           <div className="hidden md:flex h-[600px] w-full gap-4">
-            {[1, 2, 3, 4, 5, 6].map((num) => (
+            {[
+              { num: 1, alt: "Freshly renovated bathroom with floor-to-ceiling white ceramic tiles and modern floating vanity" },
+              { num: 2, alt: "Herringbone floor tile pattern in warm beige limestone — professional bathroom tiling Dublin" },
+              { num: 3, alt: "Walk-in shower niche with dark marble subway tiles and rainfall shower head" },
+              { num: 4, alt: "Modern bathroom vanity area with floating cabinet and backlit mirror, warm white finish" },
+              { num: 5, alt: "Full bathroom renovation overview with freestanding bath and large format grey tiles" },
+              { num: 6, alt: "Close-up of large format rectified tiles with fine grout lines — precise tiling workmanship Dublin" },
+            ].map(({ num, alt }) => (
               <div 
                 key={`gallery-${num}`}
                 className="relative rounded-2xl overflow-hidden flex-1 hover:flex-[3] transition-all duration-500 ease-in-out cursor-pointer group"
               >
                 <img 
                   src={`/images/gallery-${num}.png`} 
-                  alt={`Project ${num}`} 
+                  alt={alt} 
                   className="absolute inset-0 w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-500"></div>
@@ -277,11 +284,16 @@ export default function HomePage({ openQuote }: { openQuote: () => void }) {
 
           {/* Mobile Stacked Gallery */}
           <div className="md:hidden grid gap-4">
-            {[1, 2, 3, 4].map((num) => (
+            {[
+              { num: 1, alt: "Freshly renovated bathroom with white ceramic tiles and modern vanity unit — Dublin" },
+              { num: 2, alt: "Herringbone floor tiling in warm beige limestone — bathroom floor tiling Dublin" },
+              { num: 3, alt: "Walk-in shower with dark marble tiles and frameless glass door" },
+              { num: 4, alt: "Bathroom vanity area with backlit mirror and floating cabinet" },
+            ].map(({ num, alt }) => (
               <div key={`mob-gallery-${num}`} className="aspect-[4/3] rounded-2xl overflow-hidden relative">
                 <img 
                   src={`/images/gallery-${num}.png`} 
-                  alt={`Project ${num}`} 
+                  alt={alt} 
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -329,7 +341,7 @@ export default function HomePage({ openQuote }: { openQuote: () => void }) {
 
           <div className="text-center">
             <Button variant="outline" size="lg" asChild>
-              <a href="#" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2">
+              <a href="https://www.google.com/search?q=GR+Tiling+%26+Bathroom+Renovations+Dublin" target="_blank" rel="noreferrer noopener" className="inline-flex items-center gap-2">
                 See All Google Reviews <ChevronRight size={16} />
               </a>
             </Button>
