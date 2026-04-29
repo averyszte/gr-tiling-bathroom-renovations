@@ -1,0 +1,290 @@
+Build the first version of a React + Vite static website for:
+
+Business Name: GR Tiling & Bathroom Renovations
+Location: Dublin, Ireland
+Service Area: In and around Dublin
+Main Service: Bathroom renovations
+Secondary Service: Tiling services
+Phone: +353 87 720 9850
+Reputation: 5.0 stars from 6 Google reviews
+
+IMPORTANT:
+Only fully build the homepage in this first step.
+Create routes/placeholders for the other pages, but do not fully design them yet.
+
+Routes:
+/
+/services
+/services/tiling-services
+/about
+/contact
+/thank-you
+
+Main goal:
+Generate bathroom renovation quote requests and phone calls.
+
+SEO focus:
+Primary keyword: bathroom renovations Dublin
+Secondary keywords:
+- bathroom remodel Dublin
+- bathroom renovation Dublin
+- tiling services Dublin
+
+Design direction:
+Create a luxury, light-themed bathroom renovation website that feels modern, clean, premium, and spa-like, while still feeling like a trusted local tradesman in Dublin.
+
+The website should visually match the feeling of bright modern bathrooms:
+- white backgrounds
+- soft marble/stone-inspired textures
+- warm neutral tones
+- subtle gray accents
+- clean typography
+- elegant spacing
+- large bathroom imagery
+- polished but approachable
+
+Avoid generic React/SaaS design.
+Do not create a basic centered hero with three cards underneath.
+Do not use blue tech gradients.
+Do not make every section a repetitive card grid.
+This should feel custom-built for a bathroom renovation and tiling company.
+
+Hero section:
+Use this structure:
+1. Eyebrow text
+2. Large SEO-optimized H1
+3. Short description
+4. Two CTA buttons
+
+Hero copy:
+Eyebrow:
+Dublin Bathroom Renovation Specialists
+
+H1:
+Bathroom Renovations in Dublin Built Around Speed, Quality & Clean Workmanship
+
+Description:
+Transform your outdated bathroom into a clean, modern space with a reliable local team known for fast turnaround, tidy work, honest pricing, and high-quality finishes.
+
+Primary CTA:
+Get a Free Quote
+
+Secondary CTA:
+Call +353 87 720 9850
+
+Hero layout:
+Use an editorial luxury layout inspired by high-end interior design landing pages.
+The hero should be image-led, spacious, and visually impressive.
+Use a large bathroom image area with rounded corners, soft shadows, subtle overlays, or layered image panels.
+Make it feel premium but still easy to understand.
+
+Required homepage sections:
+
+1. Header
+- Clean navigation
+- Logo/business name
+- Links: Home, Services, Tiling Services, About, Contact
+- Strong CTA button: Get Free Quote
+- Mobile hamburger menu
+- Mobile sticky call/quote bar
+
+2. Hero section
+Use the exact eyebrow/H1/description/two-button structure above.
+
+3. Trust strip
+Show:
+- 5.0 Google Rating
+- Bathroom Renovations
+- Tiling Services
+- Clean & Tidy Work
+- Dublin Area
+
+4. Problem/solution section
+H2:
+A Cleaner, Faster Way to Renovate Your Bathroom
+
+Explain common customer problems:
+- outdated bathrooms
+- messy contractors
+- unclear pricing
+- long delays
+- poor communication
+- dust and disruption
+
+Position GR Tiling & Bathroom Renovations as the answer:
+- fast reliable service
+- clean workmanship
+- honest communication
+- quality finish
+- local Dublin tradesman
+
+5. Services preview section
+H2:
+Bathroom Renovation & Tiling Services in Dublin
+
+Include two main service blocks:
+- Bathroom Renovations
+- Tiling Services
+
+Bathroom Renovations should feel like the main service visually.
+Tiling Services should be secondary but still important.
+Use asymmetrical layout, not identical generic cards.
+
+6. Scrolling image banner / CTA visual section
+Create a light-themed scrolling image strip inspired by modern gallery landing pages.
+Use two horizontal rows of bathroom/project images that slowly scroll in opposite directions.
+Images should represent:
+- modern white bathrooms
+- marble tile
+- walk-in showers
+- bathroom flooring
+- clean tiling work
+- vanity areas
+
+Use placeholder images for now.
+Make this section feel premium, visual, and impressive.
+Add a CTA overlay or nearby CTA:
+H2:
+See What Your Bathroom Could Become
+Button:
+Start Your Renovation Quote
+
+7. Interactive expanding gallery section
+Create a responsive gallery inspired by an accordion image layout.
+Desktop:
+- multiple vertical image panels in a row
+- when hovering over one image, it expands wider
+- other images shrink slightly
+- rounded corners
+- smooth animation
+- light theme
+Mobile:
+- convert to a swipeable stacked gallery or simple vertical image cards
+- do not rely on hover on mobile
+
+H2:
+Recent Bathroom & Tiling Work
+
+Description:
+A preview of clean finishes, modern bathrooms, and detailed tiling work completed for local homeowners.
+
+8. Reviews section
+H2:
+Trusted by Homeowners Across Dublin
+
+Use these real review themes:
+- Gerry is friendly and reliable
+- clean work
+- no mess left behind
+- bathroom completed quickly
+- brilliant result
+- highly recommended
+- honest pricing
+
+Create 3 review cards using the provided customer names:
+- Raimonda Brooks
+- Dionne Haslam
+- Alan L
+
+Include CTA:
+See All Google Reviews
+
+9. FAQ section
+H2:
+Bathroom Renovation FAQs
+
+Include FAQ accordion items:
+- How much does a bathroom renovation cost in Dublin?
+- How long does a bathroom renovation take?
+- Do you handle both bathroom renovations and tiling?
+- Will my home be left clean during the work?
+- Do you provide quotes before starting?
+- What areas of Dublin do you cover?
+
+Keep FAQ answers concise, helpful, and conversion-focused.
+Avoid making exact price promises.
+
+10. Final CTA section
+Create a strong but elegant quote CTA.
+H2:
+Ready to Renovate Your Bathroom?
+
+Description:
+Tell us what you need and we’ll help you take the next step with a clear, honest quote.
+
+Buttons:
+Get a Free Quote
+Call Now
+
+11. Footer
+Include:
+- GR Tiling & Bathroom Renovations
+- Dublin, Ireland
+- Phone: +353 87 720 9850
+- Services: Bathroom Renovations, Tiling Services
+- Navigation links
+
+Quote form:
+Create a reusable quote form/modal opened by “Get a Free Quote” buttons.
+
+Fields:
+- Name
+- Phone
+- Email
+- Project Type
+- Message
+
+Project Type dropdown:
+- Bathroom Renovation
+- Tiling Services
+- Bathroom & Tiling
+- Other
+
+After submit, redirect to /thank-you.
+
+SEO requirements:
+- One H1 only on the homepage.
+- H1 must include the primary keyword naturally.
+- H2s should blend SEO and marketing.
+- Use crawlable text.
+- Use semantic HTML.
+- Add basic homepage meta title and description.
+- Use descriptive alt text placeholders for all images.
+- Structure content so headings/copy can be edited easily later.
+
+Suggested homepage meta title:
+Bathroom Renovations Dublin | GR Tiling & Bathroom Renovations
+
+Suggested meta description:
+GR Tiling & Bathroom Renovations provides bathroom renovations and tiling services in and around Dublin. Fast, clean, reliable work with high-quality finishes. Request a free quote.
+
+Responsiveness:
+This is critical.
+The homepage must be fully responsive on desktop, tablet, and mobile.
+Test layouts mentally for:
+- 1440px desktop
+- 1024px tablet
+- 768px tablet
+- 390px mobile
+- 360px mobile
+
+On mobile:
+- hero should stack cleanly
+- CTA buttons should be easy to tap
+- image galleries should not break layout
+- scrolling image banner should stay smooth
+- expanding hover gallery should become mobile-friendly stacked/swipe layout
+- nav should become hamburger
+- phone CTA should remain easy to access
+
+Visual inspiration:
+Use the uploaded reference screenshots as inspiration for:
+- editorial landing page composition
+- large image-led hero sections
+- eyebrow + headline + description + CTA structure
+- scrolling image gallery/banner
+- interactive image gallery
+- premium spacing and visual hierarchy
+
+Do not copy the screenshots exactly.
+Adapt the ideas to a light-themed luxury bathroom renovation website.
