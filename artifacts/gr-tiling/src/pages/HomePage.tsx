@@ -12,17 +12,17 @@ export default function HomePage({ openQuote }: { openQuote: () => void }) {
   return (
     <main className="flex-1 pb-20 md:pb-0">
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-secondary/30 pt-16 pb-24 lg:pt-24 lg:pb-32" data-testid="hero-section">
-        <div className="container mx-auto px-4 grid lg:grid-cols-2 gap-12 items-center">
+      <section className="relative overflow-hidden bg-secondary/30 pt-10 pb-20 lg:pt-14 lg:pb-24" data-testid="hero-section">
+        <div className="container mx-auto px-4 grid lg:grid-cols-2 gap-10 items-center">
           <div className="max-w-2xl">
-            <span className="text-primary font-medium tracking-wider uppercase text-sm mb-4 block">
+            <span className="text-primary font-medium tracking-wider uppercase text-sm mb-5 block">
               Dublin Bathroom Renovation Specialists
             </span>
-            <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl text-foreground leading-[1.1] mb-6">
-              Bathroom Renovations in Dublin Built Around Speed, Quality & Clean Workmanship
+            <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl text-foreground leading-[1.05] mb-5 max-w-[12ch]">
+              Bathroom Renovations in Dublin
             </h1>
-            <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-              Transform your outdated bathroom into a clean, modern space with a reliable local team known for fast turnaround, tidy work, honest pricing, and high-quality finishes.
+            <p className="text-lg sm:text-xl text-muted-foreground mb-8 leading-relaxed max-w-xl">
+              Fast, clean, high-quality bathroom renovations from a trusted local Dublin specialist.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Button size="lg" className="text-base h-14 px-8" onClick={openQuote} data-testid="button-hero-get-quote">
@@ -33,8 +33,8 @@ export default function HomePage({ openQuote }: { openQuote: () => void }) {
               </Button>
             </div>
           </div>
-          <div className="relative">
-            <div className="aspect-[4/3] lg:aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl relative z-10">
+          <div className="relative lg:-mt-4">
+            <div className="aspect-[4/3] lg:aspect-[4/4.35] rounded-2xl overflow-hidden shadow-2xl relative z-10">
               <img 
                 src="/images/hero-bathroom-1.png" 
                 alt="Luxury modern bathroom renovation" 
