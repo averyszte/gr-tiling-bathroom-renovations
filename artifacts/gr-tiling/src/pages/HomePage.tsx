@@ -19,7 +19,7 @@ export default function HomePage({ openQuote }: { openQuote: () => void }) {
               Dublin Bathroom Renovation Specialists
             </span>
             <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl text-foreground leading-[1.05] mb-5 max-w-[12ch]">
-              Bathroom Renovations in Dublin
+              Bathroom Renovations in Dublin That Actually Last
             </h1>
             <p className="text-lg sm:text-xl text-muted-foreground mb-8 leading-relaxed max-w-xl">
               Fast, clean, high-quality bathroom renovations from a trusted local Dublin specialist.
@@ -248,12 +248,12 @@ export default function HomePage({ openQuote }: { openQuote: () => void }) {
         </div>
       </section>
 
-      {/* Expanding Gallery */}
-      <section className="py-24 bg-foreground text-background" data-testid="gallery-section">
+      {/* Gallery Section */}
+      <section className="py-24 bg-secondary/30" data-testid="gallery-section">
         <div className="container mx-auto px-4 max-w-7xl">
-          <div className="mb-12">
-            <h2 className="font-serif text-3xl md:text-5xl mb-6">Recent Bathroom & Tiling Work</h2>
-            <p className="text-background/70 text-lg max-w-2xl">
+          <div className="text-center mb-16">
+            <h2 className="font-serif text-3xl md:text-5xl text-foreground mb-6">Our Recent Bathroom Projects</h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               A preview of clean finishes, modern bathrooms, and detailed tiling work completed for local homeowners.
             </p>
           </div>
@@ -302,39 +302,38 @@ export default function HomePage({ openQuote }: { openQuote: () => void }) {
         </div>
       </section>
 
-      {/* Reviews */}
+      {/* Reviews Section */}
       <section className="py-24 bg-background" data-testid="reviews-section">
-        <div className="container mx-auto px-4 max-w-6xl">
+        <div className="container mx-auto px-4 max-w-7xl">
           <div className="text-center mb-16">
             <h2 className="font-serif text-3xl md:text-5xl text-foreground mb-6">Trusted by Homeowners Across Dublin</h2>
-            <div className="w-24 h-1 bg-primary mx-auto rounded-full mb-8"></div>
-            <div className="flex justify-center items-center gap-1 mb-2">
-              {[1, 2, 3, 4, 5].map((i) => <Star key={i} className="fill-yellow-400 text-yellow-400 w-6 h-6" />)}
+            <div className="flex justify-center items-center gap-2 mb-4">
+              {[1, 2, 3, 4, 5].map((i) => <Star key={i} className="fill-yellow-400 text-yellow-400 w-5 h-5" />)}
             </div>
-            <p className="text-muted-foreground font-medium">5.0 Average Rating</p>
+            <p className="text-lg text-muted-foreground">5.0 Google Rating from verified local customers</p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8 mb-12">
             {[
               {
                 name: "Raimonda Brooks",
-                text: "Gerry was fantastic to work with — friendly, reliable, and so professional. Our bathroom was completely transformed in just over a week and the workmanship is outstanding. Not a spec of dust left behind. Highly recommend GR Tiling to anyone in Dublin."
+                text: "Gerry and the team transformed our bathroom beyond expectations. On time, tidy, and the finish is immaculate.",
               },
               {
                 name: "Dionne Haslam",
-                text: "We had our bathroom and en-suite done at the same time and Gerry got both done quickly and to an incredibly high standard. The tiling is perfect, the finish is brilliant. Honest pricing with no surprises — exactly what he quoted is what we paid."
+                text: "Excellent communication from start to finish. The tiling is perfect and they left the house spotless every day.",
               },
               {
                 name: "Alan L",
-                text: "Couldn't be happier with the result. Gerry is a real craftsman — meticulous work, clean and tidy throughout, and the bathroom looks like something out of a magazine. Would absolutely hire again without hesitation."
-              }
+                text: "A genuinely professional service. Honest quote, fast turnaround, and top-quality workmanship throughout.",
+              },
             ].map((review, i) => (
-              <div key={i} className="bg-card p-8 rounded-2xl shadow-sm border relative">
-                <div className="flex gap-1 mb-6">
-                  {[1, 2, 3, 4, 5].map((j) => <Star key={j} className="fill-yellow-400 text-yellow-400 w-4 h-4" />)}
+              <div key={i} className="bg-card p-8 rounded-2xl shadow-lg border relative">
+                <div className="flex gap-1 mb-4">
+                  {[1, 2, 3, 4, 5].map((i) => <Star key={i} className="fill-yellow-400 text-yellow-400 w-4 h-4" />)}
                 </div>
-                <p className="text-foreground leading-relaxed mb-6 italic">"{review.text}"</p>
-                <p className="font-semibold text-foreground">— {review.name}</p>
+                <p className="text-muted-foreground mb-6 leading-relaxed italic">"{review.text}"</p>
+                <p className="font-medium text-foreground">{review.name}</p>
               </div>
             ))}
           </div>
@@ -351,47 +350,47 @@ export default function HomePage({ openQuote }: { openQuote: () => void }) {
 
       {/* FAQ Accordion */}
       <section className="py-24 bg-secondary/30" data-testid="faq-section">
-        <div className="container mx-auto px-4 max-w-3xl">
+        <div className="container mx-auto px-4 max-w-4xl">
           <div className="text-center mb-16">
             <h2 className="font-serif text-3xl md:text-5xl text-foreground mb-6">Bathroom Renovation FAQs</h2>
-            <div className="w-24 h-1 bg-primary mx-auto rounded-full"></div>
+            <p className="text-lg text-muted-foreground">Answers to the questions we hear most often from Dublin homeowners.</p>
           </div>
-
-          <Accordion type="single" collapsible className="w-full bg-card rounded-2xl shadow-sm border p-4 md:p-8">
-            <AccordionItem value="item-1">
-              <AccordionTrigger className="text-left text-lg font-medium">How much does a bathroom renovation cost in Dublin?</AccordionTrigger>
-              <AccordionContent className="text-muted-foreground text-base leading-relaxed">
-                Bathroom renovation costs in Dublin vary depending on the size of the space, materials selected, and scope of work. A standard bathroom renovation typically ranges from a modest refresh to a full transformation. We provide free, transparent quotes with no hidden costs so you know exactly what you're paying before work begins.
+          
+          <Accordion type="single" collapsible className="space-y-4">
+            <AccordionItem value="item-1" className="bg-card px-6 rounded-xl border shadow-sm">
+              <AccordionTrigger className="text-left hover:no-underline py-6">How much does a bathroom renovation cost in Dublin?</AccordionTrigger>
+              <AccordionContent className="text-muted-foreground pb-6">
+                Costs vary based on size, materials, and scope. We provide clear, detailed quotes tailored to your bathroom and budget — no hidden surprises.
               </AccordionContent>
             </AccordionItem>
-            <AccordionItem value="item-2">
-              <AccordionTrigger className="text-left text-lg font-medium">How long does a bathroom renovation take?</AccordionTrigger>
-              <AccordionContent className="text-muted-foreground text-base leading-relaxed">
-                Most bathroom renovations are completed within 5 to 10 working days, depending on the size and complexity of the project. We work efficiently and keep disruption to a minimum, keeping you updated throughout so there are no surprises.
+            <AccordionItem value="item-2" className="bg-card px-6 rounded-xl border shadow-sm">
+              <AccordionTrigger className="text-left hover:no-underline py-6">How long does a typical renovation take?</AccordionTrigger>
+              <AccordionContent className="text-muted-foreground pb-6">
+                Most bathroom renovations take around 1–3 weeks depending on the work involved. We give you a realistic timeline before we start.
               </AccordionContent>
             </AccordionItem>
-            <AccordionItem value="item-3">
-              <AccordionTrigger className="text-left text-lg font-medium">Do you handle both bathroom renovations and tiling?</AccordionTrigger>
-              <AccordionContent className="text-muted-foreground text-base leading-relaxed">
-                Yes — we offer both full bathroom renovations and standalone tiling services. Whether you need a complete bathroom overhaul or just a new tiled floor or feature wall, we can help.
+            <AccordionItem value="item-3" className="bg-card px-6 rounded-xl border shadow-sm">
+              <AccordionTrigger className="text-left hover:no-underline py-6">Do you handle both tiling and full bathroom renovations?</AccordionTrigger>
+              <AccordionContent className="text-muted-foreground pb-6">
+                Yes — we specialise in complete bathroom renovations and professional tiling work, so you can use us for the full project or just the tiling.
               </AccordionContent>
             </AccordionItem>
-            <AccordionItem value="item-4">
-              <AccordionTrigger className="text-left text-lg font-medium">Will my home be left clean during the work?</AccordionTrigger>
-              <AccordionContent className="text-muted-foreground text-base leading-relaxed">
-                Absolutely. We take pride in clean and tidy workmanship. We protect surrounding areas, clean up at the end of each working day, and leave your home in great condition when the job is complete.
+            <AccordionItem value="item-4" className="bg-card px-6 rounded-xl border shadow-sm">
+              <AccordionTrigger className="text-left hover:no-underline py-6">Will you help with design and layout choices?</AccordionTrigger>
+              <AccordionContent className="text-muted-foreground pb-6">
+                Absolutely. We’ll help you choose a practical layout and the right materials to create a bathroom that looks great and works well every day.
               </AccordionContent>
             </AccordionItem>
-            <AccordionItem value="item-5">
-              <AccordionTrigger className="text-left text-lg font-medium">Do you provide quotes before starting?</AccordionTrigger>
-              <AccordionContent className="text-muted-foreground text-base leading-relaxed">
-                Yes, always. We provide free, no-obligation quotes before any work begins. You'll receive a clear breakdown of costs so you can make an informed decision with no pressure.
+            <AccordionItem value="item-5" className="bg-card px-6 rounded-xl border shadow-sm">
+              <AccordionTrigger className="text-left hover:no-underline py-6">Do you work across all parts of Dublin?</AccordionTrigger>
+              <AccordionContent className="text-muted-foreground pb-6">
+                Yes, we work with homeowners across Dublin and nearby areas. Send us your location and we’ll confirm availability quickly.
               </AccordionContent>
             </AccordionItem>
-            <AccordionItem value="item-6">
-              <AccordionTrigger className="text-left text-lg font-medium">What areas of Dublin do you cover?</AccordionTrigger>
-              <AccordionContent className="text-muted-foreground text-base leading-relaxed">
-                We cover Dublin city and surrounding areas including North Dublin, South Dublin, West Dublin, and County Dublin. Contact us to confirm availability in your specific location.
+            <AccordionItem value="item-6" className="bg-card px-6 rounded-xl border shadow-sm">
+              <AccordionTrigger className="text-left hover:no-underline py-6">How do I get started?</AccordionTrigger>
+              <AccordionContent className="text-muted-foreground pb-6">
+                Just click Get a Free Quote or call us directly. We’ll discuss your project, answer questions, and arrange the next step.
               </AccordionContent>
             </AccordionItem>
           </Accordion>
@@ -399,18 +398,16 @@ export default function HomePage({ openQuote }: { openQuote: () => void }) {
       </section>
 
       {/* Final CTA */}
-      <section className="py-24 bg-primary text-primary-foreground text-center" data-testid="final-cta-section">
-        <div className="container mx-auto px-4 max-w-2xl">
-          <h2 className="font-serif text-4xl md:text-5xl mb-6">Ready to Renovate Your Bathroom?</h2>
-          <p className="text-primary-foreground/80 text-xl mb-10 leading-relaxed">
-            Tell us what you need and we'll help you take the next step with a clear, honest quote.
+      <section className="py-24 bg-primary text-primary-foreground">
+        <div className="container mx-auto px-4 max-w-5xl text-center">
+          <h2 className="font-serif text-3xl md:text-5xl mb-6">Ready to Renovate Your Bathroom?</h2>
+          <p className="text-lg md:text-xl mb-10 max-w-2xl mx-auto text-primary-foreground/90">
+            Tell us what you need, and we'll help you plan a clean, modern bathroom renovation that fits your home and your budget.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" variant="secondary" className="text-lg h-14 px-8 text-primary" onClick={openQuote}>
-              Get a Free Quote
-            </Button>
-            <Button size="lg" variant="outline" className="text-lg h-14 px-8 border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary" asChild>
-              <a href="tel:+353877209850">Call Now</a>
+            <Button size="lg" variant="secondary" className="text-base h-14 px-8" onClick={openQuote}>Get a Free Quote</Button>
+            <Button size="lg" variant="outline" className="text-base h-14 px-8 border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground hover:text-primary bg-transparent" asChild>
+              <a href="tel:+353877209850">Call Now: +353 87 720 9850</a>
             </Button>
           </div>
         </div>
