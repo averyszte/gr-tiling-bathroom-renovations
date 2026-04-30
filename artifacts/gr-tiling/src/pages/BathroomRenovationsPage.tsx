@@ -187,7 +187,7 @@ export default function BathroomRenovationsPage({ openQuote }: { openQuote: () =
               Real Bathroom Transformations
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              See the difference between before and after — clean, modern finishes with attention to detail.
+              See the difference between before and after, clean, modern finishes with attention to detail.
             </p>
           </div>
           {/* Replace with real before/after project images */}

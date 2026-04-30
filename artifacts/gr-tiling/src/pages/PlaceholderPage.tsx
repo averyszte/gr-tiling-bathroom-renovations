@@ -4,7 +4,7 @@ export default function PlaceholderPage({ title }: { title: string }) {
       <h1 className="font-serif text-4xl sm:text-5xl text-foreground mb-6">{title}</h1>
       <div className="w-24 h-1 bg-primary mx-auto rounded-full mb-8"></div>
       <p className="text-muted-foreground text-xl max-w-md mx-auto">
-        Coming soon — this page is being built.
+        Coming soon. This page is being built.
       </p>
     </main>
   );

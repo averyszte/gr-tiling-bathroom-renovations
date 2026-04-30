@@ -89,7 +89,7 @@ export default function HomePage({ openQuote }: { openQuote: () => void }) {
           </div>
 
           <div className="relative flex flex-col md:flex-row md:items-start md:justify-between gap-14 md:gap-0">
-            {/* Connector line — desktop only */}
+            {/* Connector line desktop only */}
             <div className="hidden md:block absolute top-[3rem] left-[calc(16.67%+3rem)] right-[calc(16.67%+3rem)] h-[1.5px] bg-primary/30 z-0" />
 
             {[
@@ -221,14 +221,14 @@ export default function HomePage({ openQuote }: { openQuote: () => void }) {
                 <div className="aspect-[4/3] overflow-hidden">
                   <img 
                     src="/images/gallery-5.png" 
-                    alt="Complete bathroom renovation by GR Tiling — modern finish with premium tiles and fittings, Dublin" 
+                    alt="Complete bathroom renovation by GR Tiling, modern finish with premium tiles and fittings, Dublin" 
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                 </div>
                 <div className="p-8 md:p-10">
                   <h3 className="font-serif text-3xl mb-4">Bathroom Renovations</h3>
                   <p className="text-muted-foreground text-lg mb-6 leading-relaxed">
-                    Complete bathroom transformations — from design and demolition to fitting, tiling, plumbing, and final finish. We handle the whole project so you don't have to.
+                    Complete bathroom transformations, from design and demolition to fitting, tiling, plumbing, and final finish. We handle the whole project so you don't have to.
                   </p>
                   <ul className="flex flex-wrap gap-3 mb-8">
                     <li className="bg-secondary px-3 py-1 rounded-full text-sm font-medium">Full Project Management</li>
@@ -254,25 +254,18 @@ export default function HomePage({ openQuote }: { openQuote: () => void }) {
                 <div className="aspect-[16/10] overflow-hidden">
                   <img 
                     src="/images/gallery-2.png" 
-                    alt="Professional floor and wall tiling service in Dublin — herringbone pattern by GR Tiling" 
+                    alt="Professional floor and wall tiling service in Dublin, herringbone pattern by GR Tiling" 
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                 </div>
-                <div className="p-8 flex flex-col">
+                <div className="p-8 flex-1 flex flex-col">
                   <h3 className="font-serif text-2xl mb-3">Tiling Services</h3>
-                  <p className="text-muted-foreground mb-5 leading-relaxed">
-                    Expert tiling for floors, walls, and wet areas. From herringbone feature walls to large-format rectified tiles — precision cuts and perfect grout lines every time.
+                  <p className="text-muted-foreground mb-6 leading-relaxed">
+                    Expert tiling for floors, walls, and wet areas. From herringbone feature walls to large-format rectified tiles, precision cuts and perfect grout lines every time.
                   </p>
-                  <ul className="flex flex-wrap gap-2 mb-5">
-                    <li className="bg-secondary px-3 py-1 rounded-full text-xs font-medium">Floor & Wall Tiling</li>
-                    <li className="bg-secondary px-3 py-1 rounded-full text-xs font-medium">Wet Rooms</li>
-                    <li className="bg-secondary px-3 py-1 rounded-full text-xs font-medium">Feature Walls</li>
-                  </ul>
-                  <div className="flex flex-wrap gap-3">
-                    <Button variant="outline" className="flex-1" onClick={openQuote}>
-                      Get a Tiling Quote
-                    </Button>
-                    <Button variant="ghost" className="flex-1" asChild>
+                  <div className="mt-auto flex flex-wrap gap-3">
+                    <Button variant="secondary" className="sm:w-auto" onClick={openQuote}>Get a Tiling Quote</Button>
+                    <Button variant="ghost" className="sm:w-auto" asChild>
                       <Link href="/services/tiling-services">Learn More</Link>
                     </Button>
                   </div>
@@ -283,69 +276,28 @@ export default function HomePage({ openQuote }: { openQuote: () => void }) {
         </div>
       </section>
 
-      {/* Mid-page CTA */}
-      <section className="py-24 bg-primary text-primary-foreground">
-        <div className="container mx-auto px-4 max-w-5xl text-center">
-          <h2 className="font-serif text-3xl md:text-5xl mb-6">Ready to Renovate Your Bathroom?</h2>
-          <p className="text-lg md:text-xl mb-10 max-w-2xl mx-auto text-primary-foreground/90">
-            Tell us what you need, and we'll help you plan a clean, modern bathroom renovation that fits your home and your budget.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" variant="secondary" className="text-base h-14 px-8" onClick={openQuote}>Get a Free Quote</Button>
-            <Button size="lg" variant="outline" className="text-base h-14 px-8 border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground hover:text-primary bg-transparent" asChild>
-              <a href="tel:+353877209850">Call Now: +353 87 720 9850</a>
-            </Button>
-          </div>
-        </div>
-      </section>
-
-      {/* Gallery Section */}
-      <section className="py-24 bg-secondary/30" data-testid="gallery-section">
-        <div className="container mx-auto px-4 max-w-7xl">
-          <div className="text-center mb-16">
-            <h2 className="font-serif text-3xl md:text-5xl text-foreground mb-6">Our Recent Bathroom Projects</h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              A preview of clean finishes, modern bathrooms, and detailed tiling work completed for local homeowners.
-            </p>
+      {/* Portfolio Gallery */}
+      <section className="py-24 bg-background">
+        <div className="container mx-auto px-4 max-w-6xl">
+          <div className="mb-16">
+            <h2 className="font-serif text-3xl md:text-5xl text-foreground mb-6">Recent Work & Finished Projects</h2>
+            <div className="w-24 h-1 bg-primary rounded-full"></div>
           </div>
 
-          {/* Desktop Accordion Gallery */}
-          <div className="hidden md:flex h-[600px] w-full gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
             {[
-              { num: 1, alt: "Freshly renovated bathroom with floor-to-ceiling white ceramic tiles and modern floating vanity" },
-              { num: 2, alt: "Herringbone floor tile pattern in warm beige limestone — professional bathroom tiling Dublin" },
-              { num: 3, alt: "Walk-in shower niche with dark marble subway tiles and rainfall shower head" },
-              { num: 4, alt: "Modern bathroom vanity area with floating cabinet and backlit mirror, warm white finish" },
-              { num: 5, alt: "Full bathroom renovation overview with freestanding bath and large format grey tiles" },
-              { num: 6, alt: "Close-up of large format rectified tiles with fine grout lines — precise tiling workmanship Dublin" },
-            ].map(({ num, alt }) => (
-              <div 
-                key={`gallery-${num}`}
-                className="relative rounded-2xl overflow-hidden flex-1 hover:flex-[3] transition-all duration-500 ease-in-out cursor-pointer group"
-              >
+              { num: 1, alt: "Freshly renovated bathroom with white ceramic tiles and modern vanity unit, Dublin" },
+              { num: 2, alt: "Herringbone floor tile pattern in warm beige limestone, professional bathroom tiling Dublin" },
+              { num: 3, alt: "Modern walk-in shower with large format tiles and black fixtures, Dublin bathroom" },
+              { num: 4, alt: "Luxury bathroom with floating vanity and wall hung toilet, renovated in Dublin" },
+              { num: 5, alt: "Beautiful bathtub area with feature wall tiling and clean modern finish, Dublin" },
+              { num: 6, alt: "Close-up of large format rectified tiles with fine grout lines, precise tiling workmanship Dublin" },
+            ].map((img) => (
+              <div key={img.num} className="group relative overflow-hidden rounded-2xl shadow-lg aspect-square hover:shadow-xl transition-shadow duration-300">
                 <img 
-                  src={`/images/gallery-${num}.png`} 
-                  alt={alt} 
-                  className="absolute inset-0 w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-500"></div>
-              </div>
-            ))}
-          </div>
-
-          {/* Mobile Stacked Gallery */}
-          <div className="md:hidden grid gap-4">
-            {[
-              { num: 1, alt: "Freshly renovated bathroom with white ceramic tiles and modern vanity unit — Dublin" },
-              { num: 2, alt: "Herringbone floor tiling in warm beige limestone — bathroom floor tiling Dublin" },
-              { num: 3, alt: "Walk-in shower with dark marble tiles and frameless glass door" },
-              { num: 4, alt: "Bathroom vanity area with backlit mirror and floating cabinet" },
-            ].map(({ num, alt }) => (
-              <div key={`mob-gallery-${num}`} className="aspect-[4/3] rounded-2xl overflow-hidden relative">
-                <img 
-                  src={`/images/gallery-${num}.png`} 
-                  alt={alt} 
-                  className="w-full h-full object-cover"
+                  src={`/images/gallery-${img.num}.png`} 
+                  alt={img.alt} 
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
               </div>
             ))}
@@ -353,39 +305,28 @@ export default function HomePage({ openQuote }: { openQuote: () => void }) {
         </div>
       </section>
 
-      {/* Reviews Section */}
-      <section className="py-24 bg-background" data-testid="reviews-section">
+      {/* Reviews */}
+      <section className="py-24 bg-secondary/30">
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="text-center mb-16">
-            <h2 className="font-serif text-3xl md:text-5xl text-foreground mb-6">Trusted by Homeowners Across Dublin</h2>
+            <h2 className="font-serif text-3xl md:text-5xl text-foreground mb-6">What Our Customers Say</h2>
             <div className="flex justify-center items-center gap-2 mb-4">
-              {[1, 2, 3, 4, 5].map((i) => <Star key={i} className="fill-yellow-400 text-yellow-400 w-5 h-5" />)}
+              {[1, 2, 3, 4, 5].map((i) => (
+                <Star key={i} className="fill-yellow-400 text-yellow-400 w-5 h-5" />
+              ))}
             </div>
             <p className="text-lg text-muted-foreground">5.0 Google Rating from verified local customers</p>
           </div>
-
           <div className="grid md:grid-cols-3 gap-8 mb-12">
-            {[
-              {
-                name: "Raimonda Brooks",
-                text: "Gerry and the team transformed our bathroom beyond expectations. On time, tidy, and the finish is immaculate.",
-              },
-              {
-                name: "Dionne Haslam",
-                text: "Excellent communication from start to finish. The tiling is perfect and they left the house spotless every day.",
-              },
-              {
-                name: "Alan L",
-                text: "A genuinely professional service. Honest quote, fast turnaround, and top-quality workmanship throughout.",
-              },
-            ].map((review, i) => (
+            {reviews.map((review, i) => (
               <div key={i} className="bg-card p-8 pb-10 rounded-2xl shadow-lg border relative">
                 <div className="flex gap-1 mb-4">
-                  {[1, 2, 3, 4, 5].map((i) => <Star key={i} className="fill-yellow-400 text-yellow-400 w-4 h-4" />)}
+                  {[1, 2, 3, 4, 5].map((j) => (
+                    <Star key={j} className="fill-yellow-400 text-yellow-400 w-4 h-4" />
+                  ))}
                 </div>
                 <p className="text-muted-foreground mb-6 leading-relaxed italic">"{review.text}"</p>
                 <p className="font-medium text-foreground">{review.name}</p>
-                {/* Google G logo */}
                 <div className="absolute bottom-3 right-4 opacity-70">
                   <svg width="18" height="18" viewBox="0 0 533.5 544.3" xmlns="http://www.w3.org/2000/svg">
                     <path d="M533.5 278.4c0-18.5-1.5-37.1-4.7-55.3H272.1v104.8h147c-6.1 33.8-25.7 63.7-54.4 82.7v68h87.7c51.5-47.4 81.1-117.4 81.1-200.2z" fill="#4285f4"/>
@@ -397,7 +338,6 @@ export default function HomePage({ openQuote }: { openQuote: () => void }) {
               </div>
             ))}
           </div>
-
           <div className="text-center">
             <Button variant="outline" size="lg" asChild>
               <a href="https://maps.app.goo.gl/zXMYDcdtwATJcR9AA" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2">
@@ -408,51 +348,21 @@ export default function HomePage({ openQuote }: { openQuote: () => void }) {
         </div>
       </section>
 
-      {/* FAQ Accordion */}
-      <section className="py-24 bg-secondary/30" data-testid="faq-section">
+      {/* FAQ Section */}
+      <section className="py-24 bg-background">
         <div className="container mx-auto px-4 max-w-4xl">
           <div className="text-center mb-16">
-            <h2 className="font-serif text-3xl md:text-5xl text-foreground mb-6">Bathroom Renovation FAQs</h2>
-            <p className="text-lg text-muted-foreground">Answers to the questions we hear most often from Dublin homeowners.</p>
+            <h2 className="font-serif text-3xl md:text-5xl text-foreground mb-6">Common Questions About Bathroom Renovations</h2>
+            <div className="w-24 h-1 bg-primary mx-auto rounded-full mb-4"></div>
           </div>
           
           <Accordion type="single" collapsible className="space-y-4">
-            <AccordionItem value="item-1" className="bg-card px-6 rounded-xl border shadow-sm">
-              <AccordionTrigger className="text-left hover:no-underline py-6">How much does a bathroom renovation cost in Dublin?</AccordionTrigger>
-              <AccordionContent className="text-muted-foreground pb-6">
-                Costs vary based on size, materials, and scope. We provide clear, detailed quotes tailored to your bathroom and budget — no hidden surprises.
-              </AccordionContent>
-            </AccordionItem>
-            <AccordionItem value="item-2" className="bg-card px-6 rounded-xl border shadow-sm">
-              <AccordionTrigger className="text-left hover:no-underline py-6">How long does a typical renovation take?</AccordionTrigger>
-              <AccordionContent className="text-muted-foreground pb-6">
-                Most bathroom renovations take around 1–3 weeks depending on the work involved. We give you a realistic timeline before we start.
-              </AccordionContent>
-            </AccordionItem>
-            <AccordionItem value="item-3" className="bg-card px-6 rounded-xl border shadow-sm">
-              <AccordionTrigger className="text-left hover:no-underline py-6">Do you handle both tiling and full bathroom renovations?</AccordionTrigger>
-              <AccordionContent className="text-muted-foreground pb-6">
-                Yes — we specialise in complete bathroom renovations and professional tiling work, so you can use us for the full project or just the tiling.
-              </AccordionContent>
-            </AccordionItem>
-            <AccordionItem value="item-4" className="bg-card px-6 rounded-xl border shadow-sm">
-              <AccordionTrigger className="text-left hover:no-underline py-6">Will you help with design and layout choices?</AccordionTrigger>
-              <AccordionContent className="text-muted-foreground pb-6">
-                Absolutely. We’ll help you choose a practical layout and the right materials to create a bathroom that looks great and works well every day.
-              </AccordionContent>
-            </AccordionItem>
-            <AccordionItem value="item-5" className="bg-card px-6 rounded-xl border shadow-sm">
-              <AccordionTrigger className="text-left hover:no-underline py-6">Do you work across all parts of Dublin?</AccordionTrigger>
-              <AccordionContent className="text-muted-foreground pb-6">
-                Yes, we work with homeowners across Dublin and nearby areas. Send us your location and we’ll confirm availability quickly.
-              </AccordionContent>
-            </AccordionItem>
-            <AccordionItem value="item-6" className="bg-card px-6 rounded-xl border shadow-sm">
-              <AccordionTrigger className="text-left hover:no-underline py-6">How do I get started?</AccordionTrigger>
-              <AccordionContent className="text-muted-foreground pb-6">
-                Just click Get a Free Quote or call us directly. We’ll discuss your project, answer questions, and arrange the next step.
-              </AccordionContent>
-            </AccordionItem>
+            {faqs.map((faq, i) => (
+              <AccordionItem key={i} value={`item-${i}`} className="bg-card rounded-xl border shadow-sm px-6">
+                <AccordionTrigger className="text-left hover:no-underline py-6 text-lg font-medium">{faq.q}</AccordionTrigger>
+                <AccordionContent className="text-muted-foreground pb-6 text-base leading-relaxed">{faq.a}</AccordionContent>
+              </AccordionItem>
+            ))}
           </Accordion>
         </div>
       </section>
@@ -462,12 +372,14 @@ export default function HomePage({ openQuote }: { openQuote: () => void }) {
         <div className="container mx-auto px-4 max-w-5xl text-center">
           <h2 className="font-serif text-3xl md:text-5xl mb-6">Ready to Renovate Your Bathroom?</h2>
           <p className="text-lg md:text-xl mb-10 max-w-2xl mx-auto text-primary-foreground/90">
-            Tell us what you need, and we'll help you plan a clean, modern bathroom renovation that fits your home and your budget.
+            Get in touch today for a clear quote and reliable service from a trusted Dublin specialist.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" variant="secondary" className="text-base h-14 px-8" onClick={openQuote}>Get a Free Quote</Button>
+            <Button size="lg" variant="secondary" className="text-base h-14 px-8" onClick={openQuote}>
+              Get a Free Quote
+            </Button>
             <Button size="lg" variant="outline" className="text-base h-14 px-8 border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground hover:text-primary bg-transparent" asChild>
-              <a href="tel:+353877209850">Call Now: +353 87 720 9850</a>
+              <a href="tel:+353877209850">Call +353 87 720 9850</a>
             </Button>
           </div>
         </div>
