@@ -61,25 +61,8 @@ export default function AboutPage({ openQuote }: { openQuote: () => void }) {
   return (
     <main className="flex-1 pb-20 md:pb-0">
 
-      {/* Hero (centered) */}
-      <section className="relative overflow-hidden bg-secondary/30 pt-12 pb-20 lg:pt-16 lg:pb-24">
-        <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-primary font-semibold tracking-wider uppercase text-sm mb-4 block">
-              About GR Tiling &amp; Bathroom Renovations
-            </h1>
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground leading-[1.15] mb-6 tracking-tight">
-              Local Bathroom Renovation and Tiling Work You Can Trust
-            </h2>
-            <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed max-w-2xl mx-auto">
-              We provide clean, reliable bathroom renovations and tiling services in and around Dublin, focused on honest work, clear pricing, and results that last.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Personal section (image + text) */}
-      <section className="py-24 bg-background">
+      {/* Personal section (image + text) — first section on the page */}
+      <section className="pt-16 pb-24 lg:pt-20 lg:pb-28 bg-background">
         <div className="container mx-auto px-4 max-w-6xl grid lg:grid-cols-[5fr_7fr] gap-12 lg:gap-16 items-center">
           <div className="rounded-2xl overflow-hidden shadow-lg aspect-[4/5] bg-secondary/30">
             {/* Placeholder image, swap for a real portrait later */}
@@ -90,9 +73,9 @@ export default function AboutPage({ openQuote }: { openQuote: () => void }) {
             />
           </div>
           <div>
-            <h2 className="font-serif text-3xl md:text-5xl text-foreground mb-6">
+            <h1 className="font-serif text-3xl md:text-5xl text-foreground mb-6">
               Meet the Person Behind the Work
-            </h2>
+            </h1>
             <div className="space-y-5 text-muted-foreground text-lg leading-relaxed">
               <p>
                 This business is built on hands-on experience in bathroom renovations and tiling. Every project is completed with attention to detail, clear communication, and a focus on doing the job properly from start to finish.
