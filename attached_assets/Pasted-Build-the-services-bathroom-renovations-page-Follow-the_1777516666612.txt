@@ -1,0 +1,198 @@
+Build the /services/bathroom-renovations page.
+
+Follow the EXACT design system of the homepage:
+- same colors (brown/white palette)
+- same typography (Poppins)
+- same spacing system
+- same button styles
+- same visual tone
+
+Do NOT create a generic template layout.
+Do NOT use SaaS-style card grids.
+Do NOT overdesign.
+
+-------------------------------------
+PAGE GOAL
+-------------------------------------
+
+Target keyword:
+Bathroom Renovations Dublin
+
+Primary focus:
+- On time completion
+- On budget pricing
+- No surprises
+
+-------------------------------------
+1. HERO SECTION
+-------------------------------------
+
+Layout:
+Split layout (text left, image right)
+
+Top small text:
+Dublin Bathroom Renovation Specialists
+
+H1:
+Bathroom Renovations in Dublin
+
+Subtext:
+Get your bathroom renovated on time and on budget with a trusted local Dublin specialist. No delays, no hidden costs, and no mess left behind.
+
+Buttons:
+Primary:
+Get a Free Quote
+
+Secondary:
+Call +353 87 720 9850
+
+Use large, clean bathroom image on the right.
+
+-------------------------------------
+2. PROBLEM → SOLUTION SECTION
+-------------------------------------
+
+H2:
+Tired of Bathroom Renovations Running Over Time and Budget?
+
+Left side:
+Pain points list:
+- Projects dragging on for weeks
+- Costs increasing after work starts
+- Contractors leaving a mess
+- Poor communication
+
+Right side:
+Short solution paragraph:
+We keep your renovation simple, clear, and on track — with honest pricing, clean workmanship, and a timeline you can rely on.
+
+-------------------------------------
+3. WHAT WE DO (SERVICE BREAKDOWN)
+-------------------------------------
+
+H2:
+Bathroom Renovation Services in Dublin
+
+Use 2–3 LARGE service blocks (NOT small cards):
+
+Each block:
+- image (left or right alternating)
+- heading
+- short paragraph
+- bullet list
+- CTA button
+
+Examples:
+
+Full Bathroom Renovations  
+- Complete transformation  
+- Plumbing & fitting  
+- Tiling & finishes  
+
+Bathroom Layout & Upgrades  
+- Space optimization  
+- Modern layouts  
+- Fixture upgrades  
+
+Tiling & Finishing  
+- Floor & wall tiling  
+- Wet rooms  
+- High-quality finishes  
+
+CTA:
+Learn More or Get a Quote
+
+-------------------------------------
+4. RESULTS / VISUAL PROOF
+-------------------------------------
+
+H2:
+Recent Bathroom Renovations
+
+Use clean image grid or gallery (same style as homepage).
+
+Focus on:
+- modern bathrooms
+- clean finishes
+- high-quality visuals
+
+-------------------------------------
+5. PROCESS (SIMPLIFIED)
+-------------------------------------
+
+H2:
+How Your Renovation Works
+
+Reuse 3-step layout:
+- Tell us what you need
+- Get a clear quote
+- We get to work
+
+Keep it compact.
+
+-------------------------------------
+6. WHY CHOOSE GR
+-------------------------------------
+
+H2:
+Why Choose GR Tiling & Bathroom Renovations
+
+Use clean bullet list:
+
+- On time completion  
+- On budget pricing  
+- Clean workmanship  
+- Honest communication  
+- Local Dublin specialist  
+
+Make this section strong and easy to scan.
+
+-------------------------------------
+7. REVIEWS
+-------------------------------------
+
+Reuse homepage review section.
+
+-------------------------------------
+8. FAQ
+-------------------------------------
+
+H2:
+Bathroom Renovation FAQs
+
+Include:
+- Cost
+- Timeline
+- Cleanliness
+- Quotes
+- Areas covered
+
+Keep answers short.
+
+-------------------------------------
+9. FINAL CTA
+-------------------------------------
+
+Reuse strong CTA banner style.
+
+H2:
+Ready to Start Your Bathroom Renovation?
+
+Text:
+Get a clear quote and work with a team that shows up, sticks to the price, and gets the job done right.
+
+Buttons:
+Get a Free Quote  
+Call Now  
+
+-------------------------------------
+IMPORTANT RULES
+-------------------------------------
+
+- ONLY ONE H1 on the page
+- H2 for sections
+- Match homepage style exactly
+- No generic layouts
+- No overdesign
+- Mobile responsive
+- Keep it clean, simple, and high-converting

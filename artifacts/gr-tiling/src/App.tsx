@@ -10,12 +10,13 @@ import { QuoteModal } from "@/components/QuoteModal";
 import HomePage from "@/pages/HomePage";
 import ThankYouPage from "@/pages/ThankYouPage";
 import PlaceholderPage from "@/pages/PlaceholderPage";
+import BathroomRenovationsPage from "@/pages/BathroomRenovationsPage";
 
 const queryClient = new QueryClient();
 
 function AppLayout({ openQuote }: { openQuote: () => void }) {
   const HomePageWithProps = () => <HomePage openQuote={openQuote} />;
-  const BathroomRenovationsPage = () => <PlaceholderPage title="Bathroom Renovations in Dublin" />;
+  const BathroomRenovationsPageWithProps = () => <BathroomRenovationsPage openQuote={openQuote} />;
   const TilingServicesPage = () => <PlaceholderPage title="Tiling Services in Dublin" />;
   const AboutPage = () => <PlaceholderPage title="About Us" />;
   const ContactPage = () => <PlaceholderPage title="Contact" />;
@@ -25,7 +26,7 @@ function AppLayout({ openQuote }: { openQuote: () => void }) {
       <Header openQuote={openQuote} />
       <Switch>
         <Route path="/" component={HomePageWithProps} />
-        <Route path="/services/bathroom-renovations" component={BathroomRenovationsPage} />
+        <Route path="/services/bathroom-renovations" component={BathroomRenovationsPageWithProps} />
         <Route path="/services/tiling-services" component={TilingServicesPage} />
         <Route path="/about" component={AboutPage} />
         <Route path="/contact" component={ContactPage} />
