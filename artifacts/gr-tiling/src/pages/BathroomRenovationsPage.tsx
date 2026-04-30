@@ -1,4 +1,4 @@
-import type { ReactNode } from "react";
+import { useEffect, type ReactNode } from "react";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Star, CheckCircle2, ChevronRight, XCircle, MessageCircle, FileText, Wrench } from "lucide-react";
@@ -121,7 +121,41 @@ const processSteps = [
   { icon: <Wrench className="w-10 h-10" />, title: "We Get to Work", text: "Clean, reliable work completed on time, every time." },
 ];
 
+const PAGE_TITLE = "Bathroom Renovations Dublin | GR Tiling & Bathroom Renovations";
+const PAGE_DESCRIPTION =
+  "Bathroom renovations in Dublin done on time and on budget. Trusted local specialists for clean, reliable work. Get a free quote today.";
+
+function setMetaTag(attr: "name" | "property", key: string, content: string) {
+  let el = document.head.querySelector<HTMLMetaElement>(`meta[${attr}="${key}"]`);
+  if (!el) {
+    el = document.createElement("meta");
+    el.setAttribute(attr, key);
+    document.head.appendChild(el);
+  }
+  el.setAttribute("content", content);
+}
+
 export default function BathroomRenovationsPage({ openQuote }: { openQuote: () => void }) {
+  useEffect(() => {
+    const previousTitle = document.title;
+    const previousDescription =
+      document.head.querySelector<HTMLMetaElement>('meta[name="description"]')?.content ?? "";
+
+    document.title = PAGE_TITLE;
+    setMetaTag("name", "description", PAGE_DESCRIPTION);
+    setMetaTag("property", "og:title", PAGE_TITLE);
+    setMetaTag("property", "og:description", PAGE_DESCRIPTION);
+    setMetaTag("name", "twitter:title", PAGE_TITLE);
+    setMetaTag("name", "twitter:description", PAGE_DESCRIPTION);
+
+    return () => {
+      document.title = previousTitle;
+      if (previousDescription) {
+        setMetaTag("name", "description", previousDescription);
+      }
+    };
+  }, []);
+
   return (
     <main className="flex-1 pb-20 md:pb-0">
 
@@ -216,7 +250,10 @@ export default function BathroomRenovationsPage({ openQuote }: { openQuote: () =
             <h2 className="font-serif text-3xl md:text-5xl text-foreground mb-6">
               Bathroom Renovation Services in Dublin
             </h2>
-            <div className="w-24 h-1 bg-primary mx-auto rounded-full"></div>
+            <div className="w-24 h-1 bg-primary mx-auto rounded-full mb-6"></div>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Trusted bathroom renovation services for homes in and around Dublin, delivered with the same care and attention on every project.
+            </p>
           </div>
           <div className="space-y-24">
             {services.map((service, i) => (
@@ -284,7 +321,7 @@ export default function BathroomRenovationsPage({ openQuote }: { openQuote: () =
             <h2 className="font-serif text-3xl md:text-5xl text-foreground mb-6">How Your Renovation Works</h2>
             <div className="w-24 h-1 bg-primary mx-auto rounded-full mb-6"></div>
             <p className="text-lg text-muted-foreground max-w-xl mx-auto">
-              A quick, clear process from first message to a finished bathroom.
+              A quick, clear process built for local Dublin homes, from first message to a finished bathroom.
             </p>
           </div>
           <div className="relative flex flex-col md:flex-row md:items-start md:justify-between gap-14 md:gap-0">
