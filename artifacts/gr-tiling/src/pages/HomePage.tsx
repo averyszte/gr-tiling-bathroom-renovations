@@ -111,9 +111,9 @@ export default function HomePage({ openQuote }: { openQuote: () => void }) {
       <section className="py-24 bg-secondary/30" data-testid="process-section">
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="text-center mb-16">
-            <h2 className="font-serif text-3xl md:text-5xl text-foreground mb-6">Get Started in 3 Simple Steps</h2>
+            <h2 className="font-serif text-3xl md:text-5xl text-foreground mb-6">Your Dream Bathroom in 3 Simple Steps</h2>
             <div className="w-24 h-1 bg-primary mx-auto rounded-full mb-6"></div>
-            <p className="text-lg text-muted-foreground max-w-xl mx-auto">A simple, clear process from first message to finished work.</p>
+            <p className="text-lg text-muted-foreground max-w-xl mx-auto">The bathroom you want, on budget and on time. A simple, clear process from first message to finished work.</p>
           </div>
 
           <div className="relative flex flex-col md:flex-row md:items-start md:justify-between gap-14 md:gap-0">
@@ -122,17 +122,17 @@ export default function HomePage({ openQuote }: { openQuote: () => void }) {
             {[
               {
                 icon: <MessageCircle className="w-10 h-10" />,
-                title: "Tell Us What You Need",
-                text: "Send a quick message or call us about your bathroom or tiling project.",
+                title: "Step 1: Plan",
+                text: "Tell us what you need and we’ll go through your project, timeline, and give you a clear quote.",
               },
               {
                 icon: <FileText className="w-10 h-10" />,
-                title: "We Plan It With You",
-                text: "We'll go through your ideas, discuss options, and give you a clear quote with no surprises.",
+                title: "Step 2: Design",
+                text: "We help you choose the layout, tiles, and finishes so everything is clear before work begins.",
               },
               {
                 icon: <Wrench className="w-10 h-10" />,
-                title: "We Get It Done",
+                title: "Step 3: Build",
                 text: "We complete the work on time, keep everything clean, and deliver a high-quality finish.",
               },
             ].map((item, i) => (
