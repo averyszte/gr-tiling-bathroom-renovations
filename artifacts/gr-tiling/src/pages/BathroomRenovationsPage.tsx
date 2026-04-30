@@ -109,7 +109,7 @@ export default function BathroomRenovationsPage({ openQuote }: { openQuote: () =
             <div className="absolute -bottom-8 -right-8 w-64 h-64 bg-primary/10 rounded-full blur-3xl -z-10"></div>
           </div>
           {/* Text — right on desktop, below image on mobile */}
-          <div className="max-w-2xl">
+          <div>
             <h1 className="text-primary font-semibold tracking-wider uppercase text-sm mb-3 block">
               Bathroom Renovations Dublin
             </h1>
