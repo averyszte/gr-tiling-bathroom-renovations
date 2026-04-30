@@ -51,7 +51,7 @@ export default function HomePage({ openQuote }: { openQuote: () => void }) {
       <section className="py-16 bg-background" data-testid="process-section">
         <div className="container mx-auto px-4 max-w-4xl">
           <div className="text-center mb-14">
-            <h2 className="font-serif text-3xl md:text-4xl text-foreground mb-3">Get Started in Three Simple Steps</h2>
+            <h2 className="font-serif text-3xl md:text-4xl text-foreground mb-3">Get Started in 3 Simple Steps</h2>
             <p className="text-muted-foreground max-w-lg mx-auto">A quick, clear process from first message to quote and finished work.</p>
           </div>
 
@@ -81,7 +81,7 @@ export default function HomePage({ openQuote }: { openQuote: () => void }) {
                 className="group relative z-10 flex flex-col items-center text-center flex-1 px-6 transition-transform duration-300 hover:-translate-y-1"
               >
                 {/* Icon circle */}
-                <div className="w-20 h-20 rounded-full bg-primary/8 border-2 border-primary/30 flex items-center justify-center mb-5 text-primary shadow-sm transition-all duration-300 group-hover:bg-primary group-hover:border-primary group-hover:text-primary-foreground group-hover:shadow-md">
+                <div className="relative z-10 w-20 h-20 rounded-full bg-background border-2 border-primary/30 flex items-center justify-center mb-5 text-primary shadow-sm transition-all duration-300 group-hover:bg-primary group-hover:border-primary group-hover:text-primary-foreground group-hover:shadow-md">
                   {item.icon}
                 </div>
                 <h3 className="font-semibold text-base text-foreground mb-2">{item.title}</h3>
