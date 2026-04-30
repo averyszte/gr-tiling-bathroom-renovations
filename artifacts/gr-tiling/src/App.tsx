@@ -10,10 +10,10 @@ import { QuoteModal } from "@/components/QuoteModal";
 import { ScrollToTop } from "@/components/ScrollToTop";
 import HomePage from "@/pages/HomePage";
 import ThankYouPage from "@/pages/ThankYouPage";
-import PlaceholderPage from "@/pages/PlaceholderPage";
 import BathroomRenovationsPage from "@/pages/BathroomRenovationsPage";
 import TilingServicesPage from "@/pages/TilingServicesPage";
 import AboutPage from "@/pages/AboutPage";
+import ContactPage from "@/pages/ContactPage";
 
 const queryClient = new QueryClient();
 
@@ -22,7 +22,6 @@ function AppLayout({ openQuote }: { openQuote: () => void }) {
   const BathroomRenovationsPageWithProps = () => <BathroomRenovationsPage openQuote={openQuote} />;
   const TilingServicesPageWithProps = () => <TilingServicesPage openQuote={openQuote} />;
   const AboutPageWithProps = () => <AboutPage openQuote={openQuote} />;
-  const ContactPage = () => <PlaceholderPage title="Contact" />;
 
   return (
     <div className="flex min-h-[100dvh] flex-col">

@@ -1,0 +1,202 @@
+Build the /contact page.
+
+Do NOT redesign the site.
+Follow the exact same design system as the rest of the site:
+- Poppins font
+- brown / white color palette
+- same spacing system
+- same button styles
+- same card styles
+- fully responsive
+
+This page must be clean, simple, and highly conversion-focused.
+
+-------------------------------------
+PAGE GOAL
+-------------------------------------
+
+Make it as easy as possible for a user in Dublin to:
+- call immediately
+OR
+- request a free quote
+
+-------------------------------------
+1. COMPACT HERO SECTION (IMPORTANT)
+-------------------------------------
+
+This is NOT a large hero.
+It must be compact, centered, and functional.
+
+Structure:
+- H1
+- H2
+- short paragraph
+- two buttons
+
+H1:
+Contact GR Tiling & Bathroom Renovations
+
+H2:
+Get a Free Quote for Bathroom Renovations or Tiling in Dublin
+
+Paragraph:
+Tell us what you need and we’ll get back to you with clear next steps, honest pricing, and reliable service in and around Dublin.
+
+Buttons:
+Primary:
+Request a Free Quote
+
+Secondary:
+Call +353 87 720 9850
+
+Rules:
+- No image
+- Reduce vertical padding
+- Keep tight spacing
+- Must lead directly into the form section below
+
+-------------------------------------
+2. MAIN CONTACT SECTION (CORE)
+-------------------------------------
+
+Use a 2-column layout on desktop:
+
+LEFT SIDE (Contact Info Card):
+-------------------------------------
+- Phone: +353 87 720 9850 (clickable tel link)
+- Service Area: Dublin and surrounding areas
+- Services:
+  - Bathroom Renovations
+  - Tiling Services
+- Rating: 5.0 Google Rating
+
+Add short trust text:
+Fast replies, clear quotes, and tidy work from a local Dublin specialist.
+
+-------------------------------------
+
+RIGHT SIDE (Quote Form Card):
+-------------------------------------
+
+Heading:
+Request a Free Quote
+
+Fields:
+- Name (required)
+- Phone (required)
+- Email (required)
+- Service Needed (dropdown)
+- Message (required)
+
+Dropdown options:
+- Bathroom Renovation
+- Tiling Services
+- Bathroom & Tiling
+- Other
+
+Button:
+Send Quote Request
+
+Form behavior:
+- On submit → route to /thank-you
+- Do NOT connect to real email yet
+- Add a code comment showing where email integration will go later
+
+-------------------------------------
+3. QUICK TRUST STRIP
+-------------------------------------
+
+Add a clean horizontal strip below the form:
+
+Include 4–5 short trust points:
+
+- On Time
+- On Budget
+- Clean Workmanship
+- Dublin Area
+- 5.0 Google Rating
+
+Style:
+- minimal
+- not oversized
+- consistent with site
+
+-------------------------------------
+4. FAQ SECTION
+-------------------------------------
+
+H2:
+Contact FAQs
+
+Questions + short answers:
+
+- How soon will I get a reply?
+(We aim to respond as quickly as possible, usually within the same day.)
+
+- Do you provide free quotes?
+(Yes, all quotes are free and clearly explained before any work starts.)
+
+- What areas do you cover?
+(We provide services in and around Dublin.)
+
+- Can I request both bathroom renovation and tiling work?
+(Yes, both services can be included in your quote.)
+
+- Should I send photos?
+(Yes, photos help us understand your project faster.)
+
+-------------------------------------
+5. FINAL CTA SECTION
+-------------------------------------
+
+Use the same CTA banner style as other pages.
+
+H2:
+Ready to Talk About Your Project?
+
+Text:
+Call today or send a quick message and we’ll help you take the next step with clear pricing and reliable service.
+
+Buttons:
+Call Now
+Request a Free Quote
+
+-------------------------------------
+FUNCTIONAL REQUIREMENTS
+-------------------------------------
+
+- Phone links must use:
+  tel:+353877209850
+
+- All quote buttons should:
+  - scroll to the form
+  OR
+  - open the same form consistently
+
+- Form must:
+  - be mobile-friendly
+  - have proper spacing
+  - not overflow on small screens
+
+-------------------------------------
+SEO
+-------------------------------------
+
+Title:
+Contact GR Tiling & Bathroom Renovations | Free Quote Dublin
+
+Meta description:
+Contact GR Tiling & Bathroom Renovations for bathroom renovation and tiling quotes in Dublin. Call today or request a free quote online.
+
+-------------------------------------
+IMPORTANT RULES
+-------------------------------------
+
+Do NOT:
+- add large images
+- overdesign the page
+- add animations
+- connect backend/email yet
+- change other pages
+
+ONLY build this page cleanly and make it highly conversion-focused.
