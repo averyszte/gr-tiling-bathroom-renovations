@@ -1,0 +1,128 @@
+Perform a backend SEO check and cleanup for ONLY these two pages:
+
+/services/bathroom-renovations
+/services/tiling-services
+
+Do NOT redesign anything.
+Do NOT change layout.
+Do NOT rewrite large amounts of copy.
+Do NOT change images yet.
+This is a technical/on-page SEO cleanup only.
+
+1. Page titles and meta descriptions
+
+Bathroom Renovations page:
+
+Title:
+Bathroom Renovations Dublin | GR Tiling & Bathroom Renovations
+
+Meta description:
+Bathroom renovations in Dublin done on time and on budget by a trusted local specialist. Clean work, clear pricing, and reliable results. Get a free quote.
+
+Tiling Services page:
+
+Title:
+Tiling Services Dublin | GR Tiling & Bathroom Renovations
+
+Meta description:
+Clean, reliable tiling services in Dublin for bathrooms, walls, floors, and repairs. Precise finishes, honest pricing, and tidy work. Get a free quote.
+
+2. Heading structure
+
+For each page:
+- Only one H1
+- H1 should be the eyebrow keyword text
+- Main large marketing headline should be H2
+- Major sections should use H2
+- Card titles and smaller items should use H3 or paragraph text
+- Do not use headings just for styling
+
+Bathroom page H1:
+Bathroom Renovations Dublin
+
+Tiling page H1:
+Tiling Services Dublin
+
+3. Keyword placement
+
+Bathroom page should naturally include:
+- bathroom renovations Dublin
+- bathroom renovation Dublin
+- bathroom remodel Dublin
+- in and around Dublin
+
+Tiling page should naturally include:
+- tiling services Dublin
+- bathroom tiling Dublin
+- wall and floor tiling Dublin
+- tile installation Dublin
+- in and around Dublin
+
+Do not keyword stuff.
+Keep wording natural.
+
+4. Internal links
+
+Add or verify natural text links:
+
+Bathroom page:
+- link “tiling services” to /services/tiling-services
+- link “contact us” or “free quote” to /contact
+
+Tiling page:
+- link “bathroom renovations” to /services/bathroom-renovations
+- link “contact us” or “free quote” to /contact
+
+Use normal inline text links, not only buttons.
+
+5. Canonical URL placeholders
+
+Add canonical tags or SEO config placeholders for:
+
+/services/bathroom-renovations
+/services/tiling-services
+
+Use the current site domain structure if already configured. If no production domain exists yet, create a clear placeholder that can be updated before launch.
+
+6. Open Graph basics
+
+Add or verify Open Graph title and description for both pages matching the page title/meta intent.
+
+Do not add fake images yet.
+
+7. Semantic structure
+
+Ensure each page uses:
+- header
+- nav
+- main
+- section
+- footer
+
+Page-specific content should be inside main.
+
+8. Image alt placeholders
+
+Do not rename or optimize image files yet.
+
+But make sure all service page images have descriptive alt text placeholders, such as:
+- Modern bathroom renovation in Dublin
+- Clean bathroom tiling work in Dublin
+- Wall and floor tiling service in Dublin
+
+9. CTA links
+
+Make sure:
+- phone buttons use tel:+353877209850
+- Get a Free Quote buttons open the quote modal or link consistently
+- contact links point to /contact
+
+10. Final check
+
+Do not change design.
+Do not change spacing.
+Do not touch homepage.
+Do not touch About, Contact, or Thank You pages.
+
+Goal:
+Make both service pages SEO-ready, technically clean, internally linked, and easy to refine with new copy tomorrow.

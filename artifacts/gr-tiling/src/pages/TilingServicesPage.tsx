@@ -8,6 +8,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { applyPageSeo } from "@/lib/seo";
 
 type Service = {
   image: string;
@@ -123,38 +124,19 @@ const processSteps = [
 
 const PAGE_TITLE = "Tiling Services Dublin | GR Tiling & Bathroom Renovations";
 const PAGE_DESCRIPTION =
-  "GR Tiling & Bathroom Renovations provides clean, reliable tiling services in Dublin, including bathroom tiling, wall tiling, floor tiling, and tile repairs. Get a free quote.";
-
-function setMetaTag(attr: "name" | "property", key: string, content: string) {
-  let el = document.head.querySelector<HTMLMetaElement>(`meta[${attr}="${key}"]`);
-  if (!el) {
-    el = document.createElement("meta");
-    el.setAttribute(attr, key);
-    document.head.appendChild(el);
-  }
-  el.setAttribute("content", content);
-}
+  "Clean, reliable tiling services in Dublin for bathrooms, walls, floors, and repairs. Precise finishes, honest pricing, and tidy work. Get a free quote.";
+const PAGE_PATH = "/services/tiling-services";
 
 export default function TilingServicesPage({ openQuote }: { openQuote: () => void }) {
-  useEffect(() => {
-    const previousTitle = document.title;
-    const previousDescription =
-      document.head.querySelector<HTMLMetaElement>('meta[name="description"]')?.content ?? "";
-
-    document.title = PAGE_TITLE;
-    setMetaTag("name", "description", PAGE_DESCRIPTION);
-    setMetaTag("property", "og:title", PAGE_TITLE);
-    setMetaTag("property", "og:description", PAGE_DESCRIPTION);
-    setMetaTag("name", "twitter:title", PAGE_TITLE);
-    setMetaTag("name", "twitter:description", PAGE_DESCRIPTION);
-
-    return () => {
-      document.title = previousTitle;
-      if (previousDescription) {
-        setMetaTag("name", "description", previousDescription);
-      }
-    };
-  }, []);
+  useEffect(
+    () =>
+      applyPageSeo({
+        title: PAGE_TITLE,
+        description: PAGE_DESCRIPTION,
+        path: PAGE_PATH,
+      }),
+    [],
+  );
 
   return (
     <main className="flex-1 pb-20 md:pb-0">

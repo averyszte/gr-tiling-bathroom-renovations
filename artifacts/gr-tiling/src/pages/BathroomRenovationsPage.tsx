@@ -8,6 +8,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { applyPageSeo } from "@/lib/seo";
 
 type Service = {
   image: string;
@@ -88,7 +89,7 @@ const reviews = [
 type Faq = { q: string; a: ReactNode };
 
 const faqs: Faq[] = [
-  { q: "How much does a bathroom renovation cost in Dublin?", a: "Costs depend on the size, scope, and materials chosen. We provide clear, detailed quotes before any work starts, with no hidden extras." },
+  { q: "How much does a bathroom renovation cost in Dublin?", a: "Costs depend on the size, scope, and materials chosen for your bathroom remodel. We provide clear, detailed quotes before any work starts, with no hidden extras." },
   { q: "How long does a bathroom renovation take?", a: "Most standard bathroom renovations take 1–3 weeks. We give you a realistic timeline at the start and keep you updated throughout." },
   { q: "Will the work area be kept clean?", a: "Yes. We protect your home, clean up every day, and leave the area tidy. We treat your home the way we'd want ours treated." },
   { q: "Do I get a written quote?", a: "Absolutely. We provide a clear written quote before any work begins so you know exactly what's included and what the cost will be." },
@@ -123,38 +124,19 @@ const processSteps = [
 
 const PAGE_TITLE = "Bathroom Renovations Dublin | GR Tiling & Bathroom Renovations";
 const PAGE_DESCRIPTION =
-  "Bathroom renovations in Dublin done on time and on budget. Trusted local specialists for clean, reliable work. Get a free quote today.";
-
-function setMetaTag(attr: "name" | "property", key: string, content: string) {
-  let el = document.head.querySelector<HTMLMetaElement>(`meta[${attr}="${key}"]`);
-  if (!el) {
-    el = document.createElement("meta");
-    el.setAttribute(attr, key);
-    document.head.appendChild(el);
-  }
-  el.setAttribute("content", content);
-}
+  "Bathroom renovations in Dublin done on time and on budget by a trusted local specialist. Clean work, clear pricing, and reliable results. Get a free quote.";
+const PAGE_PATH = "/services/bathroom-renovations";
 
 export default function BathroomRenovationsPage({ openQuote }: { openQuote: () => void }) {
-  useEffect(() => {
-    const previousTitle = document.title;
-    const previousDescription =
-      document.head.querySelector<HTMLMetaElement>('meta[name="description"]')?.content ?? "";
-
-    document.title = PAGE_TITLE;
-    setMetaTag("name", "description", PAGE_DESCRIPTION);
-    setMetaTag("property", "og:title", PAGE_TITLE);
-    setMetaTag("property", "og:description", PAGE_DESCRIPTION);
-    setMetaTag("name", "twitter:title", PAGE_TITLE);
-    setMetaTag("name", "twitter:description", PAGE_DESCRIPTION);
-
-    return () => {
-      document.title = previousTitle;
-      if (previousDescription) {
-        setMetaTag("name", "description", previousDescription);
-      }
-    };
-  }, []);
+  useEffect(
+    () =>
+      applyPageSeo({
+        title: PAGE_TITLE,
+        description: PAGE_DESCRIPTION,
+        path: PAGE_PATH,
+      }),
+    [],
+  );
 
   return (
     <main className="flex-1 pb-20 md:pb-0">
