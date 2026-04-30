@@ -1,0 +1,110 @@
+Update ONLY the 3-step process section on the Bathroom Renovations service page.
+
+Use the two uploaded screenshots as visual references:
+
+Reference screenshot 1:
+Shows the current Bathroom Renovations service page version. This is the section that needs to be replaced/updated.
+
+Reference screenshot 2:
+Shows the updated homepage version with:
+- larger heading
+- cleaner spacing
+- Plan / Design / Build steps
+- centered CTA button
+- better visual hierarchy
+
+Goal:
+Make the Bathroom Renovations service page 3-step section match the homepage version’s style exactly.
+
+Do NOT change any other section.
+
+-------------------------------------
+1. Match the homepage design
+-------------------------------------
+
+Update the Bathroom Renovations page 3-step section so it uses the same:
+
+- icon circle size
+- connector line style
+- spacing
+- typography
+- button style
+- section padding
+- centered layout
+- hover behavior
+- responsive/mobile behavior
+
+as the homepage version shown in the second screenshot.
+
+Do not create a new design.
+Copy the homepage process section style.
+
+-------------------------------------
+2. Update the content
+-------------------------------------
+
+Section H2:
+Your Bathroom Renovation in 3 Simple Steps
+
+Subheading:
+A clear, stress-free process from first message to finished bathroom. On time, on budget, no surprises.
+
+Step 1 title:
+Plan
+
+Step 1 text:
+Tell us what you need and we’ll go through your bathroom, ideas, and budget to get everything clear from the start.
+
+Step 2 title:
+Design
+
+Step 2 text:
+We help you choose the right layout, tiles, and finishes so you know exactly what you're getting before work begins.
+
+Step 3 title:
+Build
+
+Step 3 text:
+We complete the full renovation on time, keep everything clean, and deliver a high-quality finish that lasts.
+
+CTA button:
+Get a Free Quote
+
+-------------------------------------
+3. CTA behavior
+-------------------------------------
+
+The Get a Free Quote button must use the same behavior as the homepage process section button:
+- open the quote modal
+OR
+- trigger the same quote form behavior used elsewhere on the site
+
+Do not make it a dead button.
+
+-------------------------------------
+4. Mobile
+-------------------------------------
+
+On mobile:
+- stack steps cleanly
+- keep spacing consistent with the homepage version
+- remove or simplify the horizontal connector line if needed
+- button should remain centered and easy to tap
+
+-------------------------------------
+Important
+-------------------------------------
+
+Do NOT change:
+- hero section
+- gallery
+- before/after slider
+- problem section
+- service blocks
+- reviews
+- FAQ
+- footer
+- homepage
+
+Only update the 3-step process section on:
+/services/bathroom-renovations

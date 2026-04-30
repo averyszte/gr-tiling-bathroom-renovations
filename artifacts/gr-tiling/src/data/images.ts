@@ -57,37 +57,37 @@ export const images = {
     },
     services: [
       {
-        src: "/images/gallery-1.png",
+        src: "/images/service-full-reno.webp",
         alt: "Full bathroom renovation in Dublin, complete transformation by GR Tiling & Bathroom Renovations",
       },
       {
-        src: "/images/gallery-3.png",
+        src: "/images/service-layout-upgrade.webp",
         alt: "Bathroom layout upgrade and modern fixture installation Dublin, GR Tiling",
       },
       {
-        src: "/images/gallery-4.png",
+        src: "/images/service-tiling-finishing.webp",
         alt: "Professional floor and wall tiling Dublin, wet rooms and feature walls by GR Tiling",
       },
     ],
     gallery: [
       {
-        src: "/images/gallery-1.png",
+        src: "/images/gallery-bath-1.webp",
         alt: "Modern bathroom renovation with white ceramic tiles and floating vanity, Dublin",
       },
       {
-        src: "/images/gallery-2.png",
+        src: "/images/gallery-bathroom-1.webp",
         alt: "Herringbone floor tiling in warm beige, professional tiling Dublin",
       },
       {
-        src: "/images/gallery-3.png",
+        src: "/images/gallery-shower-2.webp",
         alt: "Walk-in shower with dark marble tiles, bathroom renovation Dublin",
       },
       {
-        src: "/images/gallery-5.png",
+        src: "/images/gallery-bathroom-2.webp",
         alt: "Luxury freestanding bath in renovated bathroom, GR Tiling Dublin",
       },
       {
-        src: "/images/gallery-6.png",
+        src: "/images/gallery-bath-2.webp",
         alt: "Large format rectified tiles with fine grout lines, precision tiling Dublin",
       },
     ],

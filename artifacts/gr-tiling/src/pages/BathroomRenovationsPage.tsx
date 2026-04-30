@@ -112,9 +112,9 @@ const faqs: Faq[] = [
 
 
 const processSteps = [
-  { icon: <MessageCircle className="w-10 h-10" />, title: "Tell Us What You Need", text: "Send a few details about your bathroom or renovation idea." },
-  { icon: <FileText className="w-10 h-10" />, title: "Get a Clear Quote", text: "We'll discuss the work, timeline, and price, with no surprises." },
-  { icon: <Wrench className="w-10 h-10" />, title: "We Get to Work", text: "Clean, reliable work completed on time, every time." },
+  { icon: <MessageCircle className="w-10 h-10" />, title: "Plan", text: "Tell us what you need and we'll go through your bathroom, ideas, and budget to get everything clear from the start." },
+  { icon: <FileText className="w-10 h-10" />, title: "Design", text: "We help you choose the right layout, tiles, and finishes so you know exactly what you're getting before work begins." },
+  { icon: <Wrench className="w-10 h-10" />, title: "Build", text: "We complete the full renovation on time, keep everything clean, and deliver a high-quality finish that lasts." },
 ];
 
 const PAGE_TITLE = "Bathroom Renovations Dublin | GR Tiling & Bathroom Renovations";
@@ -319,10 +319,10 @@ export default function BathroomRenovationsPage({ openQuote }: { openQuote: () =
       <section className="py-[60px] md:py-24 bg-secondary/30">
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="text-center mb-8 md:mb-16">
-            <h2 className="font-serif text-3xl md:text-5xl text-foreground mb-6">How Your Renovation Works</h2>
+            <h2 className="font-serif text-3xl md:text-5xl text-foreground mb-6">Your Bathroom Renovation in 3 Simple Steps</h2>
             <div className="w-24 h-1 bg-primary mx-auto rounded-full mb-6"></div>
             <p className="text-lg text-muted-foreground max-w-xl mx-auto">
-              A quick, clear process built for local Dublin homes, from first message to a finished bathroom.
+              A clear, stress-free process from first message to finished bathroom. On time, on budget, no surprises.
             </p>
           </div>
           <div className="relative flex flex-col md:flex-row md:items-start md:justify-between gap-14 md:gap-0">
@@ -339,6 +339,11 @@ export default function BathroomRenovationsPage({ openQuote }: { openQuote: () =
                 <p className="text-muted-foreground leading-relaxed max-w-[220px]">{item.text}</p>
               </div>
             ))}
+          </div>
+          <div className="flex justify-center mt-16">
+            <Button size="lg" className="text-base h-14 px-8" onClick={openQuote}>
+              Get a Free Quote
+            </Button>
           </div>
         </div>
       </section>
