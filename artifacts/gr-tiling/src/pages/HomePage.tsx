@@ -113,7 +113,7 @@ export default function HomePage({ openQuote }: { openQuote: () => void }) {
           <div className="text-center mb-16">
             <h2 className="font-serif text-3xl md:text-5xl text-foreground mb-6">Get Started in 3 Simple Steps</h2>
             <div className="w-24 h-1 bg-primary mx-auto rounded-full mb-6"></div>
-            <p className="text-lg text-muted-foreground max-w-xl mx-auto">A quick, clear process from first message to quote and finished work.</p>
+            <p className="text-lg text-muted-foreground max-w-xl mx-auto">A simple, clear process from first message to finished work.</p>
           </div>
 
           <div className="relative flex flex-col md:flex-row md:items-start md:justify-between gap-14 md:gap-0">
@@ -123,17 +123,17 @@ export default function HomePage({ openQuote }: { openQuote: () => void }) {
               {
                 icon: <MessageCircle className="w-10 h-10" />,
                 title: "Tell Us What You Need",
-                text: "Send a few details about your bathroom, tiling job, or renovation idea.",
+                text: "Send a quick message or call us about your bathroom or tiling project.",
               },
               {
                 icon: <FileText className="w-10 h-10" />,
-                title: "Get a Clear Quote",
-                text: "We'll discuss the work, timeline, and price so there are no surprises.",
+                title: "We Plan It With You",
+                text: "We'll go through your ideas, discuss options, and give you a clear quote with no surprises.",
               },
               {
                 icon: <Wrench className="w-10 h-10" />,
-                title: "We Get to Work",
-                text: "Your project is completed with clean workmanship, clear communication, and care for your home.",
+                title: "We Get It Done",
+                text: "We complete the work on time, keep everything clean, and deliver a high-quality finish.",
               },
             ].map((item, i) => (
               <div
@@ -149,12 +149,9 @@ export default function HomePage({ openQuote }: { openQuote: () => void }) {
             ))}
           </div>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mt-16">
+          <div className="flex justify-center mt-16">
             <Button size="lg" className="text-base h-14 px-8" onClick={openQuote}>
               Get a Free Quote
-            </Button>
-            <Button size="lg" variant="outline" className="text-base h-14 px-8 bg-transparent" asChild>
-              <a href="tel:+353877209850">Call Now</a>
             </Button>
           </div>
         </div>
