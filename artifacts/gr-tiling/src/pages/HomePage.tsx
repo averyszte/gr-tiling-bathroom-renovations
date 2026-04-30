@@ -288,7 +288,7 @@ export default function HomePage({ openQuote }: { openQuote: () => void }) {
                 <div className="p-8 flex-1 flex flex-col">
                   <h3 className="font-serif text-2xl mb-3">Tiling Services</h3>
                   <p className="text-muted-foreground mb-6 leading-relaxed">
-                    Expert tiling for floors, walls, and wet areas. From herringbone feature walls to large-format rectified tiles, precision cuts and perfect grout lines every time.
+                    We take care of your tiling with clean, precise work, so you don’t have to deal with poor finishes, uneven tiles or messy jobs.
                   </p>
                   <div className="mt-auto flex flex-wrap gap-3">
                     <Button variant="secondary" size="lg" className="text-base h-14 px-8" onClick={openQuote}>Get a Tiling Quote</Button>
