@@ -108,9 +108,9 @@ export default function HomePage({ openQuote }: { openQuote: () => void }) {
       </div>
 
       {/* Process Section */}
-      <section className="py-24 bg-secondary/30" data-testid="process-section">
+      <section className="py-[60px] md:py-24 bg-secondary/30" data-testid="process-section">
         <div className="container mx-auto px-4 max-w-6xl">
-          <div className="text-center mb-16">
+          <div className="text-center mb-8 md:mb-16">
             <h2 className="font-serif text-3xl md:text-5xl text-foreground mb-6">Your Dream Bathroom in 3 Simple Steps</h2>
             <div className="w-24 h-1 bg-primary mx-auto rounded-full mb-6"></div>
             <p className="text-lg text-muted-foreground max-w-xl mx-auto">The bathroom you want, on budget and on time. A simple, clear process from first message to finished work.</p>
@@ -158,9 +158,9 @@ export default function HomePage({ openQuote }: { openQuote: () => void }) {
       </section>
 
       {/* Problem/Solution */}
-      <section className="py-24 bg-background">
+      <section className="py-[60px] md:py-24 bg-background">
         <div className="container mx-auto px-4 max-w-6xl">
-          <div className="text-center mb-16">
+          <div className="text-center mb-8 md:mb-16">
             <h2 className="font-serif text-3xl md:text-5xl text-foreground mb-6">A Cleaner, Faster Way to Renovate Your Bathroom</h2>
             <div className="w-24 h-1 bg-primary mx-auto rounded-full"></div>
           </div>
@@ -240,9 +240,9 @@ export default function HomePage({ openQuote }: { openQuote: () => void }) {
       </section>
 
       {/* Services Preview */}
-      <section className="py-24 bg-secondary/50">
+      <section className="py-[60px] md:py-24 bg-secondary/50">
         <div className="container mx-auto px-4 max-w-6xl">
-          <div className="mb-16">
+          <div className="mb-8 md:mb-16">
             <h2 className="font-serif text-3xl md:text-5xl text-foreground mb-6">Bathroom Renovation & Tiling Services in Dublin</h2>
             <div className="w-24 h-1 bg-primary rounded-full"></div>
           </div>
@@ -304,9 +304,9 @@ export default function HomePage({ openQuote }: { openQuote: () => void }) {
       </section>
 
       {/* Portfolio Gallery */}
-      <section className="py-24 bg-background">
+      <section className="py-[60px] md:py-24 bg-background">
         <div className="container mx-auto px-4 max-w-6xl">
-          <div className="mb-16">
+          <div className="mb-8 md:mb-16">
             <h2 className="font-serif text-3xl md:text-5xl text-foreground mb-6">Recent Work & Finished Projects</h2>
             <div className="w-24 h-1 bg-primary rounded-full"></div>
           </div>
@@ -347,9 +347,9 @@ export default function HomePage({ openQuote }: { openQuote: () => void }) {
       </section>
 
       {/* Reviews */}
-      <section className="py-24 bg-secondary/30">
+      <section className="py-[60px] md:py-24 bg-secondary/30">
         <div className="container mx-auto px-4 max-w-7xl">
-          <div className="text-center mb-16">
+          <div className="text-center mb-8 md:mb-16">
             <h2 className="font-serif text-3xl md:text-5xl text-foreground mb-6">What Our Customers Say</h2>
             <div className="flex justify-center items-center gap-2 mb-4">
               {[1, 2, 3, 4, 5].map((i) => (
@@ -358,7 +358,7 @@ export default function HomePage({ openQuote }: { openQuote: () => void }) {
             </div>
             <p className="text-lg text-muted-foreground">5.0 Google Rating from verified local customers</p>
           </div>
-          <div className="grid md:grid-cols-3 gap-8 mb-12">
+          <div className="grid md:grid-cols-3 gap-8 mb-8 md:mb-12">
             {reviews.map((review, i) => (
               <div key={i} className="bg-card p-8 pb-10 rounded-2xl shadow-lg border relative">
                 <div className="flex gap-1 mb-4">
@@ -390,9 +390,9 @@ export default function HomePage({ openQuote }: { openQuote: () => void }) {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-24 bg-background">
+      <section className="py-[60px] md:py-24 bg-background">
         <div className="container mx-auto px-4 max-w-4xl">
-          <div className="text-center mb-16">
+          <div className="text-center mb-8 md:mb-16">
             <h2 className="font-serif text-3xl md:text-5xl text-foreground mb-6">Common Questions About Bathroom Renovations</h2>
             <div className="w-24 h-1 bg-primary mx-auto rounded-full mb-4"></div>
           </div>
@@ -415,7 +415,7 @@ export default function HomePage({ openQuote }: { openQuote: () => void }) {
       </section>
 
       {/* Final CTA */}
-      <section className="py-24 bg-primary text-primary-foreground">
+      <section className="py-10 md:py-24 bg-primary text-primary-foreground">
         <div className="container mx-auto px-4 max-w-5xl text-center">
           <h2 className="font-serif text-3xl md:text-5xl mb-6">Ready to Renovate Your Bathroom?</h2>
           <p className="text-lg md:text-xl mb-10 max-w-2xl mx-auto text-primary-foreground/90">

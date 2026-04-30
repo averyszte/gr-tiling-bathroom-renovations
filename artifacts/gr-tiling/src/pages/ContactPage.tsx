@@ -151,7 +151,7 @@ export default function ContactPage() {
       </section>
 
       {/* 2. Main Contact Section */}
-      <section className="py-20 lg:py-24 bg-background">
+      <section className="py-[60px] lg:py-24 bg-background">
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="grid lg:grid-cols-[5fr_7fr] gap-8 lg:gap-12 items-start">
 
@@ -346,7 +346,7 @@ export default function ContactPage() {
       </section>
 
       {/* 4. FAQ */}
-      <section className="py-24 bg-secondary/30">
+      <section className="py-[60px] md:py-24 bg-secondary/30">
         <div className="container mx-auto px-4 max-w-4xl">
           <div className="text-center mb-12">
             <h2 className="font-serif text-3xl md:text-5xl text-foreground mb-6">
@@ -374,7 +374,7 @@ export default function ContactPage() {
       </section>
 
       {/* 5. Final CTA */}
-      <section className="py-24 bg-primary text-primary-foreground">
+      <section className="py-10 md:py-24 bg-primary text-primary-foreground">
         <div className="container mx-auto px-4 max-w-5xl text-center">
           <h2 className="font-serif text-3xl md:text-5xl mb-6">
             Ready to Talk About Your Project?

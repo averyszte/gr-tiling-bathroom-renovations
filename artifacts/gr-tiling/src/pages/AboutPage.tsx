@@ -62,7 +62,7 @@ export default function AboutPage({ openQuote }: { openQuote: () => void }) {
     <main className="flex-1 pb-20 md:pb-0">
 
       {/* Personal section (image + text) — first section on the page */}
-      <section className="pt-16 pb-24 lg:pt-20 lg:pb-28 bg-background">
+      <section className="pt-[60px] pb-[60px] lg:pt-20 lg:pb-28 bg-background">
         <div className="container mx-auto px-4 max-w-6xl grid lg:grid-cols-[5fr_7fr] gap-12 lg:gap-16 items-center">
           <div className="rounded-2xl overflow-hidden shadow-lg aspect-[4/5] bg-secondary/30">
             {/* Placeholder image, swap for a real portrait later */}
@@ -92,9 +92,9 @@ export default function AboutPage({ openQuote }: { openQuote: () => void }) {
       </section>
 
       {/* How I Work */}
-      <section className="py-24 bg-secondary/30">
+      <section className="py-[60px] md:py-24 bg-secondary/30">
         <div className="container mx-auto px-4 max-w-5xl">
-          <div className="text-center mb-16">
+          <div className="text-center mb-8 md:mb-16">
             <h2 className="font-serif text-3xl md:text-5xl text-foreground mb-6">
               How I Work on Every Job
             </h2>
@@ -120,7 +120,7 @@ export default function AboutPage({ openQuote }: { openQuote: () => void }) {
       </section>
 
       {/* Local Trust */}
-      <section className="py-24 bg-background">
+      <section className="py-[60px] md:py-24 bg-background">
         <div className="container mx-auto px-4 max-w-3xl text-center">
           <h2 className="font-serif text-3xl md:text-5xl text-foreground mb-6">
             Working Across Dublin
@@ -147,9 +147,9 @@ export default function AboutPage({ openQuote }: { openQuote: () => void }) {
       </section>
 
       {/* Reviews */}
-      <section className="py-24 bg-secondary/30">
+      <section className="py-[60px] md:py-24 bg-secondary/30">
         <div className="container mx-auto px-4 max-w-7xl">
-          <div className="text-center mb-16">
+          <div className="text-center mb-8 md:mb-16">
             <h2 className="font-serif text-3xl md:text-5xl text-foreground mb-6">
               What Our Customers Say
             </h2>
@@ -162,7 +162,7 @@ export default function AboutPage({ openQuote }: { openQuote: () => void }) {
               5.0 Google Rating from verified Dublin customers
             </p>
           </div>
-          <div className="grid md:grid-cols-3 gap-8 mb-12">
+          <div className="grid md:grid-cols-3 gap-8 mb-8 md:mb-12">
             {reviews.map((review, i) => (
               <div
                 key={i}
@@ -204,7 +204,7 @@ export default function AboutPage({ openQuote }: { openQuote: () => void }) {
       </section>
 
       {/* Final CTA */}
-      <section className="py-24 bg-primary text-primary-foreground">
+      <section className="py-10 md:py-24 bg-primary text-primary-foreground">
         <div className="container mx-auto px-4 max-w-5xl text-center">
           <h2 className="font-serif text-3xl md:text-5xl mb-6">
             Ready to Start Your Bathroom Renovation or Tiling Project?

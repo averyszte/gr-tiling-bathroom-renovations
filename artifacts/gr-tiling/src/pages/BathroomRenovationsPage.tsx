@@ -143,7 +143,7 @@ export default function BathroomRenovationsPage({ openQuote }: { openQuote: () =
     <main className="flex-1 pb-20 md:pb-0">
 
       {/* Hero */}
-      <section className="relative overflow-hidden bg-secondary/30 pt-12 pb-20 lg:pt-16 lg:pb-24">
+      <section className="relative overflow-hidden bg-secondary/30 pt-10 pb-[60px] lg:pt-16 lg:pb-24">
         <div className="container mx-auto px-4">
           {/* Centered text content */}
           <div className="max-w-3xl mx-auto text-center">
@@ -180,7 +180,7 @@ export default function BathroomRenovationsPage({ openQuote }: { openQuote: () =
       </section>
 
       {/* Before / After Comparison */}
-      <section className="py-20 lg:py-24 bg-background">
+      <section className="py-[60px] lg:py-24 bg-background">
         <div className="container mx-auto px-4 max-w-5xl">
           <div className="text-center mb-10 lg:mb-12">
             <h2 className="font-serif text-3xl md:text-5xl text-foreground mb-4">
@@ -204,9 +204,9 @@ export default function BathroomRenovationsPage({ openQuote }: { openQuote: () =
       </section>
 
       {/* Problem → Solution */}
-      <section className="py-24 bg-background">
+      <section className="py-[60px] md:py-24 bg-background">
         <div className="container mx-auto px-4 max-w-6xl">
-          <div className="text-center mb-16">
+          <div className="text-center mb-8 md:mb-16">
             <h2 className="font-serif text-3xl md:text-5xl text-foreground mb-6">
               Tired of Bathroom Renovations Running Over Time and Budget?
             </h2>
@@ -251,9 +251,9 @@ export default function BathroomRenovationsPage({ openQuote }: { openQuote: () =
       </section>
 
       {/* Service Breakdown */}
-      <section className="py-24 bg-secondary/30">
+      <section className="py-[60px] md:py-24 bg-secondary/30">
         <div className="container mx-auto px-4 max-w-6xl">
-          <div className="text-center mb-16">
+          <div className="text-center mb-8 md:mb-16">
             <h2 className="font-serif text-3xl md:text-5xl text-foreground mb-6">
               Bathroom Renovation Services in Dublin
             </h2>
@@ -292,9 +292,9 @@ export default function BathroomRenovationsPage({ openQuote }: { openQuote: () =
       </section>
 
       {/* Gallery */}
-      <section className="py-24 bg-background">
+      <section className="py-[60px] md:py-24 bg-background">
         <div className="container mx-auto px-4 max-w-7xl">
-          <div className="text-center mb-16">
+          <div className="text-center mb-8 md:mb-16">
             <h2 className="font-serif text-3xl md:text-5xl text-foreground mb-6">Recent Bathroom Renovations</h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               A sample of recent bathroom renovation and tiling projects completed for Dublin homeowners.
@@ -322,9 +322,9 @@ export default function BathroomRenovationsPage({ openQuote }: { openQuote: () =
       </section>
 
       {/* Process */}
-      <section className="py-24 bg-secondary/30">
+      <section className="py-[60px] md:py-24 bg-secondary/30">
         <div className="container mx-auto px-4 max-w-6xl">
-          <div className="text-center mb-16">
+          <div className="text-center mb-8 md:mb-16">
             <h2 className="font-serif text-3xl md:text-5xl text-foreground mb-6">How Your Renovation Works</h2>
             <div className="w-24 h-1 bg-primary mx-auto rounded-full mb-6"></div>
             <p className="text-lg text-muted-foreground max-w-xl mx-auto">
@@ -350,9 +350,9 @@ export default function BathroomRenovationsPage({ openQuote }: { openQuote: () =
       </section>
 
       {/* Why Choose GR */}
-      <section className="py-24 bg-background">
+      <section className="py-[60px] md:py-24 bg-background">
         <div className="container mx-auto px-4 max-w-5xl">
-          <div className="text-center mb-16">
+          <div className="text-center mb-8 md:mb-16">
             <h2 className="font-serif text-3xl md:text-5xl text-foreground mb-6">
               Why Choose GR Tiling & Bathroom Renovations
             </h2>
@@ -373,16 +373,16 @@ export default function BathroomRenovationsPage({ openQuote }: { openQuote: () =
       </section>
 
       {/* Reviews */}
-      <section className="py-24 bg-secondary/30">
+      <section className="py-[60px] md:py-24 bg-secondary/30">
         <div className="container mx-auto px-4 max-w-7xl">
-          <div className="text-center mb-16">
+          <div className="text-center mb-8 md:mb-16">
             <h2 className="font-serif text-3xl md:text-5xl text-foreground mb-6">What Our Customers Say</h2>
             <div className="flex justify-center items-center gap-2 mb-4">
               {[1, 2, 3, 4, 5].map((i) => <Star key={i} className="fill-yellow-400 text-yellow-400 w-5 h-5" />)}
             </div>
             <p className="text-lg text-muted-foreground">5.0 Google Rating from verified Dublin customers</p>
           </div>
-          <div className="grid md:grid-cols-3 gap-8 mb-12">
+          <div className="grid md:grid-cols-3 gap-8 mb-8 md:mb-12">
             {reviews.map((review, i) => (
               <div key={i} className="bg-card p-8 pb-10 rounded-2xl shadow-lg border relative">
                 <div className="flex gap-1 mb-4">
@@ -417,9 +417,9 @@ export default function BathroomRenovationsPage({ openQuote }: { openQuote: () =
       </section>
 
       {/* FAQ */}
-      <section className="py-24 bg-background">
+      <section className="py-[60px] md:py-24 bg-background">
         <div className="container mx-auto px-4 max-w-4xl">
-          <div className="text-center mb-16">
+          <div className="text-center mb-8 md:mb-16">
             <h2 className="font-serif text-3xl md:text-5xl text-foreground mb-6">Bathroom Renovation FAQs</h2>
             <p className="text-lg text-muted-foreground">Common questions from Dublin homeowners about bathroom renovations.</p>
           </div>
@@ -435,7 +435,7 @@ export default function BathroomRenovationsPage({ openQuote }: { openQuote: () =
       </section>
 
       {/* Final CTA */}
-      <section className="py-24 bg-primary text-primary-foreground">
+      <section className="py-10 md:py-24 bg-primary text-primary-foreground">
         <div className="container mx-auto px-4 max-w-5xl text-center">
           <h2 className="font-serif text-3xl md:text-5xl mb-6">Ready to Start Your Bathroom Renovation?</h2>
           <p className="text-lg md:text-xl mb-10 max-w-2xl mx-auto text-primary-foreground/90">
