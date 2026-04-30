@@ -80,44 +80,44 @@ export default function HomePage({ openQuote }: { openQuote: () => void }) {
       </div>
 
       {/* Process Section */}
-      <section className="py-16 bg-background" data-testid="process-section">
-        <div className="container mx-auto px-4 max-w-4xl">
-          <div className="text-center mb-14">
-            <h2 className="font-serif text-3xl md:text-4xl text-foreground mb-3">Get Started in 3 Simple Steps</h2>
-            <p className="text-muted-foreground max-w-lg mx-auto">A quick, clear process from first message to quote and finished work.</p>
+      <section className="py-24 bg-secondary/30" data-testid="process-section">
+        <div className="container mx-auto px-4 max-w-6xl">
+          <div className="text-center mb-16">
+            <h2 className="font-serif text-3xl md:text-5xl text-foreground mb-6">Get Started in 3 Simple Steps</h2>
+            <div className="w-24 h-1 bg-primary mx-auto rounded-full mb-6"></div>
+            <p className="text-lg text-muted-foreground max-w-xl mx-auto">A quick, clear process from first message to quote and finished work.</p>
           </div>
 
-          <div className="relative flex flex-col md:flex-row md:items-start md:justify-between gap-10 md:gap-0">
-            {/* Connector line — desktop only, sits behind icons */}
-            <div className="hidden md:block absolute top-[2.625rem] left-[calc(16.67%+2rem)] right-[calc(16.67%+2rem)] h-[1.5px] bg-primary/25 z-0" />
+          <div className="relative flex flex-col md:flex-row md:items-start md:justify-between gap-14 md:gap-0">
+            {/* Connector line — desktop only */}
+            <div className="hidden md:block absolute top-[3rem] left-[calc(16.67%+3rem)] right-[calc(16.67%+3rem)] h-[1.5px] bg-primary/30 z-0" />
 
             {[
               {
-                icon: <MessageCircle className="w-8 h-8" />,
+                icon: <MessageCircle className="w-10 h-10" />,
                 title: "Tell Us What You Need",
                 text: "Send a few details about your bathroom, tiling job, or renovation idea.",
               },
               {
-                icon: <FileText className="w-8 h-8" />,
+                icon: <FileText className="w-10 h-10" />,
                 title: "Get a Clear Quote",
                 text: "We'll discuss the work, timeline, and price so there are no surprises.",
               },
               {
-                icon: <Wrench className="w-8 h-8" />,
+                icon: <Wrench className="w-10 h-10" />,
                 title: "We Get to Work",
                 text: "Your project is completed with clean workmanship, clear communication, and care for your home.",
               },
             ].map((item, i) => (
               <div
                 key={i}
-                className="group relative z-10 flex flex-col items-center text-center flex-1 px-6 transition-transform duration-300 hover:-translate-y-1"
+                className="group relative z-10 flex flex-col items-center text-center flex-1 px-8 transition-transform duration-300 hover:-translate-y-1"
               >
-                {/* Icon circle */}
-                <div className="relative z-10 w-20 h-20 rounded-full bg-background border-2 border-primary/30 flex items-center justify-center mb-5 text-primary shadow-sm transition-all duration-300 group-hover:bg-primary group-hover:border-primary group-hover:text-primary-foreground group-hover:shadow-md">
+                <div className="relative z-10 w-24 h-24 rounded-full bg-background border-2 border-primary/35 flex items-center justify-center mb-6 text-primary shadow-sm transition-all duration-300 group-hover:bg-primary group-hover:border-primary group-hover:text-primary-foreground group-hover:shadow-lg">
                   {item.icon}
                 </div>
-                <h3 className="font-semibold text-base text-foreground mb-2">{item.title}</h3>
-                <p className="text-muted-foreground text-sm leading-relaxed max-w-[180px]">{item.text}</p>
+                <h3 className="font-semibold text-lg text-foreground mb-3">{item.title}</h3>
+                <p className="text-muted-foreground leading-relaxed max-w-[220px]">{item.text}</p>
               </div>
             ))}
           </div>
