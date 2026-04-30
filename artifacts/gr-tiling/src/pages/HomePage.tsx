@@ -91,11 +91,11 @@ export default function HomePage({ openQuote }: { openQuote: () => void }) {
             <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-px bg-border -translate-x-1/2"></div>
             
             <div className="space-y-10">
-              <h3 className="text-xl font-medium text-muted-foreground uppercase tracking-widest mb-8">The Old Way</h3>
+              <h3 className="text-xl font-medium text-muted-foreground uppercase tracking-widest mb-8">Other Renovators</h3>
               <ul className="space-y-8">
                 <li>
-                  <strong className="text-foreground block text-lg mb-1">Outdated bathrooms</strong>
-                  <span className="text-muted-foreground">Dated fixtures, cramped layouts, worn-out tiles</span>
+                  <strong className="text-foreground block text-lg mb-1">Cut corners and rushed work</strong>
+                  <span className="text-muted-foreground">Shortcuts taken, poor attention to detail, and results that don't last.</span>
                 </li>
                 <li>
                   <strong className="text-foreground block text-lg mb-1">Messy contractors</strong>
@@ -113,13 +113,13 @@ export default function HomePage({ openQuote }: { openQuote: () => void }) {
             </div>
             
             <div className="space-y-10">
-              <h3 className="text-xl font-medium text-primary uppercase tracking-widest mb-8">The GR Tiling Way</h3>
+              <h3 className="text-xl font-medium text-primary uppercase tracking-widest mb-8">The GR Way</h3>
               <ul className="space-y-8">
                 <li className="flex gap-4">
                   <div className="mt-1 flex-shrink-0 text-primary"><CheckCircle2 /></div>
                   <div>
-                    <strong className="text-foreground block text-lg mb-1">High-quality finishes that last</strong>
-                    <span className="text-muted-foreground">Premium materials installed with meticulous attention to detail.</span>
+                    <strong className="text-foreground block text-lg mb-1">Fast, reliable service</strong>
+                    <span className="text-muted-foreground">Clear timelines, constant communication, and prompt completion.</span>
                   </div>
                 </li>
                 <li className="flex gap-4">
@@ -139,8 +139,8 @@ export default function HomePage({ openQuote }: { openQuote: () => void }) {
                 <li className="flex gap-4">
                   <div className="mt-1 flex-shrink-0 text-primary"><CheckCircle2 /></div>
                   <div>
-                    <strong className="text-foreground block text-lg mb-1">Fast, reliable service</strong>
-                    <span className="text-muted-foreground">Clear timelines, constant communication, and prompt completion.</span>
+                    <strong className="text-foreground block text-lg mb-1">High-quality finishes that last</strong>
+                    <span className="text-muted-foreground">Premium materials installed with meticulous attention to detail.</span>
                   </div>
                 </li>
               </ul>
