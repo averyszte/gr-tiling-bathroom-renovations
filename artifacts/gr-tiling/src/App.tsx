@@ -7,6 +7,7 @@ import NotFound from "@/pages/not-found";
 
 import { Header, Footer } from "@/components/Layout";
 import { QuoteModal } from "@/components/QuoteModal";
+import { ScrollToTop } from "@/components/ScrollToTop";
 import HomePage from "@/pages/HomePage";
 import ThankYouPage from "@/pages/ThankYouPage";
 import PlaceholderPage from "@/pages/PlaceholderPage";
@@ -24,6 +25,7 @@ function AppLayout({ openQuote }: { openQuote: () => void }) {
 
   return (
     <div className="flex min-h-[100dvh] flex-col">
+      <ScrollToTop />
       <Header openQuote={openQuote} />
       <Switch>
         <Route path="/" component={HomePageWithProps} />
