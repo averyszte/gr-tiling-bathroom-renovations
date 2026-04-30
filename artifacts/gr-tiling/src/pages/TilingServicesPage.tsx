@@ -160,31 +160,20 @@ export default function TilingServicesPage({ openQuote }: { openQuote: () => voi
     <main className="flex-1 pb-20 md:pb-0">
 
       {/* Hero */}
-      <section className="relative overflow-hidden bg-secondary/30 pt-8 pb-16 lg:pt-10 lg:pb-20">
-        <div className="container mx-auto px-4 grid lg:grid-cols-2 gap-10 lg:gap-20 items-center">
-          {/* Image — left on desktop, top on mobile */}
-          <div className="relative lg:-mt-4">
-            <div className="aspect-[4/3] lg:aspect-[4/4.35] rounded-2xl overflow-hidden shadow-2xl relative z-10">
-              <img
-                src="/images/gallery-6.png"
-                alt="Tiling services in Dublin, large format rectified wall tiles with fine grout lines"
-                className="w-full h-full object-cover object-center"
-              />
-            </div>
-            <div className="absolute -bottom-8 -right-8 w-64 h-64 bg-primary/10 rounded-full blur-3xl -z-10"></div>
-          </div>
-          {/* Text — right on desktop, below image on mobile */}
-          <div>
-            <h1 className="text-primary font-semibold tracking-wider uppercase text-sm mb-3 block">
-              Tiling Services in Dublin
+      <section className="relative overflow-hidden bg-secondary/30 pt-12 pb-20 lg:pt-16 lg:pb-24">
+        <div className="container mx-auto px-4">
+          {/* Centered text content */}
+          <div className="max-w-3xl mx-auto text-center">
+            <h1 className="text-primary font-semibold tracking-wider uppercase text-sm mb-4 block">
+              Tiling Services Dublin
             </h1>
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground leading-[1.2] mb-5 tracking-tight">
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground leading-[1.15] mb-6 tracking-tight">
               Clean Lines. Sharp Finish. No Mess.
             </h2>
-            <p className="text-lg sm:text-xl text-muted-foreground mb-8 leading-relaxed max-w-xl">
+            <p className="text-lg sm:text-xl text-muted-foreground mb-10 leading-relaxed max-w-2xl mx-auto">
               Get precise, reliable tiling services in and around Dublin from a trusted local specialist. Clean workmanship, clear pricing, and a finish that makes the whole room feel complete.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-14 lg:mb-16">
               <Button size="lg" className="text-base h-14 px-8" onClick={openQuote}>
                 Get a Free Quote
               </Button>
@@ -192,6 +181,17 @@ export default function TilingServicesPage({ openQuote }: { openQuote: () => voi
                 <a href="tel:+353877209850">Call +353 87 720 9850</a>
               </Button>
             </div>
+          </div>
+          {/* Wide image below */}
+          <div className="relative max-w-6xl mx-auto">
+            <div className="aspect-[16/10] sm:aspect-[16/9] lg:aspect-[21/9] rounded-2xl overflow-hidden shadow-2xl relative z-10">
+              <img
+                src="/images/gallery-6.png"
+                alt="Tiling services in Dublin, large format rectified wall tiles with fine grout lines"
+                className="w-full h-full object-cover object-center"
+              />
+            </div>
+            <div className="absolute -bottom-10 left-1/2 -translate-x-1/2 w-[28rem] max-w-full h-56 bg-primary/10 rounded-full blur-3xl -z-10"></div>
           </div>
         </div>
       </section>

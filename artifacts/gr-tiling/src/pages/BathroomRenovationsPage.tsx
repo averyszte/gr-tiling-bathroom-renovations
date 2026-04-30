@@ -160,31 +160,20 @@ export default function BathroomRenovationsPage({ openQuote }: { openQuote: () =
     <main className="flex-1 pb-20 md:pb-0">
 
       {/* Hero */}
-      <section className="relative overflow-hidden bg-secondary/30 pt-8 pb-16 lg:pt-10 lg:pb-20">
-        <div className="container mx-auto px-4 grid lg:grid-cols-2 gap-10 lg:gap-20 items-center">
-          {/* Image — left on desktop, top on mobile */}
-          <div className="relative lg:-mt-4">
-            <div className="aspect-[4/3] lg:aspect-[4/4.35] rounded-2xl overflow-hidden shadow-2xl relative z-10">
-              <img
-                src="/images/hero-bathroom-2.png"
-                alt="Bathroom renovation in Dublin — modern bathroom with large format tiles and clean finish"
-                className="w-full h-full object-cover object-center"
-              />
-            </div>
-            <div className="absolute -bottom-8 -right-8 w-64 h-64 bg-primary/10 rounded-full blur-3xl -z-10"></div>
-          </div>
-          {/* Text — right on desktop, below image on mobile */}
-          <div>
-            <h1 className="text-primary font-semibold tracking-wider uppercase text-sm mb-3 block">
+      <section className="relative overflow-hidden bg-secondary/30 pt-12 pb-20 lg:pt-16 lg:pb-24">
+        <div className="container mx-auto px-4">
+          {/* Centered text content */}
+          <div className="max-w-3xl mx-auto text-center">
+            <h1 className="text-primary font-semibold tracking-wider uppercase text-sm mb-4 block">
               Bathroom Renovations Dublin
             </h1>
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground leading-[1.2] mb-5 tracking-tight">
-              Done Right. On Time. On Budget.
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground leading-[1.15] mb-6 tracking-tight">
+              On Time. On Budget. No Surprises.
             </h2>
-            <p className="text-lg sm:text-xl text-muted-foreground mb-8 leading-relaxed max-w-xl">
+            <p className="text-lg sm:text-xl text-muted-foreground mb-10 leading-relaxed max-w-2xl mx-auto">
               Get your bathroom renovated on time and on budget with a trusted local Dublin specialist. No delays, no hidden costs, and no mess left behind.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-14 lg:mb-16">
               <Button size="lg" className="text-base h-14 px-8" onClick={openQuote}>
                 Get a Free Quote
               </Button>
@@ -192,6 +181,17 @@ export default function BathroomRenovationsPage({ openQuote }: { openQuote: () =
                 <a href="tel:+353877209850">Call +353 87 720 9850</a>
               </Button>
             </div>
+          </div>
+          {/* Wide image below */}
+          <div className="relative max-w-6xl mx-auto">
+            <div className="aspect-[16/10] sm:aspect-[16/9] lg:aspect-[21/9] rounded-2xl overflow-hidden shadow-2xl relative z-10">
+              <img
+                src="/images/hero-bathroom-2.png"
+                alt="Bathroom renovation in Dublin, modern bathroom with large format tiles and clean finish"
+                className="w-full h-full object-cover object-center"
+              />
+            </div>
+            <div className="absolute -bottom-10 left-1/2 -translate-x-1/2 w-[28rem] max-w-full h-56 bg-primary/10 rounded-full blur-3xl -z-10"></div>
           </div>
         </div>
       </section>
