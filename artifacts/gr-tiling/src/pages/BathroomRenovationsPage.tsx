@@ -97,13 +97,25 @@ export default function BathroomRenovationsPage({ openQuote }: { openQuote: () =
       {/* Hero */}
       <section className="relative overflow-hidden bg-secondary/30 pt-8 pb-16 lg:pt-10 lg:pb-20">
         <div className="container mx-auto px-4 grid lg:grid-cols-2 gap-10 items-center">
+          {/* Image — left on desktop, top on mobile */}
+          <div className="relative lg:-mt-4">
+            <div className="aspect-[4/3] lg:aspect-[4/4.35] rounded-2xl overflow-hidden shadow-2xl relative z-10">
+              <img
+                src="/images/hero-bathroom-2.png"
+                alt="Bathroom renovation in Dublin — modern bathroom with large format tiles and clean finish"
+                className="w-full h-full object-cover object-center"
+              />
+            </div>
+            <div className="absolute -bottom-8 -right-8 w-64 h-64 bg-primary/10 rounded-full blur-3xl -z-10"></div>
+          </div>
+          {/* Text — right on desktop, below image on mobile */}
           <div className="max-w-2xl">
-            <p className="text-primary font-semibold tracking-wider uppercase text-sm mb-3">
-              Dublin Bathroom Renovation Specialists
-            </p>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground leading-[1.2] mb-5 tracking-tight">
-              Bathroom Renovations in Dublin
+            <h1 className="text-primary font-semibold tracking-wider uppercase text-sm mb-3 block">
+              Bathroom Renovations Dublin
             </h1>
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground leading-[1.2] mb-5 tracking-tight">
+              Done Right. On Time. On Budget.
+            </h2>
             <p className="text-lg sm:text-xl text-muted-foreground mb-8 leading-relaxed max-w-xl">
               Get your bathroom renovated on time and on budget with a trusted local Dublin specialist. No delays, no hidden costs, and no mess left behind.
             </p>
@@ -115,16 +127,6 @@ export default function BathroomRenovationsPage({ openQuote }: { openQuote: () =
                 <a href="tel:+353877209850">Call +353 87 720 9850</a>
               </Button>
             </div>
-          </div>
-          <div className="relative lg:-mt-4">
-            <div className="aspect-[4/3] lg:aspect-[4/4.35] rounded-2xl overflow-hidden shadow-2xl relative z-10">
-              <img
-                src="/images/hero-bathroom-2.png"
-                alt="Bathroom renovation in Dublin — modern bathroom with large format tiles and clean finish"
-                className="w-full h-full object-cover object-center"
-              />
-            </div>
-            <div className="absolute -bottom-8 -left-8 w-64 h-64 bg-primary/10 rounded-full blur-3xl -z-10"></div>
           </div>
         </div>
       </section>
