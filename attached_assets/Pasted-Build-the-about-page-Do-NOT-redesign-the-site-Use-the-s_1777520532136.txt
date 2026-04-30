@@ -1,0 +1,101 @@
+Build the /about page.
+
+Do NOT redesign the site.
+Use the same design system (colors, typography, spacing, buttons).
+
+Goal:
+Create a clean, personal, trust-focused About page for a local Dublin bathroom renovation and tiling business.
+
+-------------------------------------
+1. HERO SECTION (CENTERED)
+-------------------------------------
+
+H1:
+About GR Tiling & Bathroom Renovations
+
+H2:
+Local Bathroom Renovation and Tiling Work You Can Trust
+
+Paragraph:
+We provide clean, reliable bathroom renovations and tiling services in and around Dublin, focused on honest work, clear pricing, and results that last.
+
+-------------------------------------
+2. PERSONAL SECTION (IMAGE + TEXT)
+-------------------------------------
+
+Layout:
+- Split section
+- Portrait image on one side
+- Text on the other
+
+H2:
+Meet the Person Behind the Work
+
+Text (placeholder, to be replaced later):
+This business is built on hands-on experience in bathroom renovations and tiling. Every project is completed with attention to detail, clear communication, and a focus on doing the job properly from start to finish.
+
+The goal is simple — deliver clean, reliable work without delays, hidden costs, or unnecessary stress for the homeowner.
+
+With experience working in homes across Dublin, the focus is always on quality finishes, tidy work, and results that last.
+
+-------------------------------------
+3. HOW I WORK SECTION
+-------------------------------------
+
+H2:
+How I Work on Every Job
+
+Use 4 bullet points with icons:
+
+- Clear timelines from the start  
+- Honest pricing with no surprises  
+- Clean workmanship and daily tidy-up  
+- Respect for your home and space  
+
+-------------------------------------
+4. LOCAL TRUST SECTION
+-------------------------------------
+
+H2:
+Working Across Dublin
+
+Paragraph:
+GR Tiling & Bathroom Renovations provides bathroom renovation and tiling services in and around Dublin, working directly with homeowners to deliver reliable results and a smooth process from start to finish.
+
+-------------------------------------
+5. REVIEWS SECTION
+-------------------------------------
+
+Reuse existing reviews section from other pages.
+
+-------------------------------------
+6. FINAL CTA
+-------------------------------------
+
+H2:
+Ready to Start Your Bathroom Renovation or Tiling Project?
+
+Text:
+Get in touch today for a clear quote and reliable service from a local Dublin specialist.
+
+Buttons:
+Get a Free Quote
+Call +353 87 720 9850
+
+-------------------------------------
+SEO
+-------------------------------------
+
+Title:
+About GR Tiling & Bathroom Renovations | Dublin
+
+Meta description:
+Learn more about GR Tiling & Bathroom Renovations, a trusted local provider of bathroom renovations and tiling services in Dublin.
+
+-------------------------------------
+
+Important:
+- Keep layout clean and minimal
+- Do not add unnecessary sections
+- Do not make it feel corporate
+- Keep it personal and trust-focused
