@@ -10,6 +10,7 @@ import {
 } from "@/components/ui/accordion";
 import { applyPageSeo } from "@/lib/seo";
 import { BeforeAfterSlider } from "@/components/BeforeAfterSlider";
+import tilingTransformationsImage from "@assets/image_1777553093210.png";
 
 type Service = {
   image: string;
@@ -169,8 +170,8 @@ export default function TilingServicesPage({ openQuote }: { openQuote: () => voi
           <div className="relative max-w-6xl mx-auto">
             <div className="aspect-[16/10] sm:aspect-[16/9] lg:aspect-[21/9] rounded-2xl overflow-hidden shadow-2xl relative z-10">
               <img
-                src="/images/gallery-6.png"
-                alt="Tiling services in Dublin, large format rectified wall tiles with fine grout lines"
+                src={tilingTransformationsImage}
+                alt="Real tiling transformations showing before and after bathroom work"
                 className="w-full h-full object-cover object-center"
               />
             </div>
@@ -184,7 +185,7 @@ export default function TilingServicesPage({ openQuote }: { openQuote: () => voi
         <div className="container mx-auto px-4 max-w-5xl">
           <div className="text-center mb-10 lg:mb-12">
             <h2 className="font-serif text-3xl md:text-5xl text-foreground mb-4">
-              Real Bathroom Transformations
+              Real Tiling Transformations
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               See the difference between before and after, clean, modern finishes with attention to detail.
