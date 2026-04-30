@@ -122,17 +122,17 @@ export default function HomePage({ openQuote }: { openQuote: () => void }) {
             {[
               {
                 icon: <MessageCircle className="w-10 h-10" />,
-                title: "Step 1: Plan",
+                title: "Plan",
                 text: "Tell us what you need and we’ll go through your project, timeline, and give you a clear quote.",
               },
               {
                 icon: <FileText className="w-10 h-10" />,
-                title: "Step 2: Design",
+                title: "Design",
                 text: "We help you choose the layout, tiles, and finishes so everything is clear before work begins.",
               },
               {
                 icon: <Wrench className="w-10 h-10" />,
-                title: "Step 3: Build",
+                title: "Build",
                 text: "We complete the work on time, keep everything clean, and deliver a high-quality finish.",
               },
             ].map((item, i) => (
