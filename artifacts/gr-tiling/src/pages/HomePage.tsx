@@ -96,29 +96,29 @@ export default function HomePage({ openQuote }: { openQuote: () => void }) {
                 <li className="flex gap-4">
                   <div className="mt-1 flex-shrink-0 text-rose-400/80"><XCircle /></div>
                   <div>
-                    <strong className="text-foreground block text-lg mb-1">Cut corners and rushed work</strong>
-                    <span className="text-muted-foreground">Shortcuts taken, poor attention to detail, and results that don't last.</span>
+                    <strong className="text-foreground/75 block text-lg mb-1">Cut corners and rushed work</strong>
+                    <span className="text-muted-foreground/70">Shortcuts taken, poor attention to detail, and results that don't last.</span>
                   </div>
                 </li>
                 <li className="flex gap-4">
                   <div className="mt-1 flex-shrink-0 text-rose-400/80"><XCircle /></div>
                   <div>
-                    <strong className="text-foreground block text-lg mb-1">Messy contractors</strong>
-                    <span className="text-muted-foreground">Dust, debris, damage left behind</span>
+                    <strong className="text-foreground/75 block text-lg mb-1">Messy contractors</strong>
+                    <span className="text-muted-foreground/70">Dust, debris, damage left behind</span>
                   </div>
                 </li>
                 <li className="flex gap-4">
                   <div className="mt-1 flex-shrink-0 text-rose-400/80"><XCircle /></div>
                   <div>
-                    <strong className="text-foreground block text-lg mb-1">Unclear pricing</strong>
-                    <span className="text-muted-foreground">Surprise costs, vague estimates</span>
+                    <strong className="text-foreground/75 block text-lg mb-1">Unclear pricing</strong>
+                    <span className="text-muted-foreground/70">Surprise costs, vague estimates</span>
                   </div>
                 </li>
                 <li className="flex gap-4">
                   <div className="mt-1 flex-shrink-0 text-rose-400/80"><XCircle /></div>
                   <div>
-                    <strong className="text-foreground block text-lg mb-1">Long delays</strong>
-                    <span className="text-muted-foreground">Missed deadlines, weeks becoming months</span>
+                    <strong className="text-foreground/75 block text-lg mb-1">Long delays</strong>
+                    <span className="text-muted-foreground/70">Missed deadlines, weeks becoming months</span>
                   </div>
                 </li>
               </ul>
@@ -128,28 +128,28 @@ export default function HomePage({ openQuote }: { openQuote: () => void }) {
               <h3 className="text-xl font-medium text-primary uppercase tracking-widest mb-8">The GR Way</h3>
               <ul className="space-y-8">
                 <li className="flex gap-4">
-                  <div className="mt-1 flex-shrink-0 text-primary"><CheckCircle2 /></div>
+                  <div className="mt-1 flex-shrink-0 text-green-600"><CheckCircle2 /></div>
                   <div>
                     <strong className="text-foreground block text-lg mb-1">Fast, reliable service</strong>
                     <span className="text-muted-foreground">Clear timelines, constant communication, and prompt completion.</span>
                   </div>
                 </li>
                 <li className="flex gap-4">
-                  <div className="mt-1 flex-shrink-0 text-primary"><CheckCircle2 /></div>
+                  <div className="mt-1 flex-shrink-0 text-green-600"><CheckCircle2 /></div>
                   <div>
                     <strong className="text-foreground block text-lg mb-1">Clean workmanship</strong>
                     <span className="text-muted-foreground">Your home left spotless. We protect your property and clean up daily.</span>
                   </div>
                 </li>
                 <li className="flex gap-4">
-                  <div className="mt-1 flex-shrink-0 text-primary"><CheckCircle2 /></div>
+                  <div className="mt-1 flex-shrink-0 text-green-600"><CheckCircle2 /></div>
                   <div>
                     <strong className="text-foreground block text-lg mb-1">Honest, upfront pricing</strong>
                     <span className="text-muted-foreground">Clear, detailed quotes with no hidden surprises.</span>
                   </div>
                 </li>
                 <li className="flex gap-4">
-                  <div className="mt-1 flex-shrink-0 text-primary"><CheckCircle2 /></div>
+                  <div className="mt-1 flex-shrink-0 text-green-600"><CheckCircle2 /></div>
                   <div>
                     <strong className="text-foreground block text-lg mb-1">High-quality finishes that last</strong>
                     <span className="text-muted-foreground">Premium materials installed with meticulous attention to detail.</span>
