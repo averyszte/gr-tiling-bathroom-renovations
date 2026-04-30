@@ -1,0 +1,76 @@
+Add a before/after image comparison slider section to BOTH service pages:
+
+- /services/bathroom-renovations
+- /services/tiling-services
+
+-------------------------------------
+PLACEMENT
+-------------------------------------
+
+Insert the section directly BELOW the hero section
+and ABOVE the next section (problem/solution or similar).
+
+-------------------------------------
+SECTION CONTENT
+-------------------------------------
+
+Heading (H2):
+Real Bathroom Transformations
+
+Subtext:
+See the difference between before and after — clean, modern finishes with attention to detail.
+
+-------------------------------------
+SLIDER COMPONENT
+-------------------------------------
+
+Add an interactive before/after image comparison slider:
+
+- Two images layered (before + after)
+- Draggable vertical slider control
+- Smooth dragging interaction
+- Handle visible and easy to use
+- Works on desktop AND mobile (touch support)
+
+-------------------------------------
+PLACEHOLDER IMAGES
+-------------------------------------
+
+For now:
+- Use placeholder images or duplicate existing images
+- Add clear comments in code indicating:
+  "Replace with real before/after project images"
+
+-------------------------------------
+DESIGN REQUIREMENTS
+-------------------------------------
+
+- Match existing site design (rounded corners, shadows, spacing)
+- Keep it clean and minimal
+- Do NOT use dark backgrounds
+- Keep consistent with light theme
+- Do not make it full screen width — align with content container
+
+-------------------------------------
+MOBILE RESPONSIVENESS
+-------------------------------------
+
+- Slider must work with touch (swipe/drag)
+- Maintain proper aspect ratio
+- Ensure handle is easy to grab
+
+-------------------------------------
+DO NOT
+-------------------------------------
+
+- Do not redesign the page
+- Do not move other sections
+- Do not add multiple sliders
+- Only add ONE slider section per page
+
+-------------------------------------
+GOAL
+-------------------------------------
+
+This section should visually prove the quality of work
+and increase trust immediately after the hero section.

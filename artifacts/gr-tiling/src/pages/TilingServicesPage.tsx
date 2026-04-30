@@ -9,6 +9,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { applyPageSeo } from "@/lib/seo";
+import { BeforeAfterSlider } from "@/components/BeforeAfterSlider";
 
 type Service = {
   image: string;
@@ -175,6 +176,30 @@ export default function TilingServicesPage({ openQuote }: { openQuote: () => voi
             </div>
             <div className="absolute -bottom-10 left-1/2 -translate-x-1/2 w-[28rem] max-w-full h-56 bg-primary/10 rounded-full blur-3xl -z-10"></div>
           </div>
+        </div>
+      </section>
+
+      {/* Before / After Comparison */}
+      <section className="py-20 lg:py-24 bg-background">
+        <div className="container mx-auto px-4 max-w-5xl">
+          <div className="text-center mb-10 lg:mb-12">
+            <h2 className="font-serif text-3xl md:text-5xl text-foreground mb-4">
+              Real Bathroom Transformations
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              See the difference between before and after — clean, modern finishes with attention to detail.
+            </p>
+          </div>
+          {/* Replace with real before/after project images */}
+          <BeforeAfterSlider
+            beforeSrc="/images/gallery-4.png"
+            beforeAlt="Tiling project before completion by GR Tiling Dublin"
+            afterSrc="/images/gallery-3.png"
+            afterAlt="Tiling project after completion by GR Tiling Dublin"
+          />
+          <p className="text-center text-sm text-muted-foreground mt-4">
+            Drag the slider to compare before and after.
+          </p>
         </div>
       </section>
 
