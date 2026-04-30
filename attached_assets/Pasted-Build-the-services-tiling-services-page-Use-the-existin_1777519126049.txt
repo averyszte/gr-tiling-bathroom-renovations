@@ -1,0 +1,228 @@
+Build the /services/tiling-services page.
+
+Use the existing /services/bathroom-renovations page as the structural base, but DO NOT copy the wording exactly.
+
+Keep the same site design system:
+- Poppins font
+- brown / white palette
+- same button styles
+- same spacing
+- same card style
+- same mobile responsiveness
+
+Page goal:
+Rank for “tiling services Dublin” and convert users looking for clean, reliable tiling work.
+
+Target keyword:
+Tiling Services Dublin
+
+Supporting phrases:
+- wall and floor tiling Dublin
+- bathroom tiling Dublin
+- tile installation Dublin
+- tiler in Dublin
+
+-------------------------------------
+1. HERO SECTION
+-------------------------------------
+
+Use the same layout style as the bathroom renovations page.
+
+H1:
+Tiling Services in Dublin
+
+H2:
+Clean Lines. Sharp Finish. No Mess.
+
+Supporting text:
+Get precise, reliable tiling services in and around Dublin from a trusted local specialist. Clean workmanship, clear pricing, and a finish that makes the whole room feel complete.
+
+Buttons:
+Get a Free Quote
+Call +353 87 720 9850
+
+-------------------------------------
+2. PROBLEM VS SOLUTION SECTION
+-------------------------------------
+
+H2:
+Tiling Work Should Look Clean, Straight, and Built to Last
+
+Left side heading:
+THE PROBLEM
+
+Left side points:
+- Uneven tiles and messy lines
+- Poor cuts around edges and corners
+- Grout cracking or looking rough
+- Tradesmen leaving dust and mess behind
+
+Right side heading:
+THE GR WAY
+
+Right side points:
+- Precise tile layout from the start
+- Clean cuts around edges and fittings
+- Neat grout lines and strong finish
+- Tidy work with your home respected
+
+Keep the same comparison style from the bathroom renovations page.
+Use the same red X icons and green check icons.
+
+-------------------------------------
+3. WHAT’S INCLUDED SECTION
+-------------------------------------
+
+H2:
+Tiling Services in Dublin
+
+Use 3 service blocks:
+
+Bathroom Tiling
+Copy:
+Clean bathroom tiling for walls, floors, showers, and wet areas, finished with care and attention to detail.
+
+Include:
+- Shower tiling
+- Floor tiling
+- Wall tiling
+- Wet area tiling
+
+Floor & Wall Tiling
+Copy:
+Reliable wall and floor tiling for bathrooms, kitchens, hallways, and other areas of the home.
+
+Include:
+- Floor tiles
+- Wall tiles
+- Kitchen tiling
+- Hallway tiling
+
+Tile Repairs & Finishing
+Copy:
+Careful tile repairs, replacements, grout work, and finishing touches to make the space look clean again.
+
+Include:
+- Tile replacement
+- Grout touch-ups
+- Edge finishing
+- Small repair jobs
+
+-------------------------------------
+4. RESULTS / VISUAL PROOF
+-------------------------------------
+
+H2:
+Recent Tiling Work
+
+Use the same gallery style as the bathroom renovations page, but adjust copy toward:
+- clean grout lines
+- sharp edges
+- bathroom tiling
+- floor tiling
+- neat finishes
+
+-------------------------------------
+5. PROCESS SECTION
+-------------------------------------
+
+H2:
+How Your Tiling Job Works
+
+Use 3 steps:
+
+1. Tell Us What You Need
+Send details about the area, tile type, and the work needed.
+
+2. Get a Clear Quote
+You’ll get a clear price and timeline before work starts.
+
+3. We Tile It Properly
+The work is completed cleanly, carefully, and with attention to detail.
+
+-------------------------------------
+6. WHY CHOOSE GR
+-------------------------------------
+
+H2:
+Why Choose GR for Tiling Services?
+
+Use 6 cards or points:
+
+- Clean, precise finish
+- Straight lines and neat grout
+- Honest upfront pricing
+- Reliable local Dublin service
+- Respect for your home
+- Bathroom renovation experience
+
+Use the same green checkmark colour as the rest of the site.
+
+-------------------------------------
+7. REVIEWS SECTION
+-------------------------------------
+
+Reuse the same review section, but make the intro copy mention tiling and bathroom work.
+
+H2:
+Trusted for Tiling and Bathroom Work Across Dublin
+
+-------------------------------------
+8. FAQ SECTION
+-------------------------------------
+
+H2:
+Tiling Services FAQs
+
+Questions:
+- How much do tiling services cost in Dublin?
+- Do you do both wall and floor tiling?
+- Can you tile bathrooms and wet areas?
+- Do you remove old tiles?
+- How long does a tiling job take?
+- What areas around Dublin do you cover?
+
+Keep answers short, helpful, and honest.
+Do not make exact price promises.
+
+-------------------------------------
+9. FINAL CTA
+-------------------------------------
+
+H2:
+Need Tiling Done Cleanly and Properly?
+
+Text:
+Get a clear quote for tiling services in Dublin from a local tradesman known for clean work, honest pricing, and reliable results.
+
+Buttons:
+Get a Free Quote
+Call Now
+
+-------------------------------------
+SEO REQUIREMENTS
+-------------------------------------
+
+Meta title:
+Tiling Services Dublin | GR Tiling & Bathroom Renovations
+
+Meta description:
+GR Tiling & Bathroom Renovations provides clean, reliable tiling services in Dublin, including bathroom tiling, wall tiling, floor tiling, and tile repairs. Get a free quote.
+
+Internal links:
+Add natural text links to:
+- /services/bathroom-renovations
+- /contact
+
+Structure:
+- Only one H1
+- H2s for major sections
+- H3s for cards/service items
+- No duplicate H1s
+- No keyword stuffing
+
+Images:
+Leave existing placeholder images for now. Do not optimize image filenames yet.
+
+Important:
+This page should feel related to the bathroom renovations page, but not like a lazy duplicate. Same design system, different copy, different service angle.
