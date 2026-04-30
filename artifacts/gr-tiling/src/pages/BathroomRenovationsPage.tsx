@@ -160,9 +160,6 @@ export default function BathroomRenovationsPage({ openQuote }: { openQuote: () =
             </div>
             <div className="space-y-8">
               <h3 className="text-xl font-medium text-primary uppercase tracking-widest mb-8">The GR Way</h3>
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                We keep your renovation simple, clear, and on track — with honest pricing, clean workmanship, and a timeline you can rely on.
-              </p>
               <ul className="space-y-6">
                 {[
                   "Clear timelines — we stick to them",
