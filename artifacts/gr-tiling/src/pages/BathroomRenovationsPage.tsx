@@ -96,7 +96,7 @@ export default function BathroomRenovationsPage({ openQuote }: { openQuote: () =
 
       {/* Hero */}
       <section className="relative overflow-hidden bg-secondary/30 pt-8 pb-16 lg:pt-10 lg:pb-20">
-        <div className="container mx-auto px-4 grid lg:grid-cols-2 gap-10 items-center">
+        <div className="container mx-auto px-4 grid lg:grid-cols-2 gap-10 lg:gap-20 items-center">
           {/* Image — left on desktop, top on mobile */}
           <div className="relative lg:-mt-4">
             <div className="aspect-[4/3] lg:aspect-[4/4.35] rounded-2xl overflow-hidden shadow-2xl relative z-10">
