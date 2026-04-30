@@ -248,18 +248,56 @@ export default function HomePage({ openQuote }: { openQuote: () => void }) {
         </div>
       </section>
 
-      {/* CTA Banner Duplicate */}
-      <section className="py-24 bg-primary text-primary-foreground">
-        <div className="container mx-auto px-4 max-w-5xl text-center">
-          <h2 className="font-serif text-3xl md:text-5xl mb-6">Ready to Renovate Your Bathroom?</h2>
-          <p className="text-lg md:text-xl mb-10 max-w-2xl mx-auto text-primary-foreground/90">
-            Tell us what you need, and we'll help you plan a clean, modern bathroom renovation that fits your home and your budget.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" variant="secondary" className="text-base h-14 px-8" onClick={openQuote}>Get a Free Quote</Button>
-            <Button size="lg" variant="outline" className="text-base h-14 px-8 border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground hover:text-primary bg-transparent" asChild>
-              <a href="tel:+353877209850">Call Now: +353 87 720 9850</a>
-            </Button>
+      {/* Gallery Section */}
+      <section className="py-24 bg-secondary/30" data-testid="gallery-section">
+        <div className="container mx-auto px-4 max-w-7xl">
+          <div className="text-center mb-16">
+            <h2 className="font-serif text-3xl md:text-5xl text-foreground mb-6">Our Recent Bathroom Projects</h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              A preview of clean finishes, modern bathrooms, and detailed tiling work completed for local homeowners.
+            </p>
+          </div>
+
+          {/* Desktop Accordion Gallery */}
+          <div className="hidden md:flex h-[600px] w-full gap-4">
+            {[
+              { num: 1, alt: "Freshly renovated bathroom with floor-to-ceiling white ceramic tiles and modern floating vanity" },
+              { num: 2, alt: "Herringbone floor tile pattern in warm beige limestone — professional bathroom tiling Dublin" },
+              { num: 3, alt: "Walk-in shower niche with dark marble subway tiles and rainfall shower head" },
+              { num: 4, alt: "Modern bathroom vanity area with floating cabinet and backlit mirror, warm white finish" },
+              { num: 5, alt: "Full bathroom renovation overview with freestanding bath and large format grey tiles" },
+              { num: 6, alt: "Close-up of large format rectified tiles with fine grout lines — precise tiling workmanship Dublin" },
+            ].map(({ num, alt }) => (
+              <div 
+                key={`gallery-${num}`}
+                className="relative rounded-2xl overflow-hidden flex-1 hover:flex-[3] transition-all duration-500 ease-in-out cursor-pointer group"
+              >
+                <img 
+                  src={`/images/gallery-${num}.png`} 
+                  alt={alt} 
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-500"></div>
+              </div>
+            ))}
+          </div>
+
+          {/* Mobile Stacked Gallery */}
+          <div className="md:hidden grid gap-4">
+            {[
+              { num: 1, alt: "Freshly renovated bathroom with white ceramic tiles and modern vanity unit — Dublin" },
+              { num: 2, alt: "Herringbone floor tiling in warm beige limestone — bathroom floor tiling Dublin" },
+              { num: 3, alt: "Walk-in shower with dark marble tiles and frameless glass door" },
+              { num: 4, alt: "Bathroom vanity area with backlit mirror and floating cabinet" },
+            ].map(({ num, alt }) => (
+              <div key={`mob-gallery-${num}`} className="aspect-[4/3] rounded-2xl overflow-hidden relative">
+                <img 
+                  src={`/images/gallery-${num}.png`} 
+                  alt={alt} 
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            ))}
           </div>
         </div>
       </section>
