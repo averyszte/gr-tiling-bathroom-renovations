@@ -144,32 +144,32 @@ export default function BathroomRenovationsPage({ openQuote }: { openQuote: () =
             <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-px bg-border -translate-x-1/2"></div>
             <div className="space-y-10">
               <h3 className="text-xl font-medium text-muted-foreground uppercase tracking-widest mb-8">The Problem</h3>
-              <ul className="space-y-8">
+              <ul className="grid gap-4">
                 {[
                   "Projects dragging on for weeks",
                   "Costs increasing after work starts",
                   "Contractors leaving a mess",
                   "Poor communication throughout",
                 ].map((point, i) => (
-                  <li key={i} className="flex gap-4">
-                    <div className="mt-1 flex-shrink-0 text-rose-400/80"><XCircle /></div>
-                    <span className="text-foreground/75 text-lg">{point}</span>
+                  <li key={i} className="grid grid-cols-[24px_1fr] gap-4 items-start">
+                    <div className="mt-0.5 flex-shrink-0 text-rose-400/80"><XCircle className="w-5 h-5" /></div>
+                    <span className="text-foreground/75 text-lg leading-[1.55]">{point}</span>
                   </li>
                 ))}
               </ul>
             </div>
             <div className="space-y-8">
               <h3 className="text-xl font-medium text-primary uppercase tracking-widest mb-8">The GR Way</h3>
-              <ul className="space-y-6">
+              <ul className="grid gap-4">
                 {[
                   "Clear timelines — we stick to them",
                   "Honest upfront pricing — no surprises",
                   "Spotless work — we clean up daily",
                   "Regular updates — you're always in the loop",
                 ].map((point, i) => (
-                  <li key={i} className="flex gap-4">
-                    <div className="mt-1 flex-shrink-0 text-green-600"><CheckCircle2 /></div>
-                    <span className="text-foreground text-lg">{point}</span>
+                  <li key={i} className="grid grid-cols-[24px_1fr] gap-4 items-start">
+                    <div className="mt-0.5 flex-shrink-0 text-green-600"><CheckCircle2 className="w-5 h-5" /></div>
+                    <span className="text-foreground text-lg leading-[1.55]">{point}</span>
                   </li>
                 ))}
               </ul>
