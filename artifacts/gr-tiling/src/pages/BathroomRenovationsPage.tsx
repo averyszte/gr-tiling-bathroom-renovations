@@ -1,3 +1,5 @@
+import type { ReactNode } from "react";
+import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Star, CheckCircle2, ChevronRight, XCircle, MessageCircle, FileText, Wrench } from "lucide-react";
 import {
@@ -7,13 +9,22 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 
-const services = [
+type Service = {
+  image: string;
+  alt: string;
+  title: string;
+  description: ReactNode;
+  bullets: string[];
+  imageLeft: boolean;
+};
+
+const services: Service[] = [
   {
     image: "/images/gallery-1.png",
-    alt: "Full bathroom renovation in Dublin — complete transformation by GR Tiling & Bathroom Renovations",
+    alt: "Full bathroom renovation in Dublin, complete transformation by GR Tiling & Bathroom Renovations",
     title: "Full Bathroom Renovations",
     description:
-      "End-to-end bathroom transformations — from first design discussion to final clean. We manage the full project so you don't have to coordinate multiple trades.",
+      "Complete bathroom renovation from start to finish, handled by one reliable team. We manage the full project so you don't have to coordinate multiple trades.",
     bullets: [
       "Complete bathroom transformation",
       "Plumbing & fitting",
@@ -24,10 +35,10 @@ const services = [
   },
   {
     image: "/images/gallery-3.png",
-    alt: "Bathroom layout upgrade and modern fixture installation Dublin — GR Tiling",
+    alt: "Bathroom layout upgrade and modern fixture installation Dublin, GR Tiling",
     title: "Bathroom Layout & Upgrades",
     description:
-      "Reconfigure your bathroom for better use of space, modernise fixtures, and upgrade finishes — without a full gut renovation.",
+      "Smarter bathroom layouts that improve space, flow, and usability. Modernise fixtures and upgrade finishes without committing to a full gut renovation.",
     bullets: [
       "Space optimisation & layout planning",
       "Modern fixture upgrades",
@@ -38,10 +49,17 @@ const services = [
   },
   {
     image: "/images/gallery-4.png",
-    alt: "Professional floor and wall tiling Dublin — wet rooms and feature walls by GR Tiling",
+    alt: "Professional floor and wall tiling Dublin, wet rooms and feature walls by GR Tiling",
     title: "Tiling & Finishing",
-    description:
-      "Precision tiling from floor to ceiling — large-format rectified tiles, herringbone patterns, wet rooms, and feature walls. Clean grout lines every time.",
+    description: (
+      <>
+        Clean, precise tiling and finishes that elevate the final result. Large-format rectified tiles, herringbone patterns, wet rooms, and feature walls with crisp grout lines every time. For standalone work without a full renovation, see our{" "}
+        <Link href="/services/tiling-services" className="text-primary font-medium underline underline-offset-4 hover:opacity-80">
+          tiling services
+        </Link>
+        .
+      </>
+    ),
     bullets: [
       "Floor & wall tiling",
       "Wet rooms & shower enclosures",
@@ -56,7 +74,7 @@ const reasons = [
   { title: "On Time Completion", text: "We set a realistic timeline at the start and stick to it. No unexplained delays." },
   { title: "On Budget Pricing", text: "Clear, detailed quotes upfront. The price we quote is the price you pay." },
   { title: "Clean Workmanship", text: "We protect your home, clean up daily, and leave every area tidy." },
-  { title: "Honest Communication", text: "Regular updates throughout the project — you always know where things stand." },
+  { title: "Honest Communication", text: "Regular updates throughout the project, so you always know where things stand." },
   { title: "Local Dublin Specialist", text: "We work across Dublin and surrounding areas. Based local, working local." },
   { title: "High-Quality Finishes", text: "Premium materials and precision work that looks great and lasts for years." },
 ];
@@ -67,26 +85,39 @@ const reviews = [
   { name: "Alan L", text: "A genuinely professional service. Honest quote, fast turnaround, and top-quality workmanship throughout." },
 ];
 
-const faqs = [
-  { q: "How much does a bathroom renovation cost in Dublin?", a: "Costs depend on the size, scope, and materials chosen. We provide clear, detailed quotes before any work starts — no hidden extras." },
+type Faq = { q: string; a: ReactNode };
+
+const faqs: Faq[] = [
+  { q: "How much does a bathroom renovation cost in Dublin?", a: "Costs depend on the size, scope, and materials chosen. We provide clear, detailed quotes before any work starts, with no hidden extras." },
   { q: "How long does a bathroom renovation take?", a: "Most standard bathroom renovations take 1–3 weeks. We give you a realistic timeline at the start and keep you updated throughout." },
   { q: "Will the work area be kept clean?", a: "Yes. We protect your home, clean up every day, and leave the area tidy. We treat your home the way we'd want ours treated." },
   { q: "Do I get a written quote?", a: "Absolutely. We provide a clear written quote before any work begins so you know exactly what's included and what the cost will be." },
-  { q: "Do you cover all areas of Dublin?", a: "Yes — we work across Dublin and nearby areas. Contact us and we'll confirm availability for your location quickly." },
+  {
+    q: "Do you cover all areas of Dublin?",
+    a: (
+      <>
+        Yes, we work across Dublin and nearby areas.{" "}
+        <Link href="/contact" className="text-primary font-medium underline underline-offset-4 hover:opacity-80">
+          Contact us
+        </Link>{" "}
+        and we'll confirm availability for your location quickly.
+      </>
+    ),
+  },
   { q: "Can you handle just the tiling, not the full renovation?", a: "Yes. We do standalone tiling work as well as full bathroom renovations. Just let us know what you need and we'll quote accordingly." },
 ];
 
 const galleryImages = [
-  { num: 1, alt: "Modern bathroom renovation with white ceramic tiles and floating vanity — Dublin" },
-  { num: 2, alt: "Herringbone floor tiling in warm beige — professional tiling Dublin" },
-  { num: 3, alt: "Walk-in shower with dark marble tiles — bathroom renovation Dublin" },
-  { num: 5, alt: "Luxury freestanding bath in renovated bathroom — GR Tiling Dublin" },
-  { num: 6, alt: "Large format rectified tiles with fine grout lines — precision tiling Dublin" },
+  { num: 1, alt: "Modern bathroom renovation with white ceramic tiles and floating vanity, Dublin" },
+  { num: 2, alt: "Herringbone floor tiling in warm beige, professional tiling Dublin" },
+  { num: 3, alt: "Walk-in shower with dark marble tiles, bathroom renovation Dublin" },
+  { num: 5, alt: "Luxury freestanding bath in renovated bathroom, GR Tiling Dublin" },
+  { num: 6, alt: "Large format rectified tiles with fine grout lines, precision tiling Dublin" },
 ];
 
 const processSteps = [
   { icon: <MessageCircle className="w-10 h-10" />, title: "Tell Us What You Need", text: "Send a few details about your bathroom or renovation idea." },
-  { icon: <FileText className="w-10 h-10" />, title: "Get a Clear Quote", text: "We'll discuss the work, timeline, and price — no surprises." },
+  { icon: <FileText className="w-10 h-10" />, title: "Get a Clear Quote", text: "We'll discuss the work, timeline, and price, with no surprises." },
   { icon: <Wrench className="w-10 h-10" />, title: "We Get to Work", text: "Clean, reliable work completed on time, every time." },
 ];
 
@@ -146,10 +177,10 @@ export default function BathroomRenovationsPage({ openQuote }: { openQuote: () =
               <h3 className="text-xl font-medium text-muted-foreground uppercase tracking-widest mb-8">The Problem</h3>
               <ul className="grid gap-4">
                 {[
-                  "Projects dragging on for weeks",
-                  "Costs increasing after work starts",
-                  "Contractors leaving a mess",
-                  "Poor communication throughout",
+                  "Jobs that drag on for weeks longer than promised",
+                  "Prices going up halfway through the job",
+                  "Your home left in a mess every day",
+                  "Not knowing what's happening or when it'll be finished",
                 ].map((point, i) => (
                   <li key={i} className="grid grid-cols-[24px_1fr] gap-4 items-start">
                     <div className="mt-0.5 flex-shrink-0 text-rose-400/80"><XCircle className="w-5 h-5" /></div>
@@ -162,10 +193,10 @@ export default function BathroomRenovationsPage({ openQuote }: { openQuote: () =
               <h3 className="text-xl font-medium text-primary uppercase tracking-widest mb-8">The GR Way</h3>
               <ul className="grid gap-4">
                 {[
-                  "Clear timelines — we stick to them",
-                  "Honest upfront pricing — no surprises",
-                  "Spotless work — we clean up daily",
-                  "Regular updates — you're always in the loop",
+                  "Clear timelines, we stick to them",
+                  "Honest upfront pricing, no surprises",
+                  "Spotless work, we clean up daily",
+                  "Regular updates, you're always in the loop",
                 ].map((point, i) => (
                   <li key={i} className="grid grid-cols-[24px_1fr] gap-4 items-start">
                     <div className="mt-0.5 flex-shrink-0 text-green-600"><CheckCircle2 className="w-5 h-5" /></div>
@@ -203,7 +234,7 @@ export default function BathroomRenovationsPage({ openQuote }: { openQuote: () =
                   <ul className="space-y-3 mb-8">
                     {service.bullets.map((bullet, j) => (
                       <li key={j} className="flex gap-3 items-center">
-                        <CheckCircle2 className="text-primary w-5 h-5 flex-shrink-0" />
+                        <CheckCircle2 className="text-green-600 w-5 h-5 flex-shrink-0" />
                         <span className="text-foreground">{bullet}</span>
                       </li>
                     ))}
@@ -286,7 +317,7 @@ export default function BathroomRenovationsPage({ openQuote }: { openQuote: () =
           <div className="grid sm:grid-cols-2 gap-6">
             {reasons.map((item, i) => (
               <div key={i} className="flex gap-4 p-6 bg-card rounded-2xl border shadow-sm">
-                <CheckCircle2 className="text-primary w-6 h-6 flex-shrink-0 mt-0.5" />
+                <CheckCircle2 className="text-green-600 w-6 h-6 flex-shrink-0 mt-0.5" />
                 <div>
                   <h3 className="font-semibold text-foreground mb-1">{item.title}</h3>
                   <p className="text-muted-foreground text-sm leading-relaxed">{item.text}</p>

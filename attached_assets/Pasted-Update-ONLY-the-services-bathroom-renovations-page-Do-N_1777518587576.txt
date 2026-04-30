@@ -1,0 +1,104 @@
+Update ONLY the /services/bathroom-renovations page.
+
+Do NOT change the hero section.
+Do NOT change layout structure.
+Do NOT redesign anything.
+Only apply the following specific improvements.
+
+-------------------------------------
+1. PROBLEM SECTION (LEFT SIDE ONLY)
+-------------------------------------
+
+Update the wording under “THE PROBLEM” to be more specific and relatable.
+
+Replace with:
+
+- Jobs that drag on for weeks longer than promised  
+- Prices going up halfway through the job  
+- Your home left in a mess every day  
+- Not knowing what’s happening or when it’ll be finished  
+
+Do NOT change the right side content.
+
+-------------------------------------
+2. REMOVE LONG DASH STYLE (SITE-WIDE)
+-------------------------------------
+
+Replace all long dash separators like:
+“—”
+
+With a cleaner format such as:
+- commas
+- short separators
+- or simple sentence breaks
+
+Example:
+“Clear timelines — we stick to them”
+→ “Clear timelines, we stick to them”
+
+Apply this consistently across the page.
+
+-------------------------------------
+3. WHAT’S INCLUDED SECTION (MAKE IT STRONGER)
+-------------------------------------
+
+For each service block, improve the first sentence to focus on outcome/value.
+
+Example transformations:
+
+“Full bathroom renovation”
+→ “Complete bathroom renovation from start to finish, handled by one reliable team”
+
+“Bathroom layout & upgrades”
+→ “Smarter bathroom layouts that improve space, flow, and usability”
+
+“Tiling & finishing”
+→ “Clean, precise tiling and finishes that elevate the final result”
+
+Keep structure the same.
+Only improve the copy.
+
+-------------------------------------
+4. INTERNAL TEXT LINKS (IMPORTANT)
+-------------------------------------
+
+Add natural inline text links within paragraphs (not just buttons):
+
+- Link “tiling services” → /services/tiling-services  
+- Link “contact us” or similar → /contact  
+
+Make sure links are:
+- natural in sentences
+- not forced
+- not overused (2–4 total is enough)
+
+-------------------------------------
+5. WHY CHOOSE GR SECTION (CHECKMARK CONSISTENCY)
+-------------------------------------
+
+- Update ALL checkmark icons in this section to use the same green color used elsewhere on the site
+- Ensure consistency across:
+  - size
+  - color
+  - alignment
+
+-------------------------------------
+6. GLOBAL CHECKMARK CONSISTENCY
+-------------------------------------
+
+Across the ENTIRE page:
+
+- All checkmarks must use the SAME green color
+- Do NOT mix colors
+- Keep visual consistency
+
+-------------------------------------
+
+Do NOT:
+- change hero
+- change layout
+- change spacing
+- change sections
+- modify tiling page
+
+Only apply these refinements.
