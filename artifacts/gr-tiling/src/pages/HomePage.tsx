@@ -263,17 +263,11 @@ export default function HomePage({ openQuote }: { openQuote: () => void }) {
                   <p className="text-muted-foreground text-lg mb-6 leading-relaxed">
                     Complete bathroom transformations, from design and demolition to fitting, tiling, plumbing, and final finish. We handle the whole project so you don't have to.
                   </p>
-                  <ul className="flex flex-wrap gap-3 mb-8">
-                    <li className="bg-secondary px-3 py-1 rounded-full text-sm font-medium">Full Project Management</li>
-                    <li className="bg-secondary px-3 py-1 rounded-full text-sm font-medium">Supply & Fit</li>
-                    <li className="bg-secondary px-3 py-1 rounded-full text-sm font-medium">Custom Layouts</li>
-                    <li className="bg-secondary px-3 py-1 rounded-full text-sm font-medium">Premium Finishes</li>
-                  </ul>
                   <div className="flex flex-wrap gap-3">
-                    <Button size="lg" className="sm:w-auto" onClick={openQuote}>
+                    <Button size="lg" className="text-base h-14 px-8" onClick={openQuote}>
                       Get a Renovation Quote
                     </Button>
-                    <Button size="lg" variant="ghost" className="sm:w-auto" asChild>
+                    <Button size="lg" variant="ghost" className="text-base h-14 px-8" asChild>
                       <Link href="/services/bathroom-renovations">Learn More</Link>
                     </Button>
                   </div>
@@ -297,8 +291,8 @@ export default function HomePage({ openQuote }: { openQuote: () => void }) {
                     Expert tiling for floors, walls, and wet areas. From herringbone feature walls to large-format rectified tiles, precision cuts and perfect grout lines every time.
                   </p>
                   <div className="mt-auto flex flex-wrap gap-3">
-                    <Button variant="secondary" className="sm:w-auto" onClick={openQuote}>Get a Tiling Quote</Button>
-                    <Button variant="ghost" className="sm:w-auto" asChild>
+                    <Button variant="secondary" size="lg" className="text-base h-14 px-8" onClick={openQuote}>Get a Tiling Quote</Button>
+                    <Button variant="ghost" size="lg" className="text-base h-14 px-8" asChild>
                       <Link href="/services/tiling-services">Learn More</Link>
                     </Button>
                   </div>
