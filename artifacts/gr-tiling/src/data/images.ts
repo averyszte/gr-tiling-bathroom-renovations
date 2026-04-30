@@ -3,7 +3,7 @@ import _tilingHeroSrc from "@assets/image_1777553093210.png";
 export const images = {
   homepage: {
     hero: {
-      src: "/images/hero-bathroom-1.png",
+      src: "/images/hero-homepage.webp",
       alt: "Modern bathroom renovation in Dublin with freestanding bath and marble tiling",
     },
     servicesBathroom: {
