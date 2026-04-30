@@ -1,0 +1,78 @@
+Update ONLY the homepage hero section.
+
+Do NOT change any other sections, layout, colors, or components.
+
+-------------------------------------
+1. Eyebrow (H1)
+-------------------------------------
+
+Replace the eyebrow text with:
+
+Dublin Bathroom Renovation
+
+Set this eyebrow text as the ONLY H1 on the page.
+
+- Remove any other H1 tags from the page
+- Keep this visually smaller than the main headline
+
+-------------------------------------
+2. Main Headline (H2)
+-------------------------------------
+
+Replace the main headline with:
+
+On Time. On Budget. No Surprises.
+
+Set this as an H2.
+
+- This should remain the LARGEST visual text in the hero
+- Keep it bold, clear, and easy to read
+- Ensure it wraps cleanly (max 2–3 lines)
+
+-------------------------------------
+3. Supporting Text
+-------------------------------------
+
+Keep or slightly refine the supporting paragraph below to align with the message:
+
+Suggested:
+Fast, clean, high-quality bathroom renovations from a trusted local Dublin specialist who shows up on time and sticks to the price.
+
+Do NOT tag this as H1 or H2 (keep as paragraph text).
+
+-------------------------------------
+4. Structure (DO NOT CHANGE)
+-------------------------------------
+
+Keep this exact order:
+
+- H1 (eyebrow)
+- H2 (main headline)
+- paragraph
+- two buttons:
+  - Get a Free Quote
+  - Call +353 87 720 9850
+
+-------------------------------------
+5. Spacing & Layout Fix
+-------------------------------------
+
+- Reduce top padding so hero content sits higher on the page
+- Keep spacing tight between H1 and H2
+- Ensure no large empty space above or below content
+- Align image and text cleanly (balanced layout)
+
+-------------------------------------
+6. Mobile Optimization
+-------------------------------------
+
+- Ensure H2 scales properly on mobile (no oversized text)
+- Keep line breaks clean and readable
+- Stack buttons vertically with proper spacing
+- Keep hero content visible without excessive scrolling
+
+-------------------------------------
+
+Do not redesign the hero.
+Do not change colors or fonts.
+Only update text, tags, and spacing.

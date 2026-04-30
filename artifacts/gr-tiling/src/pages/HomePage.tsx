@@ -12,17 +12,17 @@ export default function HomePage({ openQuote }: { openQuote: () => void }) {
   return (
     <main className="flex-1 pb-20 md:pb-0">
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-secondary/30 pt-10 pb-20 lg:pt-14 lg:pb-24" data-testid="hero-section">
+      <section className="relative overflow-hidden bg-secondary/30 pt-8 pb-16 lg:pt-10 lg:pb-20" data-testid="hero-section">
         <div className="container mx-auto px-4 grid lg:grid-cols-2 gap-10 items-center">
           <div className="max-w-2xl">
-            <span className="text-primary font-medium tracking-wider uppercase text-sm mb-5 block">
-              Dublin Bathroom Renovation Specialists
-            </span>
-            <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl text-foreground leading-[1.05] mb-5 max-w-[12ch]">
-              Bathroom Renovations in Dublin That Actually Last
+            <h1 className="text-primary font-semibold tracking-wider uppercase text-sm mb-3 block">
+              Dublin Bathroom Renovation
             </h1>
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground leading-[1.2] mb-5 tracking-tight">
+              On Time. On Budget. No Surprises.
+            </h2>
             <p className="text-lg sm:text-xl text-muted-foreground mb-8 leading-relaxed max-w-xl">
-              Fast, clean, high-quality bathroom renovations from a trusted local Dublin specialist.
+              Fast, clean, high-quality bathroom renovations from a trusted local Dublin specialist who shows up on time and sticks to the price.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Button size="lg" className="text-base h-14 px-8" onClick={openQuote} data-testid="button-hero-get-quote">
