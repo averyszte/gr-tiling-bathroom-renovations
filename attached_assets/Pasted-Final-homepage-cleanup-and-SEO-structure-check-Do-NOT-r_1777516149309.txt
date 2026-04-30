@@ -1,0 +1,133 @@
+Final homepage cleanup and SEO/structure check.
+
+Do NOT redesign the homepage.
+Do NOT change the visual style unless fixing small consistency issues.
+This is a cleanup pass only.
+
+1. Heading structure
+Check the homepage heading hierarchy:
+
+- There must be only ONE H1 on the homepage.
+- The H1 should be:
+Dublin Bathroom Renovation
+
+- The hero main headline should be an H2:
+On Time. On Budget. No Surprises.
+
+- Each major homepage section should use an H2.
+- Card titles, service names, review names, FAQ questions, and small labels should use H3, buttons, spans, or paragraph text where appropriate.
+- Do not use heading tags just for styling.
+
+2. Homepage SEO metadata
+Add or verify homepage metadata:
+
+Title:
+Bathroom Renovations Dublin | GR Tiling & Bathroom Renovations
+
+Meta description:
+GR Tiling & Bathroom Renovations provides bathroom renovations and tiling services in and around Dublin. Fast, clean, reliable work with high-quality finishes. Request a free quote.
+
+Open Graph title:
+Bathroom Renovations Dublin | GR Tiling & Bathroom Renovations
+
+Open Graph description:
+Fast, clean bathroom renovations and tiling services in and around Dublin.
+
+3. Semantic structure
+Make sure the homepage uses clean semantic HTML:
+
+- header
+- nav
+- main
+- section
+- footer
+
+The homepage content should be inside main.
+Each major content block should be a section with an accessible heading.
+
+4. Internal links
+Check all homepage links:
+
+- Header links work
+- Services dropdown links work
+- Bathroom Renovations links go to /services/bathroom-renovations
+- Tiling Services links go to /services/tiling-services
+- Contact links go to /contact
+- Thank You page route exists
+- Quote buttons open the quote modal or link correctly
+- Phone buttons use tel:+353877209850
+
+5. Image SEO
+For all homepage images:
+
+- Add descriptive alt text
+- Do not use empty alt text unless image is purely decorative
+- Use bathroom/tiling-specific descriptions
+- Example:
+  alt="Modern bathroom renovation with freestanding bath in Dublin"
+  alt="Detailed floor tiling work by GR Tiling and Bathroom Renovations"
+
+6. FAQ structure
+Keep the FAQ section clean and accessible:
+
+- FAQ questions should be readable and clickable
+- Answers should be concise
+- Use proper button/accordion accessibility if possible
+- Do not mark FAQ questions as H1 or H2
+
+7. Local SEO copy check
+Make sure the homepage naturally includes:
+
+- Bathroom renovations in Dublin
+- Bathroom remodel Dublin
+- Tiling services Dublin
+- In and around Dublin
+- GR Tiling & Bathroom Renovations
+
+Do not keyword stuff.
+Keep copy natural and conversion-focused.
+
+8. CTA consistency
+Make sure all main CTA buttons are consistent:
+
+Primary CTA:
+Get a Free Quote
+
+Secondary CTA:
+Call +353 87 720 9850
+
+Ensure buttons are consistent in style, spacing, and mobile tap size.
+
+9. Mobile/tablet cleanup
+Check homepage responsiveness at:
+
+- desktop
+- tablet
+- mobile
+
+Fix only layout issues:
+- no horizontal overflow
+- no broken galleries
+- no cramped text
+- no tiny buttons
+- no awkward spacing
+- nav works on mobile
+- quote modal works on mobile
+
+10. Code organization
+Make homepage content easy to edit later.
+
+Where possible, organize:
+- services data
+- reviews data
+- FAQ data
+- SEO metadata
+- navigation links
+
+into clear arrays/objects instead of hard-coded scattered JSX.
+
+Do not over-engineer.
+Do not add analytics, deployment setup, backend, database, blog, or advanced integrations yet.
+
+Goal:
+Finish the homepage so it is clean, SEO-ready, responsive, easy to edit, and ready for the next phase.

@@ -111,7 +111,7 @@ export function Header({ openQuote }: { openQuote: () => void }) {
           <a href="tel:+353877209850"><Phone size={16} /> Call Us</a>
         </Button>
         <Button className="flex-1" onClick={openQuote}>
-          Get Quote
+          Get a Free Quote
         </Button>
       </div>
     </>

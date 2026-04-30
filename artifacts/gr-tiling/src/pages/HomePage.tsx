@@ -37,7 +37,7 @@ export default function HomePage({ openQuote }: { openQuote: () => void }) {
             <div className="aspect-[4/3] lg:aspect-[4/4.35] rounded-2xl overflow-hidden shadow-2xl relative z-10">
               <img 
                 src="/images/hero-bathroom-1.png" 
-                alt="Luxury modern bathroom renovation" 
+                alt="Modern bathroom renovation in Dublin with freestanding bath and marble tiling" 
                 className="w-full h-full object-cover object-center"
               />
             </div>
@@ -221,7 +221,7 @@ export default function HomePage({ openQuote }: { openQuote: () => void }) {
                 <div className="aspect-[4/3] overflow-hidden">
                   <img 
                     src="/images/gallery-5.png" 
-                    alt="Bathroom Renovations" 
+                    alt="Complete bathroom renovation by GR Tiling — modern finish with premium tiles and fittings, Dublin" 
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                 </div>
@@ -254,7 +254,7 @@ export default function HomePage({ openQuote }: { openQuote: () => void }) {
                 <div className="aspect-[16/10] overflow-hidden">
                   <img 
                     src="/images/gallery-2.png" 
-                    alt="Tiling Services" 
+                    alt="Professional floor and wall tiling service in Dublin — herringbone pattern by GR Tiling" 
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                 </div>
