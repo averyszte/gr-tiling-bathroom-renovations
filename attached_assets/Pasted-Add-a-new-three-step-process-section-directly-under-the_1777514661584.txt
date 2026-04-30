@@ -1,0 +1,82 @@
+Add a new three-step process section directly under the homepage hero section.
+
+Do NOT change the hero section or any other section.
+
+Purpose:
+Show visitors how simple it is to start a bathroom renovation quote.
+
+Use the uploaded reference images as inspiration:
+- Reference 1: simple connected step circles
+- Reference 2: larger three-card process section
+Combine the best parts of both, but do not copy either exactly.
+
+Section placement:
+Place this section immediately below the hero section.
+
+Section content:
+
+Eyebrow:
+Simple Process
+
+H2:
+How Your Bathroom Renovation Starts
+
+Description:
+A clear, simple process from first message to a clean, finished bathroom.
+
+Steps:
+
+Step 1:
+Title: Tell Us What You Need
+Text: Send a few details about your bathroom, tiling job, or renovation idea.
+
+Step 2:
+Title: Get a Clear Quote
+Text: We’ll discuss the work, timeline, and price so there are no surprises.
+
+Step 3:
+Title: We Get to Work
+Text: Your project is completed with clean workmanship, clear communication, and care for your home.
+
+Design direction:
+Create a clean, compact three-step layout.
+
+Each step should include:
+- a circular icon area at the top
+- step number
+- short title
+- short supporting text
+
+Visual style:
+- light theme
+- white or warm off-white cards
+- subtle border
+- soft shadow
+- rounded corners
+- brown accent color matching the site
+- clean Poppins typography
+
+Desktop layout:
+- Three cards in one row
+- Optional thin connecting line between the circular icons
+- Keep section compact, not oversized
+- Do not use large illustrations
+
+Hover effect:
+When hovering a step card:
+- slightly lift the card
+- reverse or enhance colors tastefully
+- make the circle background turn brown
+- make the icon/number turn white
+- increase shadow subtly
+- smooth transition
+
+Mobile layout:
+- Stack cards vertically
+- Keep icons centered
+- Remove or simplify connector line
+- Ensure no horizontal overflow
+
+Important:
+This section should feel more polished than the simple reference, but more compact than the large card reference.
+Do not make it take up too much vertical space.

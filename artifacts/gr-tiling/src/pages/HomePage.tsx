@@ -47,6 +47,51 @@ export default function HomePage({ openQuote }: { openQuote: () => void }) {
         </div>
       </section>
 
+      {/* Process Section */}
+      <section className="py-16 bg-background" data-testid="process-section">
+        <div className="container mx-auto px-4 max-w-5xl">
+          <div className="text-center mb-12">
+            <p className="text-primary font-semibold tracking-wider uppercase text-sm mb-3">Simple Process</p>
+            <h2 className="font-serif text-3xl md:text-4xl text-foreground mb-4">How Your Bathroom Renovation Starts</h2>
+            <p className="text-muted-foreground max-w-xl mx-auto">A clear, simple process from first message to a clean, finished bathroom.</p>
+          </div>
+
+          <div className="relative grid md:grid-cols-3 gap-6">
+            {/* Connector line desktop only */}
+            <div className="hidden md:block absolute top-[3.75rem] left-[16.7%] right-[16.7%] h-px bg-border z-0" />
+
+            {[
+              {
+                step: "01",
+                title: "Tell Us What You Need",
+                text: "Send a few details about your bathroom, tiling job, or renovation idea.",
+              },
+              {
+                step: "02",
+                title: "Get a Clear Quote",
+                text: "We'll discuss the work, timeline, and price so there are no surprises.",
+              },
+              {
+                step: "03",
+                title: "We Get to Work",
+                text: "Your project is completed with clean workmanship, clear communication, and care for your home.",
+              },
+            ].map((item, i) => (
+              <div
+                key={i}
+                className="group relative z-10 bg-card border rounded-2xl px-8 pt-8 pb-9 shadow-sm text-center flex flex-col items-center transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
+              >
+                <div className="w-14 h-14 rounded-full bg-secondary flex items-center justify-center mb-5 text-lg font-bold text-primary transition-all duration-300 group-hover:bg-primary group-hover:text-primary-foreground">
+                  {item.step}
+                </div>
+                <h3 className="font-semibold text-lg text-foreground mb-2">{item.title}</h3>
+                <p className="text-muted-foreground text-sm leading-relaxed">{item.text}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Trust Strip */}
       <div className="bg-primary text-primary-foreground py-6 border-y border-primary-foreground/10">
         <div className="container mx-auto px-4 overflow-hidden">
