@@ -169,7 +169,7 @@ export default function HomePage({ openQuote }: { openQuote: () => void }) {
             <div className="w-24 h-1 bg-primary rounded-full"></div>
           </div>
 
-          <div className="grid lg:grid-cols-12 gap-8 items-stretch">
+          <div className="grid lg:grid-cols-12 gap-8 items-center">
             {/* Primary Service */}
             <div className="lg:col-span-7 group">
               <div className="bg-card rounded-2xl overflow-hidden shadow-lg border h-full transition-transform duration-300 hover:shadow-xl">
@@ -205,7 +205,7 @@ export default function HomePage({ openQuote }: { openQuote: () => void }) {
 
             {/* Secondary Service */}
             <div className="lg:col-span-5 group">
-              <div className="bg-card rounded-2xl overflow-hidden shadow-md border h-full flex flex-col transition-transform duration-300 hover:shadow-lg">
+              <div className="bg-card rounded-2xl overflow-hidden shadow-md border flex flex-col transition-transform duration-300 hover:shadow-lg">
                 <div className="aspect-[16/10] overflow-hidden">
                   <img 
                     src="/images/gallery-2.png" 
