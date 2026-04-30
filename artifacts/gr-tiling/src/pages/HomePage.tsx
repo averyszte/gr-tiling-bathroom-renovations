@@ -216,34 +216,18 @@ export default function HomePage({ openQuote }: { openQuote: () => void }) {
         </div>
       </section>
 
-      {/* Marquee Banner */}
-      <section className="py-24 bg-background overflow-hidden">
-        <div className="container mx-auto px-4 text-center mb-12">
-          <h2 className="font-serif text-3xl md:text-5xl text-foreground mb-8">See What Your Bathroom Could Become</h2>
-          <Button size="lg" onClick={openQuote}>Start Your Renovation Quote</Button>
-        </div>
-
-        <div className="space-y-6">
-          {/* Row 1: Scroll Left */}
-          <div className="relative w-full flex overflow-hidden">
-            <div className="animate-scroll-left flex min-w-max gap-6 px-3">
-              {[1, 2, 3, 4, 1, 2, 3, 4].map((num, i) => (
-                <div key={`row1-${i}`} className="w-[280px] h-[200px] md:w-[320px] md:h-[220px] rounded-2xl overflow-hidden flex-shrink-0 shadow-sm border">
-                  <img src={`/images/banner-${num}.png`} alt={`Modern bathroom project ${num}`} className="w-full h-full object-cover" />
-                </div>
-              ))}
-            </div>
-          </div>
-          
-          {/* Row 2: Scroll Right */}
-          <div className="relative w-full flex overflow-hidden">
-            <div className="animate-scroll-right flex min-w-max gap-6 px-3">
-              {[5, 6, 7, 8, 5, 6, 7, 8].map((num, i) => (
-                <div key={`row2-${i}`} className="w-[280px] h-[200px] md:w-[320px] md:h-[220px] rounded-2xl overflow-hidden flex-shrink-0 shadow-sm border">
-                  <img src={`/images/banner-${num}.png`} alt={`Bathroom tiling project ${num}`} className="w-full h-full object-cover" />
-                </div>
-              ))}
-            </div>
+      {/* Mid-page CTA */}
+      <section className="py-24 bg-primary text-primary-foreground">
+        <div className="container mx-auto px-4 max-w-5xl text-center">
+          <h2 className="font-serif text-3xl md:text-5xl mb-6">Ready to Renovate Your Bathroom?</h2>
+          <p className="text-lg md:text-xl mb-10 max-w-2xl mx-auto text-primary-foreground/90">
+            Tell us what you need, and we'll help you plan a clean, modern bathroom renovation that fits your home and your budget.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button size="lg" variant="secondary" className="text-base h-14 px-8" onClick={openQuote}>Get a Free Quote</Button>
+            <Button size="lg" variant="outline" className="text-base h-14 px-8 border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground hover:text-primary bg-transparent" asChild>
+              <a href="tel:+353877209850">Call Now: +353 87 720 9850</a>
+            </Button>
           </div>
         </div>
       </section>
