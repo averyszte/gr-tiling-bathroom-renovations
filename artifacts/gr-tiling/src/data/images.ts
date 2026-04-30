@@ -7,36 +7,36 @@ export const images = {
       alt: "Modern bathroom renovation in Dublin with freestanding bath and marble tiling",
     },
     servicesBathroom: {
-      src: "/images/gallery-5.png",
+      src: "/images/services-card-bathroom.webp",
       alt: "Complete bathroom renovation by GR Tiling, modern finish with premium tiles and fittings, Dublin",
     },
     servicesTiling: {
-      src: "/images/gallery-2.png",
+      src: "/images/services-card-tiling.webp",
       alt: "Professional floor and wall tiling service in Dublin, herringbone pattern by GR Tiling",
     },
     gallery: [
       {
-        src: "/images/gallery-1.png",
+        src: "/images/gallery-bath-1.webp",
         alt: "Freshly renovated bathroom with white ceramic tiles and modern vanity unit, Dublin",
       },
       {
-        src: "/images/gallery-2.png",
+        src: "/images/gallery-tiling-floor-1.webp",
         alt: "Herringbone floor tile pattern in warm beige limestone, professional bathroom tiling Dublin",
       },
       {
-        src: "/images/gallery-3.png",
+        src: "/images/gallery-bathroom-1.webp",
         alt: "Modern walk-in shower with large format tiles and black fixtures, Dublin bathroom",
       },
       {
-        src: "/images/gallery-4.png",
+        src: "/images/gallery-tiling-detail-1.webp",
         alt: "Luxury bathroom with floating vanity and wall hung toilet, renovated in Dublin",
       },
       {
-        src: "/images/gallery-5.png",
+        src: "/images/gallery-bathroom-2.webp",
         alt: "Beautiful bathtub area with feature wall tiling and clean modern finish, Dublin",
       },
       {
-        src: "/images/gallery-6.png",
+        src: "/images/gallery-shower-1.webp",
         alt: "Close-up of large format rectified tiles with fine grout lines, precise tiling workmanship Dublin",
       },
     ],
@@ -44,7 +44,7 @@ export const images = {
 
   bathroomPage: {
     hero: {
-      src: "/images/hero-bathroom-2.png",
+      src: "/images/hero-bathroom-renovations.webp",
       alt: "Bathroom renovation in Dublin, modern bathroom with large format tiles and clean finish",
     },
     before: {
@@ -95,7 +95,7 @@ export const images = {
 
   tilingPage: {
     hero: {
-      src: _tilingHeroSrc as string,
+      src: "/images/hero-tiling-services.webp",
       alt: "Real tiling transformations showing before and after bathroom work",
     },
     before: {
