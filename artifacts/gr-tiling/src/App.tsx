@@ -15,8 +15,8 @@ const queryClient = new QueryClient();
 
 function AppLayout({ openQuote }: { openQuote: () => void }) {
   const HomePageWithProps = () => <HomePage openQuote={openQuote} />;
-  const ServicesPage = () => <PlaceholderPage title="Services" />;
-  const TilingServicesPage = () => <PlaceholderPage title="Tiling Services" />;
+  const BathroomRenovationsPage = () => <PlaceholderPage title="Bathroom Renovations in Dublin" />;
+  const TilingServicesPage = () => <PlaceholderPage title="Tiling Services in Dublin" />;
   const AboutPage = () => <PlaceholderPage title="About Us" />;
   const ContactPage = () => <PlaceholderPage title="Contact" />;
 
@@ -25,7 +25,7 @@ function AppLayout({ openQuote }: { openQuote: () => void }) {
       <Header openQuote={openQuote} />
       <Switch>
         <Route path="/" component={HomePageWithProps} />
-        <Route path="/services" component={ServicesPage} />
+        <Route path="/services/bathroom-renovations" component={BathroomRenovationsPage} />
         <Route path="/services/tiling-services" component={TilingServicesPage} />
         <Route path="/about" component={AboutPage} />
         <Route path="/contact" component={ContactPage} />

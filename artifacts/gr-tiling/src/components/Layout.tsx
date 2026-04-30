@@ -1,10 +1,11 @@
 import { Link } from "wouter";
-import { Menu, X, Phone, Star } from "lucide-react";
+import { Menu, X, Phone, Star, ChevronDown } from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 
 export function Header({ openQuote }: { openQuote: () => void }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
 
   return (
     <>
@@ -20,21 +21,41 @@ export function Header({ openQuote }: { openQuote: () => void }) {
           {/* Desktop Nav */}
           <nav className="hidden md:flex items-center gap-8" data-testid="header-nav">
             <Link href="/" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">Home</Link>
-            <Link href="/services" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">Services</Link>
-            <Link href="/services/tiling-services" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">Tiling</Link>
+
+            {/* Services Dropdown */}
+            <div className="relative group">
+              <button className="flex items-center gap-1 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
+                Services <ChevronDown size={14} className="mt-0.5 transition-transform duration-200 group-hover:rotate-180" />
+              </button>
+              <div className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-56 bg-background border border-border rounded-xl shadow-lg py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                <Link
+                  href="/services/bathroom-renovations"
+                  className="block px-4 py-2.5 text-sm text-muted-foreground hover:text-foreground hover:bg-secondary/60 transition-colors rounded-lg mx-1"
+                >
+                  Bathroom Renovations
+                </Link>
+                <Link
+                  href="/services/tiling-services"
+                  className="block px-4 py-2.5 text-sm text-muted-foreground hover:text-foreground hover:bg-secondary/60 transition-colors rounded-lg mx-1"
+                >
+                  Tiling Services
+                </Link>
+              </div>
+            </div>
+
             <Link href="/about" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">About</Link>
             <Link href="/contact" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">Contact</Link>
           </nav>
 
           <div className="flex items-center gap-4">
-            <Button 
+            <Button
               className="hidden md:inline-flex"
               onClick={openQuote}
               data-testid="button-get-quote-header"
             >
               Get Free Quote
             </Button>
-            <button 
+            <button
               className="md:hidden p-2 -mr-2 text-foreground"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               data-testid="button-hamburger-menu"
@@ -46,12 +67,40 @@ export function Header({ openQuote }: { openQuote: () => void }) {
 
         {/* Mobile Nav Dropdown */}
         {mobileMenuOpen && (
-          <div className="md:hidden absolute top-20 left-0 w-full bg-background border-b shadow-lg py-4 px-4 flex flex-col gap-4">
-            <Link href="/" className="text-lg font-medium py-2 border-b" onClick={() => setMobileMenuOpen(false)}>Home</Link>
-            <Link href="/services" className="text-lg font-medium py-2 border-b" onClick={() => setMobileMenuOpen(false)}>Services</Link>
-            <Link href="/services/tiling-services" className="text-lg font-medium py-2 border-b" onClick={() => setMobileMenuOpen(false)}>Tiling</Link>
-            <Link href="/about" className="text-lg font-medium py-2 border-b" onClick={() => setMobileMenuOpen(false)}>About</Link>
-            <Link href="/contact" className="text-lg font-medium py-2" onClick={() => setMobileMenuOpen(false)}>Contact</Link>
+          <div className="md:hidden absolute top-20 left-0 w-full bg-background border-b shadow-lg py-4 px-4 flex flex-col gap-1">
+            <Link href="/" className="text-lg font-medium py-2.5 border-b px-1" onClick={() => setMobileMenuOpen(false)}>Home</Link>
+
+            {/* Mobile Services Accordion */}
+            <div className="border-b">
+              <button
+                className="w-full flex items-center justify-between text-lg font-medium py-2.5 px-1"
+                onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
+              >
+                Services
+                <ChevronDown size={18} className={`transition-transform duration-200 ${mobileServicesOpen ? "rotate-180" : ""}`} />
+              </button>
+              {mobileServicesOpen && (
+                <div className="pb-2 pl-4 flex flex-col gap-1">
+                  <Link
+                    href="/services/bathroom-renovations"
+                    className="text-base text-muted-foreground py-2 block"
+                    onClick={() => { setMobileMenuOpen(false); setMobileServicesOpen(false); }}
+                  >
+                    Bathroom Renovations
+                  </Link>
+                  <Link
+                    href="/services/tiling-services"
+                    className="text-base text-muted-foreground py-2 block"
+                    onClick={() => { setMobileMenuOpen(false); setMobileServicesOpen(false); }}
+                  >
+                    Tiling Services
+                  </Link>
+                </div>
+              )}
+            </div>
+
+            <Link href="/about" className="text-lg font-medium py-2.5 border-b px-1" onClick={() => setMobileMenuOpen(false)}>About</Link>
+            <Link href="/contact" className="text-lg font-medium py-2.5 px-1" onClick={() => setMobileMenuOpen(false)}>Contact</Link>
           </div>
         )}
       </header>
@@ -96,10 +145,10 @@ export function Footer() {
         <div className="space-y-4">
           <h4 className="font-serif text-xl">Services</h4>
           <nav className="flex flex-col gap-3">
-            <Link href="/services" className="text-background/70 hover:text-background transition-colors">Bathroom Renovations</Link>
+            <Link href="/services/bathroom-renovations" className="text-background/70 hover:text-background transition-colors">Bathroom Renovations</Link>
             <Link href="/services/tiling-services" className="text-background/70 hover:text-background transition-colors">Tiling Services</Link>
-            <Link href="/services" className="text-background/70 hover:text-background transition-colors">Wet Rooms</Link>
-            <Link href="/services" className="text-background/70 hover:text-background transition-colors">Commercial Tiling</Link>
+            <Link href="/services/bathroom-renovations" className="text-background/70 hover:text-background transition-colors">Wet Rooms</Link>
+            <Link href="/services/bathroom-renovations" className="text-background/70 hover:text-background transition-colors">Commercial Tiling</Link>
           </nav>
         </div>
 

@@ -1,0 +1,75 @@
+Update ONLY the header navigation, routes, and homepage services preview section.
+
+Do not redesign the whole site.
+
+1. Header navigation
+
+Replace the current separate “Services” and “Tiling” nav links with one “Services” dropdown.
+
+Header nav should be:
+- Home
+- Services ▼
+- About
+- Contact
+- Get Free Quote button
+
+Dropdown behavior:
+- On hover/click, show a clean dropdown menu under “Services”
+- Include two links:
+  - Bathroom Renovations
+  - Tiling Services
+- Use a simple small chevron/down arrow icon, no underline
+- Keep the dropdown minimal, light, rounded, and consistent with the site style
+- On mobile, the Services dropdown should expand inside the hamburger menu
+
+2. Routes/pages
+
+Create or update routes:
+
+/services/bathroom-renovations
+/services/tiling-services
+
+These can be simple placeholder pages for now with correct page title/H1 only.
+
+Bathroom Renovations page:
+H1: Bathroom Renovations in Dublin
+
+Tiling Services page:
+H1: Tiling Services in Dublin
+
+Do not fully build these pages yet.
+
+3. Homepage services section
+
+In the “Bathroom Renovation & Tiling Services in Dublin” section:
+
+Add a “Learn More” button to each service card.
+
+Bathroom Renovations card:
+Button text: Learn More
+Link to: /services/bathroom-renovations
+
+Tiling Services card:
+Button text: Learn More
+Link to: /services/tiling-services
+
+Keep the existing quote buttons if they exist, but make the Learn More button visually secondary.
+
+4. Fix Tiling Services card whitespace
+
+The Tiling Services card currently has too much empty white space.
+
+Adjust only this services section so both cards feel visually balanced:
+- reduce excessive empty space inside the Tiling Services card
+- align content better vertically
+- make the card height feel intentional
+- keep image, text, tags, and buttons grouped more tightly
+- do not make it cramped
+
+5. Do not change:
+- hero section
+- comparison section
+- reviews
+- FAQ
+- CTA banners
+- footer

@@ -191,9 +191,14 @@ export default function HomePage({ openQuote }: { openQuote: () => void }) {
                     <li className="bg-secondary px-3 py-1 rounded-full text-sm font-medium">Custom Layouts</li>
                     <li className="bg-secondary px-3 py-1 rounded-full text-sm font-medium">Premium Finishes</li>
                   </ul>
-                  <Button size="lg" className="w-full sm:w-auto" onClick={openQuote}>
-                    Get a Renovation Quote
-                  </Button>
+                  <div className="flex flex-wrap gap-3">
+                    <Button size="lg" className="sm:w-auto" onClick={openQuote}>
+                      Get a Renovation Quote
+                    </Button>
+                    <Button size="lg" variant="ghost" className="sm:w-auto" asChild>
+                      <Link href="/services/bathroom-renovations">Learn More</Link>
+                    </Button>
+                  </div>
                 </div>
               </div>
             </div>
@@ -208,19 +213,24 @@ export default function HomePage({ openQuote }: { openQuote: () => void }) {
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                 </div>
-                <div className="p-8 flex-1 flex flex-col">
-                  <h3 className="font-serif text-2xl mb-4">Tiling Services</h3>
-                  <p className="text-muted-foreground mb-6 leading-relaxed flex-1">
+                <div className="p-8 flex flex-col">
+                  <h3 className="font-serif text-2xl mb-3">Tiling Services</h3>
+                  <p className="text-muted-foreground mb-5 leading-relaxed">
                     Expert tiling for floors, walls, and wet areas. From herringbone feature walls to large-format rectified tiles — precision cuts and perfect grout lines every time.
                   </p>
-                  <ul className="flex flex-wrap gap-2 mb-8">
+                  <ul className="flex flex-wrap gap-2 mb-5">
                     <li className="bg-secondary px-3 py-1 rounded-full text-xs font-medium">Floor & Wall Tiling</li>
                     <li className="bg-secondary px-3 py-1 rounded-full text-xs font-medium">Wet Rooms</li>
                     <li className="bg-secondary px-3 py-1 rounded-full text-xs font-medium">Feature Walls</li>
                   </ul>
-                  <Button variant="outline" className="w-full" onClick={openQuote}>
-                    Get a Tiling Quote
-                  </Button>
+                  <div className="flex flex-wrap gap-3">
+                    <Button variant="outline" className="flex-1" onClick={openQuote}>
+                      Get a Tiling Quote
+                    </Button>
+                    <Button variant="ghost" className="flex-1" asChild>
+                      <Link href="/services/tiling-services">Learn More</Link>
+                    </Button>
+                  </div>
                 </div>
               </div>
             </div>
