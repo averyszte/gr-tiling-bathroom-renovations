@@ -18,10 +18,10 @@ const reviews = [
 type Faq = { q: string; a: ReactNode };
 
 const faqs: Faq[] = [
-  { q: "How much does a bathroom renovation cost in Dublin?", a: "Costs depend on the size, scope, and materials chosen for your bathroom remodel. We provide clear, detailed quotes before any work starts, with no hidden extras." },
-  { q: "How long does a bathroom renovation take?", a: "Most standard bathroom renovations take 1 to 3 weeks. We give you a realistic timeline at the start and keep you updated throughout." },
-  { q: "Will the work area be kept clean?", a: "Yes. We protect your home, clean up every day, and leave the area tidy. We treat your home the way we'd want ours treated." },
-  { q: "Do I get a written quote?", a: "Absolutely. We provide a clear written quote before any work begins so you know exactly what's included and what the cost will be." },
+  { q: "How much does a bathroom renovation cost in Dublin?", a: "The cost depends on the size of the bathroom, the layout, and the finishes you choose.\n\nWe always provide a clear, upfront quote so you know exactly what to expect, with no hidden costs.\n\nWant a clear price for your project? Use the \"Get a Free Quote\" button." },
+  { q: "How long does a bathroom renovation take?", a: "Most bathroom renovations take between 1 to 2 weeks, depending on the size and complexity of the job.\n\nWe give you a clear timeline before starting and stick to it, so there are no delays or uncertainty.\n\nGet in touch using the \"Get a Free Quote\" button and we’ll walk you through your timeline." },
+  { q: "Will the work area be kept clean?", a: "Yes. We take care to keep your home clean throughout the project and tidy up at the end of each day.\n\nWe treat your home with respect and make sure everything is left clean once the job is complete." },
+  { q: "Do I get a written quote?", a: "Yes. Every project comes with a clear, written quote outlining the work, timeline, and cost.\n\nEverything is agreed clearly before any work begins, so there are no surprises." },
   {
     q: "Do you cover all areas of Dublin?",
     a: (
@@ -34,7 +34,7 @@ const faqs: Faq[] = [
       </>
     ),
   },
-  { q: "Can you handle just the tiling, not the full renovation?", a: "Yes. We do standalone tiling work as well as full bathroom renovations. Just let us know what you need and we'll quote accordingly." },
+  { q: "Can you handle just the tiling, not the full renovation?", a: "Yes. We offer both full bathroom renovations and standalone tiling services.\n\nWhether you need a full project or just tiling work, we can help.\n\nTell us what you need using the \"Get a Free Quote\" button." },
 ];
 
 export default function HomePage({ openQuote }: { openQuote: () => void }) {
@@ -405,6 +405,12 @@ export default function HomePage({ openQuote }: { openQuote: () => void }) {
               </AccordionItem>
             ))}
           </Accordion>
+          <div className="text-center mt-12">
+            <p className="text-lg text-foreground mb-6">Still have questions? We’re happy to help.</p>
+            <Button size="lg" className="text-base h-14 px-8" onClick={openQuote}>
+              Get a Free Quote
+            </Button>
+          </div>
         </div>
       </section>
 

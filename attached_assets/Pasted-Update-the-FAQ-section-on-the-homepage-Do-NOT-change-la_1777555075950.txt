@@ -1,0 +1,88 @@
+Update the FAQ section on the homepage.
+
+Do NOT change layout, design, or accordion behavior.
+
+-------------------------------------
+
+Keep all existing questions the same.
+
+Replace ONLY the answers with the following:
+
+-------------------------------------
+
+1. Cost:
+
+The cost depends on the size of the bathroom, the layout, and the finishes you choose.
+
+We always provide a clear, upfront quote so you know exactly what to expect, with no hidden costs.
+
+Want a clear price for your project? Use the "Get a Free Quote" button.
+
+-------------------------------------
+
+2. Timeline:
+
+Most bathroom renovations take between 1 to 2 weeks, depending on the size and complexity of the job.
+
+We give you a clear timeline before starting and stick to it, so there are no delays or uncertainty.
+
+Get in touch using the "Get a Free Quote" button and we’ll walk you through your timeline.
+
+-------------------------------------
+
+3. Cleanliness:
+
+Yes. We take care to keep your home clean throughout the project and tidy up at the end of each day.
+
+We treat your home with respect and make sure everything is left clean once the job is complete.
+
+-------------------------------------
+
+4. Written Quote:
+
+Yes. Every project comes with a clear, written quote outlining the work, timeline, and cost.
+
+Everything is agreed clearly before any work begins, so there are no surprises.
+
+-------------------------------------
+
+5. Location:
+
+Yes, we work across Dublin and surrounding areas.
+
+If you're unsure whether we cover your location, just get in touch and we’ll confirm.
+
+-------------------------------------
+
+6. Tiling Only:
+
+Yes. We offer both full bathroom renovations and standalone tiling services.
+
+Whether you need a full project or just tiling work, we can help.
+
+Tell us what you need using the "Get a Free Quote" button.
+
+-------------------------------------
+
+ADD CTA BELOW THE FAQ SECTION:
+
+Text:
+Still have questions? We’re happy to help.
+
+Add a PRIMARY BUTTON directly below this text:
+
+Button text:
+Get a Free Quote
+
+IMPORTANT:
+- This button must use the SAME component and behavior as all other "Get a Free Quote" buttons on the site
+- It must open the same quote form / modal or scroll to the same form
+
+-------------------------------------
+
+Do NOT:
+- change questions
+- add random new buttons inside each FAQ
+- modify layout or styling
+
+Only update the answer text and add the single CTA below the section.
