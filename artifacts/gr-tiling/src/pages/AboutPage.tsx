@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
-import { Star, Clock, BadgeEuro, Sparkles, Home } from "lucide-react";
+import { Star, Clock, BadgeEuro, Sparkles, Home, ChevronRight } from "lucide-react";
 import { applyPageSeo } from "@/lib/seo";
 
 const principles = [
@@ -162,7 +162,7 @@ export default function AboutPage({ openQuote }: { openQuote: () => void }) {
               5.0 Google Rating from verified Dublin customers
             </p>
           </div>
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-8 mb-12">
             {reviews.map((review, i) => (
               <div
                 key={i}
@@ -187,6 +187,18 @@ export default function AboutPage({ openQuote }: { openQuote: () => void }) {
                 </div>
               </div>
             ))}
+          </div>
+          <div className="text-center">
+            <Button variant="outline" size="lg" asChild>
+              <a
+                href="https://maps.app.goo.gl/zXMYDcdtwATJcR9AA"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2"
+              >
+                See All Google Reviews <ChevronRight size={16} />
+              </a>
+            </Button>
           </div>
         </div>
       </section>

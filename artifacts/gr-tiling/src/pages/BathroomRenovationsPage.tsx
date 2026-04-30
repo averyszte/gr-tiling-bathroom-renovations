@@ -379,9 +379,9 @@ export default function BathroomRenovationsPage({ openQuote }: { openQuote: () =
           <div className="text-center">
             <Button variant="outline" size="lg" asChild>
               <a
-                href="https://www.google.com/search?q=GR+Tiling+%26+Bathroom+Renovations+Dublin"
+                href="https://maps.app.goo.gl/zXMYDcdtwATJcR9AA"
                 target="_blank"
-                rel="noreferrer noopener"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-2"
               >
                 See All Google Reviews <ChevronRight size={16} />
