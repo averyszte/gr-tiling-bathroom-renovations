@@ -311,24 +311,38 @@ export default function HomePage({ openQuote }: { openQuote: () => void }) {
             <div className="w-24 h-1 bg-primary rounded-full"></div>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
-            {[
+          {(() => {
+            const galleryImages = [
               { num: 1, alt: "Freshly renovated bathroom with white ceramic tiles and modern vanity unit, Dublin" },
               { num: 2, alt: "Herringbone floor tile pattern in warm beige limestone, professional bathroom tiling Dublin" },
               { num: 3, alt: "Modern walk-in shower with large format tiles and black fixtures, Dublin bathroom" },
               { num: 4, alt: "Luxury bathroom with floating vanity and wall hung toilet, renovated in Dublin" },
               { num: 5, alt: "Beautiful bathtub area with feature wall tiling and clean modern finish, Dublin" },
               { num: 6, alt: "Close-up of large format rectified tiles with fine grout lines, precise tiling workmanship Dublin" },
-            ].map((img) => (
-              <div key={img.num} className="group relative overflow-hidden rounded-2xl shadow-lg aspect-square hover:shadow-xl transition-shadow duration-300">
-                <img
-                  src={`/images/gallery-${img.num}.png`}
-                  alt={img.alt}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                />
-              </div>
-            ))}
-          </div>
+            ];
+            return (
+              <>
+                <div className="hidden md:flex h-[500px] w-full gap-4">
+                  {galleryImages.map(({ num, alt }) => (
+                    <div
+                      key={num}
+                      className="relative rounded-2xl overflow-hidden shadow-lg flex-1 hover:flex-[3] transition-all duration-500 ease-in-out cursor-pointer group"
+                    >
+                      <img src={`/images/gallery-${num}.png`} alt={alt} className="absolute inset-0 w-full h-full object-cover" />
+                      <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-500"></div>
+                    </div>
+                  ))}
+                </div>
+                <div className="md:hidden grid grid-cols-2 gap-4">
+                  {galleryImages.map(({ num, alt }) => (
+                    <div key={num} className="aspect-square rounded-2xl overflow-hidden shadow-lg">
+                      <img src={`/images/gallery-${num}.png`} alt={alt} className="w-full h-full object-cover" />
+                    </div>
+                  ))}
+                </div>
+              </>
+            );
+          })()}
         </div>
       </section>
 
