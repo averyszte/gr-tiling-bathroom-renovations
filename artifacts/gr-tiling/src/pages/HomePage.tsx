@@ -148,6 +148,15 @@ export default function HomePage({ openQuote }: { openQuote: () => void }) {
               </div>
             ))}
           </div>
+
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mt-16">
+            <Button size="lg" className="text-base h-14 px-8" onClick={openQuote}>
+              Get a Free Quote
+            </Button>
+            <Button size="lg" variant="outline" className="text-base h-14 px-8 bg-transparent" asChild>
+              <a href="tel:+353877209850">Call Now</a>
+            </Button>
+          </div>
         </div>
       </section>
 
