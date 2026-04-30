@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Star, CheckCircle2, ChevronRight } from "lucide-react";
+import { Star, CheckCircle2, ChevronRight, XCircle } from "lucide-react";
 import { Link } from "wouter";
 import {
   Accordion,
@@ -93,21 +93,33 @@ export default function HomePage({ openQuote }: { openQuote: () => void }) {
             <div className="space-y-10">
               <h3 className="text-xl font-medium text-muted-foreground uppercase tracking-widest mb-8">Other Renovators</h3>
               <ul className="space-y-8">
-                <li>
-                  <strong className="text-foreground block text-lg mb-1">Cut corners and rushed work</strong>
-                  <span className="text-muted-foreground">Shortcuts taken, poor attention to detail, and results that don't last.</span>
+                <li className="flex gap-4">
+                  <div className="mt-1 flex-shrink-0 text-rose-400/80"><XCircle /></div>
+                  <div>
+                    <strong className="text-foreground block text-lg mb-1">Cut corners and rushed work</strong>
+                    <span className="text-muted-foreground">Shortcuts taken, poor attention to detail, and results that don't last.</span>
+                  </div>
                 </li>
-                <li>
-                  <strong className="text-foreground block text-lg mb-1">Messy contractors</strong>
-                  <span className="text-muted-foreground">Dust, debris, damage left behind</span>
+                <li className="flex gap-4">
+                  <div className="mt-1 flex-shrink-0 text-rose-400/80"><XCircle /></div>
+                  <div>
+                    <strong className="text-foreground block text-lg mb-1">Messy contractors</strong>
+                    <span className="text-muted-foreground">Dust, debris, damage left behind</span>
+                  </div>
                 </li>
-                <li>
-                  <strong className="text-foreground block text-lg mb-1">Unclear pricing</strong>
-                  <span className="text-muted-foreground">Surprise costs, vague estimates</span>
+                <li className="flex gap-4">
+                  <div className="mt-1 flex-shrink-0 text-rose-400/80"><XCircle /></div>
+                  <div>
+                    <strong className="text-foreground block text-lg mb-1">Unclear pricing</strong>
+                    <span className="text-muted-foreground">Surprise costs, vague estimates</span>
+                  </div>
                 </li>
-                <li>
-                  <strong className="text-foreground block text-lg mb-1">Long delays</strong>
-                  <span className="text-muted-foreground">Missed deadlines, weeks becoming months</span>
+                <li className="flex gap-4">
+                  <div className="mt-1 flex-shrink-0 text-rose-400/80"><XCircle /></div>
+                  <div>
+                    <strong className="text-foreground block text-lg mb-1">Long delays</strong>
+                    <span className="text-muted-foreground">Missed deadlines, weeks becoming months</span>
+                  </div>
                 </li>
               </ul>
             </div>
