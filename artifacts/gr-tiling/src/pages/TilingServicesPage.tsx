@@ -10,7 +10,7 @@ import {
 } from "@/components/ui/accordion";
 import { applyPageSeo } from "@/lib/seo";
 import { BeforeAfterSlider } from "@/components/BeforeAfterSlider";
-import tilingTransformationsImage from "@assets/image_1777553093210.png";
+import { images } from "@/data/images";
 
 type Service = {
   image: string;
@@ -23,8 +23,8 @@ type Service = {
 
 const services: Service[] = [
   {
-    image: "/images/gallery-3.png",
-    alt: "Bathroom tiling Dublin, walk-in shower with dark marble tiles by GR Tiling",
+    image: images.tilingPage.services[0].src,
+    alt: images.tilingPage.services[0].alt,
     title: "Bathroom Tiling",
     description:
       "Clean bathroom tiling for walls, floors, showers, and wet areas, finished with care and attention to detail.",
@@ -37,8 +37,8 @@ const services: Service[] = [
     imageLeft: true,
   },
   {
-    image: "/images/gallery-2.png",
-    alt: "Wall and floor tiling Dublin, herringbone floor pattern by GR Tiling",
+    image: images.tilingPage.services[1].src,
+    alt: images.tilingPage.services[1].alt,
     title: "Floor & Wall Tiling",
     description: (
       <>
@@ -58,8 +58,8 @@ const services: Service[] = [
     imageLeft: false,
   },
   {
-    image: "/images/gallery-4.png",
-    alt: "Tile repairs and finishing Dublin, neat grout work by GR Tiling",
+    image: images.tilingPage.services[2].src,
+    alt: images.tilingPage.services[2].alt,
     title: "Tile Repairs & Finishing",
     description:
       "Careful tile repairs, replacements, grout work, and finishing touches to make the space look clean again.",
@@ -110,13 +110,6 @@ const faqs: Faq[] = [
   },
 ];
 
-const galleryImages = [
-  { num: 6, alt: "Large format rectified tiles with fine grout lines, precision tiling Dublin" },
-  { num: 2, alt: "Herringbone floor tiling in warm beige, professional tile installation Dublin" },
-  { num: 4, alt: "Wall and floor tiling, neat finishes by a tiler in Dublin" },
-  { num: 3, alt: "Walk-in shower with dark marble tiles, bathroom tiling Dublin" },
-  { num: 1, alt: "Clean bathroom tiling with sharp edges, GR Tiling Dublin" },
-];
 
 const processSteps = [
   { icon: <MessageCircle className="w-10 h-10" />, title: "Tell Us What You Need", text: "Send details about the area, tile type, and the work needed." },
@@ -170,8 +163,8 @@ export default function TilingServicesPage({ openQuote }: { openQuote: () => voi
           <div className="relative max-w-6xl mx-auto">
             <div className="aspect-[16/10] sm:aspect-[16/9] lg:aspect-[21/9] rounded-2xl overflow-hidden shadow-2xl relative z-10">
               <img
-                src={tilingTransformationsImage}
-                alt="Real tiling transformations showing before and after bathroom work"
+                src={images.tilingPage.hero.src}
+                alt={images.tilingPage.hero.alt}
                 className="w-full h-full object-cover object-center"
               />
             </div>
@@ -193,10 +186,10 @@ export default function TilingServicesPage({ openQuote }: { openQuote: () => voi
           </div>
           {/* Replace with real before/after project images */}
           <BeforeAfterSlider
-            beforeSrc="/images/gallery-4.png"
-            beforeAlt="Tiling project before completion by GR Tiling Dublin"
-            afterSrc="/images/gallery-3.png"
-            afterAlt="Tiling project after completion by GR Tiling Dublin"
+            beforeSrc={images.tilingPage.before.src}
+            beforeAlt={images.tilingPage.before.alt}
+            afterSrc={images.tilingPage.after.src}
+            afterAlt={images.tilingPage.after.alt}
           />
           <p className="text-center text-sm text-muted-foreground mt-4">
             Drag the slider to compare before and after.
@@ -302,20 +295,20 @@ export default function TilingServicesPage({ openQuote }: { openQuote: () => voi
             </p>
           </div>
           <div className="hidden md:flex h-[500px] w-full gap-4">
-            {galleryImages.map(({ num, alt }) => (
+            {images.tilingPage.gallery.map(({ src, alt }) => (
               <div
-                key={num}
+                key={src}
                 className="relative rounded-2xl overflow-hidden flex-1 hover:flex-[3] transition-all duration-500 ease-in-out cursor-pointer group"
               >
-                <img src={`/images/gallery-${num}.png`} alt={alt} className="absolute inset-0 w-full h-full object-cover" />
+                <img src={src} alt={alt} className="absolute inset-0 w-full h-full object-cover" />
                 <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-500"></div>
               </div>
             ))}
           </div>
           <div className="md:hidden grid grid-cols-2 gap-4">
-            {galleryImages.slice(0, 4).map(({ num, alt }) => (
-              <div key={num} className="aspect-square rounded-2xl overflow-hidden">
-                <img src={`/images/gallery-${num}.png`} alt={alt} className="w-full h-full object-cover" />
+            {images.tilingPage.gallery.slice(0, 4).map(({ src, alt }) => (
+              <div key={src} className="aspect-square rounded-2xl overflow-hidden">
+                <img src={src} alt={alt} className="w-full h-full object-cover" />
               </div>
             ))}
           </div>

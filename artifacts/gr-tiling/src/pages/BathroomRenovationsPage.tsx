@@ -10,6 +10,7 @@ import {
 } from "@/components/ui/accordion";
 import { applyPageSeo } from "@/lib/seo";
 import { BeforeAfterSlider } from "@/components/BeforeAfterSlider";
+import { images } from "@/data/images";
 
 type Service = {
   image: string;
@@ -22,8 +23,8 @@ type Service = {
 
 const services: Service[] = [
   {
-    image: "/images/gallery-1.png",
-    alt: "Full bathroom renovation in Dublin, complete transformation by GR Tiling & Bathroom Renovations",
+    image: images.bathroomPage.services[0].src,
+    alt: images.bathroomPage.services[0].alt,
     title: "Full Bathroom Renovations",
     description:
       "Complete bathroom renovation from start to finish, handled by one reliable team. We manage the full project so you don't have to coordinate multiple trades.",
@@ -36,8 +37,8 @@ const services: Service[] = [
     imageLeft: true,
   },
   {
-    image: "/images/gallery-3.png",
-    alt: "Bathroom layout upgrade and modern fixture installation Dublin, GR Tiling",
+    image: images.bathroomPage.services[1].src,
+    alt: images.bathroomPage.services[1].alt,
     title: "Bathroom Layout & Upgrades",
     description:
       "Smarter bathroom layouts that improve space, flow, and usability. Modernise fixtures and upgrade finishes without committing to a full gut renovation.",
@@ -50,8 +51,8 @@ const services: Service[] = [
     imageLeft: false,
   },
   {
-    image: "/images/gallery-4.png",
-    alt: "Professional floor and wall tiling Dublin, wet rooms and feature walls by GR Tiling",
+    image: images.bathroomPage.services[2].src,
+    alt: images.bathroomPage.services[2].alt,
     title: "Tiling & Finishing",
     description: (
       <>
@@ -109,13 +110,6 @@ const faqs: Faq[] = [
   { q: "Can you handle just the tiling, not the full renovation?", a: "Yes. We do standalone tiling work as well as full bathroom renovations. Just let us know what you need and we'll quote accordingly." },
 ];
 
-const galleryImages = [
-  { num: 1, alt: "Modern bathroom renovation with white ceramic tiles and floating vanity, Dublin" },
-  { num: 2, alt: "Herringbone floor tiling in warm beige, professional tiling Dublin" },
-  { num: 3, alt: "Walk-in shower with dark marble tiles, bathroom renovation Dublin" },
-  { num: 5, alt: "Luxury freestanding bath in renovated bathroom, GR Tiling Dublin" },
-  { num: 6, alt: "Large format rectified tiles with fine grout lines, precision tiling Dublin" },
-];
 
 const processSteps = [
   { icon: <MessageCircle className="w-10 h-10" />, title: "Tell Us What You Need", text: "Send a few details about your bathroom or renovation idea." },
@@ -169,8 +163,8 @@ export default function BathroomRenovationsPage({ openQuote }: { openQuote: () =
           <div className="relative max-w-6xl mx-auto">
             <div className="aspect-[16/10] sm:aspect-[16/9] lg:aspect-[21/9] rounded-2xl overflow-hidden shadow-2xl relative z-10">
               <img
-                src="/images/hero-bathroom-2.png"
-                alt="Bathroom renovation in Dublin, modern bathroom with large format tiles and clean finish"
+                src={images.bathroomPage.hero.src}
+                alt={images.bathroomPage.hero.alt}
                 className="w-full h-full object-cover object-center"
               />
             </div>
@@ -192,10 +186,10 @@ export default function BathroomRenovationsPage({ openQuote }: { openQuote: () =
           </div>
           {/* Replace with real before/after project images */}
           <BeforeAfterSlider
-            beforeSrc="/images/gallery-2.png"
-            beforeAlt="Bathroom before renovation by GR Tiling Dublin"
-            afterSrc="/images/gallery-1.png"
-            afterAlt="Bathroom after renovation by GR Tiling Dublin"
+            beforeSrc={images.bathroomPage.before.src}
+            beforeAlt={images.bathroomPage.before.alt}
+            afterSrc={images.bathroomPage.after.src}
+            afterAlt={images.bathroomPage.after.alt}
           />
           <p className="text-center text-sm text-muted-foreground mt-4">
             Drag the slider to compare before and after.
@@ -301,20 +295,20 @@ export default function BathroomRenovationsPage({ openQuote }: { openQuote: () =
             </p>
           </div>
           <div className="hidden md:flex h-[500px] w-full gap-4">
-            {galleryImages.map(({ num, alt }) => (
+            {images.bathroomPage.gallery.map(({ src, alt }) => (
               <div
-                key={num}
+                key={src}
                 className="relative rounded-2xl overflow-hidden flex-1 hover:flex-[3] transition-all duration-500 ease-in-out cursor-pointer group"
               >
-                <img src={`/images/gallery-${num}.png`} alt={alt} className="absolute inset-0 w-full h-full object-cover" />
+                <img src={src} alt={alt} className="absolute inset-0 w-full h-full object-cover" />
                 <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-500"></div>
               </div>
             ))}
           </div>
           <div className="md:hidden grid grid-cols-2 gap-4">
-            {galleryImages.slice(0, 4).map(({ num, alt }) => (
-              <div key={num} className="aspect-square rounded-2xl overflow-hidden">
-                <img src={`/images/gallery-${num}.png`} alt={alt} className="w-full h-full object-cover" />
+            {images.bathroomPage.gallery.slice(0, 4).map(({ src, alt }) => (
+              <div key={src} className="aspect-square rounded-2xl overflow-hidden">
+                <img src={src} alt={alt} className="w-full h-full object-cover" />
               </div>
             ))}
           </div>

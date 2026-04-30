@@ -1,0 +1,120 @@
+Use the image inventory you just created.
+
+Now implement a centralized image system.
+
+-------------------------------------
+
+1. CREATE FILE
+
+Create:
+src/data/images.js
+
+-------------------------------------
+
+2. STRUCTURE
+
+Add ALL images from the inventory into this file.
+
+Use this exact structure:
+
+export const images = {
+  homepage: {
+    hero: {
+      src: "/images/homepage-hero.webp",
+      alt: "Modern bathroom renovation in Dublin with clean tile finish"
+    },
+    servicesBathroom: {
+      src: "/images/homepage-bathroom-service.webp",
+      alt: "Bathroom renovation service in Dublin"
+    },
+    servicesTiling: {
+      src: "/images/homepage-tiling-service.webp",
+      alt: "Tiling services in Dublin bathroom"
+    },
+    gallery: [
+      {
+        src: "/images/gallery-1.webp",
+        alt: "Bathroom renovation project in Dublin"
+      }
+    ]
+  },
+
+  bathroomPage: {
+    hero: {
+      src: "/images/bathroom-renovations-hero.webp",
+      alt: "Bathroom renovation in Dublin with modern design"
+    },
+    before: {
+      src: "/images/bathroom-before.webp",
+      alt: "Bathroom before renovation"
+    },
+    after: {
+      src: "/images/bathroom-after.webp",
+      alt: "Bathroom after renovation with modern finish"
+    }
+  },
+
+  tilingPage: {
+    hero: {
+      src: "/images/tiling-services-hero.webp",
+      alt: "Professional tiling work in Dublin"
+    }
+  },
+
+  about: {
+    portrait: {
+      src: "/images/about-portrait.webp",
+      alt: "GR Tiling and Bathroom Renovations owner"
+    }
+  }
+}
+
+-------------------------------------
+
+3. UPDATE ALL COMPONENTS
+
+Replace EVERY image usage across the entire site.
+
+No hardcoded image paths allowed anymore.
+
+Instead of:
+<img src="/images/something.webp" />
+
+Use:
+import { images } from "@/data/images"
+
+Then reference:
+images.homepage.hero.src
+images.homepage.hero.alt
+
+-------------------------------------
+
+4. REMOVE OLD REFERENCES
+
+- Remove all hardcoded image paths
+- Remove any external image URLs
+- Ensure EVERYTHING uses images.js
+
+-------------------------------------
+
+5. KEEP SITE STATIC
+
+IMPORTANT:
+- Do NOT add CMS
+- Do NOT add backend
+- Do NOT add API
+- Do NOT add upload system
+
+Images must stay in:
+public/images/
+
+-------------------------------------
+
+6. DO NOT BREAK ANYTHING
+
+- Do not change layout
+- Do not change sizes
+- Do not change styling
+- Do not change responsiveness
+
+Only centralize image references

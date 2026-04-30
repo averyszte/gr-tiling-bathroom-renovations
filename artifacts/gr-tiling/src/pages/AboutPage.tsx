@@ -3,6 +3,7 @@ import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Star, Clock, BadgeEuro, Sparkles, Home, ChevronRight } from "lucide-react";
 import { applyPageSeo } from "@/lib/seo";
+import { images } from "@/data/images";
 
 const principles = [
   {
@@ -67,8 +68,8 @@ export default function AboutPage({ openQuote }: { openQuote: () => void }) {
           <div className="rounded-2xl overflow-hidden shadow-lg aspect-[4/5] bg-secondary/30">
             {/* Placeholder image, swap for a real portrait later */}
             <img
-              src="/images/banner-3.png"
-              alt="Local Dublin tiler and bathroom renovation specialist on site"
+              src={images.about.portrait.src}
+              alt={images.about.portrait.alt}
               className="w-full h-full object-cover"
             />
           </div>

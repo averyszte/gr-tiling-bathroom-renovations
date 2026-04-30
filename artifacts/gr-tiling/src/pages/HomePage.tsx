@@ -8,6 +8,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import type { ReactNode } from "react";
+import { images } from "@/data/images";
 
 const reviews = [
   { name: "Raimonda Brooks", text: "Gerry and the team transformed our bathroom beyond expectations. On time, tidy, and the finish is immaculate." },
@@ -65,8 +66,8 @@ export default function HomePage({ openQuote }: { openQuote: () => void }) {
           <div className="relative lg:-mt-4">
             <div className="aspect-[4/3] lg:aspect-[4/4.35] rounded-2xl overflow-hidden shadow-2xl relative z-10">
               <img
-                src="/images/hero-bathroom-1.png"
-                alt="Modern bathroom renovation in Dublin with freestanding bath and marble tiling"
+                src={images.homepage.hero.src}
+                alt={images.homepage.hero.alt}
                 className="w-full h-full object-cover object-center"
               />
             </div>
@@ -253,8 +254,8 @@ export default function HomePage({ openQuote }: { openQuote: () => void }) {
               <div className="bg-card rounded-2xl overflow-hidden shadow-lg border h-full transition-transform duration-300 hover:shadow-xl">
                 <div className="aspect-[4/3] overflow-hidden">
                   <img
-                    src="/images/gallery-5.png"
-                    alt="Complete bathroom renovation by GR Tiling, modern finish with premium tiles and fittings, Dublin"
+                    src={images.homepage.servicesBathroom.src}
+                    alt={images.homepage.servicesBathroom.alt}
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                 </div>
@@ -280,8 +281,8 @@ export default function HomePage({ openQuote }: { openQuote: () => void }) {
               <div className="bg-card rounded-2xl overflow-hidden shadow-md border flex flex-col transition-transform duration-300 hover:shadow-lg">
                 <div className="aspect-[16/10] overflow-hidden">
                   <img
-                    src="/images/gallery-2.png"
-                    alt="Professional floor and wall tiling service in Dublin, herringbone pattern by GR Tiling"
+                    src={images.homepage.servicesTiling.src}
+                    alt={images.homepage.servicesTiling.alt}
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                 </div>
@@ -311,38 +312,26 @@ export default function HomePage({ openQuote }: { openQuote: () => void }) {
             <div className="w-24 h-1 bg-primary rounded-full"></div>
           </div>
 
-          {(() => {
-            const galleryImages = [
-              { num: 1, alt: "Freshly renovated bathroom with white ceramic tiles and modern vanity unit, Dublin" },
-              { num: 2, alt: "Herringbone floor tile pattern in warm beige limestone, professional bathroom tiling Dublin" },
-              { num: 3, alt: "Modern walk-in shower with large format tiles and black fixtures, Dublin bathroom" },
-              { num: 4, alt: "Luxury bathroom with floating vanity and wall hung toilet, renovated in Dublin" },
-              { num: 5, alt: "Beautiful bathtub area with feature wall tiling and clean modern finish, Dublin" },
-              { num: 6, alt: "Close-up of large format rectified tiles with fine grout lines, precise tiling workmanship Dublin" },
-            ];
-            return (
-              <>
-                <div className="hidden md:flex h-[500px] w-full gap-4">
-                  {galleryImages.map(({ num, alt }) => (
-                    <div
-                      key={num}
-                      className="relative rounded-2xl overflow-hidden shadow-lg flex-1 hover:flex-[3] transition-all duration-500 ease-in-out cursor-pointer group"
-                    >
-                      <img src={`/images/gallery-${num}.png`} alt={alt} className="absolute inset-0 w-full h-full object-cover" />
-                      <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-500"></div>
-                    </div>
-                  ))}
+          <>
+            <div className="hidden md:flex h-[500px] w-full gap-4">
+              {images.homepage.gallery.map(({ src, alt }) => (
+                <div
+                  key={src}
+                  className="relative rounded-2xl overflow-hidden shadow-lg flex-1 hover:flex-[3] transition-all duration-500 ease-in-out cursor-pointer group"
+                >
+                  <img src={src} alt={alt} className="absolute inset-0 w-full h-full object-cover" />
+                  <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-500"></div>
                 </div>
-                <div className="md:hidden grid grid-cols-2 gap-4">
-                  {galleryImages.map(({ num, alt }) => (
-                    <div key={num} className="aspect-square rounded-2xl overflow-hidden shadow-lg">
-                      <img src={`/images/gallery-${num}.png`} alt={alt} className="w-full h-full object-cover" />
-                    </div>
-                  ))}
+              ))}
+            </div>
+            <div className="md:hidden grid grid-cols-2 gap-4">
+              {images.homepage.gallery.map(({ src, alt }) => (
+                <div key={src} className="aspect-square rounded-2xl overflow-hidden shadow-lg">
+                  <img src={src} alt={alt} className="w-full h-full object-cover" />
                 </div>
-              </>
-            );
-          })()}
+              ))}
+            </div>
+          </>
         </div>
       </section>
 
