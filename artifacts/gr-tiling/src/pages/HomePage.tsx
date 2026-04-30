@@ -261,7 +261,7 @@ export default function HomePage({ openQuote }: { openQuote: () => void }) {
                 <div className="p-8 md:p-10">
                   <h3 className="font-serif text-3xl mb-4">Bathroom Renovations</h3>
                   <p className="text-muted-foreground text-lg mb-6 leading-relaxed">
-                    Complete bathroom transformations, from design and demolition to fitting, tiling, plumbing, and final finish. We handle the whole project so you don't have to.
+                    We handle your full bathroom renovation from start to finish, so you don’t have to deal with multiple trades, delays or unexpected costs.
                   </p>
                   <div className="flex flex-wrap gap-3">
                     <Button size="lg" className="text-base h-14 px-8" onClick={openQuote}>
