@@ -112,9 +112,9 @@ const faqs: Faq[] = [
 
 
 const processSteps = [
-  { icon: <MessageCircle className="w-10 h-10" />, title: "Tell Us What You Need", text: "Send details about the area, tile type, and the work needed." },
-  { icon: <FileText className="w-10 h-10" />, title: "Get a Clear Quote", text: "You'll get a clear price and timeline before any work starts." },
-  { icon: <Wrench className="w-10 h-10" />, title: "We Tile It Properly", text: "The work is completed cleanly, carefully, and with attention to detail." },
+  { icon: <MessageCircle className="w-10 h-10" />, title: "Plan", text: "Tell us what you need and we'll go through your space, layout, and tile options to make sure everything is clear before we start." },
+  { icon: <FileText className="w-10 h-10" />, title: "Design", text: "We help you choose the right tiles, layout, and finish so you get a clean, consistent look that works for your space." },
+  { icon: <Wrench className="w-10 h-10" />, title: "Build", text: "We install everything with clean, precise workmanship, keeping the area tidy and delivering a sharp, high-quality finish." },
 ];
 
 const PAGE_TITLE = "Tiling Services Dublin | GR Tiling & Bathroom Renovations";
@@ -319,10 +319,10 @@ export default function TilingServicesPage({ openQuote }: { openQuote: () => voi
       <section className="py-[60px] md:py-24 bg-secondary/30">
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="text-center mb-8 md:mb-16">
-            <h2 className="font-serif text-3xl md:text-5xl text-foreground mb-6">How Your Tiling Job Works</h2>
+            <h2 className="font-serif text-3xl md:text-5xl text-foreground mb-6">Your Tiling Project in 3 Simple Steps</h2>
             <div className="w-24 h-1 bg-primary mx-auto rounded-full mb-6"></div>
             <p className="text-lg text-muted-foreground max-w-xl mx-auto">
-              A simple, honest process for tiling work in local Dublin homes, from first message to a finished room.
+              Clean, precise tiling done right from the start. No uneven finishes, no mess, no hassle.
             </p>
           </div>
           <div className="relative flex flex-col md:flex-row md:items-start md:justify-between gap-14 md:gap-0">
@@ -339,6 +339,11 @@ export default function TilingServicesPage({ openQuote }: { openQuote: () => voi
                 <p className="text-muted-foreground leading-relaxed max-w-[220px]">{item.text}</p>
               </div>
             ))}
+          </div>
+          <div className="flex justify-center mt-16">
+            <Button size="lg" className="text-base h-14 px-8" onClick={openQuote}>
+              Get a Free Quote
+            </Button>
           </div>
         </div>
       </section>
