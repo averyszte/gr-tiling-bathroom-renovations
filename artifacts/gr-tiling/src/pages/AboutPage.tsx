@@ -30,16 +30,16 @@ const principles = [
 
 const reviews = [
   {
-    name: "Raimonda Brooks",
-    text: "Gerry and the team transformed our bathroom beyond expectations. On time, tidy, and the finish is immaculate.",
+    name: "Jessicaelizabeth Mooney",
+    text: "Excellent service. Had my bathroom done and I am absolutely delighted with the results. Highly recommend.",
   },
   {
-    name: "Dionne Haslam",
-    text: "Excellent communication from start to finish. The tiling is perfect and they left the house spotless every day.",
+    name: "Raimonda Brooks",
+    text: "Gerry is a true legend, super nice guy. Came in and got stuck into work straight away and had it done in no time. Left the place as clean as he found it.\n\nSuper honest about pricing too. I actually ended up paying less than expected. Overall 100% pleased with the result.",
   },
   {
     name: "Alan L",
-    text: "A genuinely professional service. Honest quote, fast turnaround, and top-quality workmanship throughout.",
+    text: "Used GR Tiling in my own house. Bathroom done in 3 days. Also did flooring in hallway and kitchen for my mother-in-law.\n\nSuperb job, over the moon. Highly recommend for fast, professional, friendly service.",
   },
 ];
 
@@ -174,7 +174,7 @@ export default function AboutPage({ openQuote }: { openQuote: () => void }) {
                     <Star key={j} className="fill-yellow-400 text-yellow-400 w-4 h-4" />
                   ))}
                 </div>
-                <p className="text-muted-foreground mb-6 leading-relaxed italic">
+                <p className="text-muted-foreground mb-6 leading-relaxed italic whitespace-pre-line">
                   "{review.text}"
                 </p>
                 <p className="font-medium text-foreground">{review.name}</p>

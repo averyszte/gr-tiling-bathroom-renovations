@@ -1,0 +1,63 @@
+Update all review/testimonial sections across the entire site.
+
+Goal:
+Use only the real Google review copy provided below.
+Do not use fake, rewritten, or generic testimonials.
+
+Pages/sections to check:
+- Homepage reviews section
+- Bathroom Renovations page reviews section
+- Tiling Services page reviews section
+- About page reviews section
+- Any other section showing reviews/testimonials
+
+Use these real reviews:
+
+1. Raimonda Brooks
+“Gerry is a true legend, super nice guy. Came in and got stuck into work straight away and had it done in no time. Left the place as clean as he found it.
+
+Super honest about pricing too. I actually ended up paying less than expected. Overall 100% pleased with the result.”
+
+2. Dionne Haslam
+“Great service and brilliant result. No disruption or mess left behind. The house was as clean as when Gerry arrived.
+
+Friendly, courteous, and I would recommend him to anyone.”
+
+3. Alan L
+“Used GR Tiling in my own house. Bathroom done in 3 days. Also did flooring in hallway and kitchen for my mother-in-law.
+
+Superb job, over the moon. Highly recommend for fast, professional, friendly service.”
+
+4. Jessicaelizabeth Mooney
+“Excellent service. Had my bathroom done and I am absolutely delighted with the results. Highly recommend.”
+
+5. Billy Kendrick
+“Completed a bathroom and ensuite. Excellent job. Highly recommend.”
+
+Instructions:
+- Alternate the reviews across the site so each review section does not show the exact same set in the same order.
+- Example:
+  Homepage: Raimonda Brooks, Dionne Haslam, Alan L
+  Bathroom page: Alan L, Jessicaelizabeth Mooney, Billy Kendrick
+  Tiling page: Dionne Haslam, Raimonda Brooks, Billy Kendrick
+  About page: Jessicaelizabeth Mooney, Raimonda Brooks, Alan L
+
+Review section rules:
+- Keep the existing review card design.
+- Keep the star ratings.
+- Keep the Google logo icon on each review card.
+- Keep the “See All Google Reviews” button under each review section.
+- Button should link to:
+  https://maps.app.goo.gl/zXMYDcdtwATJcR9AA
+- Button should open in a new tab.
+- Use target="_blank" and rel="noopener noreferrer".
+
+Do not:
+- use em dashes anywhere
+- invent reviews
+- rewrite into marketing copy
+- change layouts
+- change spacing
+- change headings unless necessary
+
+Only update review content and ordering.

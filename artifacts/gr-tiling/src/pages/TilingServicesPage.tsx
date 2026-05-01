@@ -83,9 +83,9 @@ const reasons = [
 ];
 
 const reviews = [
-  { name: "Raimonda Brooks", text: "Gerry's tiling is outstanding. Sharp lines, even spacing, and the grout work is immaculate. Could not be happier with the finish." },
-  { name: "Dionne Haslam", text: "Excellent tiling work in our bathroom. The cuts around the fittings were precise and the place was left spotless every day." },
-  { name: "Alan L", text: "Honest quote, fast turnaround, and top-quality tiling throughout. A really professional, tidy job from start to finish." },
+  { name: "Dionne Haslam", text: "Great service and brilliant result. No disruption or mess left behind. The house was as clean as when Gerry arrived.\n\nFriendly, courteous, and I would recommend him to anyone." },
+  { name: "Raimonda Brooks", text: "Gerry is a true legend, super nice guy. Came in and got stuck into work straight away and had it done in no time. Left the place as clean as he found it.\n\nSuper honest about pricing too. I actually ended up paying less than expected. Overall 100% pleased with the result." },
+  { name: "Billy Kendrick", text: "Completed a bathroom and ensuite. Excellent job. Highly recommend." },
 ];
 
 type Faq = { q: string; a: ReactNode };
@@ -387,7 +387,7 @@ export default function TilingServicesPage({ openQuote }: { openQuote: () => voi
                 <div className="flex gap-1 mb-4">
                   {[1, 2, 3, 4, 5].map((j) => <Star key={j} className="fill-yellow-400 text-yellow-400 w-4 h-4" />)}
                 </div>
-                <p className="text-muted-foreground mb-6 leading-relaxed italic">"{review.text}"</p>
+                <p className="text-muted-foreground mb-6 leading-relaxed italic whitespace-pre-line">"{review.text}"</p>
                 <p className="font-medium text-foreground">{review.name}</p>
                 <div className="absolute bottom-3 right-4 opacity-70">
                   <svg width="18" height="18" viewBox="0 0 533.5 544.3" xmlns="http://www.w3.org/2000/svg">

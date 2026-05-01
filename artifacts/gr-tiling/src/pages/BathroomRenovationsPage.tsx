@@ -83,9 +83,9 @@ const reasons = [
 ];
 
 const reviews = [
-  { name: "Raimonda Brooks", text: "Gerry and the team transformed our bathroom beyond expectations. On time, tidy, and the finish is immaculate." },
-  { name: "Dionne Haslam", text: "Excellent communication from start to finish. The tiling is perfect and they left the house spotless every day." },
-  { name: "Alan L", text: "A genuinely professional service. Honest quote, fast turnaround, and top-quality workmanship throughout." },
+  { name: "Alan L", text: "Used GR Tiling in my own house. Bathroom done in 3 days. Also did flooring in hallway and kitchen for my mother-in-law.\n\nSuperb job, over the moon. Highly recommend for fast, professional, friendly service." },
+  { name: "Jessicaelizabeth Mooney", text: "Excellent service. Had my bathroom done and I am absolutely delighted with the results. Highly recommend." },
+  { name: "Billy Kendrick", text: "Completed a bathroom and ensuite. Excellent job. Highly recommend." },
 ];
 
 type Faq = { q: string; a: ReactNode };
@@ -387,7 +387,7 @@ export default function BathroomRenovationsPage({ openQuote }: { openQuote: () =
                 <div className="flex gap-1 mb-4">
                   {[1, 2, 3, 4, 5].map((j) => <Star key={j} className="fill-yellow-400 text-yellow-400 w-4 h-4" />)}
                 </div>
-                <p className="text-muted-foreground mb-6 leading-relaxed italic">"{review.text}"</p>
+                <p className="text-muted-foreground mb-6 leading-relaxed italic whitespace-pre-line">"{review.text}"</p>
                 <p className="font-medium text-foreground">{review.name}</p>
                 <div className="absolute bottom-3 right-4 opacity-70">
                   <svg width="18" height="18" viewBox="0 0 533.5 544.3" xmlns="http://www.w3.org/2000/svg">

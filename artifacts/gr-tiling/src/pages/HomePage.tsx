@@ -11,9 +11,9 @@ import type { ReactNode } from "react";
 import { images } from "@/data/images";
 
 const reviews = [
-  { name: "Raimonda Brooks", text: "Gerry and the team transformed our bathroom beyond expectations. On time, tidy, and the finish is immaculate." },
-  { name: "Dionne Haslam", text: "Excellent communication from start to finish. The tiling is perfect and they left the house spotless every day." },
-  { name: "Alan L", text: "A genuinely professional service. Honest quote, fast turnaround, and top-quality workmanship throughout." },
+  { name: "Raimonda Brooks", text: "Gerry is a true legend, super nice guy. Came in and got stuck into work straight away and had it done in no time. Left the place as clean as he found it.\n\nSuper honest about pricing too. I actually ended up paying less than expected. Overall 100% pleased with the result." },
+  { name: "Dionne Haslam", text: "Great service and brilliant result. No disruption or mess left behind. The house was as clean as when Gerry arrived.\n\nFriendly, courteous, and I would recommend him to anyone." },
+  { name: "Alan L", text: "Used GR Tiling in my own house. Bathroom done in 3 days. Also did flooring in hallway and kitchen for my mother-in-law.\n\nSuperb job, over the moon. Highly recommend for fast, professional, friendly service." },
 ];
 
 type Faq = { q: string; a: ReactNode };
@@ -355,7 +355,7 @@ export default function HomePage({ openQuote }: { openQuote: () => void }) {
                     <Star key={j} className="fill-yellow-400 text-yellow-400 w-4 h-4" />
                   ))}
                 </div>
-                <p className="text-muted-foreground mb-6 leading-relaxed italic">"{review.text}"</p>
+                <p className="text-muted-foreground mb-6 leading-relaxed italic whitespace-pre-line">"{review.text}"</p>
                 <p className="font-medium text-foreground">{review.name}</p>
                 <div className="absolute bottom-3 right-4 opacity-70">
                   <svg width="18" height="18" viewBox="0 0 533.5 544.3" xmlns="http://www.w3.org/2000/svg">
