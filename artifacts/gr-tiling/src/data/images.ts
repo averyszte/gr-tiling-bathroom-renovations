@@ -108,37 +108,37 @@ export const images = {
     },
     services: [
       {
-        src: "/images/gallery-3.png",
+        src: "/images/service-tiling-1.webp",
         alt: "Bathroom tiling Dublin, walk-in shower with dark marble tiles by GR Tiling",
       },
       {
-        src: "/images/gallery-2.png",
+        src: "/images/service-tiling-2.webp",
         alt: "Wall and floor tiling Dublin, herringbone floor pattern by GR Tiling",
       },
       {
-        src: "/images/gallery-4.png",
+        src: "/images/service-tiling-3.webp",
         alt: "Tile repairs and finishing Dublin, neat grout work by GR Tiling",
       },
     ],
     gallery: [
       {
-        src: "/images/gallery-6.png",
+        src: "/images/tiling-gallery-kitchen-1.webp",
         alt: "Large format rectified tiles with fine grout lines, precision tiling Dublin",
       },
       {
-        src: "/images/gallery-2.png",
+        src: "/images/tiling-gallery-floor-2.webp",
         alt: "Herringbone floor tiling in warm beige, professional tile installation Dublin",
       },
       {
-        src: "/images/gallery-4.png",
+        src: "/images/tiling-gallery-shower-1.webp",
         alt: "Wall and floor tiling, neat finishes by a tiler in Dublin",
       },
       {
-        src: "/images/gallery-3.png",
+        src: "/images/tiling-gallery-floor-1.webp",
         alt: "Walk-in shower with dark marble tiles, bathroom tiling Dublin",
       },
       {
-        src: "/images/gallery-1.png",
+        src: "/images/tiling-gallery-bathroom-1.webp",
         alt: "Clean bathroom tiling with sharp edges, GR Tiling Dublin",
       },
     ],
@@ -146,7 +146,7 @@ export const images = {
 
   about: {
     portrait: {
-      src: "/images/banner-3.png",
+      src: "/images/hero-about-us.webp",
       alt: "Local Dublin tiler and bathroom renovation specialist on site",
     },
   },
