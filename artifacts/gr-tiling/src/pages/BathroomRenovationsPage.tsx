@@ -9,8 +9,12 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { applyPageSeo } from "@/lib/seo";
-import { BeforeAfterSlider } from "@/components/BeforeAfterSlider";
 import { images } from "@/data/images";
+import { BeforeAfterSlider } from "@/components/BeforeAfterSlider";
+import bathroomTransformation1Before from "@assets/image_1777744321787.png";
+import bathroomTransformation1After from "@assets/image_1777744321787.png";
+import bathroomTransformation2Before from "@assets/image_1777744321787.png";
+import bathroomTransformation2After from "@assets/image_1777744321787.png";
 
 type Service = {
   image: string;
@@ -175,25 +179,33 @@ export default function BathroomRenovationsPage({ openQuote }: { openQuote: () =
 
       {/* Before / After Comparison */}
       <section className="py-[60px] lg:py-24 bg-background">
-        <div className="container mx-auto px-4 max-w-5xl">
+        <div className="container mx-auto px-4 max-w-6xl">
           <div className="text-center mb-10 lg:mb-12">
             <h2 className="font-serif text-3xl md:text-5xl text-foreground mb-4">
               Real Bathroom Transformations
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              See the difference between before and after, clean, modern finishes with attention to detail.
+              See how outdated bathrooms are turned into clean, finished spaces with careful planning, tidy work, and proper attention to detail.
             </p>
           </div>
-          {/* Replace with real before/after project images */}
-          <BeforeAfterSlider
-            beforeSrc={images.bathroomPage.before.src}
-            beforeAlt={images.bathroomPage.before.alt}
-            afterSrc={images.bathroomPage.after.src}
-            afterAlt={images.bathroomPage.after.alt}
-          />
-          <p className="text-center text-sm text-muted-foreground mt-4">
-            Drag the slider to compare before and after.
-          </p>
+          <div className="grid md:grid-cols-2 gap-8 lg:gap-10">
+            <BeforeAfterSlider
+              beforeSrc={bathroomTransformation1Before}
+              beforeAlt="Bathroom transformation 1 before renovation in Dublin"
+              afterSrc={bathroomTransformation1After}
+              afterAlt="Bathroom transformation 1 after renovation in Dublin"
+              aspectClassName="aspect-[3/4]"
+              className="shadow-xl"
+            />
+            <BeforeAfterSlider
+              beforeSrc={bathroomTransformation2Before}
+              beforeAlt="Bathroom transformation 2 before renovation in Dublin"
+              afterSrc={bathroomTransformation2After}
+              afterAlt="Bathroom transformation 2 after renovation in Dublin"
+              aspectClassName="aspect-[3/4]"
+              className="shadow-xl"
+            />
+          </div>
         </div>
       </section>
 

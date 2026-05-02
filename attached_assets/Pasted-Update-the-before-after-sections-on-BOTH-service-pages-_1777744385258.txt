@@ -1,0 +1,103 @@
+Update the before/after sections on BOTH service pages:
+
+/services/bathroom-renovations
+/services/tiling-services
+
+The business has portrait-mode before and after photos, so do NOT use one wide comparison slider.
+
+Replace the current single before/after slider on each page with TWO portrait before/after comparison sliders.
+
+-------------------------------------
+GLOBAL LAYOUT RULES
+-------------------------------------
+
+Desktop:
+- Two portrait before/after sliders side by side
+- Each slider should use a 3:4 portrait aspect ratio
+- Each slider should look like a premium card
+- Rounded corners
+- Soft shadow
+- Clean spacing
+- Match the existing site style
+
+Mobile:
+- Stack the two sliders vertically
+- Keep portrait ratio
+- Drag handle must work on touch screens
+- No horizontal overflow
+
+Slider requirements:
+- Before and after images must align perfectly
+- Use object-fit: cover
+- Do not stretch images
+- Add clear labels: Before and After
+- Keep draggable handle visible and smooth
+- Touch dragging must work on mobile
+
+-------------------------------------
+BATHROOM RENOVATIONS PAGE
+-------------------------------------
+
+Section heading:
+Real Bathroom Transformations
+
+Section subheading:
+See how outdated bathrooms are turned into clean, finished spaces with careful planning, tidy work, and proper attention to detail.
+
+Image paths:
+
+Transformation 1:
+Before: /images/bathroom-transformation-1-before.webp
+After: /images/bathroom-transformation-1-after.webp
+
+Transformation 2:
+Before: /images/bathroom-transformation-2-before.webp
+After: /images/bathroom-transformation-2-after.webp
+
+Alt text:
+Bathroom transformation 1 before renovation in Dublin
+Bathroom transformation 1 after renovation in Dublin
+Bathroom transformation 2 before renovation in Dublin
+Bathroom transformation 2 after renovation in Dublin
+
+-------------------------------------
+TILING SERVICES PAGE
+-------------------------------------
+
+Section heading:
+Real Tiling Transformations
+
+Section subheading:
+See how worn or unfinished spaces are upgraded with clean, precise tiling and a sharp final finish.
+
+Image paths:
+
+Transformation 1:
+Before: /images/tiling-transformation-1-before.webp
+After: /images/tiling-transformation-1-after.webp
+
+Transformation 2:
+Before: /images/tiling-transformation-2-before.webp
+After: /images/tiling-transformation-2-after.webp
+
+Alt text:
+Tiling transformation 1 before work in Dublin
+Tiling transformation 1 after tiling work in Dublin
+Tiling transformation 2 before work in Dublin
+Tiling transformation 2 after tiling work in Dublin
+
+-------------------------------------
+IMPORTANT
+-------------------------------------
+
+Do not change:
+- hero sections
+- service cards
+- reviews
+- FAQ
+- CTA sections
+- homepage
+- about page
+- contact page
+
+Only update the before/after sections on the two service pages.

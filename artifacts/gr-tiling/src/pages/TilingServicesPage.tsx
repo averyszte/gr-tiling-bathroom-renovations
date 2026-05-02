@@ -9,8 +9,12 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { applyPageSeo } from "@/lib/seo";
-import { BeforeAfterSlider } from "@/components/BeforeAfterSlider";
 import { images } from "@/data/images";
+import { BeforeAfterSlider } from "@/components/BeforeAfterSlider";
+import tilingTransformation1Before from "@assets/image_1777744333463.png";
+import tilingTransformation1After from "@assets/image_1777744333463.png";
+import tilingTransformation2Before from "@assets/image_1777744333463.png";
+import tilingTransformation2After from "@assets/image_1777744333463.png";
 
 type Service = {
   image: string;
@@ -175,25 +179,33 @@ export default function TilingServicesPage({ openQuote }: { openQuote: () => voi
 
       {/* Before / After Comparison */}
       <section className="py-[60px] lg:py-24 bg-background">
-        <div className="container mx-auto px-4 max-w-5xl">
+        <div className="container mx-auto px-4 max-w-6xl">
           <div className="text-center mb-10 lg:mb-12">
             <h2 className="font-serif text-3xl md:text-5xl text-foreground mb-4">
               Real Tiling Transformations
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              See the difference between before and after, clean, modern finishes with attention to detail.
+              See how worn or unfinished spaces are upgraded with clean, precise tiling and a sharp final finish.
             </p>
           </div>
-          {/* Replace with real before/after project images */}
-          <BeforeAfterSlider
-            beforeSrc={images.tilingPage.before.src}
-            beforeAlt={images.tilingPage.before.alt}
-            afterSrc={images.tilingPage.after.src}
-            afterAlt={images.tilingPage.after.alt}
-          />
-          <p className="text-center text-sm text-muted-foreground mt-4">
-            Drag the slider to compare before and after.
-          </p>
+          <div className="grid md:grid-cols-2 gap-8 lg:gap-10">
+            <BeforeAfterSlider
+              beforeSrc={tilingTransformation1Before}
+              beforeAlt="Tiling transformation 1 before work in Dublin"
+              afterSrc={tilingTransformation1After}
+              afterAlt="Tiling transformation 1 after tiling work in Dublin"
+              aspectClassName="aspect-[3/4]"
+              className="shadow-xl"
+            />
+            <BeforeAfterSlider
+              beforeSrc={tilingTransformation2Before}
+              beforeAlt="Tiling transformation 2 before work in Dublin"
+              afterSrc={tilingTransformation2After}
+              afterAlt="Tiling transformation 2 after tiling work in Dublin"
+              aspectClassName="aspect-[3/4]"
+              className="shadow-xl"
+            />
+          </div>
         </div>
       </section>
 
