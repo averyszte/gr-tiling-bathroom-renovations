@@ -173,6 +173,28 @@ export default function BathroomRenovationsPage({ openQuote }: { openQuote: () =
         </div>
       </section>
 
+      {/* Trust Strip */}
+      <div className="bg-primary text-primary-foreground py-6 border-y border-primary-foreground/10">
+        <div className="container mx-auto px-4 overflow-hidden">
+          <div className="flex flex-wrap justify-center md:justify-between items-center gap-6 md:gap-4 text-sm font-medium tracking-wide">
+            <div className="flex items-center gap-2">
+              <CheckCircle2 className="w-4 h-4 opacity-80" />
+              <span>One Team</span>
+            </div>
+            <div className="hidden md:block w-1 h-1 rounded-full bg-primary-foreground/30"></div>
+            <div className="flex items-center gap-2">
+              <CheckCircle2 className="w-4 h-4 opacity-80" />
+              <span>Fixed Price</span>
+            </div>
+            <div className="hidden md:block w-1 h-1 rounded-full bg-primary-foreground/30"></div>
+            <div className="flex items-center gap-2">
+              <CheckCircle2 className="w-4 h-4 opacity-80" />
+              <span>Clean Finish</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* Before / After Comparison */}
       <section className="py-[60px] lg:py-24 bg-background">
         <div className="container mx-auto px-4 max-w-5xl">
