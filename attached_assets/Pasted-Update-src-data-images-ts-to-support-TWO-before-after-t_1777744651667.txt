@@ -1,0 +1,88 @@
+Update src/data/images.ts to support TWO before/after transformations on both service pages.
+
+Do not change layout or styling yet unless needed to support the new data structure.
+
+Current issue:
+bathroomPage only has one before and one after image.
+tilingPage only has one before and one after image.
+
+Replace that setup with arrays called transformations.
+
+Update images.ts like this:
+
+bathroomPage: {
+  hero: { ... },
+  transformations: [
+    {
+      before: {
+        src: "/images/bathroom-transformation-1-before.webp",
+        alt: "Bathroom transformation 1 before renovation in Dublin"
+      },
+      after: {
+        src: "/images/bathroom-transformation-1-after.webp",
+        alt: "Bathroom transformation 1 after renovation in Dublin"
+      }
+    },
+    {
+      before: {
+        src: "/images/bathroom-transformation-2-before.webp",
+        alt: "Bathroom transformation 2 before renovation in Dublin"
+      },
+      after: {
+        src: "/images/bathroom-transformation-2-after.webp",
+        alt: "Bathroom transformation 2 after renovation in Dublin"
+      }
+    }
+  ],
+  services: [...],
+  gallery: [...]
+}
+
+tilingPage: {
+  hero: { ... },
+  transformations: [
+    {
+      before: {
+        src: "/images/tiling-transformation-1-before.webp",
+        alt: "Tiling transformation 1 before work in Dublin"
+      },
+      after: {
+        src: "/images/tiling-transformation-1-after.webp",
+        alt: "Tiling transformation 1 after tiling work in Dublin"
+      }
+    },
+    {
+      before: {
+        src: "/images/tiling-transformation-2-before.webp",
+        alt: "Tiling transformation 2 before work in Dublin"
+      },
+      after: {
+        src: "/images/tiling-transformation-2-after.webp",
+        alt: "Tiling transformation 2 after tiling work in Dublin"
+      }
+    }
+  ],
+  services: [...],
+  gallery: [...]
+}
+
+Important:
+- Remove or stop using the old single before/after fields if they exist:
+  bathroomPage.before
+  bathroomPage.after
+  tilingPage.before
+  tilingPage.after
+
+- Update any before/after slider components so they read from:
+  images.bathroomPage.transformations
+  images.tilingPage.transformations
+
+- Render two before/after sliders per page using the new array.
+
+- Keep file paths static from /public/images/
+- Do not use @assets imports
+- Do not add backend, CMS, upload system, or dynamic image service
+
+Do not change other image paths.
+Do not change other page sections.
+Only add the new transformation image structure and update the before/after sections to use it.

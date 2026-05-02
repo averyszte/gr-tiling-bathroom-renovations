@@ -11,10 +11,6 @@ import {
 import { applyPageSeo } from "@/lib/seo";
 import { images } from "@/data/images";
 import { BeforeAfterSlider } from "@/components/BeforeAfterSlider";
-import tilingTransformation1Before from "@assets/image_1777744333463.png";
-import tilingTransformation1After from "@assets/image_1777744333463.png";
-import tilingTransformation2Before from "@assets/image_1777744333463.png";
-import tilingTransformation2After from "@assets/image_1777744333463.png";
 
 type Service = {
   image: string;
@@ -189,22 +185,17 @@ export default function TilingServicesPage({ openQuote }: { openQuote: () => voi
             </p>
           </div>
           <div className="grid md:grid-cols-2 gap-8 lg:gap-10">
-            <BeforeAfterSlider
-              beforeSrc={tilingTransformation1Before}
-              beforeAlt="Tiling transformation 1 before work in Dublin"
-              afterSrc={tilingTransformation1After}
-              afterAlt="Tiling transformation 1 after tiling work in Dublin"
-              aspectClassName="aspect-[3/4]"
-              className="shadow-xl"
-            />
-            <BeforeAfterSlider
-              beforeSrc={tilingTransformation2Before}
-              beforeAlt="Tiling transformation 2 before work in Dublin"
-              afterSrc={tilingTransformation2After}
-              afterAlt="Tiling transformation 2 after tiling work in Dublin"
-              aspectClassName="aspect-[3/4]"
-              className="shadow-xl"
-            />
+            {images.tilingPage.transformations.map((t, i) => (
+              <BeforeAfterSlider
+                key={i}
+                beforeSrc={t.before.src}
+                beforeAlt={t.before.alt}
+                afterSrc={t.after.src}
+                afterAlt={t.after.alt}
+                aspectClassName="aspect-[3/4]"
+                className="shadow-xl"
+              />
+            ))}
           </div>
         </div>
       </section>

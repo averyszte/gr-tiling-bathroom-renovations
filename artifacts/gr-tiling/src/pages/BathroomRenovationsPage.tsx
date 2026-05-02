@@ -11,10 +11,6 @@ import {
 import { applyPageSeo } from "@/lib/seo";
 import { images } from "@/data/images";
 import { BeforeAfterSlider } from "@/components/BeforeAfterSlider";
-import bathroomTransformation1Before from "@assets/image_1777744321787.png";
-import bathroomTransformation1After from "@assets/image_1777744321787.png";
-import bathroomTransformation2Before from "@assets/image_1777744321787.png";
-import bathroomTransformation2After from "@assets/image_1777744321787.png";
 
 type Service = {
   image: string;
@@ -189,22 +185,17 @@ export default function BathroomRenovationsPage({ openQuote }: { openQuote: () =
             </p>
           </div>
           <div className="grid md:grid-cols-2 gap-8 lg:gap-10">
-            <BeforeAfterSlider
-              beforeSrc={bathroomTransformation1Before}
-              beforeAlt="Bathroom transformation 1 before renovation in Dublin"
-              afterSrc={bathroomTransformation1After}
-              afterAlt="Bathroom transformation 1 after renovation in Dublin"
-              aspectClassName="aspect-[3/4]"
-              className="shadow-xl"
-            />
-            <BeforeAfterSlider
-              beforeSrc={bathroomTransformation2Before}
-              beforeAlt="Bathroom transformation 2 before renovation in Dublin"
-              afterSrc={bathroomTransformation2After}
-              afterAlt="Bathroom transformation 2 after renovation in Dublin"
-              aspectClassName="aspect-[3/4]"
-              className="shadow-xl"
-            />
+            {images.bathroomPage.transformations.map((t, i) => (
+              <BeforeAfterSlider
+                key={i}
+                beforeSrc={t.before.src}
+                beforeAlt={t.before.alt}
+                afterSrc={t.after.src}
+                afterAlt={t.after.alt}
+                aspectClassName="aspect-[3/4]"
+                className="shadow-xl"
+              />
+            ))}
           </div>
         </div>
       </section>

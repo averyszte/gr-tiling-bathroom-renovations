@@ -47,14 +47,28 @@ export const images = {
       src: "/images/hero-bathroom-renovations.webp",
       alt: "Bathroom renovation in Dublin, modern bathroom with large format tiles and clean finish",
     },
-    before: {
-      src: "/images/gallery-2.png",
-      alt: "Bathroom before renovation by GR Tiling Dublin",
-    },
-    after: {
-      src: "/images/gallery-1.png",
-      alt: "Bathroom after renovation by GR Tiling Dublin",
-    },
+    transformations: [
+      {
+        before: {
+          src: "/images/bathroom-transformation-1-before.webp",
+          alt: "Bathroom transformation 1 before renovation in Dublin",
+        },
+        after: {
+          src: "/images/bathroom-transformation-1-after.webp",
+          alt: "Bathroom transformation 1 after renovation in Dublin",
+        },
+      },
+      {
+        before: {
+          src: "/images/bathroom-transformation-2-before.webp",
+          alt: "Bathroom transformation 2 before renovation in Dublin",
+        },
+        after: {
+          src: "/images/bathroom-transformation-2-after.webp",
+          alt: "Bathroom transformation 2 after renovation in Dublin",
+        },
+      },
+    ],
     services: [
       {
         src: "/images/service-full-reno.webp",
@@ -98,14 +112,28 @@ export const images = {
       src: "/images/hero-tiling-services.webp",
       alt: "Real tiling transformations showing before and after bathroom work",
     },
-    before: {
-      src: "/images/gallery-4.png",
-      alt: "Tiling project before completion by GR Tiling Dublin",
-    },
-    after: {
-      src: "/images/gallery-3.png",
-      alt: "Tiling project after completion by GR Tiling Dublin",
-    },
+    transformations: [
+      {
+        before: {
+          src: "/images/tiling-transformation-1-before.webp",
+          alt: "Tiling transformation 1 before work in Dublin",
+        },
+        after: {
+          src: "/images/tiling-transformation-1-after.webp",
+          alt: "Tiling transformation 1 after tiling work in Dublin",
+        },
+      },
+      {
+        before: {
+          src: "/images/tiling-transformation-2-before.webp",
+          alt: "Tiling transformation 2 before work in Dublin",
+        },
+        after: {
+          src: "/images/tiling-transformation-2-after.webp",
+          alt: "Tiling transformation 2 after tiling work in Dublin",
+        },
+      },
+    ],
     services: [
       {
         src: "/images/service-tiling-1.webp",
