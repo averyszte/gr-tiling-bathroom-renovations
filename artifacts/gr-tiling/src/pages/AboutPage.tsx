@@ -75,17 +75,20 @@ export default function AboutPage({ openQuote }: { openQuote: () => void }) {
           </div>
           <div>
             <h1 className="font-serif text-3xl md:text-5xl text-foreground mb-6">
-              Meet the Person Behind the Work
+              Meet Gerard Ronan Behind the Work
             </h1>
             <div className="space-y-5 text-muted-foreground text-lg leading-relaxed">
               <p>
-                This business is built on hands-on experience in bathroom renovations and tiling. Every project is completed with attention to detail, clear communication, and a focus on doing the job properly from start to finish.
+                Hi, I'm Gerard Ronan, most people just call me Gerry.
               </p>
               <p>
-                The goal is simple: deliver clean, reliable work without delays, hidden costs, or unnecessary stress for the homeowner.
+                I started GR Tiling & Bathroom Renovations to offer something simple. Reliable, high-quality work without the usual hassle. No chasing trades, no unclear pricing, and no jobs left half done.
               </p>
               <p>
-                With experience working in homes across Dublin, the focus is always on quality finishes, tidy work, and results that last.
+                Every project is hands-on. I'm on site, making sure everything is done properly from start to finish, with attention to detail and a clean finish that lasts.
+              </p>
+              <p>
+                Working in homes across Dublin, the focus is always the same. Do the job right, keep things tidy, and make sure the customer is genuinely happy with the result.
               </p>
             </div>
           </div>
