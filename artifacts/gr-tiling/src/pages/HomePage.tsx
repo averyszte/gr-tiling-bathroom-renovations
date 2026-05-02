@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Star, CheckCircle2, ChevronRight, XCircle, MessageCircle, FileText, Wrench } from "lucide-react";
 import { Link } from "wouter";
@@ -9,6 +10,65 @@ import {
 } from "@/components/ui/accordion";
 import type { ReactNode } from "react";
 import { images } from "@/data/images";
+import { applyJsonLd, SITE_URL } from "@/lib/seo";
+
+const homeSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "LocalBusiness",
+      "name": "GR Tiling & Bathroom Renovations",
+      "url": SITE_URL,
+      "telephone": "+353877209850",
+      "email": "ronangerard98@gmail.com",
+      "areaServed": "Dublin and surrounding areas",
+      "priceRange": "€€",
+      "founder": { "@type": "Person", "name": "Gerard Ronan" },
+      "sameAs": ["https://maps.app.goo.gl/zXMYDcdtwATJcR9AA"],
+      "serviceType": "Bathroom renovations and tiling services",
+    },
+    {
+      "@type": "WebSite",
+      "name": "GR Tiling & Bathroom Renovations",
+      "url": SITE_URL,
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How much does a bathroom renovation cost in Dublin?",
+          "acceptedAnswer": { "@type": "Answer", "text": "The cost depends on the size of the bathroom, the layout, and the finishes you choose. We always provide a clear, upfront quote so you know exactly what to expect, with no hidden costs." },
+        },
+        {
+          "@type": "Question",
+          "name": "How long does a bathroom renovation take?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Most bathroom renovations take between 1 to 2 weeks, depending on the size and complexity of the job. We give you a clear timeline before starting and stick to it, so there are no delays or uncertainty." },
+        },
+        {
+          "@type": "Question",
+          "name": "Will the work area be kept clean?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. We take care to keep your home clean throughout the project and tidy up at the end of each day. We treat your home with respect and make sure everything is left clean once the job is complete." },
+        },
+        {
+          "@type": "Question",
+          "name": "Do I get a written quote?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. Every project comes with a clear, written quote outlining the work, timeline, and cost. Everything is agreed clearly before any work begins, so there are no surprises." },
+        },
+        {
+          "@type": "Question",
+          "name": "Do you cover all areas of Dublin?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes, we work across Dublin and nearby areas. Contact us and we'll confirm availability for your location quickly." },
+        },
+        {
+          "@type": "Question",
+          "name": "Can you handle just the tiling, not the full renovation?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. We offer both full bathroom renovations and standalone tiling services. Whether you need a full project or just tiling work, we can help." },
+        },
+      ],
+    },
+  ],
+};
 
 const reviews = [
   { name: "Raimonda Brooks", text: "Gerry is a true legend, super nice guy. Came in and got stuck into work straight away and had it done in no time. Left the place as clean as he found it.\n\nSuper honest about pricing too. I actually ended up paying less than expected. Overall 100% pleased with the result." },
@@ -39,6 +99,8 @@ const faqs: Faq[] = [
 ];
 
 export default function HomePage({ openQuote }: { openQuote: () => void }) {
+  useEffect(() => applyJsonLd("home", homeSchema), []);
+
   return (
     <main className="flex-1 pb-20 md:pb-0">
       {/* Hero Section */}

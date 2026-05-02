@@ -28,7 +28,58 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Phone, MapPin, Wrench, Star, Clock, BadgeEuro, Sparkles } from "lucide-react";
-import { applyPageSeo } from "@/lib/seo";
+import { applyPageSeo, applyJsonLd, SITE_URL } from "@/lib/seo";
+
+const contactSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ContactPage",
+      "name": "Contact GR Tiling & Bathroom Renovations",
+      "url": `${SITE_URL}/contact`,
+      "telephone": "+353877209850",
+      "email": "ronangerard98@gmail.com",
+      "areaServed": "Dublin and surrounding areas",
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": SITE_URL },
+        { "@type": "ListItem", "position": 2, "name": "Contact", "item": `${SITE_URL}/contact` },
+      ],
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How soon will I get a reply?",
+          "acceptedAnswer": { "@type": "Answer", "text": "We aim to respond as quickly as possible, usually within the same day." },
+        },
+        {
+          "@type": "Question",
+          "name": "Do you provide free quotes?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes, all quotes are free and clearly explained before any work starts." },
+        },
+        {
+          "@type": "Question",
+          "name": "What areas do you cover?",
+          "acceptedAnswer": { "@type": "Answer", "text": "We provide services in and around Dublin." },
+        },
+        {
+          "@type": "Question",
+          "name": "Can I request both bathroom renovation and tiling work?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes, both services can be included in your quote." },
+        },
+        {
+          "@type": "Question",
+          "name": "Should I send photos?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes, photos help us understand your project faster." },
+        },
+      ],
+    },
+  ],
+};
 import { submitToFormspree } from "@/lib/formspree";
 
 const PHONE_DISPLAY = "+353 87 720 9850";
@@ -93,15 +144,11 @@ export default function ContactPage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formError, setFormError] = useState<string | null>(null);
 
-  useEffect(
-    () =>
-      applyPageSeo({
-        title: PAGE_TITLE,
-        description: PAGE_DESCRIPTION,
-        path: PAGE_PATH,
-      }),
-    [],
-  );
+  useEffect(() => {
+    const cleanupSeo = applyPageSeo({ title: PAGE_TITLE, description: PAGE_DESCRIPTION, path: PAGE_PATH });
+    const cleanupSchema = applyJsonLd("contact", contactSchema);
+    return () => { cleanupSeo(); cleanupSchema(); };
+  }, []);
 
   const form = useForm<ContactFormValues>({
     resolver: zodResolver(formSchema),

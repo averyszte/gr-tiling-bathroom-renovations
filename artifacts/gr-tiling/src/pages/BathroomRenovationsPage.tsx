@@ -8,7 +8,65 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { applyPageSeo } from "@/lib/seo";
+import { applyPageSeo, applyJsonLd, SITE_URL } from "@/lib/seo";
+
+const bathroomSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      "name": "Bathroom Renovations Dublin",
+      "description": "Bathroom renovation services in Dublin by GR Tiling & Bathroom Renovations, focused on clean work, clear pricing, and reliable results.",
+      "provider": { "@type": "LocalBusiness", "name": "GR Tiling & Bathroom Renovations" },
+      "areaServed": "Dublin and surrounding areas",
+      "serviceType": "Bathroom Renovations",
+      "url": `${SITE_URL}/services/bathroom-renovations`,
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": SITE_URL },
+        { "@type": "ListItem", "position": 2, "name": "Services", "item": `${SITE_URL}/services` },
+        { "@type": "ListItem", "position": 3, "name": "Bathroom Renovations", "item": `${SITE_URL}/services/bathroom-renovations` },
+      ],
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How much does a bathroom renovation cost in Dublin?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Costs depend on the size, scope, and materials chosen for your bathroom remodel. We provide clear, detailed quotes before any work starts, with no hidden extras." },
+        },
+        {
+          "@type": "Question",
+          "name": "How long does a bathroom renovation take?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Most standard bathroom renovations take 1 to 3 weeks. We give you a realistic timeline at the start and keep you updated throughout." },
+        },
+        {
+          "@type": "Question",
+          "name": "Will the work area be kept clean?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. We protect your home, clean up every day, and leave the area tidy. We treat your home the way we'd want ours treated." },
+        },
+        {
+          "@type": "Question",
+          "name": "Do I get a written quote?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Absolutely. We provide a clear written quote before any work begins so you know exactly what's included and what the cost will be." },
+        },
+        {
+          "@type": "Question",
+          "name": "Do you cover all areas of Dublin?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes, we work across Dublin and nearby areas. Contact us and we'll confirm availability for your location quickly." },
+        },
+        {
+          "@type": "Question",
+          "name": "Can you handle just the tiling, not the full renovation?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. We do standalone tiling work as well as full bathroom renovations. Just let us know what you need and we'll quote accordingly." },
+        },
+      ],
+    },
+  ],
+};
 import { images } from "@/data/images";
 import { BeforeAfterSlider } from "@/components/BeforeAfterSlider";
 
@@ -123,15 +181,11 @@ const PAGE_DESCRIPTION =
 const PAGE_PATH = "/services/bathroom-renovations";
 
 export default function BathroomRenovationsPage({ openQuote }: { openQuote: () => void }) {
-  useEffect(
-    () =>
-      applyPageSeo({
-        title: PAGE_TITLE,
-        description: PAGE_DESCRIPTION,
-        path: PAGE_PATH,
-      }),
-    [],
-  );
+  useEffect(() => {
+    const cleanupSeo = applyPageSeo({ title: PAGE_TITLE, description: PAGE_DESCRIPTION, path: PAGE_PATH });
+    const cleanupSchema = applyJsonLd("bathroom-renovations", bathroomSchema);
+    return () => { cleanupSeo(); cleanupSchema(); };
+  }, []);
 
   return (
     <main className="flex-1 pb-20 md:pb-0">

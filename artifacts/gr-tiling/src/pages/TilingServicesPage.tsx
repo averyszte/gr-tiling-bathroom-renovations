@@ -8,7 +8,65 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { applyPageSeo } from "@/lib/seo";
+import { applyPageSeo, applyJsonLd, SITE_URL } from "@/lib/seo";
+
+const tilingSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      "name": "Tiling Services Dublin",
+      "description": "Professional tiling services in Dublin by GR Tiling & Bathroom Renovations, including bathroom tiling, wall tiling, floor tiling, and tile finishing.",
+      "provider": { "@type": "LocalBusiness", "name": "GR Tiling & Bathroom Renovations" },
+      "areaServed": "Dublin and surrounding areas",
+      "serviceType": "Tiling Services",
+      "url": `${SITE_URL}/services/tiling-services`,
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": SITE_URL },
+        { "@type": "ListItem", "position": 2, "name": "Services", "item": `${SITE_URL}/services` },
+        { "@type": "ListItem", "position": 3, "name": "Tiling Services", "item": `${SITE_URL}/services/tiling-services` },
+      ],
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How much do tiling services cost in Dublin?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Costs depend on the area, tile size, and scope of work. We provide a clear written quote before starting so you know the full price upfront." },
+        },
+        {
+          "@type": "Question",
+          "name": "Do you do both wall and floor tiling?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. We handle both wall and floor tiling across bathrooms, kitchens, hallways, and other areas of the home." },
+        },
+        {
+          "@type": "Question",
+          "name": "Can you tile bathrooms and wet areas?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. Bathroom and wet area tiling is one of the things we do most. We make sure everything is properly prepared, sealed, and finished cleanly." },
+        },
+        {
+          "@type": "Question",
+          "name": "Do you remove old tiles?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. We can lift and dispose of old tiles before installing the new ones. We'll factor that into the quote so there are no surprises." },
+        },
+        {
+          "@type": "Question",
+          "name": "How long does a tiling job take?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Most tiling jobs take a few days, depending on the size of the area and the type of tile. We'll give you a realistic timeline along with the quote." },
+        },
+        {
+          "@type": "Question",
+          "name": "What areas around Dublin do you cover?",
+          "acceptedAnswer": { "@type": "Answer", "text": "We work across Dublin and nearby areas. Get in touch and we'll confirm availability for your location quickly." },
+        },
+      ],
+    },
+  ],
+};
 import { images } from "@/data/images";
 import { BeforeAfterSlider } from "@/components/BeforeAfterSlider";
 
@@ -123,15 +181,11 @@ const PAGE_DESCRIPTION =
 const PAGE_PATH = "/services/tiling-services";
 
 export default function TilingServicesPage({ openQuote }: { openQuote: () => void }) {
-  useEffect(
-    () =>
-      applyPageSeo({
-        title: PAGE_TITLE,
-        description: PAGE_DESCRIPTION,
-        path: PAGE_PATH,
-      }),
-    [],
-  );
+  useEffect(() => {
+    const cleanupSeo = applyPageSeo({ title: PAGE_TITLE, description: PAGE_DESCRIPTION, path: PAGE_PATH });
+    const cleanupSchema = applyJsonLd("tiling-services", tilingSchema);
+    return () => { cleanupSeo(); cleanupSchema(); };
+  }, []);
 
   return (
     <main className="flex-1 pb-20 md:pb-0">

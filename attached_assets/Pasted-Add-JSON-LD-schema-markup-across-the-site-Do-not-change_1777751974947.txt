@@ -1,0 +1,160 @@
+Add JSON-LD schema markup across the site.
+
+Do not change layout, styling, copy, buttons, forms, or visible content.
+
+Use schema.org JSON-LD.
+
+Create a reusable SEO/schema system if one does not already exist.
+
+Business details:
+Business name: GR Tiling & Bathroom Renovations
+Owner: Gerard Ronan
+Phone: +353877209850
+Email: ronangerard98@gmail.com
+Service area: Dublin and surrounding areas
+Services:
+- Bathroom Renovations
+- Tiling Services
+Google reviews link:
+https://maps.app.goo.gl/zXMYDcdtwATJcR9AA
+
+Use the final live domain where needed:
+REPLACE_WITH_LIVE_DOMAIN
+
+Example:
+https://example.ie
+
+-------------------------------------
+1. HOMEPAGE SCHEMA
+-------------------------------------
+
+Add:
+- LocalBusiness schema
+- WebSite schema
+- FAQPage schema if FAQ questions are visible on homepage
+
+LocalBusiness:
+- name: GR Tiling & Bathroom Renovations
+- url: REPLACE_WITH_LIVE_DOMAIN
+- telephone: +353877209850
+- email: ronangerard98@gmail.com
+- areaServed: Dublin and surrounding areas
+- priceRange: €€
+- founder/name: Gerard Ronan
+- sameAs: Google reviews link
+- serviceType: Bathroom renovations and tiling services
+
+Do NOT add fake aggregateRating unless it is safe and consistent with visible review information.
+
+-------------------------------------
+2. BATHROOM RENOVATIONS PAGE
+-------------------------------------
+
+Page:
+/services/bathroom-renovations
+
+Add Service schema:
+
+name:
+Bathroom Renovations Dublin
+
+description:
+Bathroom renovation services in Dublin by GR Tiling & Bathroom Renovations, focused on clean work, clear pricing, and reliable results.
+
+provider:
+GR Tiling & Bathroom Renovations
+
+areaServed:
+Dublin and surrounding areas
+
+serviceType:
+Bathroom Renovations
+
+Add BreadcrumbList:
+Home > Services > Bathroom Renovations
+
+Add FAQPage schema only if the FAQ content is visible on this page.
+
+-------------------------------------
+3. TILING SERVICES PAGE
+-------------------------------------
+
+Page:
+/services/tiling-services
+
+Add Service schema:
+
+name:
+Tiling Services Dublin
+
+description:
+Professional tiling services in Dublin by GR Tiling & Bathroom Renovations, including bathroom tiling, wall tiling, floor tiling, and tile finishing.
+
+provider:
+GR Tiling & Bathroom Renovations
+
+areaServed:
+Dublin and surrounding areas
+
+serviceType:
+Tiling Services
+
+Add BreadcrumbList:
+Home > Services > Tiling Services
+
+Add FAQPage schema only if the FAQ content is visible on this page.
+
+-------------------------------------
+4. ABOUT PAGE
+-------------------------------------
+
+Page:
+/about
+
+Add AboutPage schema.
+
+Include:
+- name: About GR Tiling & Bathroom Renovations
+- description: Learn about Gerard Ronan and GR Tiling & Bathroom Renovations, providing bathroom renovation and tiling services in Dublin.
+- mainEntity: GR Tiling & Bathroom Renovations
+
+Add BreadcrumbList:
+Home > About
+
+-------------------------------------
+5. CONTACT PAGE
+-------------------------------------
+
+Page:
+/contact
+
+Add ContactPage schema.
+
+Include:
+- name: Contact GR Tiling & Bathroom Renovations
+- telephone: +353877209850
+- email: ronangerard98@gmail.com
+- areaServed: Dublin and surrounding areas
+
+Add BreadcrumbList:
+Home > Contact
+
+-------------------------------------
+IMPORTANT RULES
+-------------------------------------
+
+- Use JSON-LD script tags.
+- Schema must match visible page content.
+- Do not add schema for content that is not visible.
+- Do not add fake Review schema.
+- Do not add fake ratings.
+- Do not add backend or external libraries.
+- Do not break React routing.
+- Do not change page design.
+- Keep schemas easy to edit later.
+
+After adding schema, report:
+1. Which files were changed
+2. Which schema types were added
+3. Which page each schema appears on
+4. Any placeholders I still need to replace, especially the live domain

@@ -2,7 +2,27 @@ import { useEffect } from "react";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Star, Clock, BadgeEuro, Sparkles, Home, ChevronRight } from "lucide-react";
-import { applyPageSeo } from "@/lib/seo";
+import { applyPageSeo, applyJsonLd, SITE_URL } from "@/lib/seo";
+
+const aboutSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "AboutPage",
+      "name": "About GR Tiling & Bathroom Renovations",
+      "description": "Learn about Gerard Ronan and GR Tiling & Bathroom Renovations, providing bathroom renovation and tiling services in Dublin.",
+      "url": `${SITE_URL}/about`,
+      "mainEntity": { "@type": "LocalBusiness", "name": "GR Tiling & Bathroom Renovations" },
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": SITE_URL },
+        { "@type": "ListItem", "position": 2, "name": "About", "item": `${SITE_URL}/about` },
+      ],
+    },
+  ],
+};
 import { images } from "@/data/images";
 
 const principles = [
@@ -49,15 +69,11 @@ const PAGE_DESCRIPTION =
 const PAGE_PATH = "/about";
 
 export default function AboutPage({ openQuote }: { openQuote: () => void }) {
-  useEffect(
-    () =>
-      applyPageSeo({
-        title: PAGE_TITLE,
-        description: PAGE_DESCRIPTION,
-        path: PAGE_PATH,
-      }),
-    [],
-  );
+  useEffect(() => {
+    const cleanupSeo = applyPageSeo({ title: PAGE_TITLE, description: PAGE_DESCRIPTION, path: PAGE_PATH });
+    const cleanupSchema = applyJsonLd("about", aboutSchema);
+    return () => { cleanupSeo(); cleanupSchema(); };
+  }, []);
 
   return (
     <main className="flex-1 pb-20 md:pb-0">

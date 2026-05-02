@@ -40,6 +40,27 @@ function setLinkTag(rel: string, href: string) {
   el.setAttribute("href", href);
 }
 
+/**
+ * Injects (or updates) a single JSON-LD <script> tag identified by `id`.
+ * Returns a cleanup function that removes the tag, suitable for useEffect.
+ */
+export function applyJsonLd(id: string, schema: object): () => void {
+  const attr = "data-schema-id";
+  let el = document.head.querySelector<HTMLScriptElement>(
+    `script[${attr}="${id}"]`,
+  );
+  if (!el) {
+    el = document.createElement("script");
+    el.type = "application/ld+json";
+    el.setAttribute(attr, id);
+    document.head.appendChild(el);
+  }
+  el.textContent = JSON.stringify(schema);
+  return () => {
+    el?.remove();
+  };
+}
+
 export function applyPageSeo({ title, description, path }: PageSeo): () => void {
   const previousTitle = document.title;
   const previousDescription =
