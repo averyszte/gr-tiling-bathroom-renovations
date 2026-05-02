@@ -145,7 +145,7 @@ export default function BathroomRenovationsPage({ openQuote }: { openQuote: () =
               Bathroom Renovations Dublin
             </h1>
             <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground leading-[1.15] mb-6 tracking-tight">
-              On Time. On Budget. No Surprises.
+              One Team. Fixed Price. Clean Finish.
             </h2>
             <p className="text-lg sm:text-xl text-muted-foreground mb-10 leading-relaxed max-w-2xl mx-auto">
               Get your bathroom renovated on time and on budget with a trusted local Dublin specialist. No delays, no hidden costs, and no mess left behind.
@@ -172,28 +172,6 @@ export default function BathroomRenovationsPage({ openQuote }: { openQuote: () =
           </div>
         </div>
       </section>
-
-      {/* Trust Strip */}
-      <div className="bg-primary text-primary-foreground py-6 border-y border-primary-foreground/10">
-        <div className="container mx-auto px-4 overflow-hidden">
-          <div className="flex flex-wrap justify-center md:justify-between items-center gap-6 md:gap-4 text-sm font-medium tracking-wide">
-            <div className="flex items-center gap-2">
-              <CheckCircle2 className="w-4 h-4 opacity-80" />
-              <span>One Team</span>
-            </div>
-            <div className="hidden md:block w-1 h-1 rounded-full bg-primary-foreground/30"></div>
-            <div className="flex items-center gap-2">
-              <CheckCircle2 className="w-4 h-4 opacity-80" />
-              <span>Fixed Price</span>
-            </div>
-            <div className="hidden md:block w-1 h-1 rounded-full bg-primary-foreground/30"></div>
-            <div className="flex items-center gap-2">
-              <CheckCircle2 className="w-4 h-4 opacity-80" />
-              <span>Clean Finish</span>
-            </div>
-          </div>
-        </div>
-      </div>
 
       {/* Before / After Comparison */}
       <section className="py-[60px] lg:py-24 bg-background">
