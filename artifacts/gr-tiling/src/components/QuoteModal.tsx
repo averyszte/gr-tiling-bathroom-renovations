@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useLocation } from "wouter";
+import { submitToFormspree } from "@/lib/formspree";
 import { z } from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -47,6 +48,8 @@ export function QuoteModal({
   setIsOpen: (isOpen: boolean) => void;
 }) {
   const [, setLocation] = useLocation();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [formError, setFormError] = useState<string | null>(null);
 
   const form = useForm<QuoteFormValues>({
     resolver: zodResolver(formSchema),
@@ -59,11 +62,25 @@ export function QuoteModal({
     },
   });
 
-  function onSubmit(data: QuoteFormValues) {
-    console.log("Submitted quote request:", data);
-    setIsOpen(false);
-    form.reset();
-    setLocation("/thank-you");
+  async function onSubmit(data: QuoteFormValues) {
+    setIsSubmitting(true);
+    setFormError(null);
+    try {
+      await submitToFormspree({
+        name: data.name,
+        phone: data.phone,
+        email: data.email,
+        service: data.projectType,
+        message: data.message ?? "",
+      });
+      setIsOpen(false);
+      form.reset();
+      setLocation("/thank-you");
+    } catch (err) {
+      setFormError(err instanceof Error ? err.message : "Something went wrong. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   }
 
   return (
@@ -158,9 +175,12 @@ export function QuoteModal({
                 </FormItem>
               )}
             />
+            {formError && (
+              <p className="text-sm text-destructive">{formError}</p>
+            )}
             <div className="flex justify-end pt-4">
-              <Button type="submit" className="w-full sm:w-auto">
-                Request Quote
+              <Button type="submit" className="w-full sm:w-auto" disabled={isSubmitting}>
+                {isSubmitting ? "Sending..." : "Request Quote"}
               </Button>
             </div>
           </form>

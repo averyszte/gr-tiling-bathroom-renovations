@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useLocation } from "wouter";
 import { z } from "zod";
 import { useForm } from "react-hook-form";
@@ -29,6 +29,7 @@ import {
 } from "@/components/ui/accordion";
 import { Phone, MapPin, Wrench, Star, Clock, BadgeEuro, Sparkles } from "lucide-react";
 import { applyPageSeo } from "@/lib/seo";
+import { submitToFormspree } from "@/lib/formspree";
 
 const PHONE_DISPLAY = "+353 87 720 9850";
 const PHONE_TEL = "tel:+353877209850";
@@ -89,6 +90,8 @@ function scrollToForm() {
 
 export default function ContactPage() {
   const [, setLocation] = useLocation();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [formError, setFormError] = useState<string | null>(null);
 
   useEffect(
     () =>
@@ -111,14 +114,24 @@ export default function ContactPage() {
     },
   });
 
-  function onSubmit(data: ContactFormValues) {
-    // TODO: Email integration goes here.
-    // Wire this up to a backend endpoint, transactional email service
-    // (e.g. Resend, SendGrid, Postmark), or form service (e.g. Formspree)
-    // when ready. For now we just log and route to /thank-you.
-    console.log("Submitted contact quote request:", data);
-    form.reset();
-    setLocation("/thank-you");
+  async function onSubmit(data: ContactFormValues) {
+    setIsSubmitting(true);
+    setFormError(null);
+    try {
+      await submitToFormspree({
+        name: data.name,
+        phone: data.phone,
+        email: data.email,
+        service: data.service,
+        message: data.message,
+      });
+      form.reset();
+      setLocation("/thank-you");
+    } catch (err) {
+      setFormError(err instanceof Error ? err.message : "Something went wrong. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   }
 
   return (
@@ -323,8 +336,11 @@ export default function ContactPage() {
                     )}
                   />
 
-                  <Button type="submit" size="lg" className="w-full text-base h-12">
-                    Send Quote Request
+                  {formError && (
+                    <p className="text-sm text-destructive">{formError}</p>
+                  )}
+                  <Button type="submit" size="lg" className="w-full text-base h-12" disabled={isSubmitting}>
+                    {isSubmitting ? "Sending..." : "Send Quote Request"}
                   </Button>
                 </form>
               </Form>
