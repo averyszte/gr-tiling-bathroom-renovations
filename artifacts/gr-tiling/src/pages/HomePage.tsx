@@ -26,6 +26,13 @@ const homeSchema = {
       "founder": { "@type": "Person", "name": "Gerard Ronan" },
       "sameAs": ["https://maps.app.goo.gl/zXMYDcdtwATJcR9AA"],
       "serviceType": "Bathroom renovations and tiling services",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5.0",
+        "reviewCount": "5",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
     },
     {
       "@type": "WebSite",
