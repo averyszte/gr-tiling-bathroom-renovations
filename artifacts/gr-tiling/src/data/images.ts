@@ -114,11 +114,11 @@ export const images = {
     transformations: [
       {
         before: {
-          src: "/images/bathroom-transformation-1-before.webp",
+          src: "/images/tiling-transformation-1-before.webp",
           alt: "Tiling transformation 1 before work in Dublin",
         },
         after: {
-          src: "/images/bathroom-transformation-1-after.webp",
+          src: "/images/tiling-transformation-1-after.webp",
           alt: "Tiling transformation 1 after tiling work in Dublin",
         },
       },
