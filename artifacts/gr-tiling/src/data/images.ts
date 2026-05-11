@@ -2,6 +2,7 @@ export const images = {
   homepage: {
     hero: {
       src: "/images/hero-homepage.webp",
+      mobileSrc: "/images/hero-homepage-mobile.webp",
       alt: "Modern bathroom renovation in Dublin with freestanding bath and marble tiling",
     },
     servicesBathroom: {
