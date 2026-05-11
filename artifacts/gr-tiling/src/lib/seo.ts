@@ -79,9 +79,11 @@ export function applyPageSeo({ title, description, path }: PageSeo): () => void 
   setMetaTag("property", "og:title", title);
   setMetaTag("property", "og:description", description);
   setMetaTag("property", "og:url", url);
+  setMetaTag("property", "og:image", `${SITE_URL}/opengraph.jpg`);
   setMetaTag("name", "twitter:card", "summary_large_image");
   setMetaTag("name", "twitter:title", title);
   setMetaTag("name", "twitter:description", description);
+  setMetaTag("name", "twitter:image", `${SITE_URL}/opengraph.jpg`);
   setLinkTag("canonical", url);
 
   return () => {

@@ -1,8 +1,6 @@
 import { useState } from "react";
 import { Switch, Route, Router as WouterRouter } from "wouter";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
-import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/not-found";
 
 import { Header, Footer } from "@/components/Layout";
@@ -14,8 +12,6 @@ import BathroomRenovationsPage from "@/pages/BathroomRenovationsPage";
 import TilingServicesPage from "@/pages/TilingServicesPage";
 import AboutPage from "@/pages/AboutPage";
 import ContactPage from "@/pages/ContactPage";
-
-const queryClient = new QueryClient();
 
 function AppLayout({ openQuote }: { openQuote: () => void }) {
   const HomePageWithProps = () => <HomePage openQuote={openQuote} />;
@@ -46,15 +42,13 @@ function App() {
   const openQuote = () => setQuoteModalOpen(true);
 
   return (
-    <QueryClientProvider client={queryClient}>
-      <TooltipProvider>
-        <WouterRouter base={import.meta.env.BASE_URL.replace(/\/$/, "")}>
-          <AppLayout openQuote={openQuote} />
-        </WouterRouter>
-        <Toaster />
-        <QuoteModal isOpen={quoteModalOpen} setIsOpen={setQuoteModalOpen} />
-      </TooltipProvider>
-    </QueryClientProvider>
+    <>
+      <WouterRouter base={import.meta.env.BASE_URL.replace(/\/$/, "")}>
+        <AppLayout openQuote={openQuote} />
+      </WouterRouter>
+      <Toaster />
+      <QuoteModal isOpen={quoteModalOpen} setIsOpen={setQuoteModalOpen} />
+    </>
   );
 }
 

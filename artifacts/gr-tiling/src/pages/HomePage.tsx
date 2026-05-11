@@ -318,6 +318,7 @@ export default function HomePage({ openQuote }: { openQuote: () => void }) {
                   <img
                     src={images.homepage.servicesBathroom.src}
                     alt={images.homepage.servicesBathroom.alt}
+                    loading="lazy"
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                 </div>
@@ -345,6 +346,7 @@ export default function HomePage({ openQuote }: { openQuote: () => void }) {
                   <img
                     src={images.homepage.servicesTiling.src}
                     alt={images.homepage.servicesTiling.alt}
+                    loading="lazy"
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                 </div>
@@ -381,7 +383,7 @@ export default function HomePage({ openQuote }: { openQuote: () => void }) {
                   key={src}
                   className="relative rounded-2xl overflow-hidden shadow-lg flex-1 hover:flex-[3] transition-all duration-500 ease-in-out cursor-pointer group"
                 >
-                  <img src={src} alt={alt} className="absolute inset-0 w-full h-full object-cover" />
+                  <img src={src} alt={alt} loading="lazy" className="absolute inset-0 w-full h-full object-cover" />
                   <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-500"></div>
                 </div>
               ))}
@@ -389,7 +391,7 @@ export default function HomePage({ openQuote }: { openQuote: () => void }) {
             <div className="md:hidden grid grid-cols-2 gap-4">
               {images.homepage.gallery.map(({ src, alt }) => (
                 <div key={src} className="aspect-square rounded-2xl overflow-hidden shadow-lg">
-                  <img src={src} alt={alt} className="w-full h-full object-cover" />
+                  <img src={src} alt={alt} loading="lazy" className="w-full h-full object-cover" />
                 </div>
               ))}
             </div>

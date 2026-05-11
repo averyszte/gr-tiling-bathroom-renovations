@@ -1,14 +1,9 @@
 /**
  * Formspree submission utility.
  *
- * Set VITE_FORMSPREE_ID in your environment (Cloudflare Pages → Settings → 
+ * Set VITE_FORMSPREE_ID in your environment (Cloudflare Pages → Settings →
  * Environment Variables, or a local .env.local file) to the form ID from
  * your Formspree dashboard (e.g. "xrgvkpbq").
- *
- * To receive submissions on both emails, open your Formspree form →
- * Settings → Email Notifications → add sztejnmileravery@gmail.com as a
- * second recipient (requires Formspree Gold/Plus, or set up Gmail forwarding
- * as a free alternative).
  */
 
 const FORM_ID = import.meta.env.VITE_FORMSPREE_ID as string | undefined;

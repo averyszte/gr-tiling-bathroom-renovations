@@ -26,8 +26,7 @@ const tilingSchema = {
       "@type": "BreadcrumbList",
       "itemListElement": [
         { "@type": "ListItem", "position": 1, "name": "Home", "item": SITE_URL },
-        { "@type": "ListItem", "position": 2, "name": "Services", "item": `${SITE_URL}/services` },
-        { "@type": "ListItem", "position": 3, "name": "Tiling Services", "item": `${SITE_URL}/services/tiling-services` },
+        { "@type": "ListItem", "position": 2, "name": "Tiling Services", "item": `${SITE_URL}/services/tiling-services` },
       ],
     },
     {
@@ -320,6 +319,7 @@ export default function TilingServicesPage({ openQuote }: { openQuote: () => voi
                   <img
                     src={service.image}
                     alt={service.alt}
+                    loading="lazy"
                     className="w-full h-full object-cover"
                   />
                 </div>
@@ -357,7 +357,7 @@ export default function TilingServicesPage({ openQuote }: { openQuote: () => voi
                 key={src}
                 className="relative rounded-2xl overflow-hidden flex-1 hover:flex-[3] transition-all duration-500 ease-in-out cursor-pointer group"
               >
-                <img src={src} alt={alt} className="absolute inset-0 w-full h-full object-cover" />
+                <img src={src} alt={alt} loading="lazy" className="absolute inset-0 w-full h-full object-cover" />
                 <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-500"></div>
               </div>
             ))}
@@ -365,7 +365,7 @@ export default function TilingServicesPage({ openQuote }: { openQuote: () => voi
           <div className="md:hidden grid grid-cols-2 gap-4">
             {images.tilingPage.gallery.slice(0, 4).map(({ src, alt }) => (
               <div key={src} className="aspect-square rounded-2xl overflow-hidden">
-                <img src={src} alt={alt} className="w-full h-full object-cover" />
+                <img src={src} alt={alt} loading="lazy" className="w-full h-full object-cover" />
               </div>
             ))}
           </div>

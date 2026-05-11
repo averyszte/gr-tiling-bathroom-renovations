@@ -27,7 +27,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { Phone, MapPin, Wrench, Star, Clock, BadgeEuro, Sparkles } from "lucide-react";
+import { Phone, MapPin, Wrench, Star, Clock, BadgeEuro, Sparkles, Mail } from "lucide-react";
 import { applyPageSeo, applyJsonLd, SITE_URL } from "@/lib/seo";
 
 const contactSchema = {
@@ -233,6 +233,21 @@ export default function ContactPage() {
                       className="text-foreground font-medium hover:text-primary transition-colors"
                     >
                       {PHONE_DISPLAY}
+                    </a>
+                  </div>
+                </li>
+
+                <li className="flex gap-4">
+                  <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-primary/10 text-primary flex items-center justify-center">
+                    <Mail className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <p className="text-sm text-muted-foreground mb-0.5">Email</p>
+                    <a
+                      href="mailto:ronangerard98@gmail.com"
+                      className="text-foreground font-medium hover:text-primary transition-colors"
+                    >
+                      ronangerard98@gmail.com
                     </a>
                   </div>
                 </li>

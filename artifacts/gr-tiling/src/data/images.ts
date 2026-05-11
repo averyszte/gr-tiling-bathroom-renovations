@@ -1,5 +1,3 @@
-import _tilingHeroSrc from "@assets/image_1777553093210.png";
-
 export const images = {
   homepage: {
     hero: {
@@ -110,26 +108,26 @@ export const images = {
   tilingPage: {
     hero: {
       src: "/images/hero-tiling-services.webp",
-      alt: "Real tiling transformations showing before and after bathroom work",
+      alt: "Professional tiling work in Dublin — clean lines and precise finish by GR Tiling",
     },
     transformations: [
       {
         before: {
-          src: "/images/tiling-transformation-1-before.webp",
+          src: "/images/bathroom-transformation-1-before.webp",
           alt: "Tiling transformation 1 before work in Dublin",
         },
         after: {
-          src: "/images/tiling-transformation-1-after.webp",
+          src: "/images/bathroom-transformation-1-after.webp",
           alt: "Tiling transformation 1 after tiling work in Dublin",
         },
       },
       {
         before: {
-          src: "/images/tiling-transformation-2-before.webp",
+          src: "/images/bathroom-transformation-2-before.webp",
           alt: "Tiling transformation 2 before work in Dublin",
         },
         after: {
-          src: "/images/tiling-transformation-2-after.webp",
+          src: "/images/bathroom-transformation-2-after.webp",
           alt: "Tiling transformation 2 after tiling work in Dublin",
         },
       },

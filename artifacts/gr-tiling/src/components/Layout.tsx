@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 export function Header({ openQuote }: { openQuote: () => void }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
+  const [desktopServicesOpen, setDesktopServicesOpen] = useState(false);
 
   return (
     <>
@@ -24,19 +25,27 @@ export function Header({ openQuote }: { openQuote: () => void }) {
 
             {/* Services Dropdown */}
             <div className="relative group">
-              <button className="flex items-center gap-1 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
-                Services <ChevronDown size={14} className="mt-0.5 transition-transform duration-200 group-hover:rotate-180" />
+              <button
+                className="flex items-center gap-1 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+                onClick={() => setDesktopServicesOpen(!desktopServicesOpen)}
+                onKeyDown={(e) => { if (e.key === "Escape") setDesktopServicesOpen(false); }}
+                aria-expanded={desktopServicesOpen}
+                aria-haspopup="true"
+              >
+                Services <ChevronDown size={14} className={`mt-0.5 transition-transform duration-200 group-hover:rotate-180 ${desktopServicesOpen ? "rotate-180" : ""}`} />
               </button>
-              <div className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-56 bg-background border border-border rounded-xl shadow-lg py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+              <div className={`absolute top-full left-1/2 -translate-x-1/2 mt-3 w-56 bg-background border border-border rounded-xl shadow-lg py-2 transition-all duration-200 z-50 ${desktopServicesOpen ? "opacity-100 visible" : "opacity-0 invisible group-hover:opacity-100 group-hover:visible"}`}>
                 <Link
                   href="/services/bathroom-renovations"
                   className="block px-4 py-2.5 text-sm text-muted-foreground hover:text-foreground hover:bg-secondary/60 transition-colors rounded-lg mx-1"
+                  onClick={() => setDesktopServicesOpen(false)}
                 >
                   Bathroom Renovations
                 </Link>
                 <Link
                   href="/services/tiling-services"
                   className="block px-4 py-2.5 text-sm text-muted-foreground hover:text-foreground hover:bg-secondary/60 transition-colors rounded-lg mx-1"
+                  onClick={() => setDesktopServicesOpen(false)}
                 >
                   Tiling Services
                 </Link>
@@ -59,6 +68,8 @@ export function Header({ openQuote }: { openQuote: () => void }) {
               className="md:hidden p-2 -mr-2 text-foreground"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               data-testid="button-hamburger-menu"
+              aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
+              aria-expanded={mobileMenuOpen}
             >
               {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>

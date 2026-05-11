@@ -26,8 +26,7 @@ const bathroomSchema = {
       "@type": "BreadcrumbList",
       "itemListElement": [
         { "@type": "ListItem", "position": 1, "name": "Home", "item": SITE_URL },
-        { "@type": "ListItem", "position": 2, "name": "Services", "item": `${SITE_URL}/services` },
-        { "@type": "ListItem", "position": 3, "name": "Bathroom Renovations", "item": `${SITE_URL}/services/bathroom-renovations` },
+        { "@type": "ListItem", "position": 2, "name": "Bathroom Renovations", "item": `${SITE_URL}/services/bathroom-renovations` },
       ],
     },
     {
@@ -320,6 +319,7 @@ export default function BathroomRenovationsPage({ openQuote }: { openQuote: () =
                   <img
                     src={service.image}
                     alt={service.alt}
+                    loading="lazy"
                     className="w-full h-full object-cover"
                   />
                 </div>
@@ -357,7 +357,7 @@ export default function BathroomRenovationsPage({ openQuote }: { openQuote: () =
                 key={src}
                 className="relative rounded-2xl overflow-hidden flex-1 hover:flex-[3] transition-all duration-500 ease-in-out cursor-pointer group"
               >
-                <img src={src} alt={alt} className="absolute inset-0 w-full h-full object-cover" />
+                <img src={src} alt={alt} loading="lazy" className="absolute inset-0 w-full h-full object-cover" />
                 <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-500"></div>
               </div>
             ))}
@@ -365,7 +365,7 @@ export default function BathroomRenovationsPage({ openQuote }: { openQuote: () =
           <div className="md:hidden grid grid-cols-2 gap-4">
             {images.bathroomPage.gallery.slice(0, 4).map(({ src, alt }) => (
               <div key={src} className="aspect-square rounded-2xl overflow-hidden">
-                <img src={src} alt={alt} className="w-full h-full object-cover" />
+                <img src={src} alt={alt} loading="lazy" className="w-full h-full object-cover" />
               </div>
             ))}
           </div>
