@@ -136,6 +136,8 @@ export default function HomePage({ openQuote }: { openQuote: () => void }) {
             <div className="aspect-[4/3] lg:aspect-[4/4.35] rounded-2xl overflow-hidden shadow-2xl relative z-10">
               <img
                 src={images.homepage.hero.src}
+                srcSet={`${images.homepage.hero.mobileSrc} 828w, ${images.homepage.hero.src} 1600w`}
+                sizes="(max-width: 768px) 100vw, 50vw"
                 alt={images.homepage.hero.alt}
                 className="w-full h-full object-cover object-center"
               />
