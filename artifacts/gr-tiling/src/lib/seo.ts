@@ -9,7 +9,7 @@
  * before launch (or wire it through an env var).
  */
 
-export const SITE_URL = "https://www.grtilingdublin.ie";
+export const SITE_URL = "https://gr-tiling-bathroom-renovations.pages.dev";
 
 export type PageSeo = {
   title: string;

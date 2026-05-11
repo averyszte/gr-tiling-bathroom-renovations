@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /thank-you
 
-Sitemap: https://www.grtilingdublin.ie/sitemap.xml
+Sitemap: https://gr-tiling-bathroom-renovations.pages.dev/sitemap.xml
