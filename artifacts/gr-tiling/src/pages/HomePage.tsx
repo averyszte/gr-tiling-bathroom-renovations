@@ -140,6 +140,7 @@ export default function HomePage({ openQuote }: { openQuote: () => void }) {
                 sizes="(max-width: 768px) 100vw, 50vw"
                 alt={images.homepage.hero.alt}
                 className="w-full h-full object-cover object-center"
+                fetchPriority="high"
               />
             </div>
             <div className="absolute -bottom-8 -left-8 w-64 h-64 bg-primary/10 rounded-full blur-3xl -z-10"></div>
