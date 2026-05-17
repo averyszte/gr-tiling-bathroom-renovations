@@ -21,13 +21,6 @@ const bathroomSchema = {
       "areaServed": "Dublin and surrounding areas",
       "serviceType": "Bathroom Renovations",
       "url": `${SITE_URL}/services/bathroom-renovations`,
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "5.0",
-        "reviewCount": "3",
-        "bestRating": "5",
-        "worstRating": "1"
-      },
     },
     {
       "@type": "BreadcrumbList",
