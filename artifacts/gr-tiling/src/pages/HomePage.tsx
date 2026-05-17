@@ -25,6 +25,7 @@ const homeSchema = {
       "priceRange": "€€",
       "founder": { "@type": "Person", "name": "Gerard Ronan" },
       "sameAs": ["https://maps.app.goo.gl/zXMYDcdtwATJcR9AA"],
+      "image": `${SITE_URL}/opengraph.jpg`,
       "serviceType": "Bathroom renovations and tiling services",
       "aggregateRating": {
         "@type": "AggregateRating",
