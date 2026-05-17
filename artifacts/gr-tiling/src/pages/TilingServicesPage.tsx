@@ -21,13 +21,6 @@ const tilingSchema = {
       "areaServed": "Dublin and surrounding areas",
       "serviceType": "Tiling Services",
       "url": `${SITE_URL}/services/tiling-services`,
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "5.0",
-        "reviewCount": "3",
-        "bestRating": "5",
-        "worstRating": "1"
-      },
     },
     {
       "@type": "BreadcrumbList",
