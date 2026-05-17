@@ -17,7 +17,7 @@ const tilingSchema = {
       "@type": "Service",
       "name": "Tiling Services Dublin",
       "description": "Professional tiling services in Dublin by GR Tiling & Bathroom Renovations, including bathroom tiling, wall tiling, floor tiling, and tile finishing.",
-      "provider": { "@type": "LocalBusiness", "name": "GR Tiling & Bathroom Renovations" },
+      "provider": { "@type": "LocalBusiness", "name": "GR Tiling & Bathroom Renovations", "telephone": "+353877209850", "priceRange": "€€", "image": `${SITE_URL}/opengraph.jpg` },
       "areaServed": "Dublin and surrounding areas",
       "serviceType": "Tiling Services",
       "url": `${SITE_URL}/services/tiling-services`,
