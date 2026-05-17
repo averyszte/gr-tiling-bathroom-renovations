@@ -12,7 +12,7 @@ const aboutSchema = {
       "name": "About GR Tiling & Bathroom Renovations",
       "description": "Learn about Gerard Ronan and GR Tiling & Bathroom Renovations, providing bathroom renovation and tiling services in Dublin.",
       "url": `${SITE_URL}/about`,
-      "mainEntity": { "@type": "LocalBusiness", "name": "GR Tiling & Bathroom Renovations" },
+      "mainEntity": { "@type": "LocalBusiness", "name": "GR Tiling & Bathroom Renovations", "telephone": "+353877209850", "priceRange": "€€", "image": `${SITE_URL}/opengraph.jpg` },
     },
     {
       "@type": "BreadcrumbList",

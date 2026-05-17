@@ -17,7 +17,7 @@ const bathroomSchema = {
       "@type": "Service",
       "name": "Bathroom Renovations Dublin",
       "description": "Bathroom renovation services in Dublin by GR Tiling & Bathroom Renovations, focused on clean work, clear pricing, and reliable results.",
-      "provider": { "@type": "LocalBusiness", "name": "GR Tiling & Bathroom Renovations" },
+      "provider": { "@type": "LocalBusiness", "name": "GR Tiling & Bathroom Renovations", "telephone": "+353877209850", "priceRange": "€€", "image": `${SITE_URL}/opengraph.jpg` },
       "areaServed": "Dublin and surrounding areas",
       "serviceType": "Bathroom Renovations",
       "url": `${SITE_URL}/services/bathroom-renovations`,
