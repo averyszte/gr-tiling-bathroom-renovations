@@ -116,7 +116,7 @@ export default function HomePage({ openQuote }: { openQuote: () => void }) {
         <div className="container mx-auto px-4 grid lg:grid-cols-2 gap-10 items-center">
           <div className="max-w-2xl">
             <h1 className="text-primary font-semibold tracking-wider uppercase text-sm mb-3 block">
-              Dublin Bathroom Renovation
+              Dublin Tiling & Bathroom Renovations
             </h1>
             <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground leading-[1.2] mb-5 tracking-tight">
               On Time. On Budget. No Surprises.
