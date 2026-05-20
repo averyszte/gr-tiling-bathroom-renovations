@@ -132,6 +132,9 @@ export default function HomePage({ openQuote }: { openQuote: () => void }) {
                 <a href="tel:+353877209850">Call +353 87 720 9850</a>
               </Button>
             </div>
+            <div className="mt-8 max-w-xl">
+              <div className="elfsight-app-4bdd7f9c-8071-4266-b7a9-664b4f6f3f62" data-elfsight-app-lazy></div>
+            </div>
           </div>
           <div className="relative lg:-mt-4">
             <div className="aspect-[4/3] lg:aspect-[4/4.35] rounded-2xl overflow-hidden shadow-2xl relative z-10">
