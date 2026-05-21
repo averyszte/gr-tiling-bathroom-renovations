@@ -10,6 +10,7 @@ import {
 } from "@/components/ui/accordion";
 import type { ReactNode } from "react";
 import { images } from "@/data/images";
+import { HeroReviewBadge } from "@/components/ui/hero-review-badge";
 import { applyJsonLd, SITE_URL } from "@/lib/seo";
 
 const homeSchema = {
@@ -132,8 +133,8 @@ export default function HomePage({ openQuote }: { openQuote: () => void }) {
                 <a href="tel:+353877209850">Call +353 87 720 9850</a>
               </Button>
             </div>
-            <div className="mt-8 max-w-xl">
-              <div className="elfsight-app-cc21d305-b7cb-4705-a656-ab915d363988" data-elfsight-app-lazy></div>
+            <div className="mt-8">
+              <HeroReviewBadge />
             </div>
           </div>
           <div className="relative lg:-mt-4">
