@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Star, CheckCircle2, ChevronRight, XCircle, MessageCircle, FileText, Wrench } from "lucide-react";
+import { Star, CheckCircle2, ChevronRight, XCircle, MessageCircle, FileText, Wrench, Shield, Bath, LayoutGrid, Sparkles, MapPin, ClipboardList } from "lucide-react";
 import { Link } from "wouter";
 import {
   Accordion,
@@ -17,7 +17,7 @@ const homeSchema = {
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "LocalBusiness",
+      "@type": "HomeAndConstructionBusiness",
       "name": "GR Tiling & Bathroom Renovations",
       "url": SITE_URL,
       "telephone": "+353877209850",
@@ -27,7 +27,26 @@ const homeSchema = {
       "founder": { "@type": "Person", "name": "Gerard Ronan" },
       "sameAs": ["https://maps.app.goo.gl/zXMYDcdtwATJcR9AA"],
       "image": `${SITE_URL}/opengraph.jpg`,
-      "serviceType": "Bathroom renovations and tiling services",
+      "makesOffer": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Bathroom Renovations",
+            "description": "Full bathroom renovation services in Dublin including design, plumbing, tiling, and fitting.",
+            "areaServed": "Dublin"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Tiling Services",
+            "description": "Professional wall and floor tiling services in Dublin for bathrooms, kitchens, and other spaces.",
+            "areaServed": "Dublin"
+          }
+        }
+      ],
       "aggregateRating": {
         "@type": "AggregateRating",
         "ratingValue": "5.0",
@@ -156,30 +175,35 @@ export default function HomePage({ openQuote }: { openQuote: () => void }) {
       {/* Trust Strip */}
       <div className="bg-primary text-primary-foreground py-6 border-y border-primary-foreground/10">
         <div className="container mx-auto px-4 overflow-hidden">
-          <div className="flex flex-wrap justify-center md:justify-between items-center gap-6 md:gap-4 text-sm font-medium tracking-wide">
+          <div className="flex flex-wrap justify-center items-center gap-x-8 gap-y-4 text-sm font-medium tracking-wide">
             <div className="flex items-center gap-2">
-              <Star className="fill-yellow-400 text-yellow-400 w-4 h-4" />
-              <span>5.0 Google Rating</span>
-            </div>
-            <div className="hidden md:block w-1 h-1 rounded-full bg-primary-foreground/30"></div>
-            <div className="flex items-center gap-2">
-              <CheckCircle2 className="w-4 h-4 opacity-80" />
+              <Bath className="w-4 h-4 opacity-80" />
               <span>Bathroom Renovations</span>
             </div>
             <div className="hidden md:block w-1 h-1 rounded-full bg-primary-foreground/30"></div>
             <div className="flex items-center gap-2">
-              <CheckCircle2 className="w-4 h-4 opacity-80" />
+              <LayoutGrid className="w-4 h-4 opacity-80" />
               <span>Tiling Services</span>
             </div>
             <div className="hidden md:block w-1 h-1 rounded-full bg-primary-foreground/30"></div>
             <div className="flex items-center gap-2">
-              <CheckCircle2 className="w-4 h-4 opacity-80" />
+              <Sparkles className="w-4 h-4 opacity-80" />
               <span>Clean & Tidy Work</span>
             </div>
             <div className="hidden md:block w-1 h-1 rounded-full bg-primary-foreground/30"></div>
             <div className="flex items-center gap-2">
-              <CheckCircle2 className="w-4 h-4 opacity-80" />
-              <span>Dublin Area</span>
+              <Shield className="w-4 h-4 opacity-80" />
+              <span>Fully Insured</span>
+            </div>
+            <div className="hidden md:block w-1 h-1 rounded-full bg-primary-foreground/30"></div>
+            <div className="flex items-center gap-2">
+              <MapPin className="w-4 h-4 opacity-80" />
+              <span>Irish Owned & Operated</span>
+            </div>
+            <div className="hidden md:block w-1 h-1 rounded-full bg-primary-foreground/30"></div>
+            <div className="flex items-center gap-2">
+              <ClipboardList className="w-4 h-4 opacity-80" />
+              <span>Free Quotes</span>
             </div>
           </div>
         </div>

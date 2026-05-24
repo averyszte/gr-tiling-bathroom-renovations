@@ -158,8 +158,6 @@ export function Footer() {
           <nav className="flex flex-col gap-3">
             <Link href="/services/bathroom-renovations" className="text-background/70 hover:text-background transition-colors">Bathroom Renovations</Link>
             <Link href="/services/tiling-services" className="text-background/70 hover:text-background transition-colors">Tiling Services</Link>
-            <Link href="/services/bathroom-renovations" className="text-background/70 hover:text-background transition-colors">Wet Rooms</Link>
-            <Link href="/services/bathroom-renovations" className="text-background/70 hover:text-background transition-colors">Commercial Tiling</Link>
           </nav>
         </div>
 
