@@ -20,7 +20,12 @@ function GoogleIcon() {
 
 export function HeroReviewBadge() {
   return (
-    <div className="flex items-center gap-3">
+    <a
+      href="https://share.google/87MHaoyD0IJOUnsYF"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="flex items-center gap-3 hover:opacity-80 transition-opacity duration-200"
+    >
       {/* Stacked avatars */}
       <div className="flex -space-x-3">
         {avatars.map((avatar, i) => (
@@ -51,6 +56,6 @@ export function HeroReviewBadge() {
         </div>
         <p className="text-xs text-muted-foreground mt-0.5">Verified Google Reviews · Dublin</p>
       </div>
-    </div>
+    </a>
   );
 }

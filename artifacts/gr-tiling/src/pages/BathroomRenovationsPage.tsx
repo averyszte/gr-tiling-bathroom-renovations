@@ -460,7 +460,7 @@ export default function BathroomRenovationsPage({ openQuote }: { openQuote: () =
           <div className="text-center">
             <Button variant="outline" size="lg" asChild>
               <a
-                href="https://maps.app.goo.gl/zXMYDcdtwATJcR9AA"
+                href="https://share.google/87MHaoyD0IJOUnsYF"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2"
