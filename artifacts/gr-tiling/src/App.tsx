@@ -5,8 +5,8 @@ import { Toaster } from "@/components/ui/toaster";
 import { Header, Footer } from "@/components/Layout";
 import { QuoteModal } from "@/components/QuoteModal";
 import { ScrollToTop } from "@/components/ScrollToTop";
+import HomePage from "@/pages/HomePage";
 
-const HomePage = lazy(() => import("@/pages/HomePage"));
 const BathroomRenovationsPage = lazy(() => import("@/pages/BathroomRenovationsPage"));
 const TilingServicesPage = lazy(() => import("@/pages/TilingServicesPage"));
 const AboutPage = lazy(() => import("@/pages/AboutPage"));
