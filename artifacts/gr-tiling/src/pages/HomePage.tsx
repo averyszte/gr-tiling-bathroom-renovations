@@ -11,7 +11,7 @@ import {
 import type { ReactNode } from "react";
 import { images } from "@/data/images";
 import { HeroReviewBadge } from "@/components/ui/hero-review-badge";
-import { applyJsonLd, SITE_URL } from "@/lib/seo";
+import { applyJsonLd, applyPageSeo, SITE_URL } from "@/lib/seo";
 
 const homeSchema = {
   "@context": "https://schema.org",
@@ -127,6 +127,11 @@ const faqs: Faq[] = [
 ];
 
 export default function HomePage({ openQuote }: { openQuote: () => void }) {
+  useEffect(() => applyPageSeo({
+    title: "Bathroom Renovations & Tiling Services Dublin | GR Tiling",
+    description: "Transform your bathroom with Dublin's trusted renovation and tiling specialists. Clean work, honest pricing, and a 5-star reputation. Get a free quote today.",
+    path: "/",
+  }), []);
   useEffect(() => applyJsonLd("home", homeSchema), []);
 
   return (
