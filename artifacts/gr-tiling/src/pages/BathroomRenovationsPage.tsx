@@ -9,6 +9,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { applyPageSeo, applyJsonLd, SITE_URL } from "@/lib/seo";
+import { HeroReviewBadge } from "@/components/ui/hero-review-badge";
 
 const bathroomSchema = {
   "@context": "https://schema.org",
@@ -203,13 +204,16 @@ export default function BathroomRenovationsPage({ openQuote }: { openQuote: () =
             <p className="text-lg sm:text-xl text-muted-foreground mb-10 leading-relaxed max-w-2xl mx-auto">
               Get your bathroom renovated on time and on budget with a trusted local Dublin specialist. No delays, no hidden costs, and no mess left behind.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-14 lg:mb-16">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
               <Button size="lg" className="text-base h-14 px-8" onClick={openQuote}>
                 Get a Free Quote
               </Button>
               <Button size="lg" variant="outline" className="text-base h-14 px-8 bg-transparent" asChild>
                 <a href="tel:+353877209850">Call +353 87 720 9850</a>
               </Button>
+            </div>
+            <div className="flex justify-center mb-14 lg:mb-16">
+              <HeroReviewBadge />
             </div>
           </div>
           {/* Wide image below */}

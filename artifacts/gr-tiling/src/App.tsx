@@ -1,4 +1,4 @@
-import { lazy, Suspense, useState } from "react";
+import { useState } from "react";
 import { Switch, Route, Router as WouterRouter } from "wouter";
 import { Toaster } from "@/components/ui/toaster";
 
@@ -6,13 +6,12 @@ import { Header, Footer } from "@/components/Layout";
 import { QuoteModal } from "@/components/QuoteModal";
 import { ScrollToTop } from "@/components/ScrollToTop";
 import HomePage from "@/pages/HomePage";
-
-const BathroomRenovationsPage = lazy(() => import("@/pages/BathroomRenovationsPage"));
-const TilingServicesPage = lazy(() => import("@/pages/TilingServicesPage"));
-const AboutPage = lazy(() => import("@/pages/AboutPage"));
-const ContactPage = lazy(() => import("@/pages/ContactPage"));
-const ThankYouPage = lazy(() => import("@/pages/ThankYouPage"));
-const NotFound = lazy(() => import("@/pages/not-found"));
+import BathroomRenovationsPage from "@/pages/BathroomRenovationsPage";
+import TilingServicesPage from "@/pages/TilingServicesPage";
+import AboutPage from "@/pages/AboutPage";
+import ContactPage from "@/pages/ContactPage";
+import ThankYouPage from "@/pages/ThankYouPage";
+import NotFound from "@/pages/not-found";
 
 function AppLayout({ openQuote }: { openQuote: () => void }) {
   const HomePageWithProps = () => <HomePage openQuote={openQuote} />;
@@ -24,17 +23,15 @@ function AppLayout({ openQuote }: { openQuote: () => void }) {
     <div className="flex min-h-[100dvh] flex-col">
       <ScrollToTop />
       <Header openQuote={openQuote} />
-      <Suspense fallback={<div className="flex-1" />}>
-        <Switch>
-          <Route path="/" component={HomePageWithProps} />
-          <Route path="/services/bathroom-renovations" component={BathroomRenovationsPageWithProps} />
-          <Route path="/services/tiling-services" component={TilingServicesPageWithProps} />
-          <Route path="/about" component={AboutPageWithProps} />
-          <Route path="/contact" component={ContactPage} />
-          <Route path="/thank-you" component={ThankYouPage} />
-          <Route component={NotFound} />
-        </Switch>
-      </Suspense>
+      <Switch>
+        <Route path="/" component={HomePageWithProps} />
+        <Route path="/services/bathroom-renovations" component={BathroomRenovationsPageWithProps} />
+        <Route path="/services/tiling-services" component={TilingServicesPageWithProps} />
+        <Route path="/about" component={AboutPageWithProps} />
+        <Route path="/contact" component={ContactPage} />
+        <Route path="/thank-you" component={ThankYouPage} />
+        <Route component={NotFound} />
+      </Switch>
       <Footer />
     </div>
   );
