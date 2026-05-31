@@ -1,7 +1,7 @@
 import { useEffect, type ReactNode } from "react";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
-import { Star, CheckCircle2, ChevronRight, XCircle, MessageCircle, FileText, Wrench } from "lucide-react";
+import { CheckCircle2, ChevronRight, XCircle, MessageCircle, FileText, Wrench } from "lucide-react";
 import {
   Accordion,
   AccordionContent,
@@ -10,6 +10,11 @@ import {
 } from "@/components/ui/accordion";
 import { applyPageSeo, applyJsonLd, SITE_URL } from "@/lib/seo";
 import { HeroReviewBadge } from "@/components/ui/hero-review-badge";
+import { TrustStrip } from "@/components/TrustStrip";
+import { images } from "@/data/images";
+import { BeforeAfterSlider } from "@/components/BeforeAfterSlider";
+import { BelowFold } from "@/components/BelowFold";
+import { ReviewsSection } from "@/components/ReviewsSection";
 
 const bathroomSchema = {
   "@context": "https://schema.org",
@@ -18,7 +23,7 @@ const bathroomSchema = {
       "@type": "Service",
       "name": "Bathroom Renovations Dublin",
       "description": "Bathroom renovation services in Dublin by GR Tiling & Bathroom Renovations, focused on clean work, clear pricing, and reliable results.",
-      "provider": { "@type": "LocalBusiness", "name": "GR Tiling & Bathroom Renovations", "telephone": "+353877209850", "priceRange": "€€", "image": `${SITE_URL}/opengraph.jpg` },
+      "provider": { "@type": "HomeAndConstructionBusiness", "name": "GR Tiling & Bathroom Renovations", "telephone": "+353877209850", "priceRange": "€€", "image": `${SITE_URL}/opengraph.jpg` },
       "areaServed": "Dublin and surrounding areas",
       "serviceType": "Bathroom Renovations",
       "url": `${SITE_URL}/services/bathroom-renovations`,
@@ -67,8 +72,6 @@ const bathroomSchema = {
     },
   ],
 };
-import { images } from "@/data/images";
-import { BeforeAfterSlider } from "@/components/BeforeAfterSlider";
 
 type Service = {
   image: string;
@@ -98,8 +101,14 @@ const services: Service[] = [
     image: images.bathroomPage.services[1].src,
     alt: images.bathroomPage.services[1].alt,
     title: "Bathroom Layout & Upgrades",
-    description:
-      "Smarter bathroom layouts that improve space, flow, and usability. Modernise fixtures and upgrade finishes without committing to a full gut renovation.",
+    description: (
+      <>
+        Smarter bathroom layouts that improve space, flow, and usability. Modernise fixtures and upgrade finishes without committing to a full gut renovation. We also specialise in{" "}
+        <Link href="/services/wet-room-installation-dublin" className="text-primary font-medium underline underline-offset-4 hover:opacity-80">wet room installations</Link>
+        {" "}and{" "}
+        <Link href="/services/accessible-bathroom-dublin" className="text-primary font-medium underline underline-offset-4 hover:opacity-80">accessible bathroom conversions</Link>.
+      </>
+    ),
     bullets: [
       "Space optimisation & layout planning",
       "Modern fixture upgrades",
@@ -131,26 +140,12 @@ const services: Service[] = [
   },
 ];
 
-const reasons = [
-  { title: "On Time Completion", text: "We set a realistic timeline at the start and stick to it. No unexplained delays." },
-  { title: "On Budget Pricing", text: "Clear, detailed quotes upfront. The price we quote is the price you pay." },
-  { title: "Clean Workmanship", text: "We protect your home, clean up daily, and leave every area tidy." },
-  { title: "Honest Communication", text: "Regular updates throughout the project, so you always know where things stand." },
-  { title: "Local Dublin Specialist", text: "We work across Dublin and surrounding areas. Based local, working local." },
-  { title: "High-Quality Finishes", text: "Premium materials and precision work that looks great and lasts for years." },
-];
-
-const reviews = [
-  { name: "Alan L", text: "Used GR Tiling in my own house. Bathroom done in 3 days. Also did flooring in hallway and kitchen for my mother-in-law.\n\nSuperb job, over the moon. Highly recommend for fast, professional, friendly service." },
-  { name: "Jessicaelizabeth Mooney", text: "Excellent service. Had my bathroom done and I am absolutely delighted with the results. Highly recommend." },
-  { name: "Billy Kendrick", text: "Completed a bathroom and ensuite. Excellent job. Highly recommend." },
-];
 
 type Faq = { q: string; a: ReactNode };
 
 const faqs: Faq[] = [
   { q: "How much does a bathroom renovation cost in Dublin?", a: "Costs depend on the size, scope, and materials chosen for your bathroom remodel. We provide clear, detailed quotes before any work starts, with no hidden extras." },
-  { q: "How long does a bathroom renovation take?", a: "Most standard bathroom renovations take 1–3 weeks. We give you a realistic timeline at the start and keep you updated throughout." },
+  { q: "How long does a bathroom renovation take?", a: "Most standard bathroom renovations take 1-3 weeks. We give you a realistic timeline at the start and keep you updated throughout." },
   { q: "Will the work area be kept clean?", a: "Yes. We protect your home, clean up every day, and leave the area tidy. We treat your home the way we'd want ours treated." },
   { q: "Do I get a written quote?", a: "Absolutely. We provide a clear written quote before any work begins so you know exactly what's included and what the cost will be." },
   {
@@ -167,7 +162,6 @@ const faqs: Faq[] = [
   },
   { q: "Can you handle just the tiling, not the full renovation?", a: "Yes. We do standalone tiling work as well as full bathroom renovations. Just let us know what you need and we'll quote accordingly." },
 ];
-
 
 const processSteps = [
   { icon: <MessageCircle className="w-10 h-10" />, title: "Plan", text: "Tell us what you need and we'll go through your bathroom, ideas, and budget to get everything clear from the start." },
@@ -199,7 +193,7 @@ export default function BathroomRenovationsPage({ openQuote }: { openQuote: () =
               Bathroom Renovations Dublin
             </h1>
             <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground leading-[1.15] mb-6 tracking-tight">
-              One Team. Fixed Price. Clean Finish.
+              One Team. Clear Quote. Clean Finish.
             </h2>
             <p className="text-lg sm:text-xl text-muted-foreground mb-10 leading-relaxed max-w-2xl mx-auto">
               Get your bathroom renovated on time and on budget with a trusted local Dublin specialist. No delays, no hidden costs, and no mess left behind.
@@ -222,6 +216,7 @@ export default function BathroomRenovationsPage({ openQuote }: { openQuote: () =
               <img
                 src={images.bathroomPage.hero.src}
                 alt={images.bathroomPage.hero.alt}
+                fetchPriority="high"
                 className="w-full h-full object-cover object-center"
               />
             </div>
@@ -229,6 +224,9 @@ export default function BathroomRenovationsPage({ openQuote }: { openQuote: () =
           </div>
         </div>
       </section>
+
+      <BelowFold>
+      <TrustStrip />
 
       {/* Before / After Comparison */}
       <section className="py-[60px] lg:py-24 bg-background">
@@ -257,7 +255,71 @@ export default function BathroomRenovationsPage({ openQuote }: { openQuote: () =
         </div>
       </section>
 
-      {/* Problem → Solution */}
+      {/* Process */}
+      <section className="py-[60px] md:py-24 bg-secondary/30">
+        <div className="container mx-auto px-4 max-w-6xl">
+          <div className="text-center mb-8 md:mb-16">
+            <h2 className="font-serif text-3xl md:text-5xl text-foreground mb-6">Your Bathroom Renovation in 3 Simple Steps</h2>
+            <div className="w-24 h-1 bg-primary mx-auto rounded-full mb-6"></div>
+            <p className="text-lg text-muted-foreground max-w-xl mx-auto">
+              A clear, stress-free process from first message to finished bathroom. On time, on budget, no surprises.
+            </p>
+          </div>
+          <div className="relative flex flex-col md:flex-row md:items-start md:justify-between gap-14 md:gap-0">
+            <div className="hidden md:block absolute top-[3rem] left-[calc(16.67%+3rem)] right-[calc(16.67%+3rem)] h-[1.5px] bg-primary/30 z-0" />
+            {processSteps.map((item, i) => (
+              <div key={i} className="group relative z-10 flex flex-col items-center text-center flex-1 px-8 transition-transform duration-300 hover:-translate-y-1">
+                <div className="relative z-10 w-24 h-24 rounded-full bg-background border-2 border-primary/35 flex items-center justify-center mb-6 text-primary shadow-sm transition-all duration-300 group-hover:bg-primary group-hover:border-primary group-hover:text-primary-foreground group-hover:shadow-lg">
+                  {item.icon}
+                </div>
+                <h3 className="font-semibold text-lg text-foreground mb-3">{item.title}</h3>
+                <p className="text-muted-foreground leading-relaxed max-w-[220px]">{item.text}</p>
+              </div>
+            ))}
+          </div>
+          <div className="flex justify-center mt-16">
+            <Button size="lg" className="text-base h-14 px-8" onClick={openQuote}>Get a Free Quote</Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Types of Bathroom Renovations */}
+      <section className="py-[60px] md:py-24 bg-background">
+        <div className="container mx-auto px-4 max-w-6xl">
+          <div className="text-center mb-10 lg:mb-12">
+            <h2 className="font-serif text-3xl md:text-5xl text-foreground mb-4">What We Renovate</h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              From full family bathrooms to ensuites, wet rooms, and accessible bathroom conversions.
+            </p>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {[
+              { ...images.bathroomPage.whatWeRenovate[0], label: "Full Bathroom", desc: "Complete strip out and refit", href: null },
+              { ...images.bathroomPage.whatWeRenovate[1], label: "Ensuite", desc: "Smaller scale, same quality", href: null },
+              { ...images.bathroomPage.whatWeRenovate[2], label: "Wet Room", desc: null, href: "/services/wet-room-installation-dublin" },
+              { ...images.bathroomPage.whatWeRenovate[3], label: "Accessible", desc: null, href: "/services/accessible-bathroom-dublin" },
+            ].map((room, i) => (
+              <div key={i} className="relative rounded-2xl overflow-hidden aspect-[4/3] group cursor-pointer">
+                <img src={room.src} alt={room.alt} loading="lazy" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                <div className="absolute inset-0 bg-black/30 group-hover:bg-black/40 transition-colors duration-300" />
+                <div className="absolute bottom-0 left-0 right-0 flex items-center justify-between px-4 pb-4">
+                  <div>
+                    <p className="text-white font-semibold text-sm">{room.label}</p>
+                    {room.desc && <p className="text-white/70 text-xs mt-0.5">{room.desc}</p>}
+                  </div>
+                  {room.href && (
+                    <Link href={room.href} className="inline-flex items-center gap-1.5 bg-white text-foreground text-sm font-medium px-4 py-2 rounded-lg hover:bg-white/90 transition-colors flex-shrink-0">
+                      Learn More <ChevronRight size={14} />
+                    </Link>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Problem to solution */}
       <section className="py-[60px] md:py-24 bg-background">
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="text-center mb-8 md:mb-16">
@@ -355,7 +417,7 @@ export default function BathroomRenovationsPage({ openQuote }: { openQuote: () =
               A sample of recent bathroom renovation and tiling projects completed for Dublin homeowners.
             </p>
           </div>
-          <div className="hidden md:flex h-[500px] w-full gap-4">
+          <div className="hidden md:flex h-[620px] w-full gap-4">
             {images.bathroomPage.gallery.map(({ src, alt }) => (
               <div
                 key={src}
@@ -366,9 +428,9 @@ export default function BathroomRenovationsPage({ openQuote }: { openQuote: () =
               </div>
             ))}
           </div>
-          <div className="md:hidden grid grid-cols-2 gap-4">
-            {images.bathroomPage.gallery.slice(0, 4).map(({ src, alt }) => (
-              <div key={src} className="aspect-square rounded-2xl overflow-hidden">
+          <div className="md:hidden grid grid-cols-3 gap-4">
+            {images.bathroomPage.gallery.map(({ src, alt }) => (
+              <div key={src} className="aspect-[3/4] rounded-2xl overflow-hidden">
                 <img src={src} alt={alt} loading="lazy" className="w-full h-full object-cover" />
               </div>
             ))}
@@ -376,105 +438,7 @@ export default function BathroomRenovationsPage({ openQuote }: { openQuote: () =
         </div>
       </section>
 
-      {/* Process */}
-      <section className="py-[60px] md:py-24 bg-secondary/30">
-        <div className="container mx-auto px-4 max-w-6xl">
-          <div className="text-center mb-8 md:mb-16">
-            <h2 className="font-serif text-3xl md:text-5xl text-foreground mb-6">Your Bathroom Renovation in 3 Simple Steps</h2>
-            <div className="w-24 h-1 bg-primary mx-auto rounded-full mb-6"></div>
-            <p className="text-lg text-muted-foreground max-w-xl mx-auto">
-              A clear, stress-free process from first message to finished bathroom. On time, on budget, no surprises.
-            </p>
-          </div>
-          <div className="relative flex flex-col md:flex-row md:items-start md:justify-between gap-14 md:gap-0">
-            <div className="hidden md:block absolute top-[3rem] left-[calc(16.67%+3rem)] right-[calc(16.67%+3rem)] h-[1.5px] bg-primary/30 z-0" />
-            {processSteps.map((item, i) => (
-              <div
-                key={i}
-                className="group relative z-10 flex flex-col items-center text-center flex-1 px-8 transition-transform duration-300 hover:-translate-y-1"
-              >
-                <div className="relative z-10 w-24 h-24 rounded-full bg-background border-2 border-primary/35 flex items-center justify-center mb-6 text-primary shadow-sm transition-all duration-300 group-hover:bg-primary group-hover:border-primary group-hover:text-primary-foreground group-hover:shadow-lg">
-                  {item.icon}
-                </div>
-                <h3 className="font-semibold text-lg text-foreground mb-3">{item.title}</h3>
-                <p className="text-muted-foreground leading-relaxed max-w-[220px]">{item.text}</p>
-              </div>
-            ))}
-          </div>
-          <div className="flex justify-center mt-16">
-            <Button size="lg" className="text-base h-14 px-8" onClick={openQuote}>
-              Get a Free Quote
-            </Button>
-          </div>
-        </div>
-      </section>
-
-      {/* Why Choose GR */}
-      <section className="py-[60px] md:py-24 bg-background">
-        <div className="container mx-auto px-4 max-w-5xl">
-          <div className="text-center mb-8 md:mb-16">
-            <h2 className="font-serif text-3xl md:text-5xl text-foreground mb-6">
-              Why Choose GR Tiling & Bathroom Renovations
-            </h2>
-            <div className="w-24 h-1 bg-primary mx-auto rounded-full"></div>
-          </div>
-          <div className="grid sm:grid-cols-2 gap-6">
-            {reasons.map((item, i) => (
-              <div key={i} className="flex gap-4 p-6 bg-card rounded-2xl border shadow-sm">
-                <CheckCircle2 className="text-green-600 w-6 h-6 flex-shrink-0 mt-0.5" />
-                <div>
-                  <h3 className="font-semibold text-foreground mb-1">{item.title}</h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed">{item.text}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Reviews */}
-      <section className="py-[60px] md:py-24 bg-secondary/30">
-        <div className="container mx-auto px-4 max-w-7xl">
-          <div className="text-center mb-8 md:mb-16">
-            <h2 className="font-serif text-3xl md:text-5xl text-foreground mb-6">What Our Customers Say</h2>
-            <div className="flex justify-center items-center gap-2 mb-4">
-              {[1, 2, 3, 4, 5].map((i) => <Star key={i} className="fill-yellow-400 text-yellow-400 w-5 h-5" />)}
-            </div>
-            <p className="text-lg text-muted-foreground">5.0 Google Rating from verified Dublin customers</p>
-          </div>
-          <div className="grid md:grid-cols-3 gap-8 mb-8 md:mb-12">
-            {reviews.map((review, i) => (
-              <div key={i} className="bg-card p-8 pb-10 rounded-2xl shadow-lg border relative">
-                <div className="flex gap-1 mb-4">
-                  {[1, 2, 3, 4, 5].map((j) => <Star key={j} className="fill-yellow-400 text-yellow-400 w-4 h-4" />)}
-                </div>
-                <p className="text-muted-foreground mb-6 leading-relaxed italic whitespace-pre-line">"{review.text}"</p>
-                <p className="font-medium text-foreground">{review.name}</p>
-                <div className="absolute bottom-3 right-4 opacity-70">
-                  <svg width="18" height="18" viewBox="0 0 533.5 544.3" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M533.5 278.4c0-18.5-1.5-37.1-4.7-55.3H272.1v104.8h147c-6.1 33.8-25.7 63.7-54.4 82.7v68h87.7c51.5-47.4 81.1-117.4 81.1-200.2z" fill="#4285f4"/>
-                    <path d="M272.1 544.3c73.4 0 135.3-24.1 180.4-65.7l-87.7-68c-24.4 16.6-55.9 26-92.6 26-71 0-131.2-47.9-152.8-112.3H28.9v70.1c46.2 91.9 140.3 149.9 243.2 149.9z" fill="#34a853"/>
-                    <path d="M119.3 324.3c-11.4-33.8-11.4-70.4 0-104.2V150H28.9c-38.6 76.9-38.6 167.5 0 244.4l90.4-70.1z" fill="#fbbc04"/>
-                    <path d="M272.1 107.7c38.8-.6 76.3 14 104.4 40.8l77.7-77.7C405 24.6 339.7-.8 272.1 0 169.2 0 75.1 58 28.9 150l90.4 70.1c21.5-64.5 81.8-112.4 152.8-112.4z" fill="#ea4335"/>
-                  </svg>
-                </div>
-              </div>
-            ))}
-          </div>
-          <div className="text-center">
-            <Button variant="outline" size="lg" asChild>
-              <a
-                href="https://share.google/87MHaoyD0IJOUnsYF"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2"
-              >
-                See All Google Reviews <ChevronRight size={16} />
-              </a>
-            </Button>
-          </div>
-        </div>
-      </section>
+      <ReviewsSection />
 
       {/* FAQ */}
       <section className="py-[60px] md:py-24 bg-background">
@@ -517,6 +481,7 @@ export default function BathroomRenovationsPage({ openQuote }: { openQuote: () =
         </div>
       </section>
 
+      </BelowFold>
     </main>
   );
 }

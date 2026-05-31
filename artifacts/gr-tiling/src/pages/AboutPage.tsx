@@ -1,8 +1,9 @@
 import { useEffect } from "react";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
-import { Star, Clock, BadgeEuro, Sparkles, Home, ChevronRight } from "lucide-react";
 import { applyPageSeo, applyJsonLd, SITE_URL } from "@/lib/seo";
+import { ReviewsSection } from "@/components/ReviewsSection";
+import { images } from "@/data/images";
 
 const aboutSchema = {
   "@context": "https://schema.org",
@@ -23,45 +24,32 @@ const aboutSchema = {
     },
   ],
 };
-import { images } from "@/data/images";
+
+const credentials = [
+  { stat: "15 Years", label: "In the trade" },
+  { stat: "Family Business", label: "Irish owned & operated" },
+  { stat: "One Team", label: "Full job, start to finish" },
+];
 
 const principles = [
   {
-    icon: <Clock className="w-6 h-6" />,
     title: "Clear timelines from the start",
     text: "Realistic schedules agreed upfront, with regular updates so you always know where the job stands.",
   },
   {
-    icon: <BadgeEuro className="w-6 h-6" />,
     title: "Honest pricing with no surprises",
     text: "Detailed written quotes before any work begins. The price quoted is the price paid.",
   },
   {
-    icon: <Sparkles className="w-6 h-6" />,
     title: "Clean workmanship and daily tidy-up",
     text: "Surfaces protected, dust kept down, and the work area cleared at the end of every visit.",
   },
   {
-    icon: <Home className="w-6 h-6" />,
     title: "Respect for your home and space",
     text: "We treat every home like our own, working tidily and considerately from start to finish.",
   },
 ];
 
-const reviews = [
-  {
-    name: "Jessicaelizabeth Mooney",
-    text: "Excellent service. Had my bathroom done and I am absolutely delighted with the results. Highly recommend.",
-  },
-  {
-    name: "Raimonda Brooks",
-    text: "Gerry is a true legend, super nice guy. Came in and got stuck into work straight away and had it done in no time. Left the place as clean as he found it.\n\nSuper honest about pricing too. I actually ended up paying less than expected. Overall 100% pleased with the result.",
-  },
-  {
-    name: "Alan L",
-    text: "Used GR Tiling in my own house. Bathroom done in 3 days. Also did flooring in hallway and kitchen for my mother-in-law.\n\nSuperb job, over the moon. Highly recommend for fast, professional, friendly service.",
-  },
-];
 
 const PAGE_TITLE = "About GR Tiling & Bathroom Renovations | Dublin";
 const PAGE_DESCRIPTION =
@@ -78,21 +66,24 @@ export default function AboutPage({ openQuote }: { openQuote: () => void }) {
   return (
     <main className="flex-1 pb-20 md:pb-0">
 
-      {/* Personal section (image + text) — first section on the page */}
+      {/* Personal section */}
       <section className="pt-[60px] pb-[60px] lg:pt-20 lg:pb-28 bg-background">
         <div className="container mx-auto px-4 max-w-6xl grid lg:grid-cols-[5fr_7fr] gap-12 lg:gap-16 items-center">
           <div className="rounded-2xl overflow-hidden shadow-lg aspect-[4/5] bg-secondary/30">
-            {/* Placeholder image, swap for a real portrait later */}
             <img
               src={images.about.portrait.src}
               alt={images.about.portrait.alt}
+              loading="lazy"
               className="w-full h-full object-cover"
             />
           </div>
           <div>
-            <h1 className="font-serif text-3xl md:text-5xl text-foreground mb-6">
-              Meet Gerard Ronan Behind the Work
+            <h1 className="text-primary font-semibold tracking-wider uppercase text-sm mb-4 block">
+              About GR Tiling Dublin
             </h1>
+            <h2 className="font-serif text-3xl md:text-5xl text-foreground mb-6">
+              Meet Gerard Ronan Behind the Work
+            </h2>
             <div className="space-y-5 text-muted-foreground text-lg leading-relaxed">
               <p>
                 Hi, I'm Gerard Ronan, most people just call me Gerry.
@@ -101,10 +92,7 @@ export default function AboutPage({ openQuote }: { openQuote: () => void }) {
                 I started GR Tiling & Bathroom Renovations to offer something simple. Reliable, high-quality work without the usual hassle. No chasing trades, no unclear pricing, and no jobs left half done.
               </p>
               <p>
-                Every project is hands-on. I'm on site, making sure everything is done properly from start to finish, with attention to detail and a clean finish that lasts.
-              </p>
-              <p>
-                Working in homes across Dublin, the focus is always the same. Do the job right, keep things tidy, and make sure the customer is genuinely happy with the result.
+                Working in homes across Dublin and surrounding counties, the focus is always the same. Do the job right, keep things tidy, and make sure the customer is genuinely happy with the result.
               </p>
             </div>
           </div>
@@ -113,26 +101,30 @@ export default function AboutPage({ openQuote }: { openQuote: () => void }) {
 
       {/* How I Work */}
       <section className="py-[60px] md:py-24 bg-secondary/30">
-        <div className="container mx-auto px-4 max-w-5xl">
-          <div className="text-center mb-8 md:mb-16">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <div className="text-center mb-10 md:mb-16">
             <h2 className="font-serif text-3xl md:text-5xl text-foreground mb-6">
               How I Work on Every Job
             </h2>
             <div className="w-24 h-1 bg-primary mx-auto rounded-full"></div>
           </div>
-          <div className="grid sm:grid-cols-2 gap-6">
+
+          {/* Credential stats */}
+          <div className="flex flex-col sm:flex-row divide-y sm:divide-y-0 sm:divide-x divide-border border rounded-2xl overflow-hidden bg-background mb-12">
+            {credentials.map((c, i) => (
+              <div key={i} className="flex-1 px-8 py-8 text-center">
+                <p className="font-bold text-2xl sm:text-3xl text-primary mb-1">{c.stat}</p>
+                <p className="text-sm text-muted-foreground">{c.label}</p>
+              </div>
+            ))}
+          </div>
+
+          {/* Principles list */}
+          <div className="divide-y divide-border">
             {principles.map((item, i) => (
-              <div
-                key={i}
-                className="flex gap-4 p-6 bg-card rounded-2xl border shadow-sm"
-              >
-                <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center">
-                  {item.icon}
-                </div>
-                <div>
-                  <h3 className="font-semibold text-foreground mb-1">{item.title}</h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed">{item.text}</p>
-                </div>
+              <div key={i} className="flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-8 py-6">
+                <h3 className="font-semibold text-foreground sm:w-56 flex-shrink-0">{item.title}</h3>
+                <p className="text-muted-foreground leading-relaxed">{item.text}</p>
               </div>
             ))}
           </div>
@@ -166,62 +158,7 @@ export default function AboutPage({ openQuote }: { openQuote: () => void }) {
         </div>
       </section>
 
-      {/* Reviews */}
-      <section className="py-[60px] md:py-24 bg-secondary/30">
-        <div className="container mx-auto px-4 max-w-7xl">
-          <div className="text-center mb-8 md:mb-16">
-            <h2 className="font-serif text-3xl md:text-5xl text-foreground mb-6">
-              What Our Customers Say
-            </h2>
-            <div className="flex justify-center items-center gap-2 mb-4">
-              {[1, 2, 3, 4, 5].map((i) => (
-                <Star key={i} className="fill-yellow-400 text-yellow-400 w-5 h-5" />
-              ))}
-            </div>
-            <p className="text-lg text-muted-foreground">
-              5.0 Google Rating from verified Dublin customers
-            </p>
-          </div>
-          <div className="grid md:grid-cols-3 gap-8 mb-8 md:mb-12">
-            {reviews.map((review, i) => (
-              <div
-                key={i}
-                className="bg-card p-8 pb-10 rounded-2xl shadow-lg border relative"
-              >
-                <div className="flex gap-1 mb-4">
-                  {[1, 2, 3, 4, 5].map((j) => (
-                    <Star key={j} className="fill-yellow-400 text-yellow-400 w-4 h-4" />
-                  ))}
-                </div>
-                <p className="text-muted-foreground mb-6 leading-relaxed italic whitespace-pre-line">
-                  "{review.text}"
-                </p>
-                <p className="font-medium text-foreground">{review.name}</p>
-                <div className="absolute bottom-3 right-4 opacity-70">
-                  <svg width="18" height="18" viewBox="0 0 533.5 544.3" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M533.5 278.4c0-18.5-1.5-37.1-4.7-55.3H272.1v104.8h147c-6.1 33.8-25.7 63.7-54.4 82.7v68h87.7c51.5-47.4 81.1-117.4 81.1-200.2z" fill="#4285f4"/>
-                    <path d="M272.1 544.3c73.4 0 135.3-24.1 180.4-65.7l-87.7-68c-24.4 16.6-55.9 26-92.6 26-71 0-131.2-47.9-152.8-112.3H28.9v70.1c46.2 91.9 140.3 149.9 243.2 149.9z" fill="#34a853"/>
-                    <path d="M119.3 324.3c-11.4-33.8-11.4-70.4 0-104.2V150H28.9c-38.6 76.9-38.6 167.5 0 244.4l90.4-70.1z" fill="#fbbc04"/>
-                    <path d="M272.1 107.7c38.8-.6 76.3 14 104.4 40.8l77.7-77.7C405 24.6 339.7-.8 272.1 0 169.2 0 75.1 58 28.9 150l90.4 70.1c21.5-64.5 81.8-112.4 152.8-112.4z" fill="#ea4335"/>
-                  </svg>
-                </div>
-              </div>
-            ))}
-          </div>
-          <div className="text-center">
-            <Button variant="outline" size="lg" asChild>
-              <a
-                href="https://share.google/87MHaoyD0IJOUnsYF"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2"
-              >
-                See All Google Reviews <ChevronRight size={16} />
-              </a>
-            </Button>
-          </div>
-        </div>
-      </section>
+      <ReviewsSection className="bg-secondary/30" />
 
       {/* Final CTA */}
       <section className="py-10 md:py-24 bg-primary text-primary-foreground">

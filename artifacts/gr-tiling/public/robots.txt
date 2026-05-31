@@ -4,14 +4,18 @@ Disallow: /thank-you
 
 User-agent: OAI-SearchBot
 Allow: /
+Disallow: /thank-you
 
 User-agent: PerplexityBot
 Allow: /
+Disallow: /thank-you
 
 User-agent: Googlebot
 Allow: /
+Disallow: /thank-you
 
 User-agent: Bingbot
 Allow: /
+Disallow: /thank-you
 
 Sitemap: https://grtilingandbathrooms.ie/sitemap.xml

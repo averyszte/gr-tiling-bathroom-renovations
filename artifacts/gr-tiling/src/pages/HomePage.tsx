@@ -1,7 +1,9 @@
 import { useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Star, CheckCircle2, ChevronRight, XCircle, MessageCircle, FileText, Wrench, Shield, Bath, LayoutGrid, Sparkles, MapPin, ClipboardList } from "lucide-react";
+import { CheckCircle2, XCircle, MessageCircle, FileText, Wrench, Shield, Bath, LayoutGrid, Sparkles, MapPin, ClipboardList } from "lucide-react";
 import { Link } from "wouter";
+import { BelowFold } from "@/components/BelowFold";
+import { ReviewsSection } from "@/components/ReviewsSection";
 import {
   Accordion,
   AccordionContent,
@@ -50,7 +52,7 @@ const homeSchema = {
       "aggregateRating": {
         "@type": "AggregateRating",
         "ratingValue": "5.0",
-        "reviewCount": "3",
+        "reviewCount": 3,
         "bestRating": "5",
         "worstRating": "1"
       },
@@ -59,6 +61,12 @@ const homeSchema = {
       "@type": "WebSite",
       "name": "GR Tiling & Bathroom Renovations",
       "url": SITE_URL,
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": SITE_URL },
+      ],
     },
     {
       "@type": "FAQPage",
@@ -98,11 +106,6 @@ const homeSchema = {
   ],
 };
 
-const reviews = [
-  { name: "Raimonda Brooks", text: "Gerry is a true legend, super nice guy. Came in and got stuck into work straight away and had it done in no time. Left the place as clean as he found it.\n\nSuper honest about pricing too. I actually ended up paying less than expected. Overall 100% pleased with the result." },
-  { name: "Dionne Haslam", text: "Great service and brilliant result. No disruption or mess left behind. The house was as clean as when Gerry arrived.\n\nFriendly, courteous, and I would recommend him to anyone." },
-  { name: "Alan L", text: "Used GR Tiling in my own house. Bathroom done in 3 days. Also did flooring in hallway and kitchen for my mother-in-law.\n\nSuperb job, over the moon. Highly recommend for fast, professional, friendly service." },
-];
 
 type Faq = { q: string; a: ReactNode };
 
@@ -177,6 +180,7 @@ export default function HomePage({ openQuote }: { openQuote: () => void }) {
         </div>
       </section>
 
+      <BelowFold>
       {/* Trust Strip */}
       <div className="bg-primary text-primary-foreground py-6 border-y border-primary-foreground/10">
         <div className="container mx-auto px-4 overflow-hidden">
@@ -443,48 +447,7 @@ export default function HomePage({ openQuote }: { openQuote: () => void }) {
         </div>
       </section>
 
-      {/* Reviews */}
-      <section className="py-[60px] md:py-24 bg-secondary/30">
-        <div className="container mx-auto px-4 max-w-7xl">
-          <div className="text-center mb-8 md:mb-16">
-            <h2 className="font-serif text-3xl md:text-5xl text-foreground mb-6">What Our Customers Say</h2>
-            <div className="flex justify-center items-center gap-2 mb-4">
-              {[1, 2, 3, 4, 5].map((i) => (
-                <Star key={i} className="fill-yellow-400 text-yellow-400 w-5 h-5" />
-              ))}
-            </div>
-            <p className="text-lg text-muted-foreground">5.0 Google Rating from verified local customers</p>
-          </div>
-          <div className="grid md:grid-cols-3 gap-8 mb-8 md:mb-12">
-            {reviews.map((review, i) => (
-              <div key={i} className="bg-card p-8 pb-10 rounded-2xl shadow-lg border relative">
-                <div className="flex gap-1 mb-4">
-                  {[1, 2, 3, 4, 5].map((j) => (
-                    <Star key={j} className="fill-yellow-400 text-yellow-400 w-4 h-4" />
-                  ))}
-                </div>
-                <p className="text-muted-foreground mb-6 leading-relaxed italic whitespace-pre-line">"{review.text}"</p>
-                <p className="font-medium text-foreground">{review.name}</p>
-                <div className="absolute bottom-3 right-4 opacity-70">
-                  <svg width="18" height="18" viewBox="0 0 533.5 544.3" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M533.5 278.4c0-18.5-1.5-37.1-4.7-55.3H272.1v104.8h147c-6.1 33.8-25.7 63.7-54.4 82.7v68h87.7c51.5-47.4 81.1-117.4 81.1-200.2z" fill="#4285f4"/>
-                    <path d="M272.1 544.3c73.4 0 135.3-24.1 180.4-65.7l-87.7-68c-24.4 16.6-55.9 26-92.6 26-71 0-131.2-47.9-152.8-112.3H28.9v70.1c46.2 91.9 140.3 149.9 243.2 149.9z" fill="#34a853"/>
-                    <path d="M119.3 324.3c-11.4-33.8-11.4-70.4 0-104.2V150H28.9c-38.6 76.9-38.6 167.5 0 244.4l90.4-70.1z" fill="#fbbc04"/>
-                    <path d="M272.1 107.7c38.8-.6 76.3 14 104.4 40.8l77.7-77.7C405 24.6 339.7-.8 272.1 0 169.2 0 75.1 58 28.9 150l90.4 70.1c21.5-64.5 81.8-112.4 152.8-112.4z" fill="#ea4335"/>
-                  </svg>
-                </div>
-              </div>
-            ))}
-          </div>
-          <div className="text-center">
-            <Button variant="outline" size="lg" asChild>
-              <a href="https://share.google/87MHaoyD0IJOUnsYF" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2">
-                See All Google Reviews <ChevronRight size={16} />
-              </a>
-            </Button>
-          </div>
-        </div>
-      </section>
+      <ReviewsSection className="bg-secondary/30" />
 
       {/* FAQ Section */}
       <section className="py-[60px] md:py-24 bg-background">
@@ -528,6 +491,8 @@ export default function HomePage({ openQuote }: { openQuote: () => void }) {
           </div>
         </div>
       </section>
+
+      </BelowFold>
     </main>
   );
 }

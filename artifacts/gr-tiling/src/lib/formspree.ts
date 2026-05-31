@@ -1,7 +1,7 @@
 /**
  * Formspree submission utility.
  *
- * Set VITE_FORMSPREE_ID in your environment (Cloudflare Pages → Settings →
+ * Set VITE_FORMSPREE_ID in your environment (Cloudflare Pages -> Settings ->
  * Environment Variables, or a local .env.local file) to the form ID from
  * your Formspree dashboard (e.g. "xrgvkpbq").
  */

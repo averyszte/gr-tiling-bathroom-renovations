@@ -1,7 +1,7 @@
 import { useEffect, type ReactNode } from "react";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
-import { Star, CheckCircle2, ChevronRight, XCircle, MessageCircle, FileText, Wrench } from "lucide-react";
+import { CheckCircle2, ChevronRight, XCircle, MessageCircle, FileText, Wrench } from "lucide-react";
 import {
   Accordion,
   AccordionContent,
@@ -10,6 +10,11 @@ import {
 } from "@/components/ui/accordion";
 import { applyPageSeo, applyJsonLd, SITE_URL } from "@/lib/seo";
 import { HeroReviewBadge } from "@/components/ui/hero-review-badge";
+import { TrustStrip } from "@/components/TrustStrip";
+import { images, gridImages } from "@/data/images";
+import { BeforeAfterSlider } from "@/components/BeforeAfterSlider";
+import { BelowFold } from "@/components/BelowFold";
+import { ReviewsSection } from "@/components/ReviewsSection";
 
 const tilingSchema = {
   "@context": "https://schema.org",
@@ -18,7 +23,7 @@ const tilingSchema = {
       "@type": "Service",
       "name": "Tiling Services Dublin",
       "description": "Professional tiling services in Dublin by GR Tiling & Bathroom Renovations, including bathroom tiling, wall tiling, floor tiling, and tile finishing.",
-      "provider": { "@type": "LocalBusiness", "name": "GR Tiling & Bathroom Renovations", "telephone": "+353877209850", "priceRange": "€€", "image": `${SITE_URL}/opengraph.jpg` },
+      "provider": { "@type": "HomeAndConstructionBusiness", "name": "GR Tiling & Bathroom Renovations", "telephone": "+353877209850", "priceRange": "€€", "image": `${SITE_URL}/opengraph.jpg` },
       "areaServed": "Dublin and surrounding areas",
       "serviceType": "Tiling Services",
       "url": `${SITE_URL}/services/tiling-services`,
@@ -67,8 +72,6 @@ const tilingSchema = {
     },
   ],
 };
-import { images } from "@/data/images";
-import { BeforeAfterSlider } from "@/components/BeforeAfterSlider";
 
 type Service = {
   image: string;
@@ -84,8 +87,13 @@ const services: Service[] = [
     image: images.tilingPage.services[0].src,
     alt: images.tilingPage.services[0].alt,
     title: "Bathroom Tiling",
-    description:
-      "Clean bathroom tiling for walls, floors, showers, and wet areas, finished with care and attention to detail.",
+    description: (
+      <>
+        Clean bathroom tiling for walls, floors, showers, and wet areas, finished with care and attention to detail. See our dedicated{" "}
+        <Link href="/services/bathroom-tiling-dublin" className="text-primary font-medium underline underline-offset-4 hover:opacity-80">bathroom tiling page</Link>
+        {" "}for more detail.
+      </>
+    ),
     bullets: [
       "Shower tiling",
       "Floor tiling",
@@ -100,11 +108,13 @@ const services: Service[] = [
     title: "Floor & Wall Tiling",
     description: (
       <>
-        Reliable wall and floor tiling for bathrooms, kitchens, hallways, and other areas of the home. If your project is part of a wider refit, take a look at our{" "}
-        <Link href="/services/bathroom-renovations" className="text-primary font-medium underline underline-offset-4 hover:opacity-80">
-          bathroom renovations
-        </Link>{" "}
-        service too.
+        Reliable wall and floor tiling for bathrooms, kitchens, hallways, and other areas of the home. See our dedicated{" "}
+        <Link href="/services/floor-wall-tiling-dublin" className="text-primary font-medium underline underline-offset-4 hover:opacity-80">floor and wall tiling</Link>
+        {" "}and{" "}
+        <Link href="/services/kitchen-tiling-dublin" className="text-primary font-medium underline underline-offset-4 hover:opacity-80">kitchen tiling</Link>
+        {" "}pages, or our{" "}
+        <Link href="/services/bathroom-renovations" className="text-primary font-medium underline underline-offset-4 hover:opacity-80">bathroom renovations</Link>
+        {" "}service if your project is part of a wider refit.
       </>
     ),
     bullets: [
@@ -119,8 +129,13 @@ const services: Service[] = [
     image: images.tilingPage.services[2].src,
     alt: images.tilingPage.services[2].alt,
     title: "Tile Repairs & Finishing",
-    description:
-      "Careful tile repairs, replacements, grout work, and finishing touches to make the space look clean again.",
+    description: (
+      <>
+        Careful tile repairs, replacements, grout work, and finishing touches to make the space look clean again. See our{" "}
+        <Link href="/services/tile-repairs-dublin" className="text-primary font-medium underline underline-offset-4 hover:opacity-80">tile repairs page</Link>
+        {" "}for more detail.
+      </>
+    ),
     bullets: [
       "Tile replacement",
       "Grout touch-ups",
@@ -131,20 +146,6 @@ const services: Service[] = [
   },
 ];
 
-const reasons = [
-  { title: "Clean, Precise Finish", text: "Every job is finished to a high standard, with attention to detail in every cut and joint." },
-  { title: "Straight Lines and Neat Grout", text: "Even tile spacing, sharp lines, and crisp grout work that holds up over time." },
-  { title: "Honest Upfront Pricing", text: "Clear quotes before any work starts. The price we quote is the price you pay." },
-  { title: "Reliable Local Dublin Service", text: "Based in Dublin and working across the city. We turn up when we say we will." },
-  { title: "Respect for Your Home", text: "We protect floors and surfaces, clean up daily, and leave the area tidy at the end of each visit." },
-  { title: "Bathroom Renovation Experience", text: "Years of full bathroom work means we understand how tiling fits into the bigger picture." },
-];
-
-const reviews = [
-  { name: "Dionne Haslam", text: "Great service and brilliant result. No disruption or mess left behind. The house was as clean as when Gerry arrived.\n\nFriendly, courteous, and I would recommend him to anyone." },
-  { name: "Raimonda Brooks", text: "Gerry is a true legend, super nice guy. Came in and got stuck into work straight away and had it done in no time. Left the place as clean as he found it.\n\nSuper honest about pricing too. I actually ended up paying less than expected. Overall 100% pleased with the result." },
-  { name: "Billy Kendrick", text: "Completed a bathroom and ensuite. Excellent job. Highly recommend." },
-];
 
 type Faq = { q: string; a: ReactNode };
 
@@ -167,7 +168,6 @@ const faqs: Faq[] = [
     ),
   },
 ];
-
 
 const processSteps = [
   { icon: <MessageCircle className="w-10 h-10" />, title: "Plan", text: "Tell us what you need and we'll go through your space, layout, and tile options to make sure everything is clear before we start." },
@@ -222,6 +222,7 @@ export default function TilingServicesPage({ openQuote }: { openQuote: () => voi
               <img
                 src={images.tilingPage.hero.src}
                 alt={images.tilingPage.hero.alt}
+                fetchPriority="high"
                 className="w-full h-full object-cover object-center"
               />
             </div>
@@ -229,6 +230,9 @@ export default function TilingServicesPage({ openQuote }: { openQuote: () => voi
           </div>
         </div>
       </section>
+
+      <BelowFold>
+      <TrustStrip />
 
       {/* Before / After Comparison */}
       <section className="py-[60px] lg:py-24 bg-background">
@@ -257,7 +261,66 @@ export default function TilingServicesPage({ openQuote }: { openQuote: () => voi
         </div>
       </section>
 
-      {/* Problem → Solution */}
+      {/* Process */}
+      <section className="py-[60px] md:py-24 bg-secondary/30">
+        <div className="container mx-auto px-4 max-w-6xl">
+          <div className="text-center mb-8 md:mb-16">
+            <h2 className="font-serif text-3xl md:text-5xl text-foreground mb-6">Your Tiling Project in 3 Simple Steps</h2>
+            <div className="w-24 h-1 bg-primary mx-auto rounded-full mb-6"></div>
+            <p className="text-lg text-muted-foreground max-w-xl mx-auto">
+              Clean, precise tiling done right from the start. No uneven finishes, no mess, no hassle.
+            </p>
+          </div>
+          <div className="relative flex flex-col md:flex-row md:items-start md:justify-between gap-14 md:gap-0">
+            <div className="hidden md:block absolute top-[3rem] left-[calc(16.67%+3rem)] right-[calc(16.67%+3rem)] h-[1.5px] bg-primary/30 z-0" />
+            {processSteps.map((item, i) => (
+              <div key={i} className="group relative z-10 flex flex-col items-center text-center flex-1 px-8 transition-transform duration-300 hover:-translate-y-1">
+                <div className="relative z-10 w-24 h-24 rounded-full bg-background border-2 border-primary/35 flex items-center justify-center mb-6 text-primary shadow-sm transition-all duration-300 group-hover:bg-primary group-hover:border-primary group-hover:text-primary-foreground group-hover:shadow-lg">
+                  {item.icon}
+                </div>
+                <h3 className="font-semibold text-lg text-foreground mb-3">{item.title}</h3>
+                <p className="text-muted-foreground leading-relaxed max-w-[220px]">{item.text}</p>
+              </div>
+            ))}
+          </div>
+          <div className="flex justify-center mt-16">
+            <Button size="lg" className="text-base h-14 px-8" onClick={openQuote}>Get a Free Quote</Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Where We Tile */}
+      <section className="py-[60px] md:py-24 bg-background">
+        <div className="container mx-auto px-4 max-w-6xl">
+          <div className="text-center mb-10 lg:mb-12">
+            <h2 className="font-serif text-3xl md:text-5xl text-foreground mb-4">Where We Tile</h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              From bathroom walls to kitchen splashbacks, we tile across all types of rooms and surfaces.
+            </p>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {[
+              { ...gridImages.bathrooms, label: "Bathrooms", href: "/services/bathroom-tiling-dublin" },
+              { ...gridImages.showerAreas, label: "Shower Areas", href: "/services/bathroom-tiling-dublin" },
+              { ...gridImages.kitchens, label: "Kitchens", href: "/services/kitchen-tiling-dublin" },
+              { ...gridImages.hallwaysFloors, label: "Floors & Walls", href: "/services/floor-wall-tiling-dublin" },
+            ].map((room, i) => (
+              <div key={i} className="relative rounded-2xl overflow-hidden aspect-[4/3] group cursor-pointer">
+                <img src={room.src} alt={room.alt} loading="lazy" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                <div className="absolute inset-0 bg-black/30 group-hover:bg-black/40 transition-colors duration-300" />
+                <div className="absolute bottom-0 left-0 right-0 flex items-center justify-between px-4 pb-4">
+                  <span className="text-white font-semibold text-sm">{room.label}</span>
+                  <Link href={room.href} className="inline-flex items-center gap-1.5 bg-white text-foreground text-sm font-medium px-4 py-2 rounded-lg hover:bg-white/90 transition-colors">
+                    Learn More <ChevronRight size={14} />
+                  </Link>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Problem to solution */}
       <section className="py-[60px] md:py-24 bg-background">
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="text-center mb-8 md:mb-16">
@@ -347,7 +410,7 @@ export default function TilingServicesPage({ openQuote }: { openQuote: () => voi
       </section>
 
       {/* Gallery */}
-      <section className="py-[60px] md:py-24 bg-background">
+      <section className="py-[60px] md:py-24 bg-secondary/30">
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="text-center mb-8 md:mb-16">
             <h2 className="font-serif text-3xl md:text-5xl text-foreground mb-6">Recent Tiling Work</h2>
@@ -355,7 +418,7 @@ export default function TilingServicesPage({ openQuote }: { openQuote: () => voi
               A selection of recent tiling jobs showing clean grout lines, sharp edges, and neat finishes across Dublin homes.
             </p>
           </div>
-          <div className="hidden md:flex h-[500px] w-full gap-4">
+          <div className="hidden md:flex h-[620px] w-full gap-4">
             {images.tilingPage.gallery.map(({ src, alt }) => (
               <div
                 key={src}
@@ -366,9 +429,9 @@ export default function TilingServicesPage({ openQuote }: { openQuote: () => voi
               </div>
             ))}
           </div>
-          <div className="md:hidden grid grid-cols-2 gap-4">
-            {images.tilingPage.gallery.slice(0, 4).map(({ src, alt }) => (
-              <div key={src} className="aspect-square rounded-2xl overflow-hidden">
+          <div className="md:hidden grid grid-cols-3 gap-4">
+            {images.tilingPage.gallery.map(({ src, alt }) => (
+              <div key={src} className="aspect-[3/4] rounded-2xl overflow-hidden">
                 <img src={src} alt={alt} loading="lazy" className="w-full h-full object-cover" />
               </div>
             ))}
@@ -376,105 +439,7 @@ export default function TilingServicesPage({ openQuote }: { openQuote: () => voi
         </div>
       </section>
 
-      {/* Process */}
-      <section className="py-[60px] md:py-24 bg-secondary/30">
-        <div className="container mx-auto px-4 max-w-6xl">
-          <div className="text-center mb-8 md:mb-16">
-            <h2 className="font-serif text-3xl md:text-5xl text-foreground mb-6">Your Tiling Project in 3 Simple Steps</h2>
-            <div className="w-24 h-1 bg-primary mx-auto rounded-full mb-6"></div>
-            <p className="text-lg text-muted-foreground max-w-xl mx-auto">
-              Clean, precise tiling done right from the start. No uneven finishes, no mess, no hassle.
-            </p>
-          </div>
-          <div className="relative flex flex-col md:flex-row md:items-start md:justify-between gap-14 md:gap-0">
-            <div className="hidden md:block absolute top-[3rem] left-[calc(16.67%+3rem)] right-[calc(16.67%+3rem)] h-[1.5px] bg-primary/30 z-0" />
-            {processSteps.map((item, i) => (
-              <div
-                key={i}
-                className="group relative z-10 flex flex-col items-center text-center flex-1 px-8 transition-transform duration-300 hover:-translate-y-1"
-              >
-                <div className="relative z-10 w-24 h-24 rounded-full bg-background border-2 border-primary/35 flex items-center justify-center mb-6 text-primary shadow-sm transition-all duration-300 group-hover:bg-primary group-hover:border-primary group-hover:text-primary-foreground group-hover:shadow-lg">
-                  {item.icon}
-                </div>
-                <h3 className="font-semibold text-lg text-foreground mb-3">{item.title}</h3>
-                <p className="text-muted-foreground leading-relaxed max-w-[220px]">{item.text}</p>
-              </div>
-            ))}
-          </div>
-          <div className="flex justify-center mt-16">
-            <Button size="lg" className="text-base h-14 px-8" onClick={openQuote}>
-              Get a Free Quote
-            </Button>
-          </div>
-        </div>
-      </section>
-
-      {/* Why Choose GR */}
-      <section className="py-[60px] md:py-24 bg-background">
-        <div className="container mx-auto px-4 max-w-5xl">
-          <div className="text-center mb-8 md:mb-16">
-            <h2 className="font-serif text-3xl md:text-5xl text-foreground mb-6">
-              Why Choose GR for Tiling Services?
-            </h2>
-            <div className="w-24 h-1 bg-primary mx-auto rounded-full"></div>
-          </div>
-          <div className="grid sm:grid-cols-2 gap-6">
-            {reasons.map((item, i) => (
-              <div key={i} className="flex gap-4 p-6 bg-card rounded-2xl border shadow-sm">
-                <CheckCircle2 className="text-green-600 w-6 h-6 flex-shrink-0 mt-0.5" />
-                <div>
-                  <h3 className="font-semibold text-foreground mb-1">{item.title}</h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed">{item.text}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Reviews */}
-      <section className="py-[60px] md:py-24 bg-secondary/30">
-        <div className="container mx-auto px-4 max-w-7xl">
-          <div className="text-center mb-8 md:mb-16">
-            <h2 className="font-serif text-3xl md:text-5xl text-foreground mb-6">Trusted for Tiling and Bathroom Work Across Dublin</h2>
-            <div className="flex justify-center items-center gap-2 mb-4">
-              {[1, 2, 3, 4, 5].map((i) => <Star key={i} className="fill-yellow-400 text-yellow-400 w-5 h-5" />)}
-            </div>
-            <p className="text-lg text-muted-foreground">5.0 Google Rating from verified Dublin customers</p>
-          </div>
-          <div className="grid md:grid-cols-3 gap-8 mb-8 md:mb-12">
-            {reviews.map((review, i) => (
-              <div key={i} className="bg-card p-8 pb-10 rounded-2xl shadow-lg border relative">
-                <div className="flex gap-1 mb-4">
-                  {[1, 2, 3, 4, 5].map((j) => <Star key={j} className="fill-yellow-400 text-yellow-400 w-4 h-4" />)}
-                </div>
-                <p className="text-muted-foreground mb-6 leading-relaxed italic whitespace-pre-line">"{review.text}"</p>
-                <p className="font-medium text-foreground">{review.name}</p>
-                <div className="absolute bottom-3 right-4 opacity-70">
-                  <svg width="18" height="18" viewBox="0 0 533.5 544.3" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M533.5 278.4c0-18.5-1.5-37.1-4.7-55.3H272.1v104.8h147c-6.1 33.8-25.7 63.7-54.4 82.7v68h87.7c51.5-47.4 81.1-117.4 81.1-200.2z" fill="#4285f4"/>
-                    <path d="M272.1 544.3c73.4 0 135.3-24.1 180.4-65.7l-87.7-68c-24.4 16.6-55.9 26-92.6 26-71 0-131.2-47.9-152.8-112.3H28.9v70.1c46.2 91.9 140.3 149.9 243.2 149.9z" fill="#34a853"/>
-                    <path d="M119.3 324.3c-11.4-33.8-11.4-70.4 0-104.2V150H28.9c-38.6 76.9-38.6 167.5 0 244.4l90.4-70.1z" fill="#fbbc04"/>
-                    <path d="M272.1 107.7c38.8-.6 76.3 14 104.4 40.8l77.7-77.7C405 24.6 339.7-.8 272.1 0 169.2 0 75.1 58 28.9 150l90.4 70.1c21.5-64.5 81.8-112.4 152.8-112.4z" fill="#ea4335"/>
-                  </svg>
-                </div>
-              </div>
-            ))}
-          </div>
-          <div className="text-center">
-            <Button variant="outline" size="lg" asChild>
-              <a
-                href="https://share.google/87MHaoyD0IJOUnsYF"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2"
-              >
-                See All Google Reviews <ChevronRight size={16} />
-              </a>
-            </Button>
-          </div>
-        </div>
-      </section>
+      <ReviewsSection heading="Trusted for Tiling and Bathroom Work Across Dublin" />
 
       {/* FAQ */}
       <section className="py-[60px] md:py-24 bg-background">
@@ -517,6 +482,7 @@ export default function TilingServicesPage({ openQuote }: { openQuote: () => voi
         </div>
       </section>
 
+      </BelowFold>
     </main>
   );
 }

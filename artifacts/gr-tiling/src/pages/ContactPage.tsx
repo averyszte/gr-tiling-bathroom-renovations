@@ -29,6 +29,7 @@ import {
 } from "@/components/ui/accordion";
 import { Phone, MapPin, Wrench, Star, Clock, BadgeEuro, Sparkles, Mail } from "lucide-react";
 import { applyPageSeo, applyJsonLd, SITE_URL } from "@/lib/seo";
+import { submitToFormspree } from "@/lib/formspree";
 
 const contactSchema = {
   "@context": "https://schema.org",
@@ -80,7 +81,6 @@ const contactSchema = {
     },
   ],
 };
-import { submitToFormspree } from "@/lib/formspree";
 
 const PHONE_DISPLAY = "+353 87 720 9850";
 const PHONE_TEL = "tel:+353877209850";
@@ -102,11 +102,11 @@ const formSchema = z.object({
 type ContactFormValues = z.infer<typeof formSchema>;
 
 const trustPoints = [
-  { icon: <Clock className="w-4 h-4" />, label: "On Time" },
-  { icon: <BadgeEuro className="w-4 h-4" />, label: "On Budget" },
-  { icon: <Sparkles className="w-4 h-4" />, label: "Clean Workmanship" },
-  { icon: <MapPin className="w-4 h-4" />, label: "Dublin Area" },
-  { icon: <Star className="w-4 h-4 fill-yellow-400 text-yellow-400" />, label: "5.0 Google Rating" },
+  { icon: <Clock className="w-4 h-4" aria-hidden="true" />, label: "On Time" },
+  { icon: <BadgeEuro className="w-4 h-4" aria-hidden="true" />, label: "On Budget" },
+  { icon: <Sparkles className="w-4 h-4" aria-hidden="true" />, label: "Clean Workmanship" },
+  { icon: <MapPin className="w-4 h-4" aria-hidden="true" />, label: "Dublin Area" },
+  { icon: <Star className="w-4 h-4 fill-yellow-400 text-yellow-400" aria-hidden="true" />, label: "5.0 Google Rating" },
 ];
 
 const faqs = [
