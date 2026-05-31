@@ -1,0 +1,29 @@
+# Cloudflare Pages — route-specific hero image preloads
+# Tells the browser about each page's LCP image before any HTML or JS is parsed.
+
+/services/bathroom-renovations
+  Link: </images/hero-bathroom-renovations.webp>; rel=preload; as=image
+
+/services/tiling-services
+  Link: </images/hero-tiling-services.webp>; rel=preload; as=image
+
+/services/wet-room-installation-dublin
+  Link: </images/hero-wet-room.webp>; rel=preload; as=image
+
+/services/accessible-bathroom-dublin
+  Link: </images/hero-accessible-bathroom.webp>; rel=preload; as=image
+
+/services/floor-wall-tiling-dublin
+  Link: </images/hero-floor-wall-tiling.webp>; rel=preload; as=image
+
+/services/bathroom-tiling-dublin
+  Link: </images/hero-bathroom-tiling.webp>; rel=preload; as=image
+
+/services/kitchen-tiling-dublin
+  Link: </images/hero-kitchen-tiling.webp>; rel=preload; as=image
+
+/services/tile-repairs-dublin
+  Link: </images/hero-tile-repairs.webp>; rel=preload; as=image
+
+/about
+  Link: </images/hero-about-us.webp>; rel=preload; as=image
