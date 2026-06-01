@@ -207,6 +207,7 @@ export default function FloorWallTilingPage({ openQuote }: { openQuote: () => vo
                 src={images.floorWallTilingPage.hero.src}
                 alt={images.floorWallTilingPage.hero.alt}
                 fetchPriority="high"
+                sizes="(min-width: 1200px) 1152px, 100vw"
                 className="w-full h-full object-cover object-center"
               />
             </div>

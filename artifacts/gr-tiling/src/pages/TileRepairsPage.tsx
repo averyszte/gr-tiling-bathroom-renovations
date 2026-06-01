@@ -155,7 +155,7 @@ export default function TileRepairsPage({ openQuote }: { openQuote: () => void }
           </div>
           <div className="relative max-w-6xl mx-auto">
             <div className="aspect-[16/10] sm:aspect-[16/9] lg:aspect-[21/9] rounded-2xl overflow-hidden shadow-2xl relative z-10">
-              <img src={images.tileRepairsPage.hero.src} alt={images.tileRepairsPage.hero.alt} fetchPriority="high" className="w-full h-full object-cover object-center" />
+              <img src={images.tileRepairsPage.hero.src} alt={images.tileRepairsPage.hero.alt} fetchPriority="high" sizes="(min-width: 1200px) 1152px, 100vw" className="w-full h-full object-cover object-center" />
             </div>
             <div className="absolute -bottom-10 left-1/2 -translate-x-1/2 w-[28rem] max-w-full h-56 bg-primary/10 rounded-full blur-3xl -z-10"></div>
           </div>

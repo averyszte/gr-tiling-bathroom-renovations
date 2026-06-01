@@ -195,6 +195,7 @@ export default function WetRoomPage({ openQuote }: { openQuote: () => void }) {
                 src={images.wetRoomPage.hero.src}
                 alt={images.wetRoomPage.hero.alt}
                 fetchPriority="high"
+                sizes="(min-width: 1200px) 1152px, 100vw"
                 className="w-full h-full object-cover object-center"
               />
             </div>

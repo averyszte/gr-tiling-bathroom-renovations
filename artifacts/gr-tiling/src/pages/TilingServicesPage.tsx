@@ -223,6 +223,7 @@ export default function TilingServicesPage({ openQuote }: { openQuote: () => voi
                 src={images.tilingPage.hero.src}
                 alt={images.tilingPage.hero.alt}
                 fetchPriority="high"
+                sizes="(min-width: 1200px) 1152px, 100vw"
                 className="w-full h-full object-cover object-center"
               />
             </div>

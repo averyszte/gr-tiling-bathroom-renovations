@@ -217,6 +217,7 @@ export default function BathroomRenovationsPage({ openQuote }: { openQuote: () =
                 src={images.bathroomPage.hero.src}
                 alt={images.bathroomPage.hero.alt}
                 fetchPriority="high"
+                sizes="(min-width: 1200px) 1152px, 100vw"
                 className="w-full h-full object-cover object-center"
               />
             </div>
