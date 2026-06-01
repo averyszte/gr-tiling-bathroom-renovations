@@ -99,12 +99,12 @@ const schema = {
 };
 
 const areas = [
-  { ...gridImages.bathroomFloors,  label: "Bathroom Floors", href: null },
-  { ...gridImages.bathroomWalls,   label: "Bathroom Walls",  href: null },
-  { ...gridImages.showerAreas,     label: "Shower Areas",    href: null },
-  { ...gridImages.ensuites,        label: "Ensuites",        href: null },
-  { ...gridImages.wetRooms,        label: "Wet Rooms",       href: "/services/wet-room-installation-dublin" },
-  { ...gridImages.tileRepairsCard, label: "Tile Repairs",    href: "/services/tile-repairs-dublin" },
+  { ...gridImages.bathroomFloors,  label: "Bathroom Floors", desc: "Non-slip, waterproof tiles",    href: null },
+  { ...gridImages.bathroomWalls,   label: "Bathroom Walls",  desc: "Clean, precise finishes",       href: null },
+  { ...gridImages.showerAreas,     label: "Shower Areas",    desc: "Fully waterproofed and tiled",  href: null },
+  { ...gridImages.ensuites,        label: "Ensuites",        desc: "Small space, same quality",     href: null },
+  { ...gridImages.wetRooms,        label: "Wet Rooms",       desc: null, href: "/services/wet-room-installation-dublin" },
+  { ...gridImages.tileRepairsCard, label: "Tile Repairs",    desc: null, href: "/services/tile-repairs-dublin" },
 ];
 
 const process = [
@@ -179,11 +179,14 @@ export default function BathroomTilingPage({ openQuote }: { openQuote: () => voi
               <div key={i} className="relative rounded-2xl overflow-hidden aspect-[4/3] group cursor-pointer">
                 <img src={area.src} alt={area.alt} loading="lazy" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                 <div className="absolute inset-0 bg-black/30 group-hover:bg-black/40 transition-colors duration-300" />
-                <div className="absolute bottom-0 left-0 right-0 flex items-center justify-between px-4 pb-4">
-                  <span className="text-white font-semibold text-sm">{area.label}</span>
+                <div className="absolute bottom-0 left-0 right-0 flex flex-col items-start gap-1.5 px-4 pb-4">
+                  <div>
+                    <span className="text-white font-semibold text-sm leading-tight">{area.label}</span>
+                    {area.desc && <p className="text-white/75 text-xs mt-0.5">{area.desc}</p>}
+                  </div>
                   {area.href && (
-                    <Link href={area.href} className="inline-flex items-center gap-1.5 bg-white text-foreground text-sm font-medium px-4 py-2 rounded-lg hover:bg-white/90 transition-colors">
-                      Learn More <ChevronRight size={14} />
+                    <Link href={area.href} className="inline-flex items-center gap-1 bg-white text-foreground text-xs font-medium px-3 py-1.5 rounded-lg hover:bg-white/90 transition-colors">
+                      Learn More <ChevronRight size={12} />
                     </Link>
                   )}
                 </div>

@@ -99,12 +99,12 @@ const schema = {
 };
 
 const repairTypes = [
-  { ...gridImages.bathrooms,      label: "Bathroom Tiles",   href: "/services/bathroom-tiling-dublin" },
-  { ...gridImages.kitchens,       label: "Kitchen Tiles",    href: "/services/kitchen-tiling-dublin" },
-  { ...gridImages.hallwaysFloors, label: "Floor Tiles",      href: "/services/floor-wall-tiling-dublin" },
-  { ...gridImages.showerAreas,    label: "Shower Areas",     href: "/services/bathroom-tiling-dublin" },
-  { ...gridImages.groutSilicone,  label: "Grout & Silicone", href: null },
-  { ...gridImages.bathroomWalls,  label: "Wall Tiles",       href: "/services/floor-wall-tiling-dublin" },
+  { ...gridImages.bathrooms,      label: "Bathroom Tiles",   desc: null,                        href: "/services/bathroom-tiling-dublin" },
+  { ...gridImages.kitchens,       label: "Kitchen Tiles",    desc: null,                        href: "/services/kitchen-tiling-dublin" },
+  { ...gridImages.hallwaysFloors, label: "Floor Tiles",      desc: null,                        href: "/services/floor-wall-tiling-dublin" },
+  { ...gridImages.showerAreas,    label: "Shower Areas",     desc: null,                        href: "/services/bathroom-tiling-dublin" },
+  { ...gridImages.groutSilicone,  label: "Grout & Silicone", desc: "Regrouting and resealing",  href: null },
+  { ...gridImages.bathroomWalls,  label: "Wall Tiles",       desc: null,                        href: "/services/floor-wall-tiling-dublin" },
 ];
 
 const process = [
@@ -179,11 +179,14 @@ export default function TileRepairsPage({ openQuote }: { openQuote: () => void }
               <div key={i} className="relative rounded-2xl overflow-hidden aspect-[4/3] group cursor-pointer">
                 <img src={item.src} alt={item.alt} loading="lazy" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                 <div className="absolute inset-0 bg-black/30 group-hover:bg-black/40 transition-colors duration-300" />
-                <div className="absolute bottom-0 left-0 right-0 flex items-center justify-between px-4 pb-4">
-                  <span className="text-white font-semibold text-sm">{item.label}</span>
+                <div className="absolute bottom-0 left-0 right-0 flex flex-col items-start gap-1.5 px-4 pb-4">
+                  <div>
+                    <span className="text-white font-semibold text-sm leading-tight">{item.label}</span>
+                    {item.desc && <p className="text-white/75 text-xs mt-0.5">{item.desc}</p>}
+                  </div>
                   {item.href && (
-                    <Link href={item.href} className="inline-flex items-center gap-1.5 bg-white text-foreground text-sm font-medium px-4 py-2 rounded-lg hover:bg-white/90 transition-colors">
-                      Learn More <ChevronRight size={14} />
+                    <Link href={item.href} className="inline-flex items-center gap-1 bg-white text-foreground text-xs font-medium px-3 py-1.5 rounded-lg hover:bg-white/90 transition-colors">
+                      Learn More <ChevronRight size={12} />
                     </Link>
                   )}
                 </div>
