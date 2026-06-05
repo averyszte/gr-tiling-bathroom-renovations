@@ -76,12 +76,39 @@ function getStoredAttribution() {
   }
 }
 
+function removeTrackingParamsFromUrl() {
+  if (typeof window === "undefined") {
+    return;
+  }
+
+  const url = new URL(window.location.href);
+  let hasTrackingParams = false;
+
+  TRACKING_PARAM_NAMES.forEach((name) => {
+    if (url.searchParams.has(name)) {
+      url.searchParams.delete(name);
+      hasTrackingParams = true;
+    }
+  });
+
+  if (!hasTrackingParams) {
+    return;
+  }
+
+  window.history.replaceState(
+    window.history.state,
+    document.title,
+    `${url.pathname}${url.search}${url.hash}`,
+  );
+}
+
 export function initLeadAttribution() {
   if (typeof window === "undefined") {
     return;
   }
 
   if (window.sessionStorage.getItem(ATTRIBUTION_STORAGE_KEY)) {
+    removeTrackingParamsFromUrl();
     return;
   }
 
@@ -97,6 +124,8 @@ export function initLeadAttribution() {
   } catch {
     // Attribution is helpful, but it should never block the site or form.
   }
+
+  removeTrackingParamsFromUrl();
 }
 
 export function getLeadAttribution(formName: "contact_page" | "quote_modal") {
