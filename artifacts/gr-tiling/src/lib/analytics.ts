@@ -3,6 +3,20 @@ type DataLayerPayload = {
   [key: string]: unknown;
 };
 
+const ATTRIBUTION_STORAGE_KEY = "gr_lead_attribution";
+const TRACKING_PARAM_NAMES = [
+  "utm_source",
+  "utm_medium",
+  "utm_campaign",
+  "utm_content",
+  "utm_term",
+  "gclid",
+  "gbraid",
+  "wbraid",
+  "msclkid",
+  "fbclid",
+];
+
 declare global {
   interface Window {
     dataLayer?: DataLayerPayload[];
@@ -32,6 +46,74 @@ export function pushDataLayer(payload: DataLayerPayload) {
     ...currentPageContext(),
     ...payload,
   });
+}
+
+function getTrackingParams() {
+  if (typeof window === "undefined") {
+    return {};
+  }
+
+  const params = new URLSearchParams(window.location.search);
+  return TRACKING_PARAM_NAMES.reduce<Record<string, string>>((acc, name) => {
+    const value = params.get(name);
+    if (value) {
+      acc[name] = value;
+    }
+    return acc;
+  }, {});
+}
+
+function getStoredAttribution() {
+  if (typeof window === "undefined") {
+    return {};
+  }
+
+  try {
+    const raw = window.sessionStorage.getItem(ATTRIBUTION_STORAGE_KEY);
+    return raw ? (JSON.parse(raw) as Record<string, string>) : {};
+  } catch {
+    return {};
+  }
+}
+
+export function initLeadAttribution() {
+  if (typeof window === "undefined") {
+    return;
+  }
+
+  if (window.sessionStorage.getItem(ATTRIBUTION_STORAGE_KEY)) {
+    return;
+  }
+
+  const attribution = {
+    landing_page_path: window.location.pathname,
+    landing_page_url: window.location.href,
+    referrer: document.referrer,
+    ...getTrackingParams(),
+  };
+
+  try {
+    window.sessionStorage.setItem(ATTRIBUTION_STORAGE_KEY, JSON.stringify(attribution));
+  } catch {
+    // Attribution is helpful, but it should never block the site or form.
+  }
+}
+
+export function getLeadAttribution(formName: "contact_page" | "quote_modal") {
+  if (typeof window === "undefined") {
+    return {};
+  }
+
+  initLeadAttribution();
+
+  return {
+    form_name: formName,
+    submitted_from_path: window.location.pathname,
+    submitted_from_url: window.location.href,
+    submitted_from_title: document.title,
+    ...getStoredAttribution(),
+    ...getTrackingParams(),
+  };
 }
 
 export function trackGenerateLead({
