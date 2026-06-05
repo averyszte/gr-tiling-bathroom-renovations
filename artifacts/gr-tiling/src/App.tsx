@@ -21,6 +21,7 @@ import TileRepairsPage from "@/pages/TileRepairsPage";
 import PrivacyPolicyPage from "@/pages/PrivacyPolicyPage";
 import TermsPage from "@/pages/TermsPage";
 import NotFound from "@/pages/not-found";
+import { trackQuoteOpen } from "@/lib/analytics";
 
 function AppLayout({ openQuote }: { openQuote: () => void }) {
   const HomePageWithProps = () => <HomePage openQuote={openQuote} />;
@@ -64,7 +65,10 @@ function AppLayout({ openQuote }: { openQuote: () => void }) {
 
 function App() {
   const [quoteModalOpen, setQuoteModalOpen] = useState(false);
-  const openQuote = () => setQuoteModalOpen(true);
+  const openQuote = () => {
+    trackQuoteOpen();
+    setQuoteModalOpen(true);
+  };
 
   return (
     <>

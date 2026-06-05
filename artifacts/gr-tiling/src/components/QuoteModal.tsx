@@ -29,6 +29,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { trackGenerateLead } from "@/lib/analytics";
 
 const formSchema = z.object({
   name: z.string().min(2, "Name is required"),
@@ -72,6 +73,10 @@ export function QuoteModal({
         email: data.email,
         service: data.projectType,
         message: data.message ?? "",
+      });
+      trackGenerateLead({
+        formName: "quote_modal",
+        service: data.projectType,
       });
       setIsOpen(false);
       form.reset();

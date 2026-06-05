@@ -30,6 +30,7 @@ import {
 import { Phone, MapPin, Wrench, Star, Clock, BadgeEuro, Sparkles, Mail } from "lucide-react";
 import { applyPageSeo, applyJsonLd, SITE_URL } from "@/lib/seo";
 import { submitToFormspree } from "@/lib/formspree";
+import { trackGenerateLead } from "@/lib/analytics";
 
 const contactSchema = {
   "@context": "https://schema.org",
@@ -171,6 +172,10 @@ export default function ContactPage() {
         email: data.email,
         service: data.service,
         message: data.message,
+      });
+      trackGenerateLead({
+        formName: "contact_page",
+        service: data.service,
       });
       form.reset();
       setLocation("/thank-you");
