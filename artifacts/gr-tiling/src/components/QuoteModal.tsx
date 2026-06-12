@@ -30,10 +30,18 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { getLeadAttribution, trackGenerateLead } from "@/lib/analytics";
+import { storeLeadDetails } from "@/lib/lead";
 
 const formSchema = z.object({
   name: z.string().min(2, "Name is required"),
-  phone: z.string().min(5, "Phone is required"),
+  phone: z
+    .string()
+    .min(1, "Phone is required")
+    .regex(/^[+()\d\s./-]+$/, "Phone number can only contain digits, spaces and + ( ) - characters")
+    .refine((value) => {
+      const digits = value.replace(/\D/g, "");
+      return digits.length >= 7 && digits.length <= 15;
+    }, "Please double-check your phone number"),
   email: z.string().email("Invalid email address"),
   projectType: z.string().min(1, "Please select a project type"),
   message: z.string().optional(),
@@ -79,6 +87,7 @@ export function QuoteModal({
         formName: "quote_modal",
         service: data.projectType,
       });
+      storeLeadDetails({ name: data.name, phone: data.phone, email: data.email });
       setIsOpen(false);
       form.reset();
       setLocation("/thank-you");
@@ -107,7 +116,7 @@ export function QuoteModal({
                 <FormItem>
                   <FormLabel>Name</FormLabel>
                   <FormControl>
-                    <Input placeholder="Your full name" {...field} />
+                    <Input placeholder="Your full name" autoComplete="name" {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -121,7 +130,7 @@ export function QuoteModal({
                   <FormItem>
                     <FormLabel>Phone</FormLabel>
                     <FormControl>
-                      <Input placeholder="Your phone number" {...field} />
+                      <Input placeholder="Your phone number" type="tel" inputMode="tel" autoComplete="tel" {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -134,7 +143,7 @@ export function QuoteModal({
                   <FormItem>
                     <FormLabel>Email</FormLabel>
                     <FormControl>
-                      <Input placeholder="Your email address" type="email" {...field} />
+                      <Input placeholder="Your email address" type="email" autoComplete="email" {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>

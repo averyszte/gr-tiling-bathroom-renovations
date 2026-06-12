@@ -31,6 +31,7 @@ import { Phone, MapPin, Wrench, Star, Clock, BadgeEuro, Sparkles, Mail } from "l
 import { applyPageSeo, applyJsonLd, SITE_URL } from "@/lib/seo";
 import { submitToFormspree } from "@/lib/formspree";
 import { getLeadAttribution, trackGenerateLead } from "@/lib/analytics";
+import { storeLeadDetails } from "@/lib/lead";
 
 const contactSchema = {
   "@context": "https://schema.org",
@@ -94,7 +95,14 @@ const PAGE_PATH = "/contact";
 
 const formSchema = z.object({
   name: z.string().min(2, "Name is required"),
-  phone: z.string().min(5, "Phone is required"),
+  phone: z
+    .string()
+    .min(1, "Phone is required")
+    .regex(/^[+()\d\s./-]+$/, "Phone number can only contain digits, spaces and + ( ) - characters")
+    .refine((value) => {
+      const digits = value.replace(/\D/g, "");
+      return digits.length >= 7 && digits.length <= 15;
+    }, "Please double-check your phone number"),
   email: z.string().email("Please enter a valid email address"),
   service: z.string().min(1, "Please select a service"),
   message: z.string().min(5, "Please tell us a little about your project"),
@@ -178,6 +186,7 @@ export default function ContactPage() {
         formName: "contact_page",
         service: data.service,
       });
+      storeLeadDetails({ name: data.name, phone: data.phone, email: data.email });
       form.reset();
       setLocation("/thank-you");
     } catch (err) {
@@ -326,7 +335,7 @@ export default function ContactPage() {
                       <FormItem>
                         <FormLabel>Name</FormLabel>
                         <FormControl>
-                          <Input placeholder="Your full name" {...field} />
+                          <Input placeholder="Your full name" autoComplete="name" {...field} />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
@@ -341,7 +350,7 @@ export default function ContactPage() {
                         <FormItem>
                           <FormLabel>Phone</FormLabel>
                           <FormControl>
-                            <Input placeholder="Your phone number" type="tel" {...field} />
+                            <Input placeholder="Your phone number" type="tel" inputMode="tel" autoComplete="tel" {...field} />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -354,7 +363,7 @@ export default function ContactPage() {
                         <FormItem>
                           <FormLabel>Email</FormLabel>
                           <FormControl>
-                            <Input placeholder="you@example.com" type="email" {...field} />
+                            <Input placeholder="you@example.com" type="email" autoComplete="email" {...field} />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
