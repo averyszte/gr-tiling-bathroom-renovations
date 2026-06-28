@@ -27,7 +27,7 @@ const homeSchema = {
       "areaServed": "Dublin and surrounding areas",
       "priceRange": "€€",
       "founder": { "@type": "Person", "name": "Gerard Ronan" },
-      "sameAs": ["https://maps.app.goo.gl/zXMYDcdtwATJcR9AA"],
+      "sameAs": ["https://share.google/z1tXW8N29eKLZzJyr"],
       "image": `${SITE_URL}/opengraph.jpg`,
       "makesOffer": [
         {
@@ -52,7 +52,7 @@ const homeSchema = {
       "aggregateRating": {
         "@type": "AggregateRating",
         "ratingValue": "5.0",
-        "reviewCount": 3,
+        "reviewCount": 6,
         "bestRating": "5",
         "worstRating": "1"
       },
