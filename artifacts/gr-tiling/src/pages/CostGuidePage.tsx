@@ -15,7 +15,7 @@ const PAGE_TITLE = "Bathroom Renovation & Tiling Guide Dublin | GR Tiling";
 const PAGE_DESCRIPTION = "An honest guide to bathroom renovations and tiling in Dublin. Understand what's involved, what affects your quote, and what to expect before work begins.";
 const PAGE_PATH = "/cost-guide";
 
-const schema = {
+export const schema = {
   "@context": "https://schema.org",
   "@graph": [
     {

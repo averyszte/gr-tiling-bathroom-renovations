@@ -19,7 +19,7 @@ const PAGE_TITLE = "Kitchen Tiling Dublin | Splashbacks & Floors | GR Tiling";
 const PAGE_DESCRIPTION = "Kitchen tiling in Dublin. Splashbacks, wall tiles, floor tiles, and utility rooms. Clean, practical finishes. Free quotes from GR Tiling.";
 const PAGE_PATH = "/services/kitchen-tiling-dublin";
 
-const schema = {
+export const schema = {
   "@context": "https://schema.org",
   "@graph": [
     {

@@ -1,1 +1,7 @@
-/* /index.html 200
+# Intentionally empty. Previously had a catch-all "/* /index.html 200" rule
+# for client-side SPA routing, back when only dist/index.html existed and
+# every route had to boot the JS app to render. Now every real route is
+# prerendered as its own static file (see scripts/prerender.tsx), so Cloudflare
+# Pages serves those directly — and unmatched paths now correctly fall through
+# to dist/404.html with a real HTTP 404, instead of a 200 full of homepage
+# content (which was a soft-404/duplicate-content problem for crawlers).

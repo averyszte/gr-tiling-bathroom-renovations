@@ -19,7 +19,7 @@ const PAGE_TITLE = "Bathroom Tiling Dublin | Professional Tilers | GR Tiling";
 const PAGE_DESCRIPTION = "Professional bathroom tiling in Dublin. Floors, walls, showers, ensuites and wet rooms with proper prep, clean grout lines, and tidy finishes.";
 const PAGE_PATH = "/services/bathroom-tiling-dublin";
 
-const schema = {
+export const schema = {
   "@context": "https://schema.org",
   "@graph": [
     {

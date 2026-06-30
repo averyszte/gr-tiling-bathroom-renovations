@@ -16,7 +16,7 @@ import { BeforeAfterSlider } from "@/components/BeforeAfterSlider";
 import { BelowFold } from "@/components/BelowFold";
 import { ReviewsSection } from "@/components/ReviewsSection";
 
-const tilingSchema = {
+export const tilingSchema = {
   "@context": "https://schema.org",
   "@graph": [
     {

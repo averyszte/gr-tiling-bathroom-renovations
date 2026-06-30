@@ -6,7 +6,7 @@ const PAGE_DESCRIPTION = "Privacy policy for GR Tiling & Bathroom Renovations. H
 const PAGE_PATH = "/privacy-policy";
 const LAST_UPDATED = new Date("2026-06-30").toLocaleDateString("en-IE", { day: "numeric", month: "long", year: "numeric" });
 
-const schema = {
+export const schema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [

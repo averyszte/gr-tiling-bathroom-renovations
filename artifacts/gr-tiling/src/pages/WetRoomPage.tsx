@@ -19,7 +19,7 @@ const PAGE_TITLE = "Wet Room Installation Dublin | GR Tiling";
 const PAGE_DESCRIPTION = "Professional wet room installation in Dublin with full waterproofing, drainage, tiling, and finishing from GR Tiling & Bathroom Renovations.";
 const PAGE_PATH = "/services/wet-room-installation-dublin";
 
-const schema = {
+export const schema = {
   "@context": "https://schema.org",
   "@graph": [
     {

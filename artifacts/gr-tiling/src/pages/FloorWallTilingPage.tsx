@@ -19,7 +19,7 @@ const PAGE_TITLE = "Floor & Wall Tiling Dublin | Expert Tilers | GR Tiling";
 const PAGE_DESCRIPTION = "Professional floor and wall tiling in Dublin for bathrooms, kitchens, hallways and splashbacks. Clean lines, durable results, tidy work.";
 const PAGE_PATH = "/services/floor-wall-tiling-dublin";
 
-const schema = {
+export const schema = {
   "@context": "https://schema.org",
   "@graph": [
     {

@@ -19,7 +19,7 @@ const PAGE_TITLE = "Tile Repairs Dublin | Cracked Tiles Fixed | GR Tiling";
 const PAGE_DESCRIPTION = "Tile repairs across Dublin. Cracked tiles, loose tiles, broken grout, failed silicone. Honest advice on repair vs retile. Free quotes from GR Tiling.";
 const PAGE_PATH = "/services/tile-repairs-dublin";
 
-const schema = {
+export const schema = {
   "@context": "https://schema.org",
   "@graph": [
     {

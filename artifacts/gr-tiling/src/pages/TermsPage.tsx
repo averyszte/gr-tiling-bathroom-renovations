@@ -6,7 +6,7 @@ const PAGE_DESCRIPTION = "Terms and conditions for GR Tiling & Bathroom Renovati
 const PAGE_PATH = "/terms";
 const LAST_UPDATED = new Date("2026-06-30").toLocaleDateString("en-IE", { day: "numeric", month: "long", year: "numeric" });
 
-const schema = {
+export const schema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [

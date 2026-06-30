@@ -19,7 +19,7 @@ const PAGE_TITLE = "Accessible Bathroom Renovations Dublin | GR Tiling";
 const PAGE_DESCRIPTION = "Accessible bathroom renovations in Dublin. Walk-in showers, wet rooms, grab rails, and non-slip tiles. Safe, practical work from GR Tiling.";
 const PAGE_PATH = "/services/accessible-bathroom-dublin";
 
-const schema = {
+export const schema = {
   "@context": "https://schema.org",
   "@graph": [
     {

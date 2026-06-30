@@ -33,7 +33,7 @@ import { submitToFormspree } from "@/lib/formspree";
 import { getLeadAttribution, trackGenerateLead } from "@/lib/analytics";
 import { storeLeadDetails } from "@/lib/lead";
 
-const contactSchema = {
+export const contactSchema = {
   "@context": "https://schema.org",
   "@graph": [
     {

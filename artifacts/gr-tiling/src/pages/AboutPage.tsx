@@ -5,7 +5,7 @@ import { applyPageSeo, applyJsonLd, SITE_URL } from "@/lib/seo";
 import { ReviewsSection } from "@/components/ReviewsSection";
 import { images } from "@/data/images";
 
-const aboutSchema = {
+export const aboutSchema = {
   "@context": "https://schema.org",
   "@graph": [
     {

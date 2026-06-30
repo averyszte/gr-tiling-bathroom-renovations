@@ -15,7 +15,7 @@ import { images } from "@/data/images";
 import { HeroReviewBadge } from "@/components/ui/hero-review-badge";
 import { applyJsonLd, applyPageSeo, SITE_URL } from "@/lib/seo";
 
-const homeSchema = {
+export const homeSchema = {
   "@context": "https://schema.org",
   "@graph": [
     {
