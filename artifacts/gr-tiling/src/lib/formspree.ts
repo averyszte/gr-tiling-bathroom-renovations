@@ -6,7 +6,7 @@
  * your Formspree dashboard (e.g. "xrgvkpbq").
  */
 
-const FORM_ID = import.meta.env.VITE_FORMSPREE_ID as string | undefined;
+const FORM_ID = import.meta.env?.VITE_FORMSPREE_ID as string | undefined;
 
 export const FORMSPREE_ENDPOINT = FORM_ID
   ? `https://formspree.io/f/${FORM_ID}`

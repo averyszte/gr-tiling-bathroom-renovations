@@ -4,6 +4,7 @@ import { applyPageSeo, applyJsonLd, SITE_URL } from "@/lib/seo";
 const PAGE_TITLE = "Privacy Policy | GR Tiling & Bathroom Renovations";
 const PAGE_DESCRIPTION = "Privacy policy for GR Tiling & Bathroom Renovations. How we collect, use, and protect your personal information.";
 const PAGE_PATH = "/privacy-policy";
+const LAST_UPDATED = new Date("2026-06-30").toLocaleDateString("en-IE", { day: "numeric", month: "long", year: "numeric" });
 
 const schema = {
   "@context": "https://schema.org",
@@ -28,7 +29,7 @@ export default function PrivacyPolicyPage() {
 
           <h1 className="text-primary font-semibold tracking-wider uppercase text-sm mb-4 block">Privacy Policy</h1>
           <h2 className="font-serif text-4xl md:text-5xl text-foreground mb-4">How We Handle Your Information</h2>
-          <p className="text-muted-foreground mb-12">Last updated: {new Date().toLocaleDateString("en-IE", { day: "numeric", month: "long", year: "numeric" })}</p>
+          <p className="text-muted-foreground mb-12">Last updated: {LAST_UPDATED}</p>
 
           <div className="prose-content space-y-10 text-muted-foreground leading-relaxed">
 

@@ -63,7 +63,7 @@ function AppLayout({ openQuote }: { openQuote: () => void }) {
   );
 }
 
-function App() {
+function App({ ssrPath }: { ssrPath?: string } = {}) {
   const [quoteModalOpen, setQuoteModalOpen] = useState(false);
   const openQuote = () => {
     trackQuoteOpen();
@@ -72,11 +72,11 @@ function App() {
 
   return (
     <>
-      <WouterRouter base={import.meta.env.BASE_URL.replace(/\/$/, "")}>
+      <WouterRouter base={import.meta.env?.BASE_URL?.replace(/\/$/, "") ?? ""} ssrPath={ssrPath}>
         <AppLayout openQuote={openQuote} />
+        <Toaster />
+        <QuoteModal isOpen={quoteModalOpen} setIsOpen={setQuoteModalOpen} />
       </WouterRouter>
-      <Toaster />
-      <QuoteModal isOpen={quoteModalOpen} setIsOpen={setQuoteModalOpen} />
     </>
   );
 }

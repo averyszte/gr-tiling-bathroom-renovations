@@ -4,6 +4,7 @@ import { applyPageSeo, applyJsonLd, SITE_URL } from "@/lib/seo";
 const PAGE_TITLE = "Terms & Conditions | GR Tiling & Bathroom Renovations";
 const PAGE_DESCRIPTION = "Terms and conditions for GR Tiling & Bathroom Renovations services in Dublin, Ireland.";
 const PAGE_PATH = "/terms";
+const LAST_UPDATED = new Date("2026-06-30").toLocaleDateString("en-IE", { day: "numeric", month: "long", year: "numeric" });
 
 const schema = {
   "@context": "https://schema.org",
@@ -28,7 +29,7 @@ export default function TermsPage() {
 
           <h1 className="text-primary font-semibold tracking-wider uppercase text-sm mb-4 block">Terms & Conditions</h1>
           <h2 className="font-serif text-4xl md:text-5xl text-foreground mb-4">Service Terms for Renovation and Tiling Work</h2>
-          <p className="text-muted-foreground mb-12">Last updated: {new Date().toLocaleDateString("en-IE", { day: "numeric", month: "long", year: "numeric" })}</p>
+          <p className="text-muted-foreground mb-12">Last updated: {LAST_UPDATED}</p>
 
           <div className="space-y-10 text-muted-foreground leading-relaxed">
 

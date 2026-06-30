@@ -1,8 +1,14 @@
-import { createRoot } from "react-dom/client";
+import { createRoot, hydrateRoot } from "react-dom/client";
 import App from "./App";
 import "./index.css";
 import { initLeadAttribution, installContactClickTracking } from "@/lib/analytics";
 
 initLeadAttribution();
 installContactClickTracking();
-createRoot(document.getElementById("root")!).render(<App />);
+
+const rootEl = document.getElementById("root")!;
+if (rootEl.hasChildNodes()) {
+  hydrateRoot(rootEl, <App />);
+} else {
+  createRoot(rootEl).render(<App />);
+}
