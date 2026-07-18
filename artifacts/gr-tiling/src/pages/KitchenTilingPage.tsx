@@ -1,22 +1,22 @@
-import { useEffect } from "react";
+import { useEffect, type ReactNode } from "react";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
-import { ChevronRight, FileText, Wrench, LayoutGrid, Sparkles } from "lucide-react";
+import { CheckCircle2, ChevronRight, FileText, Wrench, LayoutGrid, Sparkles } from "lucide-react";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { applyPageSeo, applyJsonLd, SITE_URL } from "@/lib/seo";
+import { applyPageSeo, applyJsonLd, SITE_URL, DUBLIN_AREAS } from "@/lib/seo";
 import { HeroReviewBadge } from "@/components/ui/hero-review-badge";
 import { TrustStrip } from "@/components/TrustStrip";
 import { images, gridImages } from "@/data/images";
 import { BelowFold } from "@/components/BelowFold";
 import { ReviewsSection } from "@/components/ReviewsSection";
 
-const PAGE_TITLE = "Kitchen Tiling Dublin | Splashbacks & Floors | GR Tiling";
-const PAGE_DESCRIPTION = "Kitchen tiling in Dublin. Splashbacks, wall tiles, floor tiles, and utility rooms. Clean, practical finishes. Free quotes from GR Tiling.";
+const PAGE_TITLE = "Kitchen Tiling Dublin | Splashbacks & Floors — GR Tiling";
+const PAGE_DESCRIPTION = "Kitchen tiling in Dublin by GR Tiling. Metro & herringbone splashbacks, wall and floor tiling, utility rooms, neat cuts around units. 15 yrs, fully insured.";
 const PAGE_PATH = "/services/kitchen-tiling-dublin";
 
 export const schema = {
@@ -32,57 +32,65 @@ export const schema = {
         "url": SITE_URL,
         "telephone": "+353877209850"
       },
-      "areaServed": "Dublin"
+      "areaServed": DUBLIN_AREAS
     },
     {
       "@type": "FAQPage",
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "How much does a kitchen splashback cost to tile?",
+          "name": "How much does a kitchen splashback cost in Dublin?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Splashback tiling quotes depend on the tile, layout, surface condition, and finish you want. Get in touch and we will give you a clear written quote for your kitchen."
+            "text": "There is no single figure — it depends on the length of the run, the tile, and whether you want a straightforward brick-bond metro or a herringbone or patterned feature that takes far more cutting and labour. We always give an honest, written quote after seeing the kitchen, and our cost guide explains what shapes a splashback price before you call."
           }
         },
         {
           "@type": "Question",
-          "name": "Can you tile behind a cooker?",
+          "name": "What's the difference between a metro and a herringbone splashback?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes. Tiling behind a cooker or hob is one of the most common kitchen tiling jobs we do. The area is measured, prepared, and tiled with appropriate grout and silicone finishing."
+            "text": "A metro splashback is the classic rectangular brick tile, usually 100x200mm, laid in a horizontal offset bond — clean, timeless and quick to set out. Herringbone uses the same or a slimmer tile turned to a 45 or 90-degree zig-zag, which adds movement and a more crafted look but needs far more cutting at the ends of each row. Herringbone typically adds noticeably to the labour; both look superb behind a hob."
           }
         },
         {
           "@type": "Question",
-          "name": "What tiles are best for kitchen floors?",
+          "name": "Can you tile around my existing kitchen units and worktops?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Porcelain is generally the most practical choice for kitchen floors, durable, easy to clean, and available in a wide range of finishes. We are happy to advise on formats that work best for your space."
+            "text": "Yes — that is the core of kitchen tiling. We work to the underside of wall cabinets, meet the worktop with a consistent joint, and cut cleanly around sockets, switches, taps and appliance gaps. Where tile meets the worktop or units we finish with a flexible silicone rather than rigid grout, so the joint copes with movement and stays watertight. Neat cuts around obstructions are exactly what separates a fitted splashback from a DIY one."
           }
         },
         {
           "@type": "Question",
-          "name": "Can you tile around existing cabinets?",
+          "name": "What grout should I use in a kitchen so it doesn't go grey?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes. We tile around existing cabinets, appliances, and fixtures without disrupting them. We plan the layout carefully to keep cuts clean and consistent."
+            "text": "Above a hob and around the sink we recommend an epoxy or high-performance stain-resistant grout, which is effectively non-porous — it shrugs off grease, wine and coffee and wipes clean without sealing. Standard cement grout is porous and absorbs cooking grease, which is why older splashbacks go grey along the joints. For lower-exposure walls a good stain-resistant cement grout is often fine. We match the grout to the zone rather than over-spec everywhere."
           }
         },
         {
           "@type": "Question",
-          "name": "Do you do small kitchen tiling jobs?",
+          "name": "Do you tile kitchen and utility floors as well as splashbacks?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes. We are happy to quote for smaller jobs including individual splashbacks. Get in touch and we will give you a straight answer on what makes sense for your kitchen."
+            "text": "Yes. We fit dense porcelain floors for kitchens and utility rooms — low water absorption, hard-wearing, and genuinely easy to mop clean. Utility rooms also get a tiled splash zone behind the sink and washing machine. If your job is mainly about levelling an uneven period-house floor or large-format technique across an open-plan space, that sits under our floor and wall tiling service, and we will tell you which fits."
           }
         },
         {
           "@type": "Question",
-          "name": "How long does a kitchen splashback take?",
+          "name": "My splashback tiles are fine but the grout looks awful — do I need a new splashback?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "A standard kitchen splashback is usually completed in a day. Larger areas or more complex layouts will take longer. We confirm the timeline when we quote."
+            "text": "Usually not. If the tiles are sound and well-bonded but the grout is stained, cracked or mouldy, raking it out and regrouting — plus renewing the silicone at the worktop and corners — restores the splashback at a fraction of the cost of re-tiling. A full re-tile only makes sense if tiles are drummy, lifting or cracked. That refresh work is our tile and grout repairs service rather than new kitchen tiling."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which parts of Dublin do you cover, and are you insured?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "GR Tiling is Dublin-based, Irish owned and operated, and covers Dublin city and county. Owner Gerry has 15 years in the trade and the business is fully insured, with a 5.0 Google rating. We turn up on time, keep the kitchen clean and tidy while we work, and give an honest written quote up front — never a fixed guaranteed price pulled off a webpage before we have seen your kitchen."
           }
         }
       ]
@@ -99,27 +107,46 @@ export const schema = {
 };
 
 const areas = [
-  { ...gridImages.kitchenSplashbacks, label: "Splashbacks",         desc: "Fixed price available",    href: null },
-  { ...gridImages.kitchenWalls,       label: "Kitchen Walls",       desc: "Clean, easy to maintain",  href: null },
-  { ...gridImages.utilityRooms,       label: "Utility Rooms",       desc: "Practical, durable tiles", href: null },
+  { ...gridImages.kitchenSplashbacks, label: "Splashbacks",         desc: "Metro, herringbone, patterned", href: null },
+  { ...gridImages.kitchenWalls,       label: "Kitchen Walls",       desc: "Neat cuts around units",       href: null },
+  { ...gridImages.utilityRooms,       label: "Utility Rooms",       desc: "Hard-wearing walls & floors",  href: null },
   { ...gridImages.hallwaysFloors,     label: "Floor & Wall Tiling", desc: null, href: "/services/floor-wall-tiling-dublin" },
 ];
 
 const process = [
-  { icon: <FileText className="w-10 h-10" />, title: "Measure and plan", text: "Layout planned around your cabinets, sockets, and appliances before anything starts." },
-  { icon: <Wrench className="w-10 h-10" />, title: "Prepare the surface", text: "Walls and floors cleaned, primed, and levelled so tiles sit flat and stay put." },
-  { icon: <LayoutGrid className="w-10 h-10" />, title: "Tile installation", text: "Precise cuts around existing fixtures for a seamless, professional finish." },
-  { icon: <Sparkles className="w-10 h-10" />, title: "Grout, silicone and clean", text: "Finished with matching grout, silicone at joints, and a full clean-down." },
+  { icon: <FileText className="w-10 h-10" />, title: "Survey & set-out", text: "We measure the run, agree tile, pattern and grout, and mark the setting-out so full tiles land at eye level and cuts fall out of sight." },
+  { icon: <Wrench className="w-10 h-10" />, title: "Prep & prime", text: "We check the wall or floor is sound, flat and dry, then prime absorbent surfaces so the adhesive bonds and tiles don't debond later." },
+  { icon: <LayoutGrid className="w-10 h-10" />, title: "Tile around the kitchen", text: "We fix the splashback, walls or floor with the right adhesive, cutting cleanly around sockets, taps, units, appliances and extractor boxing." },
+  { icon: <Sparkles className="w-10 h-10" />, title: "Grout, seal & snag", text: "We grout with the stain-resistant spec agreed, silicone every movement junction, then clean off and walk the job with you." },
 ];
 
 
-const faqs = [
-  { q: "How much does a kitchen splashback cost to tile?", a: "Splashback tiling quotes depend on the tile, layout, surface condition, and finish you want. Get in touch and we will give you a clear written quote for your kitchen." },
-  { q: "Can you tile behind a cooker?", a: "Yes. Tiling behind a cooker or hob is one of the most common kitchen jobs we do. The area is measured, prepared, and tiled with appropriate finishing throughout." },
-  { q: "What tiles are best for kitchen floors?", a: "Porcelain is generally the most practical choice for kitchen floors, durable, easy to clean, and available in a wide range of finishes and formats. We are happy to advise on what works best for your space." },
-  { q: "Can you tile around existing cabinets?", a: "Yes. We tile around existing cabinets, appliances, and fixtures without disrupting them. We plan the layout carefully to keep cuts clean and consistent throughout." },
-  { q: "Do you do small kitchen tiling jobs?", a: "Yes. We are happy to quote for smaller jobs including individual splashbacks. Get in touch and we will give you a straight answer on what makes sense for your kitchen." },
-  { q: "How long does a kitchen splashback take?", a: "A standard kitchen splashback is usually completed in a day. Larger areas or more complex layouts will take a little longer. We confirm the exact timeline when we quote." },
+type Faq = { q: string; a: ReactNode };
+
+const faqs: Faq[] = [
+  {
+    q: "How much does a kitchen splashback cost in Dublin?",
+    a: (
+      <>
+        There's no single figure — it depends on the length of the run, the tile, and whether you want a straightforward brick-bond metro or a herringbone or patterned feature that takes far more cutting and labour. We always give an honest, written quote after seeing the kitchen, and you can read more about{" "}
+        <Link href="/cost-guide" className="text-primary font-medium underline underline-offset-4 hover:opacity-80">what shapes a splashback price</Link>{" "}before you call.
+      </>
+    ),
+  },
+  { q: "What's the difference between a metro and a herringbone splashback?", a: "A metro splashback is the classic rectangular brick tile, usually 100x200mm, laid in a horizontal offset bond — clean, timeless and quick to set out. Herringbone uses the same or a slimmer tile turned to a 45 or 90-degree zig-zag, which adds movement and a more crafted look but needs far more cutting at the ends of each row. Herringbone typically adds noticeably to the labour; both look superb behind a hob." },
+  { q: "Can you tile around my existing kitchen units and worktops?", a: "Yes — that's the core of kitchen tiling. We work to the underside of wall cabinets, meet the worktop with a consistent joint, and cut cleanly around sockets, switches, taps and appliance gaps. Where tile meets the worktop or units we finish with a flexible silicone rather than rigid grout, so the joint copes with movement and stays watertight. Neat cuts around obstructions are exactly what separates a fitted splashback from a DIY one." },
+  { q: "What grout should I use in a kitchen so it doesn't go grey?", a: "Above a hob and around the sink we recommend an epoxy or high-performance stain-resistant grout, which is effectively non-porous — it shrugs off grease, wine and coffee and wipes clean without sealing. Standard cement grout is porous and absorbs cooking grease, which is why older splashbacks go grey along the joints. For lower-exposure walls a good stain-resistant cement grout is often fine. We match the grout to the zone rather than over-spec everywhere." },
+  {
+    q: "Do you tile kitchen and utility floors as well as splashbacks?",
+    a: (
+      <>
+        Yes. We fit dense porcelain floors for kitchens and utility rooms — low water absorption, hard-wearing, and genuinely easy to mop clean. Utility rooms also get a tiled splash zone behind the sink and washing machine. If your job is mainly about levelling an uneven period-house floor or large-format technique, that sits under our{" "}
+        <Link href="/services/floor-wall-tiling-dublin" className="text-primary font-medium underline underline-offset-4 hover:opacity-80">floor &amp; wall tiling</Link>{" "}service, and we'll tell you which fits.
+      </>
+    ),
+  },
+  { q: "My splashback tiles are fine but the grout looks awful — do I need a new splashback?", a: "Usually not. If the tiles are sound and well-bonded but the grout is stained, cracked or mouldy, raking it out and regrouting — plus renewing the silicone at the worktop and corners — restores the splashback at a fraction of the cost of re-tiling. A full re-tile only makes sense if tiles are drummy, lifting or cracked. That refresh work is our tile and grout repairs service rather than new kitchen tiling." },
+  { q: "Which parts of Dublin do you cover, and are you insured?", a: "GR Tiling is Dublin-based, Irish owned and operated, and covers Dublin city and county. Owner Gerry has 15 years in the trade and the business is fully insured, with a 5.0 Google rating. We turn up on time, keep the kitchen clean and tidy while we work, and give an honest written quote up front — never a fixed guaranteed price pulled off a webpage before we've seen your kitchen." },
 ];
 
 export default function KitchenTilingPage({ openQuote }: { openQuote: () => void }) {
@@ -136,12 +163,12 @@ export default function KitchenTilingPage({ openQuote }: { openQuote: () => void
       <section className="relative overflow-hidden bg-secondary/30 pt-10 pb-[60px] lg:pt-16 lg:pb-24">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-primary font-semibold tracking-wider uppercase text-sm mb-4 block">Kitchen Tiling Dublin</h1>
+            <h1 className="text-primary font-semibold tracking-wider uppercase text-sm mb-4 block">Kitchen Tiling · Dublin</h1>
             <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground leading-[1.15] mb-6 tracking-tight">
-              Clean Cuts. Neat Finish. Every Time.
+              Splashbacks And Floors, Done Right
             </h2>
             <p className="text-lg sm:text-xl text-muted-foreground mb-10 leading-relaxed max-w-2xl mx-auto">
-              We tile kitchens across Dublin including splashbacks, walls, floors, and utility rooms. Whether you want a simple metro tile splashback or a full kitchen floor, we give the space a clean, professional finish.
+              From a crisp metro splashback behind the hob to a full kitchen and utility floor, we deliver clean lines, tight cuts around every unit and socket, and grout built to shrug off heat, grease and daily scrubbing.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
               <Button size="lg" className="text-base h-14 px-8" onClick={openQuote}>Get a Free Quote</Button>
@@ -162,6 +189,33 @@ export default function KitchenTilingPage({ openQuote }: { openQuote: () => void
 
       <BelowFold>
       <TrustStrip />
+
+      {/* Intro: splashback to full floor */}
+      <section className="py-[60px] md:py-24 bg-background">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <h2 className="font-serif text-3xl md:text-4xl text-foreground mb-6">
+            Kitchen tiling in Dublin, from splashback to full floor
+          </h2>
+          <p className="text-lg text-muted-foreground leading-relaxed mb-6">
+            A kitchen is the hardest-working room in the house — spitting fat behind the hob, constant splashing at the sink, dropped pans underfoot. We tile Dublin kitchens so the finish still looks sharp years on: full tiles and clean joints where the eye lands, not awkward slivers by the extractor.
+          </p>
+          <ul className="grid sm:grid-cols-2 gap-x-8 gap-y-3">
+            {[
+              "Metro, herringbone and patterned splashbacks set out around the hob",
+              "Clean cuts around sockets, switches, taps and extractor boxing",
+              "Wall cabinets and worktops met with a tidy, even joint",
+              "Stain-resistant epoxy grout offered where grease and heat are worst",
+              "Flexible sanitary silicone at all worktop, sink and corner junctions",
+              "Porcelain kitchen and utility floors that mop clean and wear hard",
+            ].map((point, i) => (
+              <li key={i} className="flex gap-3 items-start">
+                <CheckCircle2 className="text-green-600 w-5 h-5 flex-shrink-0 mt-1" />
+                <span className="text-foreground">{point}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
 
       {/* Where We Tile */}
       <section className="py-[60px] md:py-24 bg-background">
@@ -205,11 +259,14 @@ export default function KitchenTilingPage({ openQuote }: { openQuote: () => void
               <img src={images.kitchenTilingPage.splashbackSection.src} alt={images.kitchenTilingPage.splashbackSection.alt} loading="lazy" className="w-full h-full object-cover" />
             </div>
             <div>
-              <h2 className="font-serif text-3xl md:text-4xl text-foreground mb-6">Kitchen Splashbacks</h2>
+              <h2 className="font-serif text-3xl md:text-4xl text-foreground mb-6">Tiling around cabinets and appliances</h2>
               <div className="space-y-4 text-muted-foreground leading-relaxed">
-                <p>A kitchen splashback is one of the most impactful and practical upgrades you can make. It protects walls from grease and moisture, and with the right tile it transforms the look of the whole kitchen.</p>
-                <p>Your written quote depends on the tile, layout, surface condition, and finish you want. Metro tiles, large format, herringbone, pattern tiles. We can lay them all to a clean, professional finish.</p>
-                <p>Small jobs are always welcome. Get in touch and we will give you a straight answer on quote and timing.</p>
+                <p>A splashback is only as good as the cuts around everything bolted to the wall. We measure and cut so tile lines run through cleanly — sockets square on a joint, not clipped at an angle — and tile behind range cookers and fridges so there are no bare patches when they're pulled out.</p>
+                <p>
+                  Mainly floor build-up or large-format across an open-plan kitchen-diner? That's our{" "}
+                  <Link href="/services/floor-wall-tiling-dublin" className="text-primary font-medium underline underline-offset-4 hover:opacity-80">floor &amp; wall tiling</Link>. Planning a wider refit? See{" "}
+                  <Link href="/services/tiling-services" className="text-primary font-medium underline underline-offset-4 hover:opacity-80">our full tiling services</Link>.
+                </p>
               </div>
             </div>
           </div>
@@ -242,8 +299,37 @@ export default function KitchenTilingPage({ openQuote }: { openQuote: () => void
         </div>
       </section>
 
-      {/* Gallery */}
+      {/* Why grout goes grey */}
       <section className="py-[60px] md:py-24 bg-secondary/30">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <h2 className="font-serif text-3xl md:text-4xl text-foreground mb-6">
+            Why kitchen grout goes grey above the hob
+          </h2>
+          <p className="text-lg text-muted-foreground leading-relaxed mb-8">
+            The commonest complaint about older kitchen tiling is grey, greasy grout above the cooker that no scrubbing brings back. It's not surface dirt — it's grease absorbed into porous cement grout, which oxidises and darkens. The fix is specification, not elbow grease:
+          </p>
+          <ul className="grid sm:grid-cols-2 gap-x-8 gap-y-3">
+            {[
+              "Epoxy or high-performance grout in the hardest-hit zones — non-porous, wipes clean, no sealing",
+              "A sensible stain-resistant cement grout elsewhere — matched to exposure, not blanket-spec",
+              "Flexible silicone at movement junctions, not rigid grout that cracks",
+              "Substrate primed before tiling so nothing debonds later",
+            ].map((point, i) => (
+              <li key={i} className="flex gap-3 items-start">
+                <CheckCircle2 className="text-green-600 w-5 h-5 flex-shrink-0 mt-1" />
+                <span className="text-foreground">{point}</span>
+              </li>
+            ))}
+          </ul>
+          <p className="text-base text-muted-foreground leading-relaxed mt-8">
+            If your tiles are sound but the grout has simply stained, you often don't need a re-tile at all — that's our{" "}
+            <Link href="/services/tile-repairs-dublin" className="text-primary font-medium underline underline-offset-4 hover:opacity-80">tile &amp; grout repairs</Link>{" "}work.
+          </p>
+        </div>
+      </section>
+
+      {/* Gallery */}
+      <section className="py-[60px] md:py-24 bg-background">
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="text-center mb-8 md:mb-16">
             <h2 className="font-serif text-3xl md:text-5xl text-foreground mb-6">Our Work</h2>
@@ -267,7 +353,10 @@ export default function KitchenTilingPage({ openQuote }: { openQuote: () => void
         </div>
       </section>
 
-      <ReviewsSection />
+      <ReviewsSection
+        featured="alan"
+        trustLine="Kitchen and floor work Dublin homeowners rate 5.0 on Google"
+      />
 
       {/* Related Services */}
       <section className="py-[60px] md:py-24 bg-secondary/30">
@@ -306,11 +395,20 @@ export default function KitchenTilingPage({ openQuote }: { openQuote: () => void
         </div>
       </section>
 
+      {/* Areas served */}
+      <section className="py-10 bg-background border-t border-border/60">
+        <div className="container mx-auto px-4 max-w-4xl text-center">
+          <p className="text-sm text-muted-foreground leading-relaxed">
+            <span className="font-medium text-foreground">Based in Dublin.</span> Kitchen tiling and splashbacks across the city — Rathfarnham, Dundrum and Stillorgan, Clontarf and Raheny, Swords and Malahide, and the city centre.
+          </p>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="py-10 md:py-24 bg-primary text-primary-foreground">
         <div className="container mx-auto px-4 max-w-5xl text-center">
-          <h2 className="font-serif text-3xl md:text-5xl mb-6">Ready to Upgrade Your Kitchen?</h2>
-          <p className="text-lg md:text-xl mb-10 max-w-2xl mx-auto text-primary-foreground/90">Get a clear, written quote for your kitchen tiling. No vague estimates, no hidden costs.</p>
+          <h2 className="font-serif text-3xl md:text-5xl mb-6">Get a written quote for your kitchen tiling</h2>
+          <p className="text-lg md:text-xl mb-10 max-w-2xl mx-auto text-primary-foreground/90">Splashback, walls or full kitchen and utility floor — tell us what you have in mind and Gerry will give you an honest, written quote. Dublin-based, fully insured, on time and tidy.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" variant="secondary" className="text-base h-14 px-8" onClick={openQuote}>Get a Free Quote</Button>
             <Button size="lg" variant="outline" className="text-base h-14 px-8 border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground hover:text-primary bg-transparent" asChild>

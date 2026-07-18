@@ -1,6 +1,7 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, type ReactNode } from "react";
+import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
-import { Info } from "lucide-react";
+import { Info, CheckCircle2, XCircle, LayoutGrid, Layers, Home, Droplets, ClipboardList, Grid3x3 } from "lucide-react";
 import {
   Accordion,
   AccordionContent,
@@ -9,10 +10,12 @@ import {
 } from "@/components/ui/accordion";
 import { applyPageSeo, applyJsonLd, SITE_URL } from "@/lib/seo";
 import { HeroReviewBadge } from "@/components/ui/hero-review-badge";
+import { TrustStrip } from "@/components/TrustStrip";
 import { BelowFold } from "@/components/BelowFold";
+import { ReviewsSection } from "@/components/ReviewsSection";
 
-const PAGE_TITLE = "Bathroom Renovation & Tiling Guide Dublin | GR Tiling";
-const PAGE_DESCRIPTION = "An honest guide to bathroom renovations and tiling in Dublin. Understand what's involved, what affects your quote, and what to expect before work begins.";
+const PAGE_TITLE = "Bathroom Renovation Cost Dublin | What Affects It";
+const PAGE_DESCRIPTION = "What affects the cost of a bathroom renovation or tiling job in Dublin? An honest look at the factors that shape your quote — plus a free written quote from Gerry.";
 const PAGE_PATH = "/cost-guide";
 
 export const schema = {
@@ -23,58 +26,66 @@ export const schema = {
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "What affects a full bathroom renovation quote in Dublin?",
+          "name": "How much does a bathroom renovation cost in Dublin?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Every job is different. The final scope depends on the size of the bathroom, the tiles chosen, whether any plumbing changes are needed, and the sanitary ware selected. Get in touch and we will visit the site and provide a clear written quote before any work begins."
+            "text": "We don't publish a figure, and we'd be suspicious of anyone who does without seeing your room. The cost is shaped by the state of your subfloor and walls, whether the layout stays put, the condition hidden behind the old tiles, and the finishes you choose. Rather than a phone guess we'd only have to revise, Gerry surveys the actual bathroom and gives you an itemised written quote you can rely on. This page explains every factor that moves the number."
           }
         },
         {
           "@type": "Question",
-          "name": "What affects a tiling quote in Dublin?",
+          "name": "What does it cost to tile a bathroom in Ireland?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Tiling quotes vary depending on the tile size, the pattern, and the complexity of the job. Larger tiles and intricate patterns take more skill and time to lay. Get in touch and we will give you an honest quote based on your specific job."
+            "text": "It depends on real, measurable things: the area being tiled, whether it's a straightforward straight lay or an intricate pattern like herringbone, the tile format (large-format and natural stone take more skill and time), and how much preparation the surface needs first. Because those vary job to job, we give a written quote after seeing the space rather than a fixed online rate. Preparation is always part of it and never the corner to cut."
           }
         },
         {
           "@type": "Question",
-          "name": "Do you tile kitchen splashbacks?",
+          "name": "Why won't you give me a fixed price over the phone?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes. We tile kitchen splashbacks, walls, and floors. We can review the layout, tile choice, and prep needed, then give you a clear written quote."
+            "text": "Because no honest tradesman can quote your bathroom without seeing it. The biggest cost drivers are hidden — the state of the subfloor, damp behind the tiles, whether the walls are true — and none of that shows in a phone call. A cheap phone figure only gets protected later with change orders. Instead, Gerry surveys the actual room and gives you an itemised written quote you can trust, so the agreed price is the price you pay."
           }
         },
         {
           "@type": "Question",
-          "name": "Do you include tiles in renovation quotes?",
+          "name": "Why is the cheapest quote often a false economy?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "We offer both supply and fit, and fit only. Many customers prefer to visit a tile merchant and choose their own tiles. We are happy to advise on what works best for your space. All quotes clearly outline what is and is not included."
+            "text": "The cheapest quote is usually cheapest because it has quietly removed the invisible work — tanking in wet zones, priming absorbent surfaces, backer boards, movement joints, and timber pattressing behind grab rails. None of that shows on day one, but skipping it is exactly why a bathroom cracks, leaks or goes mouldy within a couple of years. A slightly higher quote that includes proper prep and waterproofing is genuinely the cheaper bathroom over its life."
           }
         },
         {
           "@type": "Question",
-          "name": "Why do renovation quotes vary so much?",
+          "name": "Why does a wet room cost more than a standard shower?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "The main variables are tile choice, whether any plumbing needs to move, the condition of existing walls and floors, bathroom size, and the sanitary ware selected. It is also worth checking what is actually included in a quote because scope can vary between contractors."
+            "text": "Because it's a more involved build. A wet room needs a drain, a graded screed or former so the floor falls correctly, and full-room tanking rather than a simple tray. How much more it comes to depends heavily on your floor — especially over suspended timber in older Dublin homes — which is why it can only be quoted after a survey. The waterproofing is the one line you must never cut, since a failed tank can cause damage many times its cost."
           }
         },
         {
           "@type": "Question",
-          "name": "Can you work within a set budget?",
+          "name": "Is regrouting cheaper than retiling?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes. Once we understand your priorities, we can advise on where to focus and where to simplify, whether that is tile choice, sanitary ware selection, or the scope of work. We would rather give honest advice upfront than surprise you later."
+            "text": "Yes, considerably — when your tiles are sound and well-bonded and only the grout and silicone have failed, regrouting restores the surface for a fraction of the disruption of a retile. Retiling is only necessary when tiles are drummy, lifting or cracked, or when the waterproofing behind them has failed. We give you the honest verdict on which your bathroom actually needs, and quote it in writing."
           }
         },
         {
           "@type": "Question",
-          "name": "How do I get an accurate quote for a bathroom renovation in Dublin?",
+          "name": "Should I budget a contingency, and how much?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Get in touch and we will visit the site, take measurements, and discuss your plans. We will then provide a clear written quote covering all labour, scope, and timeline. No obligation, no hidden costs."
+            "text": "Yes — a sensible contingency is wise on almost any Dublin bathroom, and more so in older housing stock. Victorian and Edwardian terraces and mid-century semis regularly hide surprises on strip-out: rotten timber under a leaking tray, bridged damp, or a subfloor that needs stiffening. A contingency means an honest surprise doesn't derail your project. We show you any genuine issue and price it openly before doing the work — it's never a blank cheque."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does moving the bath or toilet add much to the cost?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It does — relocating fixtures means new first-fix plumbing, possibly moving the soil stack, and chasing walls and floors that then need making good. Keeping your existing layout is the single biggest saving available on any refit. If your current arrangement works, we'll usually advise keeping it and spending the budget on finishes and proper prep instead."
           }
         }
       ]
@@ -120,35 +131,42 @@ const quoteFactors = [
   },
 ];
 
-const faqs = [
+const costFactors = [
+  { icon: <LayoutGrid className="w-6 h-6" />, label: "Your Existing Layout", desc: "Keep it, save the most" },
+  { icon: <Layers className="w-6 h-6" />, label: "Substrate Condition", desc: "Sound base or repairs first" },
+  { icon: <Home className="w-6 h-6" />, label: "Older Dublin Homes", desc: "Hidden surprises on strip-out" },
+  { icon: <Grid3x3 className="w-6 h-6" />, label: "Tile Choice", desc: "Standard vs large-format, stone" },
+  { icon: <Droplets className="w-6 h-6" />, label: "Waterproofing", desc: "Non-negotiable in wet zones" },
+  { icon: <ClipboardList className="w-6 h-6" />, label: "Scope Of Work", desc: "Refresh or full refit" },
+];
+
+type Faq = { q: string; a: ReactNode };
+
+const faqs: Faq[] = [
+  { q: "How much does a bathroom renovation cost in Dublin?", a: "We don't publish a figure, and we'd be suspicious of anyone who does without seeing your room. The cost is shaped by the state of your subfloor and walls, whether the layout stays put, the condition hidden behind the old tiles, and the finishes you choose. Rather than a phone guess we'd only have to revise, Gerry surveys the actual bathroom and gives you an itemised written quote you can rely on. This page explains every factor that moves the number." },
+  { q: "What does it cost to tile a bathroom in Ireland?", a: "It depends on real, measurable things: the area being tiled, whether it's a straightforward straight lay or an intricate pattern like herringbone, the tile format (large-format and natural stone take more skill and time), and how much preparation the surface needs first. Because those vary job to job, we give a written quote after seeing the space rather than a fixed online rate. Preparation is always part of it and never the corner to cut." },
+  { q: "Why won't you give me a fixed price over the phone?", a: "Because no honest tradesman can quote your bathroom without seeing it. The biggest cost drivers are hidden — the state of the subfloor, damp behind the tiles, whether the walls are true — and none of that shows in a phone call. A cheap phone figure only gets protected later with change orders. Instead, Gerry surveys the actual room and gives you an itemised written quote you can trust, so the agreed price is the price you pay." },
+  { q: "Why is the cheapest quote often a false economy?", a: "The cheapest quote is usually cheapest because it has quietly removed the invisible work — tanking in wet zones, priming absorbent surfaces, backer boards, movement joints, and timber pattressing behind grab rails. None of that shows on day one, but skipping it is exactly why a bathroom cracks, leaks or goes mouldy within a couple of years. A slightly higher quote that includes proper prep and waterproofing is genuinely the cheaper bathroom over its life." },
   {
-    q: "What affects a full bathroom renovation quote in Dublin?",
-    a: "Every job is different. The final scope depends on the size of the bathroom, the tiles chosen, whether any plumbing changes are needed, and the sanitary ware selected. Get in touch and we will visit the site and provide a clear written quote before any work begins.",
+    q: "Why does a wet room cost more than a standard shower?",
+    a: (
+      <>
+        Because it's a more involved build. A wet room needs a drain, a graded screed or former so the floor falls correctly, and full-room tanking rather than a simple tray. How much more it comes to depends heavily on your floor — especially over suspended timber in older Dublin homes — which is why it can only be quoted after a survey. See our{" "}
+        <Link href="/services/wet-room-installation-dublin" className="text-primary font-medium underline underline-offset-4 hover:opacity-80">wet room installation</Link>{" "}page for how that build is done properly.
+      </>
+    ),
   },
   {
-    q: "What affects a tiling quote?",
-    a: "Tiling quotes vary depending on the tile size, the pattern, and the complexity of the job. Larger tiles and intricate patterns take more skill and time to lay. Small jobs and kitchen splashbacks are assessed on their own scope. Get in touch and we will give you an honest quote based on your specific job.",
+    q: "Is regrouting cheaper than retiling?",
+    a: (
+      <>
+        Yes, considerably — when your tiles are sound and well-bonded and only the grout and silicone have failed, regrouting restores the surface for a fraction of the disruption of a retile. Retiling is only necessary when tiles are drummy, lifting or cracked, or when the waterproofing behind them has failed. Our{" "}
+        <Link href="/services/tile-repairs-dublin" className="text-primary font-medium underline underline-offset-4 hover:opacity-80">tile &amp; grout repairs</Link>{" "}page explains the difference.
+      </>
+    ),
   },
-  {
-    q: "Do you include tiles in renovation quotes?",
-    a: "We offer both supply and fit, and labour only. Many of our customers prefer to visit a tile merchant and choose their own tiles. We can point you in the right direction and advise on what formats and finishes will work best for your space. Every quote clearly states what is and is not included so there are no surprises.",
-  },
-  {
-    q: "Why do renovation quotes vary so much?",
-    a: "The main variables are tile choice, whether plumbing needs to move, the condition of existing walls and floors, bathroom size, and the sanitary ware selected. It is also worth checking what is actually included in a quote because the difference in scope can make quotes look very different on paper.",
-  },
-  {
-    q: "Can you work within a set budget?",
-    a: "Yes. Once we understand your priorities, we can advise on where to focus and where to simplify, whether that is tile format, sanitary ware selection, or the scope of work. Our approach is to give honest advice upfront rather than surprise you later.",
-  },
-  {
-    q: "How do I get an accurate quote?",
-    a: "Get in touch and we will arrange a site visit, take measurements, and talk through your plans. We will then provide a clear written quote covering all labour, materials if applicable, scope, and timeline. No obligation and no hidden costs.",
-  },
-  {
-    q: "How long does a bathroom renovation take?",
-    a: "Most full bathroom renovations take one to two weeks depending on the size and complexity of the job. We agree a timeline before starting and stick to it. We have a strong team so jobs move quickly and we do not leave sites half-done.",
-  },
+  { q: "Should I budget a contingency, and how much?", a: "Yes — a sensible contingency is wise on almost any Dublin bathroom, and more so in older housing stock. Victorian and Edwardian terraces and mid-century semis regularly hide surprises on strip-out: rotten timber under a leaking tray, bridged damp, or a subfloor that needs stiffening. A contingency means an honest surprise doesn't derail your project. We show you any genuine issue and price it openly before doing the work — it's never a blank cheque." },
+  { q: "Does moving the bath or toilet add much to the cost?", a: "It does — relocating fixtures means new first-fix plumbing, possibly moving the soil stack, and chasing walls and floors that then need making good. Keeping your existing layout is the single biggest saving available on any refit. If your current arrangement works, we'll usually advise keeping it and spending the budget on finishes and proper prep instead." },
 ];
 
 export default function CostGuidePage({ openQuote }: { openQuote: () => void }) {
@@ -166,13 +184,13 @@ export default function CostGuidePage({ openQuote }: { openQuote: () => void }) 
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="text-primary font-semibold tracking-wider uppercase text-sm mb-4 block">
-              Bathroom Renovations & Tiling Dublin
+              Dublin Bathroom &amp; Tiling Cost Guide
             </h1>
             <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground leading-[1.15] mb-6 tracking-tight">
-              What to Expect.<br className="hidden sm:block" /> No Surprises.
+              What Shapes Your Bathroom Quote
             </h2>
             <p className="text-lg sm:text-xl text-muted-foreground mb-10 leading-relaxed max-w-2xl mx-auto">
-              Every renovation and tiling job is different. This guide explains what is typically involved, what affects your quote, and what to expect when you get in touch.
+              We don't post prices online, because no two Dublin bathrooms are the same. What we can do is show you honestly what drives a quote up or down — so you know exactly what you're paying for when Gerry surveys your room and puts it in writing.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
               <Button size="lg" className="text-base h-14 px-8" onClick={openQuote}>
@@ -190,6 +208,32 @@ export default function CostGuidePage({ openQuote }: { openQuote: () => void }) 
       </section>
 
       <BelowFold>
+      <TrustStrip />
+
+      {/* Why no price */}
+      <section className="py-[60px] md:py-24 bg-background">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <h2 className="font-serif text-3xl md:text-4xl text-foreground mb-6">
+            Why we don't publish a price
+          </h2>
+          <p className="text-lg text-muted-foreground leading-relaxed mb-6">
+            Ring around for a bathroom renovation cost and you'll hear wildly different answers. The honest reason: no tradesman can price your bathroom unseen — it's driven more by what strip-out reveals than the suite you pick. So Gerry surveys the room and gives you an itemised written quote you can hold us to. See our{" "}
+            <Link href="/services/bathroom-renovations" className="text-primary font-medium underline underline-offset-4 hover:opacity-80">full bathroom renovations</Link>{" "}page for the detail.
+          </p>
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+            {costFactors.map((factor, i) => (
+              <div key={i} className="bg-card rounded-2xl border shadow-sm p-6 flex flex-col gap-3">
+                <div className="text-primary">{factor.icon}</div>
+                <div>
+                  <p className="font-semibold text-foreground">{factor.label}</p>
+                  <p className="text-sm text-muted-foreground mt-1">{factor.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Bathroom renovation quote factors */}
       <section className="py-[60px] md:py-24 bg-background">
         <div className="container mx-auto px-4 max-w-6xl">
@@ -305,6 +349,65 @@ export default function CostGuidePage({ openQuote }: { openQuote: () => void }) 
         </div>
       </section>
 
+      {/* Up / down drivers */}
+      <section className="py-[60px] md:py-24 bg-secondary/30">
+        <div className="container mx-auto px-4 max-w-5xl">
+          <div className="text-center mb-10 lg:mb-12">
+            <h2 className="font-serif text-3xl md:text-5xl text-foreground mb-4">What Moves the Number</h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              No figures — those are yours to receive in writing — but a clear sense of which way each factor pushes.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-2 gap-6">
+            <div className="bg-background rounded-2xl border shadow-sm p-8">
+              <h3 className="font-semibold text-lg text-foreground mb-5">What pushes a quote up</h3>
+              <ul className="grid gap-3">
+                {[
+                  "A full strip-out and skip disposal over a partial refresh",
+                  "Suspended timber floors that must be stiffened and decoupled",
+                  "Walls noticeably out of plumb, or hidden damp and rot on strip-out",
+                  "A wet-room build-up with full-room tanking, a former and falls",
+                  "Large-format or natural stone, underfloor heating, moving the soil stack",
+                  "Period houses with narrow stairs and no parking",
+                ].map((point, i) => (
+                  <li key={i} className="grid grid-cols-[20px_1fr] gap-3 items-start">
+                    <XCircle className="w-5 h-5 text-rose-400/80 mt-0.5" />
+                    <span className="text-foreground/80 leading-[1.5]">{point}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="bg-background rounded-2xl border shadow-sm p-8">
+              <h3 className="font-semibold text-lg text-foreground mb-5">What keeps a quote down</h3>
+              <ul className="grid gap-3">
+                {[
+                  "A sound existing substrate that needs no structural work",
+                  "Keeping the layout so no plumbing moves and no walls get chased",
+                  "Standard-format porcelain in a simple straight lay",
+                  "A like-for-like refit rather than a reconfiguration",
+                  "Choosing where to spend the finish budget yourself",
+                  "A refresh or regrout where the tiles are still sound",
+                ].map((point, i) => (
+                  <li key={i} className="grid grid-cols-[20px_1fr] gap-3 items-start">
+                    <CheckCircle2 className="w-5 h-5 text-green-600 mt-0.5" />
+                    <span className="text-foreground leading-[1.5]">{point}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+          <p className="text-base text-muted-foreground leading-relaxed mt-8 max-w-3xl mx-auto text-center">
+            Skill and correct materials cost a little more upfront and far less over the life of the bathroom. The cheapest quote is usually cheapest because it has quietly skipped tanking, priming or movement joints — the invisible work explained across{" "}
+            <Link href="/services/tiling-services" className="text-primary font-medium underline underline-offset-4 hover:opacity-80">our tiling services</Link>. That's why we quote in writing after seeing the room.
+          </p>
+        </div>
+      </section>
+
+      <ReviewsSection
+        featured="brooks"
+        trustLine="Honest pricing is the whole point of this guide — rated 5.0 on Google"
+      />
+
       {/* FAQ */}
       <section className="py-[60px] md:py-24 bg-secondary/30">
         <div className="container mx-auto px-4 max-w-4xl">
@@ -332,9 +435,10 @@ export default function CostGuidePage({ openQuote }: { openQuote: () => void }) 
       {/* CTA */}
       <section className="py-10 md:py-24 bg-primary text-primary-foreground">
         <div className="container mx-auto px-4 max-w-5xl text-center">
-          <h2 className="font-serif text-3xl md:text-5xl mb-6">Ready for a Clear Written Quote?</h2>
+          <h2 className="font-serif text-3xl md:text-5xl mb-6">Get an honest written quote for your bathroom</h2>
           <p className="text-lg md:text-xl mb-10 max-w-2xl mx-auto text-primary-foreground/90">
-            Every GR Tiling quote is clear, written, and obligation-free. No vague estimates, no hidden extras. Just honest advice for your specific job.
+            No fixed guesswork, no pressure — Gerry surveys your actual room and gives you a clear, itemised price you can trust. Fully insured, 15 years in the trade, Dublin based.{" "}
+            <Link href="/about" className="underline underline-offset-4 hover:opacity-80">Meet Gerry</Link>.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" variant="secondary" className="text-base h-14 px-8" onClick={openQuote}>

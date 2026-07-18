@@ -11,6 +11,49 @@
 
 export const SITE_URL = "https://grtilingandbathrooms.ie";
 
+/**
+ * Dublin areas served, for JSON-LD `areaServed`. This is a structured
+ * local-relevance signal only — it lives in schema, NOT as repeated visible
+ * page copy, so it strengthens "near me" / suburb relevance without
+ * reintroducing the duplicate-boilerplate problem across sibling pages.
+ */
+export const DUBLIN_AREAS: string[] = [
+  "Dublin",
+  "Dublin City Centre",
+  "Rathmines",
+  "Ranelagh",
+  "Rathgar",
+  "Terenure",
+  "Rathfarnham",
+  "Dundrum",
+  "Ballsbridge",
+  "Sandymount",
+  "Donnybrook",
+  "Blackrock",
+  "Dún Laoghaire",
+  "Stillorgan",
+  "Phibsborough",
+  "Drumcondra",
+  "Glasnevin",
+  "Cabra",
+  "Clontarf",
+  "Marino",
+  "Raheny",
+  "Crumlin",
+  "Kimmage",
+  "Walkinstown",
+  "Tallaght",
+  "Lucan",
+  "Clondalkin",
+  "Swords",
+  "Malahide",
+  "Portmarnock",
+  "Howth",
+  "Blanchardstown",
+  "Castleknock",
+  "Finglas",
+];
+
 export type PageSeo = {
   title: string;
   description: string;

@@ -1,22 +1,22 @@
-import { useEffect } from "react";
+import { useEffect, type ReactNode } from "react";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
-import { ChevronRight, Search, Wrench, LayoutGrid, Sparkles } from "lucide-react";
+import { CheckCircle2, ChevronRight, Search, Wrench, LayoutGrid, Sparkles } from "lucide-react";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { applyPageSeo, applyJsonLd, SITE_URL } from "@/lib/seo";
+import { applyPageSeo, applyJsonLd, SITE_URL, DUBLIN_AREAS } from "@/lib/seo";
 import { HeroReviewBadge } from "@/components/ui/hero-review-badge";
 import { TrustStrip } from "@/components/TrustStrip";
 import { images, gridImages } from "@/data/images";
 import { BelowFold } from "@/components/BelowFold";
 import { ReviewsSection } from "@/components/ReviewsSection";
 
-const PAGE_TITLE = "Tile Repairs Dublin | Cracked Tiles Fixed | GR Tiling";
-const PAGE_DESCRIPTION = "Tile repairs across Dublin. Cracked tiles, loose tiles, broken grout, failed silicone. Honest advice on repair vs retile. Free quotes from GR Tiling.";
+const PAGE_TITLE = "Tile Repairs Dublin | Regrout, Silicone & Grout Fix";
+const PAGE_DESCRIPTION = "Tile repairs in Dublin by Gerry, 15 years in the trade, fully insured. Regrouting, silicone renewal, cracked & loose tiles, mouldy grout removal. Free written quote.";
 const PAGE_PATH = "/services/tile-repairs-dublin";
 
 export const schema = {
@@ -32,57 +32,65 @@ export const schema = {
         "url": SITE_URL,
         "telephone": "+353877209850"
       },
-      "areaServed": "Dublin"
+      "areaServed": DUBLIN_AREAS
     },
     {
       "@type": "FAQPage",
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "Can you replace one cracked tile?",
+          "name": "Can you replace grout without removing the tiles?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes, in many cases a single tile can be replaced. It is easiest when the customer has a spare matching tile. If not, we discuss the best options, including a close match or a partial retile of a section."
+            "text": "Yes — that's the whole point of a regrout. As long as the tiles are sound and well-bonded, we rake the old grout out of the joints to a proper depth and fill them with fresh grout, leaving the tiles in place. It restores the look and seals the surface again at a fraction of a retile. We only need to lift tiles when they're cracked, loose or drummy, and even then it's usually just the affected ones."
           }
         },
         {
           "@type": "Question",
-          "name": "Why are my bathroom tiles coming loose?",
+          "name": "How do I know if I need a regrout or a full retile?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Loose tiles are usually caused by water getting behind the tiles over time, poor adhesive or surface preparation when originally laid, or movement in the substrate beneath. We assess the cause before recommending the right fix."
+            "text": "We tap the tiles and listen. A solid, dull sound means the tile is well-bonded and a regrout will do. A hollow, drummy sound means the bed has failed and new grout won't hold — that needs tiles lifted or a full re-tile. Cracked, lifting or moving tiles, or failed waterproofing, all point to a bigger job. We give you the honest verdict in writing so you're not paying for a repair that won't last."
           }
         },
         {
           "@type": "Question",
-          "name": "Can cracked grout cause leaks?",
+          "name": "How often should grout be replaced?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes. Cracked or missing grout, especially in shower areas, allows water to penetrate behind the tiles. Over time this causes tiles to loosen, mould to form, and water damage to spread. It is worth fixing promptly."
+            "text": "Cement grout typically needs renewing around every eight to ten years, sooner if it's cracked, crumbling or has gone permanently dark. It's porous, so it absorbs soap, limescale and mould over time. Regular resealing slows that down, but grout is a wearing surface and eventually needs raking out and replacing. If yours is cracking well before that, it usually points to movement underneath rather than age, which we'd check on the visit."
           }
         },
         {
           "@type": "Question",
-          "name": "Is it better to repair or retile?",
+          "name": "Why does mould keep coming back on my silicone?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "It depends on the extent of the damage and the underlying cause. A small number of cracked or loose tiles can often be repaired. If the adhesive has failed across a larger area, or if there is recurring moisture damage, a full retile may be the better long-term option. We give honest advice on which makes more sense."
+            "text": "Because fresh silicone laid over old never bonds properly and traps mould underneath, so it grows straight back through. The only lasting fix is to cut the old silicone out completely, treat the junction and lay a new bead of sanitary anti-mould silicone. If it still returns after a proper renewal, the cause is usually poor ventilation or moisture getting behind the tiles — worth investigating rather than replacing the sealant on repeat."
           }
         },
         {
           "@type": "Question",
-          "name": "Do you repair shower tiles?",
+          "name": "What does tile and grout repair cost in Dublin?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes. We repair cracked and loose shower tiles, regrout shower areas, and reseal silicone joints. Where water has damaged the surface behind the tiles, we address that too before retiling."
+            "text": "It depends on the size of the area, whether it's a regrout, a silicone renewal, a few loose tiles or a combination, and how the existing joints come out. Small silicone and mould jobs are low-ticket; a full shower regrout is more. We never quote a fixed price online — we give an honest written quote after seeing the job. Our cost guide explains the factors that move the price up or down."
           }
         },
         {
           "@type": "Question",
-          "name": "What if I do not have spare tiles?",
+          "name": "My tiles look fine but water is getting through — can you just regrout it?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "We discuss the options with you. Sometimes a close match is possible. In other cases, tiling a section with a complementary tile or creating a feature panel works better than a poor match. We give you honest options rather than just proceeding with something that will look wrong."
+            "text": "Sometimes, but not always. If the grout has failed and water is tracking through the joints, a regrout and silicone renewal seals it. But if the waterproofing behind a shower has failed, the leak is behind the tile where grout can't reach, and regrouting only masks it. We'll check which it is. A true waterproofing failure needs wet room re-waterproofing done properly, and we'd tell you that rather than sell you a patch."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you reseal natural stone and porous grout?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Natural stone — marble, limestone, travertine — and cement grout are both porous and stain or etch if left unsealed. Resealing periodically is normal maintenance, not a sign anything's wrong, and it keeps the surface shedding water and resisting soap and limescale. We can reseal as a standalone job or as the finishing step after a regrout, and we'll tell you honestly how often your particular surface will need it."
           }
         }
       ]
@@ -108,20 +116,39 @@ const repairTypes = [
 ];
 
 const process = [
-  { icon: <Search className="w-10 h-10" />, title: "Assess the damage", text: "We inspect the tiles and substrate to find the actual cause, not just what is visible on the surface." },
-  { icon: <Wrench className="w-10 h-10" />, title: "Source and prepare", text: "Matching tiles sourced where possible. Damaged tiles and failed adhesive fully removed." },
-  { icon: <LayoutGrid className="w-10 h-10" />, title: "Repair and retile", text: "Replacement tiles laid with the correct adhesive for the location and substrate type." },
-  { icon: <Sparkles className="w-10 h-10" />, title: "Regrout, seal and clean", text: "Regrouted with matching grout, siliconed at joints, and fully cleaned down." },
+  { icon: <Search className="w-10 h-10" />, title: "Tap Test & Verdict", text: "We tap the tiles to check what's sound and give you an honest regrout-or-retile answer before any work starts." },
+  { icon: <Wrench className="w-10 h-10" />, title: "Rake & Cut Out", text: "Old grout is raked out to a proper depth and every scrap of perished silicone is cut away, not skimmed over." },
+  { icon: <LayoutGrid className="w-10 h-10" />, title: "Treat & Renew", text: "Mould is treated at the source, then we regrout the joints and lay fresh anti-mould sanitary silicone at the movement lines." },
+  { icon: <Sparkles className="w-10 h-10" />, title: "Seal & Leave Clean", text: "We reseal porous grout and stone, wipe everything down and leave the bathroom as tidy as we found it." },
 ];
 
 
-const faqs = [
-  { q: "Can you replace one cracked tile?", a: "Yes, in many cases a single tile can be replaced. It is easiest when the customer has a spare matching tile. If not, we discuss the best options: a close match, or tiling a section to create a clean result." },
-  { q: "Why are my bathroom tiles coming loose?", a: "Loose tiles are usually caused by water getting behind them over time, poor adhesive or surface preparation when originally laid, or movement in the substrate. We assess the cause before recommending the right fix." },
-  { q: "Can cracked grout cause leaks?", a: "Yes. Cracked or missing grout, especially in shower areas, allows water to penetrate behind the tiles. Over time this causes tiles to loosen, mould to form, and water damage to spread. It is worth addressing promptly." },
-  { q: "Is it better to repair or retile?", a: "It depends on the extent of the damage. A small number of cracked or loose tiles can often be repaired cleanly. If adhesive has failed across a larger area, or there is recurring moisture damage, a full retile may be the better long-term option. We give honest advice on which makes more sense for your situation." },
-  { q: "Do you repair shower tiles?", a: "Yes. We repair cracked and loose shower tiles, regrout shower areas, and reseal silicone joints. Where water has damaged the surface behind the tiles, we address that too before retiling." },
-  { q: "What if I do not have spare tiles?", a: "We discuss the options with you. Sometimes a close match is possible. In other cases, tiling a small section with a complementary tile works better than a poor match. We give honest options rather than just proceeding with something that will look wrong." },
+type Faq = { q: string; a: ReactNode };
+
+const faqs: Faq[] = [
+  { q: "Can you replace grout without removing the tiles?", a: "Yes — that's the whole point of a regrout. As long as the tiles are sound and well-bonded, we rake the old grout out of the joints to a proper depth and fill them with fresh grout, leaving the tiles in place. It restores the look and seals the surface again at a fraction of a retile. We only need to lift tiles when they're cracked, loose or drummy, and even then it's usually just the affected ones." },
+  { q: "How do I know if I need a regrout or a full retile?", a: "We tap the tiles and listen. A solid, dull sound means the tile is well-bonded and a regrout will do. A hollow, drummy sound means the bed has failed and new grout won't hold — that needs tiles lifted or a full re-tile. Cracked, lifting or moving tiles, or failed waterproofing, all point to a bigger job. We give you the honest verdict in writing so you're not paying for a repair that won't last." },
+  { q: "How often should grout be replaced?", a: "Cement grout typically needs renewing around every eight to ten years, sooner if it's cracked, crumbling or has gone permanently dark. It's porous, so it absorbs soap, limescale and mould over time. Regular resealing slows that down, but grout is a wearing surface and eventually needs raking out and replacing. If yours is cracking well before that, it usually points to movement underneath rather than age, which we'd check on the visit." },
+  { q: "Why does mould keep coming back on my silicone?", a: "Because fresh silicone laid over old never bonds properly and traps mould underneath, so it grows straight back through. The only lasting fix is to cut the old silicone out completely, treat the junction and lay a new bead of sanitary anti-mould silicone. If it still returns after a proper renewal, the cause is usually poor ventilation or moisture getting behind the tiles — worth investigating rather than replacing the sealant on repeat." },
+  {
+    q: "What does tile and grout repair cost in Dublin?",
+    a: (
+      <>
+        It depends on the size of the area, whether it's a regrout, a silicone renewal, a few loose tiles or a combination, and how the existing joints come out. Small silicone and mould jobs are low-ticket; a full shower regrout is more. We never quote a fixed price online — we give an honest written quote after seeing the job. Our{" "}
+        <Link href="/cost-guide" className="text-primary font-medium underline underline-offset-4 hover:opacity-80">regrout &amp; repair costs</Link>{" "}guide explains the factors that move the price.
+      </>
+    ),
+  },
+  {
+    q: "My tiles look fine but water is getting through — can you just regrout it?",
+    a: (
+      <>
+        Sometimes, but not always. If the grout has failed and water is tracking through the joints, a regrout and silicone renewal seals it. But if the waterproofing behind a shower has failed, the leak is behind the tile where grout can't reach, and regrouting only masks it. We'll check which it is. A true waterproofing failure needs{" "}
+        <Link href="/services/wet-room-installation-dublin" className="text-primary font-medium underline underline-offset-4 hover:opacity-80">wet room re-waterproofing</Link>{" "}done properly, and we'd tell you that rather than sell you a patch.
+      </>
+    ),
+  },
+  { q: "Do you reseal natural stone and porous grout?", a: "Yes. Natural stone — marble, limestone, travertine — and cement grout are both porous and stain or etch if left unsealed. Resealing periodically is normal maintenance, not a sign anything's wrong, and it keeps the surface shedding water and resisting soap and limescale. We can reseal as a standalone job or as the finishing step after a regrout, and we'll tell you honestly how often your particular surface will need it." },
 ];
 
 export default function TileRepairsPage({ openQuote }: { openQuote: () => void }) {
@@ -138,12 +165,12 @@ export default function TileRepairsPage({ openQuote }: { openQuote: () => void }
       <section className="relative overflow-hidden bg-secondary/30 pt-10 pb-[60px] lg:pt-16 lg:pb-24">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-primary font-semibold tracking-wider uppercase text-sm mb-4 block">Tile Repairs Dublin</h1>
+            <h1 className="text-primary font-semibold tracking-wider uppercase text-sm mb-4 block">Tile &amp; Grout Repairs · Dublin</h1>
             <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground leading-[1.15] mb-6 tracking-tight">
-              Fixed Properly. Not Just Patched Up.
+              Refresh It Without Renovating
             </h2>
             <p className="text-lg sm:text-xl text-muted-foreground mb-10 leading-relaxed max-w-2xl mx-auto">
-              We repair damaged tiles across Dublin: cracked tiles, loose tiles, broken grout, failed silicone, and water-damaged areas. Honest advice on whether to repair or retile.
+              Cracked tiles, mouldy grout and failing silicone don't always mean a full retile. We rake out, regrout, reseal and renew across Dublin — a fast, insured, honestly-priced fix that stops water getting where it shouldn't.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
               <Button size="lg" className="text-base h-14 px-8" onClick={openQuote}>Get a Free Quote</Button>
@@ -164,6 +191,33 @@ export default function TileRepairsPage({ openQuote }: { openQuote: () => void }
 
       <BelowFold>
       <TrustStrip />
+
+      {/* Intro: affordable fix */}
+      <section className="py-[60px] md:py-24 bg-background">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <h2 className="font-serif text-3xl md:text-4xl text-foreground mb-6">
+            The affordable fix before the expensive one
+          </h2>
+          <p className="text-lg text-muted-foreground leading-relaxed mb-6">
+            Most Dublin bathrooms don't need ripping out — they need the joints sorted. Grout is porous and silicone perishes, so the lines go dark, crack and let water behind the tile. Caught early it's a straightforward fix — and the honest question we answer every visit is regrout or retile.
+          </p>
+          <ul className="grid sm:grid-cols-2 gap-x-8 gap-y-3">
+            {[
+              "Grout raked out to a sound depth, not just skimmed",
+              "Sanitary-grade anti-mould silicone at every movement junction",
+              "Old silicone fully removed — never a fresh bead over perished old",
+              "Mould treated at the source, not painted over",
+              "Porous grout and natural stone resealed to slow re-staining",
+              "An honest verdict on whether repair or retile is the sensible spend",
+            ].map((point, i) => (
+              <li key={i} className="flex gap-3 items-start">
+                <CheckCircle2 className="text-green-600 w-5 h-5 flex-shrink-0 mt-1" />
+                <span className="text-foreground">{point}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
 
       {/* What We Fix */}
       <section className="py-[60px] md:py-24 bg-background">
@@ -204,11 +258,14 @@ export default function TileRepairsPage({ openQuote }: { openQuote: () => void }
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <div>
-              <h2 className="font-serif text-3xl md:text-4xl text-foreground mb-6">Repair or Retile?</h2>
+              <h2 className="font-serif text-3xl md:text-4xl text-foreground mb-6">Regrout or retile? The tap test decides</h2>
               <div className="space-y-4 text-muted-foreground leading-relaxed">
-                <p>Not every tile problem needs a full retile. A small number of cracked or loose tiles can often be repaired cleanly and at a fraction of the cost.</p>
-                <p>But some problems point to something deeper. If adhesive has failed across a larger area, or water has been getting behind tiles for a long time, a repair on top of that will only hold for so long. In those cases, a full retile is the honest answer.</p>
-                <p>We will always tell you which makes more sense for your situation. We would rather give you the right advice than do a job that needs to be redone in a year.</p>
+                <p>The most useful thing on a repair call is the tap test. A solid, dull note means the tile is well-bonded — if only the grout and silicone have failed, a regrout restores the surface for a fraction of a retile. A drummy note means the bed has failed, and no new grout fixes that.</p>
+                <p>
+                  Where the waterproofing behind a shower has failed, the fix is{" "}
+                  <Link href="/services/wet-room-installation-dublin" className="text-primary font-medium underline underline-offset-4 hover:opacity-80">wet room re-waterproofing</Link>, not a regrout; a floor on a failed substrate wants proper{" "}
+                  <Link href="/services/floor-wall-tiling-dublin" className="text-primary font-medium underline underline-offset-4 hover:opacity-80">floor re-tiling</Link>. Borderline? We give you both options in writing.
+                </p>
               </div>
             </div>
             <div className="rounded-2xl overflow-hidden shadow-lg aspect-[4/3]">
@@ -244,8 +301,36 @@ export default function TileRepairsPage({ openQuote }: { openQuote: () => void }
         </div>
       </section>
 
-      {/* Gallery */}
+      {/* Grout vs silicone */}
       <section className="py-[60px] md:py-24 bg-secondary/30">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <h2 className="font-serif text-3xl md:text-4xl text-foreground mb-6">
+            Grout, silicone and where each belongs
+          </h2>
+          <p className="text-lg text-muted-foreground leading-relaxed mb-8">
+            People use "grout" and "silicone" interchangeably, but they do different jobs — mixing them up is why so many DIY repairs fail. Grout is rigid and fills the joints; silicone is flexible and belongs only at movement junctions — corners, floor-to-wall, around the bath. Put rigid grout where the building moves and it cracks.
+          </p>
+          <p className="font-semibold text-foreground mb-3">Signs it's time to call:</p>
+          <ul className="grid sm:grid-cols-2 gap-x-8 gap-y-3">
+            {[
+              "Grout lines cracked, crumbling or missing in patches",
+              "Black or pink mould in the silicone that won't scrub out",
+              "Silicone lifting, shrinking or peeling away from the tile",
+              "Tiles that sound hollow (drummy) when tapped, or feel loose",
+              "Water appearing below a bathroom, or a musty damp smell",
+              "Grout gone permanently dark despite regular cleaning",
+            ].map((point, i) => (
+              <li key={i} className="flex gap-3 items-start">
+                <CheckCircle2 className="text-green-600 w-5 h-5 flex-shrink-0 mt-1" />
+                <span className="text-foreground">{point}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      {/* Gallery */}
+      <section className="py-[60px] md:py-24 bg-background">
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="text-center mb-8 md:mb-16">
             <h2 className="font-serif text-3xl md:text-5xl text-foreground mb-6">Our Work</h2>
@@ -269,7 +354,10 @@ export default function TileRepairsPage({ openQuote }: { openQuote: () => void }
         </div>
       </section>
 
-      <ReviewsSection />
+      <ReviewsSection
+        featured="brooks"
+        trustLine="Fast, tidy, honestly priced — rated 5.0 on Google"
+      />
 
       {/* Related Services */}
       <section className="py-[60px] md:py-24 bg-secondary/30">
@@ -308,11 +396,20 @@ export default function TileRepairsPage({ openQuote }: { openQuote: () => void }
         </div>
       </section>
 
+      {/* Areas served */}
+      <section className="py-10 bg-background border-t border-border/60">
+        <div className="container mx-auto px-4 max-w-4xl text-center">
+          <p className="text-sm text-muted-foreground leading-relaxed">
+            <span className="font-medium text-foreground">Based in Dublin.</span> Tile and grout repairs across the city and county — Phibsborough, Drumcondra and Glasnevin, Crumlin, Kimmage and Walkinstown, Dún Laoghaire and Blackrock.
+          </p>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="py-10 md:py-24 bg-primary text-primary-foreground">
         <div className="container mx-auto px-4 max-w-5xl text-center">
-          <h2 className="font-serif text-3xl md:text-5xl mb-6">Got Damaged Tiles? Get in Touch</h2>
-          <p className="text-lg md:text-xl mb-10 max-w-2xl mx-auto text-primary-foreground/90">Send us photos and we will give you honest advice on whether a repair or a retile is the right option.</p>
+          <h2 className="font-serif text-3xl md:text-5xl mb-6">Get it fixed before it spreads</h2>
+          <p className="text-lg md:text-xl mb-10 max-w-2xl mx-auto text-primary-foreground/90">Mouldy grout and failing silicone only get worse — and dearer — the longer they're left. Call Gerry for an honest written quote. Fully insured, 15 years in the trade, and your bathroom left as clean as we found it.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" variant="secondary" className="text-base h-14 px-8" onClick={openQuote}>Get a Free Quote</Button>
             <Button size="lg" variant="outline" className="text-base h-14 px-8 border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground hover:text-primary bg-transparent" asChild>

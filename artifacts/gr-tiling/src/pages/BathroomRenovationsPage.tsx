@@ -1,14 +1,14 @@
 import { useEffect, type ReactNode } from "react";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
-import { CheckCircle2, ChevronRight, XCircle, MessageCircle, FileText, Wrench } from "lucide-react";
+import { CheckCircle2, ChevronRight, XCircle, FileText, Layers, ShieldCheck, Trash2, Users, Bath } from "lucide-react";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { applyPageSeo, applyJsonLd, SITE_URL } from "@/lib/seo";
+import { applyPageSeo, applyJsonLd, SITE_URL, DUBLIN_AREAS } from "@/lib/seo";
 import { HeroReviewBadge } from "@/components/ui/hero-review-badge";
 import { TrustStrip } from "@/components/TrustStrip";
 import { images } from "@/data/images";
@@ -24,7 +24,7 @@ export const bathroomSchema = {
       "name": "Bathroom Renovations Dublin",
       "description": "Bathroom renovation services in Dublin by GR Tiling & Bathroom Renovations, focused on clean work, clear pricing, and reliable results.",
       "provider": { "@type": "HomeAndConstructionBusiness", "name": "GR Tiling & Bathroom Renovations", "telephone": "+353877209850", "priceRange": "€€", "image": `${SITE_URL}/opengraph.jpg` },
-      "areaServed": "Dublin and surrounding areas",
+      "areaServed": DUBLIN_AREAS,
       "serviceType": "Bathroom Renovations",
       "url": `${SITE_URL}/services/bathroom-renovations`,
     },
@@ -40,33 +40,43 @@ export const bathroomSchema = {
       "mainEntity": [
         {
           "@type": "Question",
+          "name": "How long does a full bathroom renovation take in Dublin?",
+          "acceptedAnswer": { "@type": "Answer", "text": "A standard full bathroom typically runs seven to ten working days from strip-out to snag, and a more complex job — moving the layout, a wet-room build-up, or hidden damage found on strip-out — usually ten to fourteen. The honest figure depends on your room, and drying and curing times for levelling and tanking cannot be rushed without risking the finish. We give you a realistic programme with the written quote, not an optimistic promise." },
+        },
+        {
+          "@type": "Question",
+          "name": "Do I need planning permission to renovate my bathroom?",
+          "acceptedAnswer": { "@type": "Answer", "text": "For a standard like-for-like renovation that does not extend the house or change how the space is used, the work is generally classed as exempted development, so no planning permission is required. Renovating within an existing bathroom, even with a new layout inside the same room, normally falls under this. Because every property differs, we confirm your specific situation rather than assume — and we will always tell you if something needs checking." },
+        },
+        {
+          "@type": "Question",
+          "name": "Will you manage the plumber and electrician, or do I arrange them?",
+          "acceptedAnswer": { "@type": "Answer", "text": "We manage everything. That is the whole point of a turnkey renovation — one contractor accountable for the full project. Gerry coordinates the first and second-fix plumbing, the electrical work for your extract fan and RCD-protected circuits, the waterproofing, tiling and fit-out, all in the correct sequence. You have a single point of contact and one written quote, rather than juggling five trades and hoping they turn up in the right order." },
+        },
+        {
+          "@type": "Question",
+          "name": "What does a full bathroom renovation include?",
+          "acceptedAnswer": { "@type": "Answer", "text": "It covers strip-out and skip disposal of the old suite and tiles, first-fix plumbing and electrics, any structural or substrate work such as floor stiffening and backer board, plastering and levelling, waterproofing the wet zones, tiling, second-fix, sanitaryware, shower screen and brassware, then grouting, sealing and a full snag. In short, everything from the empty shell to a finished room you can use — handled by one contractor." },
+        },
+        {
+          "@type": "Question",
           "name": "How much does a bathroom renovation cost in Dublin?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Costs depend on the size, scope, and materials chosen for your bathroom remodel. We provide clear, detailed quotes before any work starts, with no hidden extras." },
+          "acceptedAnswer": { "@type": "Answer", "text": "Cost is shaped by factors, not a single figure, which is why we never post a fixed guaranteed price online. Keeping the existing layout keeps it down; moving the toilet or soil stack, discovering damp or rot on strip-out, a wet-room build-up, or large-format and natural-stone tiling push it up. We give a clear written quote after seeing the room. See our cost guide for what shapes a bathroom renovation quote in Dublin." },
         },
         {
           "@type": "Question",
-          "name": "How long does a bathroom renovation take?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Most standard bathroom renovations take 1 to 3 weeks. We give you a realistic timeline at the start and keep you updated throughout." },
+          "name": "What if you find damp or damage once the old bathroom is stripped out?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Dublin's older houses often hide surprises behind the tiles — damp in a cold return, perished pipework, or a rotten section of subfloor. If we find anything, we stop, show you, and put the additional work in writing with a revised figure before continuing. Nothing gets buried or quietly added to the final bill. Tiling over active damp or a soft floor only guarantees the job fails, so we would never do it." },
         },
         {
           "@type": "Question",
-          "name": "Will the work area be kept clean?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Yes. We protect your home, clean up every day, and leave the area tidy. We treat your home the way we'd want ours treated." },
+          "name": "Can you renovate a small ensuite as well as a main bathroom?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. Ensuite renovations follow the same turnkey process — strip-out, coordinated first and second fix, waterproofing, tiling and fit-out — just in a tighter space where careful setting-out and layout matter even more. Small rooms are less forgiving of poor planning, so signing off the tile layout and fixture positions before we start is where a compact ensuite is won. We give the same written quote and single point of contact." },
         },
         {
           "@type": "Question",
-          "name": "Do I get a written quote?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Absolutely. We provide a clear written quote before any work begins so you know exactly what's included and what the cost will be." },
-        },
-        {
-          "@type": "Question",
-          "name": "Do you cover all areas of Dublin?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Yes, we work across Dublin and nearby areas. Contact us and we'll confirm availability for your location quickly." },
-        },
-        {
-          "@type": "Question",
-          "name": "Can you handle just the tiling, not the full renovation?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Yes. We do standalone tiling work as well as full bathroom renovations. Just let us know what you need and we'll quote accordingly." },
+          "name": "Do you handle the tiling yourselves or subcontract it?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Tiling is Gerry's own trade — fifteen years of it — so the craft at the heart of your renovation is done by the person running the job, not handed to an unknown sub. That means the substrate prep, waterproofing and setting-out are all controlled by one accountable pair of hands. If your project needs specialist detail, you can see the full range across all our tiling services, all delivered to the same standard." },
         },
       ],
     },
@@ -144,34 +154,57 @@ const services: Service[] = [
 type Faq = { q: string; a: ReactNode };
 
 const faqs: Faq[] = [
-  { q: "How much does a bathroom renovation cost in Dublin?", a: "Costs depend on the size, scope, and materials chosen for your bathroom remodel. We provide clear, detailed quotes before any work starts, with no hidden extras." },
-  { q: "How long does a bathroom renovation take?", a: "Most standard bathroom renovations take 1-3 weeks. We give you a realistic timeline at the start and keep you updated throughout." },
-  { q: "Will the work area be kept clean?", a: "Yes. We protect your home, clean up every day, and leave the area tidy. We treat your home the way we'd want ours treated." },
-  { q: "Do I get a written quote?", a: "Absolutely. We provide a clear written quote before any work begins so you know exactly what's included and what the cost will be." },
+  { q: "How long does a full bathroom renovation take in Dublin?", a: "A standard full bathroom typically runs seven to ten working days from strip-out to snag, and a more complex job — moving the layout, a wet-room build-up, or hidden damage found on strip-out — usually ten to fourteen. The honest figure depends on your room, and drying and curing times for levelling and tanking cannot be rushed without risking the finish. We give you a realistic programme with the written quote, not an optimistic promise." },
+  { q: "Do I need planning permission to renovate my bathroom?", a: "For a standard like-for-like renovation that does not extend the house or change how the space is used, the work is generally classed as exempted development, so no planning permission is required. Renovating within an existing bathroom, even with a new layout inside the same room, normally falls under this. Because every property differs, we confirm your specific situation rather than assume — and we will always tell you if something needs checking." },
+  { q: "Will you manage the plumber and electrician, or do I arrange them?", a: "We manage everything. That is the whole point of a turnkey renovation — one contractor accountable for the full project. Gerry coordinates the first and second-fix plumbing, the electrical work for your extract fan and RCD-protected circuits, the waterproofing, tiling and fit-out, all in the correct sequence. You have a single point of contact and one written quote, rather than juggling five trades and hoping they turn up in the right order." },
+  { q: "What does a full bathroom renovation include?", a: "It covers strip-out and skip disposal of the old suite and tiles, first-fix plumbing and electrics, any structural or substrate work such as floor stiffening and backer board, plastering and levelling, waterproofing the wet zones, tiling, second-fix, sanitaryware, shower screen and brassware, then grouting, sealing and a full snag. In short, everything from the empty shell to a finished room you can use — handled by one contractor." },
   {
-    q: "Do you cover all areas of Dublin?",
+    q: "How much does a bathroom renovation cost in Dublin?",
     a: (
       <>
-        Yes, we work across Dublin and nearby areas.{" "}
-        <Link href="/contact" className="text-primary font-medium underline underline-offset-4 hover:opacity-80">
-          Contact us
-        </Link>{" "}
-        and we'll confirm availability for your location quickly.
+        Cost is shaped by factors, not a single figure, which is why we never post a fixed guaranteed price online. Keeping the existing layout keeps it down; moving the toilet or soil stack, discovering damp or rot on strip-out, a wet-room build-up, or large-format and natural-stone tiling push it up. We give a clear written quote after seeing the room. For what drives the price, see{" "}
+        <Link href="/cost-guide" className="text-primary font-medium underline underline-offset-4 hover:opacity-80">
+          what shapes a bathroom renovation quote in Dublin
+        </Link>
+        .
       </>
     ),
   },
-  { q: "Can you handle just the tiling, not the full renovation?", a: "Yes. We do standalone tiling work as well as full bathroom renovations. Just let us know what you need and we'll quote accordingly." },
+  { q: "What if you find damp or damage once the old bathroom is stripped out?", a: "Dublin's older houses often hide surprises behind the tiles — damp in a cold return, perished pipework, or a rotten section of subfloor. If we find anything, we stop, show you, and put the additional work in writing with a revised figure before continuing. Nothing gets buried or quietly added to the final bill. Tiling over active damp or a soft floor only guarantees the job fails, so we would never do it." },
+  { q: "Can you renovate a small ensuite as well as a main bathroom?", a: "Yes. Ensuite renovations follow the same turnkey process — strip-out, coordinated first and second fix, waterproofing, tiling and fit-out — just in a tighter space where careful setting-out and layout matter even more. Small rooms are less forgiving of poor planning, so signing off the tile layout and fixture positions before we start is where a compact ensuite is won. We give the same written quote and single point of contact." },
+  {
+    q: "Do you handle the tiling yourselves or subcontract it?",
+    a: (
+      <>
+        Tiling is Gerry's own trade — fifteen years of it — so the craft at the heart of your renovation is done by the person running the job, not handed to an unknown sub. That means the substrate prep, waterproofing and setting-out are all controlled by one accountable pair of hands. If your project needs specialist detail, you can see the full range across{" "}
+        <Link href="/services/tiling-services" className="text-primary font-medium underline underline-offset-4 hover:opacity-80">
+          all our tiling services
+        </Link>
+        , all delivered to the same standard.
+      </>
+    ),
+  },
 ];
 
 const processSteps = [
-  { icon: <MessageCircle className="w-10 h-10" />, title: "Plan", text: "Tell us what you need and we'll go through your bathroom, ideas, and budget to get everything clear from the start." },
-  { icon: <FileText className="w-10 h-10" />, title: "Design", text: "We help you choose the right layout, tiles, and finishes so you know exactly what you're getting before work begins." },
-  { icon: <Wrench className="w-10 h-10" />, title: "Build", text: "We complete the full renovation on time, keep everything clean, and deliver a high-quality finish that lasts." },
+  { icon: <FileText className="w-10 h-10" />, title: "Survey & Written Quote", text: "Gerry visits, measures the room, talks through layout and finish, and sends an honest itemised written quote — never a fixed online price." },
+  { icon: <Trash2 className="w-10 h-10" />, title: "Strip-Out & First Fix", text: "We remove the old suite and tiles, take the waste away, flag any hidden damp or damage in writing, then run and pressure-test the plumbing and electrics." },
+  { icon: <Layers className="w-10 h-10" />, title: "Prep, Waterproof & Tile", text: "Floors and walls are levelled, stiffened and boarded, wet zones waterproofed and cured, then tiles are set out and fixed so no sliver cuts land at eye level." },
+  { icon: <ShieldCheck className="w-10 h-10" />, title: "Fit-Out & Snag", text: "We connect the suite, screen and brassware, grout and seal every junction, then snag and clean down so the finished room is ready to use." },
 ];
 
-const PAGE_TITLE = "Bathroom Renovations Dublin | GR Tiling & Bathroom Renovations";
+const renovationStages = [
+  { icon: <Trash2 className="w-6 h-6" />, label: "Full Strip-Out", desc: "Old suite out, waste gone" },
+  { icon: <Users className="w-6 h-6" />, label: "Trades Coordinated", desc: "Plumbing and electrics managed" },
+  { icon: <Layers className="w-6 h-6" />, label: "Walls & Floors Prepped", desc: "Levelled, boarded, waterproofed" },
+  { icon: <CheckCircle2 className="w-6 h-6" />, label: "Expert Tiling", desc: "Set out, fixed, grouted right" },
+  { icon: <Bath className="w-6 h-6" />, label: "Full Fit-Out", desc: "Suite, screen, brassware installed" },
+  { icon: <ShieldCheck className="w-6 h-6" />, label: "Snagged & Sealed", desc: "Finished, checked, cleaned down" },
+];
+
+const PAGE_TITLE = "Bathroom Renovations Dublin | One Contractor, Start to Finish";
 const PAGE_DESCRIPTION =
-  "Bathroom renovations in Dublin done on time and on budget by a trusted local specialist. Clean work, clear pricing, and reliable results. Get a free quote.";
+  "Full bathroom renovations in Dublin managed by one contractor start to finish. Strip-out, plumbing, tiling and fit-out. On time, on budget, fully insured.";
 const PAGE_PATH = "/services/bathroom-renovations";
 
 export default function BathroomRenovationsPage({ openQuote }: { openQuote: () => void }) {
@@ -190,13 +223,13 @@ export default function BathroomRenovationsPage({ openQuote }: { openQuote: () =
           {/* Centered text content */}
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="text-primary font-semibold tracking-wider uppercase text-sm mb-4 block">
-              Bathroom Renovations Dublin
+              Turnkey Bathroom Renovations · Dublin
             </h1>
             <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground leading-[1.15] mb-6 tracking-tight">
-              One Team. Clear Quote. Clean Finish.
+              Your Whole Bathroom, One Contractor
             </h2>
             <p className="text-lg sm:text-xl text-muted-foreground mb-10 leading-relaxed max-w-2xl mx-auto">
-              Get your bathroom renovated on time and on budget with a trusted local Dublin specialist. No delays, no hidden costs, and no mess left behind.
+              From strip-out to the final seal, Gerry runs the entire project so you are not left chasing plumbers, sparks and tilers yourself. Fifteen years in Dublin bathrooms, fully insured, and finished on time and on budget with an honest written quote before we lift a tool.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
               <Button size="lg" className="text-base h-14 px-8" onClick={openQuote}>
@@ -229,6 +262,56 @@ export default function BathroomRenovationsPage({ openQuote }: { openQuote: () =
       <BelowFold>
       <TrustStrip />
 
+      {/* Turnkey intro prose */}
+      <section className="py-[60px] md:py-24 bg-background">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <h2 className="font-serif text-3xl md:text-4xl text-foreground mb-6">
+            One contractor for the whole bathroom, not five numbers to chase
+          </h2>
+          <p className="text-lg text-muted-foreground leading-relaxed mb-8">
+            A full bathroom touches nearly every trade — plumber, electrician, plasterer, waterproofer and tiler, plus the strip-out and skip. Manage it yourself and you become the unpaid project manager. Gerry runs the whole job as your single point of contact, in the right order, so no stage undoes the one before it.
+          </p>
+          <ul className="grid sm:grid-cols-2 gap-x-8 gap-y-3 mt-8">
+            {[
+              "One contractor accountable for the entire project, start to finish",
+              "A written, itemised quote before work begins — never a fixed online guess",
+              "Trades booked and sequenced so no stage undoes the one before it",
+              "Layout and tile setting-out signed off by you before anything is fixed",
+              "Fully insured, Irish owned and operated, 15 years in Dublin bathrooms",
+              "The room left clean and tidy at the end of every working day",
+            ].map((point, i) => (
+              <li key={i} className="flex gap-3 items-start">
+                <CheckCircle2 className="text-green-600 w-5 h-5 flex-shrink-0 mt-1" />
+                <span className="text-foreground">{point}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      {/* Renovation stages */}
+      <section className="py-[60px] md:py-24 bg-secondary/30">
+        <div className="container mx-auto px-4 max-w-6xl">
+          <div className="text-center mb-10 lg:mb-12">
+            <h2 className="font-serif text-3xl md:text-5xl text-foreground mb-4">Everything a Full Renovation Covers</h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Every stage handled and sequenced by one team, from the empty shell to a finished room you can use.
+            </p>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
+            {renovationStages.map((stage, i) => (
+              <div key={i} className="bg-card rounded-2xl border shadow-sm p-6 flex flex-col gap-3">
+                <div className="text-primary">{stage.icon}</div>
+                <div>
+                  <p className="font-semibold text-foreground">{stage.label}</p>
+                  <p className="text-sm text-muted-foreground mt-1">{stage.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Before / After Comparison */}
       <section className="py-[60px] lg:py-24 bg-background">
         <div className="container mx-auto px-4 max-w-6xl">
@@ -260,14 +343,14 @@ export default function BathroomRenovationsPage({ openQuote }: { openQuote: () =
       <section className="py-[60px] md:py-24 bg-secondary/30">
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="text-center mb-8 md:mb-16">
-            <h2 className="font-serif text-3xl md:text-5xl text-foreground mb-6">Your Bathroom Renovation in 3 Simple Steps</h2>
+            <h2 className="font-serif text-3xl md:text-5xl text-foreground mb-6">Your Bathroom Renovation in 4 Simple Steps</h2>
             <div className="w-24 h-1 bg-primary mx-auto rounded-full mb-6"></div>
             <p className="text-lg text-muted-foreground max-w-xl mx-auto">
-              A clear, stress-free process from first message to finished bathroom. On time, on budget, no surprises.
+              One contractor, one accountable sequence — from the first survey to a snagged, sealed and finished bathroom. On time, on budget, no surprises.
             </p>
           </div>
           <div className="relative flex flex-col md:flex-row md:items-start md:justify-between gap-14 md:gap-0">
-            <div className="hidden md:block absolute top-[3rem] left-[calc(16.67%+3rem)] right-[calc(16.67%+3rem)] h-[1.5px] bg-primary/30 z-0" />
+            <div className="hidden md:block absolute top-[3rem] left-[calc(12.5%+3rem)] right-[calc(12.5%+3rem)] h-[1.5px] bg-primary/30 z-0" />
             {processSteps.map((item, i) => (
               <div key={i} className="group relative z-10 flex flex-col items-center text-center flex-1 px-8 transition-transform duration-300 hover:-translate-y-1">
                 <div className="relative z-10 w-24 h-24 rounded-full bg-background border-2 border-primary/35 flex items-center justify-center mb-6 text-primary shadow-sm transition-all duration-300 group-hover:bg-primary group-hover:border-primary group-hover:text-primary-foreground group-hover:shadow-lg">
@@ -320,6 +403,35 @@ export default function BathroomRenovationsPage({ openQuote }: { openQuote: () =
         </div>
       </section>
 
+      {/* What a full renovation includes */}
+      <section className="py-[60px] md:py-24 bg-secondary/30">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <h2 className="font-serif text-3xl md:text-4xl text-foreground mb-6">
+            What a full bathroom renovation actually includes
+          </h2>
+          <p className="text-lg text-muted-foreground leading-relaxed mb-8">
+            "Renovation" gets used loosely, so here is exactly what a full refit covers — everything from the empty shell to a finished room, handled by one contractor. The deep tiling detail lives across{" "}
+            <Link href="/services/tiling-services" className="text-primary font-medium underline underline-offset-4 hover:opacity-80">all our tiling services</Link>, and{" "}
+            <Link href="/cost-guide" className="text-primary font-medium underline underline-offset-4 hover:opacity-80">what shapes your quote</Link>{" "}is set out on the cost guide.
+          </p>
+          <ul className="grid sm:grid-cols-2 gap-x-8 gap-y-3 mt-8">
+            {[
+              "Strip-out and skip disposal included, not billed as an extra later",
+              "Hidden damage flagged in writing before we continue, never buried",
+              "First and second fix plumbing and electrics coordinated for you",
+              "Substrate put right — levelling, stiffening, backer board — before tiling",
+              "Sanitaryware, screen and brassware supplied and fitted, or your own installed",
+              "A snag and clean-down so the room is finished, not just \"nearly there\"",
+            ].map((point, i) => (
+              <li key={i} className="flex gap-3 items-start">
+                <CheckCircle2 className="text-green-600 w-5 h-5 flex-shrink-0 mt-1" />
+                <span className="text-foreground">{point}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
       {/* Problem to solution */}
       <section className="py-[60px] md:py-24 bg-background">
         <div className="container mx-auto px-4 max-w-6xl">
@@ -364,6 +476,38 @@ export default function BathroomRenovationsPage({ openQuote }: { openQuote: () =
               </ul>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Deep dive: sequencing */}
+      <section className="py-[60px] md:py-24 bg-background">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <h2 className="font-serif text-3xl md:text-4xl text-foreground mb-6">
+            Why the order matters
+          </h2>
+          <p className="text-lg text-muted-foreground leading-relaxed mb-8">
+            Most bathroom disasters aren't bad tiling — they're a sequencing failure, where two stages happen in the wrong order and one wrecks the other. Tile before the plumbing is pressure-tested and a slow leak means smashing new tile to reach the pipe. One contractor keeps the order right:
+          </p>
+          <ol className="space-y-3">
+            {[
+              "Survey, design and layout signed off with you",
+              "Strip-out and disposal",
+              "First-fix plumbing and electrics, pressure-tested",
+              "Substrate put right — stiffening, backer board, levelling",
+              "Waterproofing, left to cure before anything goes on top",
+              "Tiling, set out from the most visible line",
+              "Second fix, sanitaryware and fit-out",
+              "Grout, silicone, seal and a full snag",
+            ].map((step, i) => (
+              <li key={i} className="flex gap-4 items-start">
+                <span className="flex-shrink-0 w-7 h-7 rounded-full bg-primary/10 text-primary text-sm font-semibold flex items-center justify-center">{i + 1}</span>
+                <span className="text-foreground leading-[1.55] pt-0.5">{step}</span>
+              </li>
+            ))}
+          </ol>
+          <p className="text-base text-muted-foreground leading-relaxed mt-8">
+            A standard like-for-like bathroom is generally exempted development — no planning permission needed, though we always confirm your specifics. Insist on the boring stuff the cheapest quote skips: pressure testing, tanking that's allowed to cure, floor stiffening, priming and pattressing.
+          </p>
         </div>
       </section>
 
@@ -439,14 +583,17 @@ export default function BathroomRenovationsPage({ openQuote }: { openQuote: () =
         </div>
       </section>
 
-      <ReviewsSection />
+      <ReviewsSection
+        featured="mooney"
+        trustLine="Rated 5.0 on Google by Dublin homeowners we have renovated for"
+      />
 
       {/* FAQ */}
       <section className="py-[60px] md:py-24 bg-background">
         <div className="container mx-auto px-4 max-w-4xl">
           <div className="text-center mb-8 md:mb-16">
             <h2 className="font-serif text-3xl md:text-5xl text-foreground mb-6">Bathroom Renovation FAQs</h2>
-            <p className="text-lg text-muted-foreground">Common questions from Dublin homeowners about bathroom renovations.</p>
+            <p className="text-lg text-muted-foreground">Common questions from Dublin homeowners about full bathroom renovations.</p>
           </div>
           <Accordion type="single" collapsible className="space-y-4">
             {faqs.map((item, i) => (
@@ -459,12 +606,21 @@ export default function BathroomRenovationsPage({ openQuote }: { openQuote: () =
         </div>
       </section>
 
+      {/* Areas served */}
+      <section className="py-10 bg-background border-t border-border/60">
+        <div className="container mx-auto px-4 max-w-4xl text-center">
+          <p className="text-sm text-muted-foreground leading-relaxed">
+            <span className="font-medium text-foreground">Based in Dublin.</span> We renovate bathrooms right across the city and county — from the period terraces of Rathmines, Ranelagh and Phibsborough to the semis of Raheny, Crumlin and Dundrum, and out to Swords, Malahide and Lucan.
+          </p>
+        </div>
+      </section>
+
       {/* Final CTA */}
       <section className="py-10 md:py-24 bg-primary text-primary-foreground">
         <div className="container mx-auto px-4 max-w-5xl text-center">
-          <h2 className="font-serif text-3xl md:text-5xl mb-6">Ready to Start Your Bathroom Renovation?</h2>
+          <h2 className="font-serif text-3xl md:text-5xl mb-6">Ready to renovate your bathroom the easy way?</h2>
           <p className="text-lg md:text-xl mb-10 max-w-2xl mx-auto text-primary-foreground/90">
-            Get a clear quote and work with a team that shows up, sticks to the price, and gets the job done right.
+            One contractor, one written quote, one accountable finish — on time, on budget, and fully insured. Call Gerry on +353 87 720 9850 for a free survey and an honest written quote for your Dublin bathroom renovation.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" variant="secondary" className="text-base h-14 px-8" onClick={openQuote}>

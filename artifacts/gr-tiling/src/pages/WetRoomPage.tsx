@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, type ReactNode } from "react";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { CheckCircle2, XCircle, ChevronRight } from "lucide-react";
@@ -8,15 +8,15 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { applyPageSeo, applyJsonLd, SITE_URL } from "@/lib/seo";
+import { applyPageSeo, applyJsonLd, SITE_URL, DUBLIN_AREAS } from "@/lib/seo";
 import { HeroReviewBadge } from "@/components/ui/hero-review-badge";
 import { TrustStrip } from "@/components/TrustStrip";
 import { images } from "@/data/images";
 import { BelowFold } from "@/components/BelowFold";
 import { ReviewsSection } from "@/components/ReviewsSection";
 
-const PAGE_TITLE = "Wet Room Installation Dublin | GR Tiling";
-const PAGE_DESCRIPTION = "Professional wet room installation in Dublin with full waterproofing, drainage, tiling, and finishing from GR Tiling & Bathroom Renovations.";
+const PAGE_TITLE = "Wet Room Installation Dublin | Tanking Experts";
+const PAGE_DESCRIPTION = "Wet room installation in Dublin done right. Full tanking, level-access drainage, R11 slip-resistant tiles. 15 years, fully insured, honest written quotes. Free survey.";
 const PAGE_PATH = "/services/wet-room-installation-dublin";
 
 export const schema = {
@@ -32,57 +32,73 @@ export const schema = {
         "url": SITE_URL,
         "telephone": "+353877209850"
       },
-      "areaServed": "Dublin"
+      "areaServed": DUBLIN_AREAS
     },
     {
       "@type": "FAQPage",
       "mainEntity": [
         {
           "@type": "Question",
+          "name": "Will a wet room leak?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Not when the waterproofing is done properly. The reason wet rooms leak is almost never the tiles — it is an unsealed junction, corner or pipe penetration behind them. We tank the whole wet zone as one continuous system, band every internal corner and change of plane with reinforcing tape, seal the shower waste and pipes directly into the membrane, and let it fully cure before tiling. Done that way, the tanking, not the grout, keeps the room dry."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is tanking and why does it cost extra?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Tanking is the hidden waterproof membrane — liquid-applied or a bonded sheet — that turns the floor and walls into a sealed tank beneath the tile. It is the extra cost, and the extra time, that separates a wet room from a simple shower. Tiles and cement grout are porous and not waterproof on their own, so without tanking, water gets behind the finish. It is the one part of the job that is never worth saving money on."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Wet room or walk-in shower — which should I choose?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A walk-in shower sits within a standard bathroom, usually with a low-profile tray and a glass screen. A true wet room has no tray and no threshold — the whole floor is tanked and graded to a drain. Wet rooms feel more open, are easier to clean and suit small or awkward rooms well, but they cost more because of the drainage, graded screed and full tanking. We will give you an honest steer for your specific room before anything is ordered."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can you build a wet room upstairs on a timber floor?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, and it is one of the most common Dublin jobs we do, but it is also the highest-risk detail in domestic tiling. A timber floor flexes, and that movement will crack rigid tile and open a leak straight into the ceiling below. We stiffen the deck, then bond down a decoupling membrane — often one that is waterproof too — so movement is isolated and the floor forms part of the tank. It has to be surveyed properly first."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do you stop the water spreading across the floor?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "With falls. The whole shower area is graded at a gentle, even gradient toward the drain, so water always runs to the outlet rather than travelling across the room. On a pre-formed base this is built in; on a screeded floor we form the falls by hand to a linear channel or a central point drain. Setting that gradient correctly — enough to drain, gentle enough to stay safe underfoot — is one of the most skilled parts of the build."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which tiles are safe for a wet-room floor?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Slip-resistant porcelain. We work to R11 on the DIN 51130 ramp scale as the sensible minimum for a wet-room floor, which is grippier than the R10 you might accept on a bathroom used with a bath mat. Smaller-format tiles or mosaics on the shower floor are ideal because the extra grout lines add grip and let the floor follow the falls to the drain. Walls can be large-format porcelain for a clean, continuous, low-maintenance finish."
+          }
+        },
+        {
+          "@type": "Question",
           "name": "How much does a wet room cost in Dublin?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Every wet room is different depending on size, tile choice, drainage setup, and whether it is a new install or a conversion. Get in touch and we will visit the site and provide a clear written quote before any work begins."
+            "text": "It depends on the room, so we only ever give a written quote after a survey. The figure is driven by your floor structure, whether an upstairs timber deck needs stiffening and decoupling, the drainage and screed build-up, the tile spec, and any hidden damp found on strip-out. A wet room carries a genuine premium over a standard shower because of the tanking, falls and drainage. Our cost guide breaks down exactly what moves the price."
           }
         },
         {
           "@type": "Question",
-          "name": "Can any bathroom be converted into a wet room?",
+          "name": "Do you handle grab rails, seats and grant paperwork?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Most bathrooms can be converted into a wet room, but it depends on the floor type, subfloor condition, drainage position, and available ceiling height. We assess your bathroom before recommending the best approach."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Do wet rooms leak?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "A properly installed wet room should not leak. The key is full tanking of walls and floor before tiling, correct drainage falls, and quality sealing at all joints and edges. Poor installation is the main cause of wet room leaks."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Are wet rooms suitable for small bathrooms?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes. Removing a raised shower tray and enclosure can make a small bathroom feel significantly larger and easier to use. Wet rooms work particularly well in ensuites and compact bathroom layouts."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Do I need special tiles for a wet room?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Floor tiles in a wet room should have a suitable slip resistance rating. Wall tiles need to be suitable for wet areas. We advise on the right tile types and finishes during the planning stage."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "How long does wet room installation take?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Most wet room installations take between one and two weeks depending on the size and complexity. We agree a timeline before starting and stick to it."
+            "text": "Those belong to a different service. This page is about the design and waterproofing craft of a wet room. If the project is about mobility, ageing in place, or a Housing Adaptation Grant, our accessible and mobility bathrooms service is built around exactly that — level access, structural pattressing for grab rails, seats and grant-compliant design. A wet room and an accessible bathroom share vocabulary but are quite different briefs, and we will point you to the right one."
           }
         }
       ]
@@ -101,56 +117,53 @@ export const schema = {
 const process = [
   {
     step: "01",
-    title: "Site visit and quote",
-    desc: "We visit the bathroom, assess the layout, drainage options, and subfloor condition, and provide a clear written quote before any work begins.",
+    title: "Survey & Falls Plan",
+    desc: "We assess your floor structure, subfloor and drainage options, then set the level-access design and where the falls run.",
   },
   {
     step: "02",
-    title: "Layout and plumbing planning",
-    desc: "Plumbing routes, drain position, floor falls, and the overall layout are all planned before anything is touched. Getting this right at the start is what prevents problems later.",
+    title: "Structure & Decouple",
+    desc: "We stiffen any timber deck, install backer boards and bond down a decoupling membrane so movement never reaches the tile.",
   },
   {
     step: "03",
-    title: "Waterproofing and tanking",
-    desc: "Full tanking of walls and floor before any tile goes down. This is the most critical stage of a wet room installation.",
+    title: "Tank & Cure",
+    desc: "We apply the full tanking system, band every junction and pipe, seal the drain in, and let it fully cure before tiling begins.",
   },
   {
     step: "04",
-    title: "Tiling and bathroom fitting",
-    desc: "Tiles are laid with correct falls toward the drain using appropriate adhesive and grout for wet areas. Sanitary ware, shower screens, and all fittings are installed and finished once tiling is complete.",
-  },
-  {
-    step: "05",
-    title: "Finishing and handover",
-    desc: "Siliconing, sealing, and a full clean-down. We check everything before handing back a space that is ready to use.",
+    title: "Tile, Grout & Check",
+    desc: "We tile to the falls in R11 floor porcelain, grout and silicone the movement junctions, then flood-check the finished detail.",
   },
 ];
 
 
-const faqs = [
+type Faq = { q: string; a: ReactNode };
+
+const faqs: Faq[] = [
+  { q: "Will a wet room leak?", a: "Not when the waterproofing is done properly. The reason wet rooms leak is almost never the tiles — it is an unsealed junction, corner or pipe penetration behind them. We tank the whole wet zone as one continuous system, band every internal corner and change of plane with reinforcing tape, seal the shower waste and pipes directly into the membrane, and let it fully cure before tiling. Done that way, the tanking, not the grout, keeps the room dry." },
+  { q: "What is tanking and why does it cost extra?", a: "Tanking is the hidden waterproof membrane — liquid-applied or a bonded sheet — that turns the floor and walls into a sealed tank beneath the tile. It is the extra cost, and the extra time, that separates a wet room from a simple shower. Tiles and cement grout are porous and not waterproof on their own, so without tanking, water gets behind the finish. It is the one part of the job that is never worth saving money on." },
+  { q: "Wet room or walk-in shower — which should I choose?", a: "A walk-in shower sits within a standard bathroom, usually with a low-profile tray and a glass screen. A true wet room has no tray and no threshold — the whole floor is tanked and graded to a drain. Wet rooms feel more open, are easier to clean and suit small or awkward rooms well, but they cost more because of the drainage, graded screed and full tanking. We will give you an honest steer for your specific room before anything is ordered." },
+  { q: "Can you build a wet room upstairs on a timber floor?", a: "Yes, and it is one of the most common Dublin jobs we do, but it is also the highest-risk detail in domestic tiling. A timber floor flexes, and that movement will crack rigid tile and open a leak straight into the ceiling below. We stiffen the deck, then bond down a decoupling membrane — often one that is waterproof too — so movement is isolated and the floor forms part of the tank. It has to be surveyed properly first." },
+  { q: "How do you stop the water spreading across the floor?", a: "With falls. The whole shower area is graded at a gentle, even gradient toward the drain, so water always runs to the outlet rather than travelling across the room. On a pre-formed base this is built in; on a screeded floor we form the falls by hand to a linear channel or a central point drain. Setting that gradient correctly — enough to drain, gentle enough to stay safe underfoot — is one of the most skilled parts of the build." },
+  { q: "Which tiles are safe for a wet-room floor?", a: "Slip-resistant porcelain. We work to R11 on the DIN 51130 ramp scale as the sensible minimum for a wet-room floor, which is grippier than the R10 you might accept on a bathroom used with a bath mat. Smaller-format tiles or mosaics on the shower floor are ideal because the extra grout lines add grip and let the floor follow the falls to the drain. Walls can be large-format porcelain for a clean, continuous, low-maintenance finish." },
   {
     q: "How much does a wet room cost in Dublin?",
-    a: "Every wet room is different depending on size, tile choice, drainage setup, and whether it is a new install or a conversion. Get in touch and we will visit the site and give you a clear written quote before any work begins.",
+    a: (
+      <>
+        It depends on the room, so we only ever give a written quote after a survey. The figure is driven by your floor structure, whether an upstairs timber deck needs stiffening and decoupling, the drainage and screed build-up, the tile spec, and any hidden damp found on strip-out. A wet room carries a genuine premium over a standard shower because of the tanking, falls and drainage. Our{" "}
+        <Link href="/cost-guide" className="text-primary font-medium underline underline-offset-4 hover:opacity-80">wet room costs</Link>{" "}guide breaks down what moves the price.
+      </>
+    ),
   },
   {
-    q: "Can any bathroom be converted into a wet room?",
-    a: "Most bathrooms can be converted, but it depends on the floor type, subfloor condition, drainage position, and ceiling height. We will assess the space before recommending the right approach.",
-  },
-  {
-    q: "Do wet rooms leak?",
-    a: "A properly installed wet room should not leak. The key is full tanking of walls and floor before tiling, correct drainage falls, and proper sealing at all joints and edges. Poor preparation is the main cause of wet room leaks, which is why we treat the waterproofing stage as the most important part of the job.",
-  },
-  {
-    q: "Are wet rooms good for small bathrooms?",
-    a: "Yes. Removing a raised shower tray and enclosure can make a small bathroom feel significantly larger and more practical. Wet rooms work particularly well in ensuites and tighter layouts.",
-  },
-  {
-    q: "Do I need special tiles for a wet room?",
-    a: "Floor tiles should have a suitable slip resistance rating for wet areas. Wall tiles need to be suitable for constant moisture. We will advise on the right options during the planning stage.",
-  },
-  {
-    q: "How long does wet room installation take?",
-    a: "Most wet room installations take between one and two weeks depending on the size and complexity. We agree a clear timeline before starting and stick to it.",
+    q: "Do you handle grab rails, seats and grant paperwork?",
+    a: (
+      <>
+        Those belong to a different service. This page is about the design and waterproofing craft of a wet room. If the project is about mobility, ageing in place, or a Housing Adaptation Grant, our{" "}
+        <Link href="/services/accessible-bathroom-dublin" className="text-primary font-medium underline underline-offset-4 hover:opacity-80">accessible &amp; mobility bathrooms</Link>{" "}service is built around exactly that — level access, structural pattressing for grab rails, seats and grant-compliant design. We will point you to the right one.
+      </>
+    ),
   },
 ];
 
@@ -173,10 +186,10 @@ export default function WetRoomPage({ openQuote }: { openQuote: () => void }) {
               Wet Room Installation Dublin
             </h1>
             <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground leading-[1.15] mb-6 tracking-tight">
-              Installed Properly From Start to Finish
+              Wet Rooms That Never Leak
             </h2>
             <p className="text-lg sm:text-xl text-muted-foreground mb-10 leading-relaxed max-w-2xl mx-auto">
-              We design and install wet rooms for Dublin homes, handling full waterproofing, drainage, tiling, shower screens, and finishing. Built properly from the ground up.
+              A wet room lives or dies on the waterproofing you can't see. We build the whole room as one sealed tank — banded junctions, graded falls, level-access drainage — so what looks stunning on day one stays sound for decades.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
               <Button size="lg" className="text-base h-14 px-8" onClick={openQuote}>Get a Free Quote</Button>
@@ -256,8 +269,63 @@ export default function WetRoomPage({ openQuote }: { openQuote: () => void }) {
         </div>
       </section>
 
-      {/* Waterproofing trust section */}
+      {/* Wet room vs walk-in shower */}
       <section className="py-[60px] md:py-24 bg-secondary/30">
+        <div className="container mx-auto px-4 max-w-5xl">
+          <div className="text-center mb-10 lg:mb-12">
+            <h2 className="font-serif text-3xl md:text-5xl text-foreground mb-4">Wet Room or Walk-In Shower?</h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Both are good options — the right one depends on your room, your budget and how open and accessible you want it.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-2 gap-6">
+            {[
+              {
+                title: "Wet room",
+                desc: "Trayless and level-access — the whole floor tanked and graded to a drain.",
+                traits: [
+                  "No tray or threshold to step over",
+                  "Feels open and is easier to clean",
+                  "Suits small, awkward or accessible layouts",
+                  "Full-room tanking, falls and drainage",
+                  "A higher-spec, more involved build",
+                ],
+              },
+              {
+                title: "Walk-in shower",
+                desc: "A low-profile tray and glass screen within a standard bathroom.",
+                traits: [
+                  "Simpler, more cost-effective build",
+                  "A low tray and threshold at the entry",
+                  "An enclosure and screen to clean",
+                  "Waterproofing focused on the shower zone",
+                  "Suits most standard bathrooms",
+                ],
+              },
+            ].map((col, i) => (
+              <div key={i} className="bg-background rounded-2xl border shadow-sm p-8">
+                <h3 className="font-serif text-2xl text-foreground mb-2">{col.title}</h3>
+                <p className="text-muted-foreground mb-5 leading-relaxed">{col.desc}</p>
+                <ul className="grid gap-3">
+                  {col.traits.map((t, j) => (
+                    <li key={j} className="flex gap-3 items-start">
+                      <span className="mt-2 w-1.5 h-1.5 rounded-full bg-primary/50 flex-shrink-0" />
+                      <span className="text-foreground leading-[1.5]">{t}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+          <p className="text-base text-muted-foreground leading-relaxed mt-8 max-w-3xl mx-auto text-center">
+            Not sure which suits your room? We'll give you an honest steer before anything's ordered. The enclosure route lives on our{" "}
+            <Link href="/services/bathroom-tiling-dublin" className="text-primary font-medium underline underline-offset-4 hover:opacity-80">bathroom &amp; shower tiling</Link>{" "}page.
+          </p>
+        </div>
+      </section>
+
+      {/* Waterproofing trust section */}
+      <section className="py-[60px] md:py-24 bg-background">
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <div className="rounded-2xl overflow-hidden shadow-lg aspect-[4/3]">
@@ -270,17 +338,15 @@ export default function WetRoomPage({ openQuote }: { openQuote: () => void }) {
             </div>
             <div>
               <h2 className="font-serif text-3xl md:text-4xl text-foreground mb-6">
-                Waterproofing is What Separates a Good Wet Room from a Bad One
+                What actually makes a wet room a wet room
               </h2>
               <div className="space-y-4 text-muted-foreground leading-relaxed">
                 <p>
-                  Most wet room problems (leaks, loose tiles, damp, mould) come back to one thing: waterproofing that was not done properly before the tiles went down.
+                  A wet room isn't a shower without the tray — it's the most demanding waterproofing job in domestic tiling. Tiles and grout are a wearing surface, not the waterproof layer. What keeps the room dry is a continuous tanking membrane hidden beneath the tile, sealed at every junction, pipe and drain. Get it wrong and it's not a repair, it's a rebuild.
                 </p>
                 <p>
-                  We treat the tanking and drainage stage as the most important part of the installation. The floor needs to fall correctly toward the drain, every joint and corner needs proper sealing, and the right adhesive and grout must be used throughout.
-                </p>
-                <p>
-                  Once the tiles are on top, you cannot go back and fix what is underneath without pulling everything out. We get it right the first time.
+                  Want the wider fit-out managed end to end? That's our{" "}
+                  <Link href="/services/bathroom-renovations" className="text-primary font-medium underline underline-offset-4 hover:opacity-80">full bathroom renovations</Link>.
                 </p>
               </div>
             </div>
@@ -316,6 +382,62 @@ export default function WetRoomPage({ openQuote }: { openQuote: () => void }) {
         </div>
       </section>
 
+      {/* Falls, drainage, slip */}
+      <section className="py-[60px] md:py-24 bg-secondary/30">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <h2 className="font-serif text-3xl md:text-4xl text-foreground mb-6">
+            Falls, drainage and slip-resistance
+          </h2>
+          <p className="text-lg text-muted-foreground leading-relaxed mb-8">
+            A wet room has no upstand, so the floor itself contains the water — a gentle, even fall to the drain: too flat and it pools, too steep and it's unsafe. The tile spec is a safety choice, not a style one: R11 slip-resistant porcelain, well above the R10 you'd accept with a bath mat. Still weighing a wet room against a{" "}
+            <Link href="/services/bathroom-tiling-dublin" className="text-primary font-medium underline underline-offset-4 hover:opacity-80">walk-in shower enclosure</Link>? Worth an honest chat first.
+          </p>
+          <ul className="grid sm:grid-cols-2 gap-x-8 gap-y-3">
+            {[
+              "Even, continuous falls to a linear or point drain — no ponding",
+              "R11-rated slip-resistant porcelain as the wet-room floor standard",
+              "Small-format or mosaic shower floors for grip and to follow the falls",
+              "Large-format porcelain walls for a clean, low-grout, easy-clean finish",
+              "Drain type chosen around your layout, screed depth and preferred look",
+              "Epoxy grout offered in the wet zone for near-impervious joints",
+            ].map((point, i) => (
+              <li key={i} className="flex gap-3 items-start">
+                <CheckCircle2 className="text-green-600 w-5 h-5 flex-shrink-0 mt-1" />
+                <span className="text-foreground">{point}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      {/* Deep: upstairs timber risk */}
+      <section className="py-[60px] md:py-24 bg-background">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <h2 className="font-serif text-3xl md:text-4xl text-foreground mb-6">
+            Upstairs wet rooms on a timber floor
+          </h2>
+          <p className="text-lg text-muted-foreground leading-relaxed mb-8">
+            The single biggest wet-room risk in Dublin is a first-floor wet room over a suspended timber deck — common in older terraces and semis, on joists notched by decades of plumbers. Timber moves, tile doesn't, so rigid tile over a flexing deck cracks and leaks into the ceiling below. Done right, it's a sequence:
+          </p>
+          <ol className="space-y-3">
+            {[
+              "Stiffen the deck — over-board and add noggins — so it stops bouncing",
+              "Bond down a decoupling membrane, often waterproof, so it isolates movement and forms part of the tank",
+              "Only then tank, tile to the falls and grout with flexible products",
+            ].map((step, i) => (
+              <li key={i} className="flex gap-4 items-start">
+                <span className="flex-shrink-0 w-7 h-7 rounded-full bg-primary/10 text-primary text-sm font-semibold flex items-center justify-center">{i + 1}</span>
+                <span className="text-foreground leading-[1.55] pt-0.5">{step}</span>
+              </li>
+            ))}
+          </ol>
+          <p className="text-base text-muted-foreground leading-relaxed mt-8">
+            A tanking failure over a habitable room means rot, blown plaster and a damaged ceiling — many multiples of the correct tanking cost, which is why the cheapest quote is often the dearest. We survey before we quote; for what drives the figure see our{" "}
+            <Link href="/cost-guide" className="text-primary font-medium underline underline-offset-4 hover:opacity-80">wet room costs</Link>{" "}guide.
+          </p>
+        </div>
+      </section>
+
       {/* Gallery */}
       <section className="py-[60px] md:py-24 bg-secondary/30">
         <div className="container mx-auto px-4 max-w-7xl">
@@ -343,7 +465,10 @@ export default function WetRoomPage({ openQuote }: { openQuote: () => void }) {
         </div>
       </section>
 
-      <ReviewsSection />
+      <ReviewsSection
+        featured="mooney"
+        trustLine="A finished, watertight bathroom rated 5.0 on Google"
+      />
 
       {/* Related Services */}
       <section className="py-[60px] md:py-24 bg-secondary/30">
@@ -381,12 +506,21 @@ export default function WetRoomPage({ openQuote }: { openQuote: () => void }) {
         </div>
       </section>
 
+      {/* Areas served */}
+      <section className="py-10 bg-background border-t border-border/60">
+        <div className="container mx-auto px-4 max-w-4xl text-center">
+          <p className="text-sm text-muted-foreground leading-relaxed">
+            <span className="font-medium text-foreground">Based in Dublin.</span> Wet room installations across the city — from period returns in Rathmines and Ranelagh to the semis of Cabra, Raheny and Crumlin, and out to Swords and Lucan.
+          </p>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="py-10 md:py-24 bg-primary text-primary-foreground">
         <div className="container mx-auto px-4 max-w-5xl text-center">
-          <h2 className="font-serif text-3xl md:text-5xl mb-6">Ready to Start Your Wet Room?</h2>
+          <h2 className="font-serif text-3xl md:text-5xl mb-6">Get a wet room built to last</h2>
           <p className="text-lg md:text-xl mb-10 max-w-2xl mx-auto text-primary-foreground/90">
-            Get a clear, written quote for your wet room installation. No vague estimates, no hidden costs.
+            Book a free on-site survey and we'll assess your floor, plan the falls and drainage, and send an honest written quote — no fixed online prices, no surprises mid-build. Fully insured, 15 years in the trade.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" variant="secondary" className="text-base h-14 px-8" onClick={openQuote}>Get a Free Quote</Button>

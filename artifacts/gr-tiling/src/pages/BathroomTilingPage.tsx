@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, type ReactNode } from "react";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { CheckCircle2, ChevronRight, FileText, Wrench, LayoutGrid, Sparkles } from "lucide-react";
@@ -8,15 +8,15 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { applyPageSeo, applyJsonLd, SITE_URL } from "@/lib/seo";
+import { applyPageSeo, applyJsonLd, SITE_URL, DUBLIN_AREAS } from "@/lib/seo";
 import { HeroReviewBadge } from "@/components/ui/hero-review-badge";
 import { TrustStrip } from "@/components/TrustStrip";
 import { images, gridImages } from "@/data/images";
 import { BelowFold } from "@/components/BelowFold";
 import { ReviewsSection } from "@/components/ReviewsSection";
 
-const PAGE_TITLE = "Bathroom Tiling Dublin | Professional Tilers | GR Tiling";
-const PAGE_DESCRIPTION = "Professional bathroom tiling in Dublin. Floors, walls, showers, ensuites and wet rooms with proper prep, clean grout lines, and tidy finishes.";
+const PAGE_TITLE = "Bathroom Tiling Dublin | Showers & Ensuites | GR Tiling";
+const PAGE_DESCRIPTION = "Expert bathroom tiling in Dublin — shower walls and floors, ensuites, niches, waterproofing before tiling. 15 years, fully insured, free written quote. Call today.";
 const PAGE_PATH = "/services/bathroom-tiling-dublin";
 
 export const schema = {
@@ -32,57 +32,73 @@ export const schema = {
         "url": SITE_URL,
         "telephone": "+353877209850"
       },
-      "areaServed": "Dublin"
+      "areaServed": DUBLIN_AREAS
     },
     {
       "@type": "FAQPage",
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "How much does bathroom tiling cost in Dublin?",
+          "name": "Do you waterproof the shower before tiling, or just tile over the walls?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Tiling rates vary depending on tile size, pattern, and the area being tiled. Get in touch and we will give you a clear written quote for your specific job."
+            "text": "We always tank the wet zone before any tile goes on. Tiles and cement grout are porous, so water will get behind them — the waterproof membrane is what catches it. We band every internal corner, seal around pipes and the shower waste, and take the membrane to a sensible height. Over timber floors we use a decoupling membrane that is also waterproof. This is standard BS 5385 practice, not an extra."
           }
         },
         {
           "@type": "Question",
-          "name": "Do shower walls need waterproofing before tiling?",
+          "name": "How long does it take to tile a bathroom or ensuite in Dublin?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes. Shower walls should be properly waterproofed before tiling to prevent water getting behind the tiles over time. Skipping this step is a common cause of loose tiles, mould, and water damage."
+            "text": "A straightforward shower enclosure or small ensuite is usually a few days on the tiling and waterproofing alone; a full bathroom with floor and walls runs longer, and the tanking must fully cure before grouting. Awkward access, natural stone, intricate patterns and older substrates that need levelling all add time. We give you a realistic schedule in your written quote."
           }
         },
         {
           "@type": "Question",
-          "name": "Can you replace cracked or loose bathroom tiles?",
+          "name": "Can you tile over my existing tiles or old bathroom walls?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes. We remove and replace damaged tiles and address any underlying issues. See our tile repairs page for more detail."
+            "text": "Sometimes, but we never assume. We tap-test for hollow or drummy tiles and check the wall is sound, flat and dry first. Tiling over loose tiles, active damp or a moving substrate just guarantees the new work fails too. Often the honest answer in an older Dublin home is to strip back to a sound background and board it — we will tell you which applies and price it straight."
           }
         },
         {
           "@type": "Question",
-          "name": "What tiles are best for bathroom floors?",
+          "name": "What tiles work best on a shower floor?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Floor tiles should have a suitable slip resistance rating for wet areas. Porcelain is generally a durable, low-maintenance choice. We are happy to advise on formats and finishes during the planning stage."
+            "text": "Small-format tiles or mosaics. The extra grout lines give grip underfoot when the floor is wet and let the surface fall neatly to the drain, which large tiles cannot do on a graded floor. For slip resistance we look for around R11 on a walk-in shower floor. Porcelain is our default for wet areas — dense, low water absorption and hard-wearing in the Irish climate."
           }
         },
         {
           "@type": "Question",
-          "name": "Do you tile shower niches and recessed shelving?",
+          "name": "My bathroom is tiny — will the tiles still look right?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes. Shower niches and recessed shelving are a popular finish and we tile these as part of the overall shower or bathroom tiling job."
+            "text": "Small rooms are where setting-out matters most, because every wall is in view at once. We plan the layout so full tiles land where the eye falls and cuts sit in the least visible places — never a sliver at eye level. We set out from the most prominent line rather than an out-of-square wall, and agree the plan with you before fixing. Done right, careful setting-out makes a compact ensuite feel considered rather than cramped."
           }
         },
         {
           "@type": "Question",
-          "name": "How long does bathroom tiling take?",
+          "name": "Can you build a tiled niche or shelf into the shower?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Most bathroom tiling jobs take between two and five days depending on the size of the space and the complexity of the tile layout. We agree a timeline before starting and stick to it."
+            "text": "Yes, and it is one of the nicer details we do. A recessed niche gives you somewhere for bottles without a plastic caddy. The key is that it is tanked and tiled to drain, with sealed junctions, so water never sits behind it — a badly built niche is the first thing to leak. We set its position and height into your tile layout so the surrounding courses stay clean."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I need a full wet room, or will a tiled shower enclosure do?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A tiled enclosure over a tray suits most Dublin bathrooms and is what we do most. A full wet room is a trayless, level-floor build with a former and graded falls — more work, more waterproofing, and a different price bracket. If that is what you are after, see our full wet room installation page. If you just want a well-tiled, properly tanked shower, an enclosure is usually the sensible choice."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What does bathroom tiling cost in Dublin?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It depends on the room — size, tile format, how much prep and levelling the substrate needs, whether it is a simple splashback or a fully tanked shower, and pattern complexity. Large-format and natural stone are slower and more skilled; herringbone and mosaics add labour. We do not post fixed prices because every bathroom is different, but our cost guide sets out honest ranges, and we always give you a clear written quote after seeing the job."
           }
         }
       ]
@@ -99,29 +115,49 @@ export const schema = {
 };
 
 const areas = [
-  { ...gridImages.bathroomFloors,  label: "Bathroom Floors", desc: "Non-slip, waterproof tiles",    href: null },
-  { ...gridImages.bathroomWalls,   label: "Bathroom Walls",  desc: "Clean, precise finishes",       href: null },
-  { ...gridImages.showerAreas,     label: "Shower Areas",    desc: "Fully waterproofed and tiled",  href: null },
-  { ...gridImages.ensuites,        label: "Ensuites",        desc: "Small space, same quality",     href: null },
+  { ...gridImages.bathroomFloors,  label: "Bathroom Floors", desc: "Falls to the drain, non-slip", href: null },
+  { ...gridImages.bathroomWalls,   label: "Bathroom Walls",  desc: "Set out for balanced cuts",    href: null },
+  { ...gridImages.showerAreas,     label: "Shower Areas",    desc: "Tanked before any tiling",     href: null },
+  { ...gridImages.ensuites,        label: "Ensuites",        desc: "Tight rooms set out right",    href: null },
   { ...gridImages.wetRooms,        label: "Wet Rooms",       desc: null, href: "/services/wet-room-installation-dublin" },
   { ...gridImages.tileRepairsCard, label: "Tile Repairs",    desc: null, href: "/services/tile-repairs-dublin" },
 ];
 
 const process = [
-  { icon: <FileText className="w-10 h-10" />, title: "Survey and quote", text: "We measure the space, plan the tile layout, and check what prep is needed." },
-  { icon: <Wrench className="w-10 h-10" />, title: "Waterproofing", text: "Shower and wet areas waterproofed properly before any tile goes down." },
-  { icon: <LayoutGrid className="w-10 h-10" />, title: "Tile installation", text: "Laid with waterproof adhesive, precise cuts, and consistent spacing." },
-  { icon: <Sparkles className="w-10 h-10" />, title: "Grout, seal and finish", text: "Grouted with water-resistant grout, siliconed at all joints, fully cleaned." },
+  { icon: <FileText className="w-10 h-10" />, title: "Survey & Set-Out", text: "We inspect the real substrate behind your old tiles, check falls and plumb, then plan a layout you sign off before anything is fixed." },
+  { icon: <Wrench className="w-10 h-10" />, title: "Prep & Waterproof", text: "We stiffen and level the background, board over timber and stud, then tank the wet zone with banded corners and sealed penetrations." },
+  { icon: <LayoutGrid className="w-10 h-10" />, title: "Tile & Cut", text: "We fix walls and floor from the most visible line, back-butter large formats for solid coverage, and cut niches and edges cleanly." },
+  { icon: <Sparkles className="w-10 h-10" />, title: "Grout, Seal & Snag", text: "We grout, run anti-mould silicone at every movement junction, seal where needed, then clean down and walk the room with you." },
 ];
 
 
-const faqs = [
-  { q: "How much does bathroom tiling cost in Dublin?", a: "Tiling rates vary depending on tile size, pattern, and the area being tiled. Get in touch and we will give you a clear written quote based on your specific job." },
-  { q: "Do shower walls need waterproofing before tiling?", a: "Yes. Shower walls should be properly waterproofed before tiling to prevent water getting behind the tiles over time. Skipping this step is one of the most common causes of loose tiles, mould, and water damage." },
-  { q: "Can you replace cracked or loose bathroom tiles?", a: "Yes. We remove damaged tiles, address any underlying issues, and replace them to match as closely as possible. See our tile repairs page for more detail." },
-  { q: "What tiles are best for bathroom floors?", a: "Floor tiles should have a suitable slip resistance rating for wet areas. Porcelain is generally a durable, low-maintenance choice. We are happy to advise on the right options for your space." },
-  { q: "Do you tile shower niches and recessed shelving?", a: "Yes. Shower niches and recessed shelving are tiled as part of the overall job. We plan these into the layout from the start." },
-  { q: "How long does bathroom tiling take?", a: "Most bathroom tiling jobs take between two and five days depending on the size of the space and the tile layout. We agree a clear timeline before starting." },
+type Faq = { q: string; a: ReactNode };
+
+const faqs: Faq[] = [
+  { q: "Do you waterproof the shower before tiling, or just tile over the walls?", a: "We always tank the wet zone before any tile goes on. Tiles and cement grout are porous, so water will get behind them — the waterproof membrane is what catches it. We band every internal corner, seal around pipes and the shower waste, and take the membrane to a sensible height. Over timber floors we use a decoupling membrane that is also waterproof. This is standard BS 5385 practice, not an extra." },
+  { q: "How long does it take to tile a bathroom or ensuite in Dublin?", a: "A straightforward shower enclosure or small ensuite is usually a few days on the tiling and waterproofing alone; a full bathroom with floor and walls runs longer, and the tanking must fully cure before grouting. Awkward access, natural stone, intricate patterns and older substrates that need levelling all add time. We give you a realistic schedule in your written quote." },
+  { q: "Can you tile over my existing tiles or old bathroom walls?", a: "Sometimes, but we never assume. We tap-test for hollow or drummy tiles and check the wall is sound, flat and dry first. Tiling over loose tiles, active damp or a moving substrate just guarantees the new work fails too. Often the honest answer in an older Dublin home is to strip back to a sound background and board it — we will tell you which applies and price it straight." },
+  { q: "What tiles work best on a shower floor?", a: "Small-format tiles or mosaics. The extra grout lines give grip underfoot when the floor is wet and let the surface fall neatly to the drain, which large tiles cannot do on a graded floor. For slip resistance we look for around R11 on a walk-in shower floor. Porcelain is our default for wet areas — dense, low water absorption and hard-wearing in the Irish climate." },
+  { q: "My bathroom is tiny — will the tiles still look right?", a: "Small rooms are where setting-out matters most, because every wall is in view at once. We plan the layout so full tiles land where the eye falls and cuts sit in the least visible places — never a sliver at eye level. We set out from the most prominent line rather than an out-of-square wall, and agree the plan with you before fixing. Done right, careful setting-out makes a compact ensuite feel considered rather than cramped." },
+  { q: "Can you build a tiled niche or shelf into the shower?", a: "Yes, and it is one of the nicer details we do. A recessed niche gives you somewhere for bottles without a plastic caddy. The key is that it is tanked and tiled to drain, with sealed junctions, so water never sits behind it — a badly built niche is the first thing to leak. We set its position and height into your tile layout so the surrounding courses stay clean." },
+  {
+    q: "Do I need a full wet room, or will a tiled shower enclosure do?",
+    a: (
+      <>
+        A tiled enclosure over a tray suits most Dublin bathrooms and is what we do most. A full wet room is a trayless, level-floor build with a former and graded falls — more work, more waterproofing, and a different price bracket. If that is what you are after, see our{" "}
+        <Link href="/services/wet-room-installation-dublin" className="text-primary font-medium underline underline-offset-4 hover:opacity-80">full wet room installation</Link>{" "}page. If you just want a well-tiled, properly tanked shower, an enclosure is usually the sensible choice.
+      </>
+    ),
+  },
+  {
+    q: "What does bathroom tiling cost in Dublin?",
+    a: (
+      <>
+        It depends on the room — size, tile format, how much prep and levelling the substrate needs, whether it is a simple splashback or a fully tanked shower, and pattern complexity. Large-format and natural stone are slower and more skilled; herringbone and mosaics add labour. We do not post fixed prices because every bathroom is different, but our{" "}
+        <Link href="/cost-guide" className="text-primary font-medium underline underline-offset-4 hover:opacity-80">cost guide</Link>{" "}sets out honest ranges, and we always give you a clear written quote after seeing the job.
+      </>
+    ),
+  },
 ];
 
 export default function BathroomTilingPage({ openQuote }: { openQuote: () => void }) {
@@ -138,12 +174,12 @@ export default function BathroomTilingPage({ openQuote }: { openQuote: () => voi
       <section className="relative overflow-hidden bg-secondary/30 pt-10 pb-[60px] lg:pt-16 lg:pb-24">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-primary font-semibold tracking-wider uppercase text-sm mb-4 block">Bathroom Tiling Dublin</h1>
+            <h1 className="text-primary font-semibold tracking-wider uppercase text-sm mb-4 block">Bathroom &amp; Shower Tiling Dublin</h1>
             <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground leading-[1.15] mb-6 tracking-tight">
-              Prepared Right. Tiled Right. Built to Last.
+              Bathroom Tiling Done Properly
             </h2>
             <p className="text-lg sm:text-xl text-muted-foreground mb-10 leading-relaxed max-w-2xl mx-auto">
-              We provide bathroom tiling across Dublin, covering floors, walls, shower areas, ensuites, and wet rooms. Proper preparation, clean grout lines, and a finish that holds up over time.
+              Shower walls and floors, ensuites, wet zones and niches — tiled by a Dublin tradesman with 15 years on the tools. Waterproofed before a single tile goes on, set out so the finish looks right at eye level, and left clean and tidy.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
               <Button size="lg" className="text-base h-14 px-8" onClick={openQuote}>Get a Free Quote</Button>
@@ -164,6 +200,34 @@ export default function BathroomTilingPage({ openQuote }: { openQuote: () => voi
 
       <BelowFold>
       <TrustStrip />
+
+      {/* Intro: done to last */}
+      <section className="py-[60px] md:py-24 bg-background">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <h2 className="font-serif text-3xl md:text-4xl text-foreground mb-6">
+            Bathroom tiling in Dublin, done to last
+          </h2>
+          <p className="text-lg text-muted-foreground leading-relaxed mb-6">
+            A bathroom is the hardest room to tile well — it gets wet daily, it moves, and bright light shows every mistake. Getting it right is less about the tile than what happens first: a sound substrate, waterproofing, and setting-out that lands full tiles where the eye falls. For how we treat different backgrounds, see{" "}
+            <Link href="/services/floor-wall-tiling-dublin" className="text-primary font-medium underline underline-offset-4 hover:opacity-80">how we prep floors &amp; walls</Link>.
+          </p>
+          <ul className="grid sm:grid-cols-2 gap-x-8 gap-y-3">
+            {[
+              "Tap-test and inspect the real substrate before quoting",
+              "Tank shower walls and floors, corners banded, penetrations sealed",
+              "Backer board over timber and stud, not straight onto plasterboard",
+              "Set out from the most visible line — no slivers at eye level",
+              "Silicone, not grout, at every movement junction",
+              "Left clean and tidy each day, on the agreed written quote",
+            ].map((point, i) => (
+              <li key={i} className="flex gap-3 items-start">
+                <CheckCircle2 className="text-green-600 w-5 h-5 flex-shrink-0 mt-1" />
+                <span className="text-foreground">{point}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
 
       {/* Where We Tile */}
       <section className="py-[60px] md:py-24 bg-background">
@@ -204,13 +268,18 @@ export default function BathroomTilingPage({ openQuote }: { openQuote: () => voi
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <div>
-              <h2 className="font-serif text-3xl md:text-4xl text-foreground mb-6">Shower Tiling in Dublin</h2>
+              <h2 className="font-serif text-3xl md:text-4xl text-foreground mb-6">Showers, ensuites and the details that matter</h2>
               <div className="space-y-4 text-muted-foreground leading-relaxed">
-                <p>Shower tiling needs more than a neat finish. The surface behind the tiles must be properly waterproofed before anything goes down. This is what prevents leaks, loose tiles, and water damage further down the line.</p>
-                <p>We tile shower walls, shower floors, walk-in showers, and shower niches. Whether it is part of a full bathroom renovation or a standalone tiling job, we treat shower areas with the care they need.</p>
+                <p>Most of our calls are shower enclosures over a tray and compact ensuites — where craft counts most. We favour small-format or mosaic on the shower floor for grip and correct falls, and set ensuites out carefully because every wall is in view at once.</p>
+                <p>
+                  A full trayless room is a different build — see our{" "}
+                  <Link href="/services/wet-room-installation-dublin" className="text-primary font-medium underline underline-offset-4 hover:opacity-80">wet room installation</Link>. Tiles sound but grout tired? Our{" "}
+                  <Link href="/services/tile-repairs-dublin" className="text-primary font-medium underline underline-offset-4 hover:opacity-80">tile &amp; grout repairs</Link>{" "}refresh it for less, and the{" "}
+                  <Link href="/cost-guide" className="text-primary font-medium underline underline-offset-4 hover:opacity-80">cost guide</Link>{" "}sets out the ranges.
+                </p>
               </div>
               <div className="space-y-3 mt-6">
-                {["Shower wall and floor tiling", "Waterproofing applied before tiling", "Walk-in shower and wet room tiling", "Shower niche and recess tiling", "Mosaic shower floors", "Regrouting and resealing"].map((item, i) => (
+                {["Balanced setting-out agreed with you before fixing", "Small-format or mosaic shower floors for grip and falls", "Tanked, drainable niches that look built-in and stay dry", "Flexible S1/S2 adhesive over timber and any surface that moves", "Anti-mould sanitary silicone at baths, trays and corners", "Full solid-bed coverage under large-format — no dot-and-dab"].map((item, i) => (
                   <div key={i} className="flex items-center gap-3">
                     <CheckCircle2 className="w-5 h-5 text-green-600 flex-shrink-0" />
                     <span className="text-muted-foreground text-sm">{item}</span>
@@ -251,8 +320,35 @@ export default function BathroomTilingPage({ openQuote }: { openQuote: () => voi
         </div>
       </section>
 
-      {/* Gallery */}
+      {/* Waterproofing deep-dive */}
       <section className="py-[60px] md:py-24 bg-secondary/30">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <h2 className="font-serif text-3xl md:text-4xl text-foreground mb-6">
+            The part you can't see keeps the room dry
+          </h2>
+          <p className="text-lg text-muted-foreground leading-relaxed mb-8">
+            Ask any honest tiler where showers fail and it's almost never the tile — it's the waterproofing behind it. Standard BS 5385 is explicit: the tiled finish is a wearing surface, not the waterproof layer. The leaks we get called to fix are almost always the predictable ones:
+          </p>
+          <ul className="grid sm:grid-cols-2 gap-x-8 gap-y-3">
+            {[
+              "Unbanded floor-to-wall junctions",
+              "No seal at the shower waste",
+              "Membrane stopped too low up the wall",
+              "Incompatible products mixed between systems",
+              "Tiling before the membrane had cured",
+              "A bouncy timber floor never stiffened or decoupled",
+            ].map((point, i) => (
+              <li key={i} className="flex gap-3 items-start">
+                <CheckCircle2 className="text-green-600 w-5 h-5 flex-shrink-0 mt-1" />
+                <span className="text-foreground">{point}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      {/* Gallery */}
+      <section className="py-[60px] md:py-24 bg-background">
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="text-center mb-8 md:mb-16">
             <h2 className="font-serif text-3xl md:text-5xl text-foreground mb-6">Our Work</h2>
@@ -276,7 +372,10 @@ export default function BathroomTilingPage({ openQuote }: { openQuote: () => voi
         </div>
       </section>
 
-      <ReviewsSection />
+      <ReviewsSection
+        featured="mooney"
+        trustLine="A finished bathroom Dublin homeowners rate 5.0 on Google"
+      />
 
       {/* Related Services */}
       <section className="py-[60px] md:py-24 bg-secondary/30">
@@ -315,11 +414,20 @@ export default function BathroomTilingPage({ openQuote }: { openQuote: () => voi
         </div>
       </section>
 
+      {/* Areas served */}
+      <section className="py-10 bg-background border-t border-border/60">
+        <div className="container mx-auto px-4 max-w-4xl text-center">
+          <p className="text-sm text-muted-foreground leading-relaxed">
+            <span className="font-medium text-foreground">Based in Dublin.</span> Bathroom and shower tiling throughout the city — Ballsbridge, Sandymount and Donnybrook, Cabra, Marino and Clontarf, Clondalkin and Castleknock, and everywhere between.
+          </p>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="py-10 md:py-24 bg-primary text-primary-foreground">
         <div className="container mx-auto px-4 max-w-5xl text-center">
-          <h2 className="font-serif text-3xl md:text-5xl mb-6">Ready to Get Your Bathroom Tiled?</h2>
-          <p className="text-lg md:text-xl mb-10 max-w-2xl mx-auto text-primary-foreground/90">Get a clear, written quote for your bathroom tiling. No vague estimates, no hidden costs.</p>
+          <h2 className="font-serif text-3xl md:text-5xl mb-6">Get your bathroom tiled by someone who does it properly</h2>
+          <p className="text-lg md:text-xl mb-10 max-w-2xl mx-auto text-primary-foreground/90">Fully insured, 15 years on the tools, clean and tidy, on time and on your written quote. Tell us about your shower, ensuite or bathroom and we'll come and take a look.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" variant="secondary" className="text-base h-14 px-8" onClick={openQuote}>Get a Free Quote</Button>
             <Button size="lg" variant="outline" className="text-base h-14 px-8 border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground hover:text-primary bg-transparent" asChild>
