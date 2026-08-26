@@ -108,15 +108,15 @@ export function QuoteModal({
           </DialogDescription>
         </DialogHeader>
         <Form {...form}>
-          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4 pt-4">
+          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4 pt-4" noValidate>
             <FormField
               control={form.control}
               name="name"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Name</FormLabel>
+                  <FormLabel required>Name</FormLabel>
                   <FormControl>
-                    <Input placeholder="Your full name" autoComplete="name" {...field} />
+                    <Input placeholder="Your full name" autoComplete="name" aria-required="true" {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -128,9 +128,9 @@ export function QuoteModal({
                 name="phone"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Phone</FormLabel>
+                    <FormLabel required>Phone</FormLabel>
                     <FormControl>
-                      <Input placeholder="Your phone number" type="tel" inputMode="tel" autoComplete="tel" {...field} />
+                      <Input placeholder="Your phone number" type="tel" inputMode="tel" autoComplete="tel" aria-required="true" {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -141,9 +141,9 @@ export function QuoteModal({
                 name="email"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Email</FormLabel>
+                    <FormLabel required>Email</FormLabel>
                     <FormControl>
-                      <Input placeholder="Your email address" type="email" autoComplete="email" {...field} />
+                      <Input placeholder="Your email address" type="email" autoComplete="email" aria-required="true" {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -155,10 +155,10 @@ export function QuoteModal({
               name="projectType"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Project Type</FormLabel>
+                  <FormLabel required>Project Type</FormLabel>
                   <Select onValueChange={field.onChange} defaultValue={field.value}>
                     <FormControl>
-                      <SelectTrigger>
+                      <SelectTrigger aria-required="true">
                         <SelectValue placeholder="Select a project type" />
                       </SelectTrigger>
                     </FormControl>

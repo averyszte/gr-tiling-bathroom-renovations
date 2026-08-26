@@ -333,9 +333,9 @@ export default function ContactPage() {
                     name="name"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>Name</FormLabel>
+                        <FormLabel required>Name</FormLabel>
                         <FormControl>
-                          <Input placeholder="Your full name" autoComplete="name" {...field} />
+                          <Input placeholder="Your full name" autoComplete="name" aria-required="true" {...field} />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
@@ -348,9 +348,9 @@ export default function ContactPage() {
                       name="phone"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel>Phone</FormLabel>
+                          <FormLabel required>Phone</FormLabel>
                           <FormControl>
-                            <Input placeholder="Your phone number" type="tel" inputMode="tel" autoComplete="tel" {...field} />
+                            <Input placeholder="Your phone number" type="tel" inputMode="tel" autoComplete="tel" aria-required="true" {...field} />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -361,9 +361,9 @@ export default function ContactPage() {
                       name="email"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel>Email</FormLabel>
+                          <FormLabel required>Email</FormLabel>
                           <FormControl>
-                            <Input placeholder="you@example.com" type="email" autoComplete="email" {...field} />
+                            <Input placeholder="you@example.com" type="email" autoComplete="email" aria-required="true" {...field} />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -376,10 +376,10 @@ export default function ContactPage() {
                     name="service"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>Service Needed</FormLabel>
+                        <FormLabel required>Service Needed</FormLabel>
                         <Select onValueChange={field.onChange} value={field.value}>
                           <FormControl>
-                            <SelectTrigger>
+                            <SelectTrigger aria-required="true">
                               <SelectValue placeholder="Select a service" />
                             </SelectTrigger>
                           </FormControl>
@@ -400,11 +400,12 @@ export default function ContactPage() {
                     name="message"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>Message</FormLabel>
+                        <FormLabel required>Message</FormLabel>
                         <FormControl>
                           <Textarea
                             placeholder="Tell us a bit about your project, location, and timing..."
                             className="resize-none min-h-[120px]"
+                            aria-required="true"
                             {...field}
                           />
                         </FormControl>
