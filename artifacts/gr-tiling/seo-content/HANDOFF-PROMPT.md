@@ -8,8 +8,8 @@ Then paste everything below the line.
 ---
 
 You're working in the GR Tiling & Bathroom Renovations site (React + Vite + wouter,
-build-time prerendering via `scripts/prerender.tsx`, edge meta via
-`functions/_middleware.js`, deployed on Cloudflare Pages). The site at
+build-time prerendering via `scripts/prerender.tsx`, which also writes every
+page's <head> tags, deployed on Cloudflare Pages). The site at
 grtilingandbathrooms.ie has a serious indexing problem: only ~4 of ~15 pages are
 indexed after two months. The cause is NOT the framework — it's near-duplicate
 sibling pages, thin unique copy, an identical review block on every page, and FAQ

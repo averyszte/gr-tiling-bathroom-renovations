@@ -129,11 +129,16 @@ const faqs: Faq[] = [
   { q: "Can you handle just the tiling, not the full renovation?", a: "Yes. We offer both full bathroom renovations and standalone tiling services.\n\nWhether you need a full project or just tiling work, we can help.\n\nTell us what you need using the \"Get a Free Quote\" button." },
 ];
 
+export const PAGE_TITLE = "Bathroom Renovations & Tiling Services Dublin | GR Tiling";
+export const PAGE_DESCRIPTION =
+  "Transform your bathroom with Dublin's trusted renovation and tiling specialists. Clean work, honest pricing, and a 5-star reputation. Get a free quote today.";
+export const PAGE_PATH = "/";
+
 export default function HomePage({ openQuote }: { openQuote: () => void }) {
   useEffect(() => applyPageSeo({
-    title: "Bathroom Renovations & Tiling Services Dublin | GR Tiling",
-    description: "Transform your bathroom with Dublin's trusted renovation and tiling specialists. Clean work, honest pricing, and a 5-star reputation. Get a free quote today.",
-    path: "/",
+    title: PAGE_TITLE,
+    description: PAGE_DESCRIPTION,
+    path: PAGE_PATH,
   }), []);
   useEffect(() => applyJsonLd("home", homeSchema), []);
 

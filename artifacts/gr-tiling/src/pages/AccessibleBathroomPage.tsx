@@ -15,9 +15,9 @@ import { images } from "@/data/images";
 import { BelowFold } from "@/components/BelowFold";
 import { ReviewsSection } from "@/components/ReviewsSection";
 
-const PAGE_TITLE = "Accessible Bathrooms Dublin | Grant-Ready Wet Rooms";
-const PAGE_DESCRIPTION = "Mobility bathrooms in Dublin — level-access showers, grab rails and non-slip floors, built grant-compliant. Fully insured, 15 years. Free written quote.";
-const PAGE_PATH = "/services/accessible-bathroom-dublin";
+export const PAGE_TITLE = "Accessible Bathrooms Dublin | Grant-Ready Wet Rooms";
+export const PAGE_DESCRIPTION = "Mobility bathrooms in Dublin — level-access showers, grab rails and non-slip floors, built grant-compliant. Fully insured, 15 years. Free written quote.";
+export const PAGE_PATH = "/services/accessible-bathroom-dublin";
 
 export const schema = {
   "@context": "https://schema.org",

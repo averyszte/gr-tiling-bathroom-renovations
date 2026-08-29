@@ -15,9 +15,9 @@ import { images, gridImages } from "@/data/images";
 import { BelowFold } from "@/components/BelowFold";
 import { ReviewsSection } from "@/components/ReviewsSection";
 
-const PAGE_TITLE = "Bathroom Tiling Dublin | Showers & Ensuites | GR Tiling";
-const PAGE_DESCRIPTION = "Expert bathroom tiling in Dublin — shower walls and floors, ensuites, niches, waterproofing before tiling. 15 years, fully insured, free written quote. Call today.";
-const PAGE_PATH = "/services/bathroom-tiling-dublin";
+export const PAGE_TITLE = "Bathroom Tiling Dublin | Showers & Ensuites | GR Tiling";
+export const PAGE_DESCRIPTION = "Expert bathroom tiling in Dublin — shower walls and floors, ensuites, niches, waterproofing before tiling. 15 years, fully insured, free written quote. Call today.";
+export const PAGE_PATH = "/services/bathroom-tiling-dublin";
 
 export const schema = {
   "@context": "https://schema.org",

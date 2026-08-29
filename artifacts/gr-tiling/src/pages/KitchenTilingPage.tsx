@@ -15,9 +15,9 @@ import { images, gridImages } from "@/data/images";
 import { BelowFold } from "@/components/BelowFold";
 import { ReviewsSection } from "@/components/ReviewsSection";
 
-const PAGE_TITLE = "Kitchen Tiling Dublin | Splashbacks & Floors — GR Tiling";
-const PAGE_DESCRIPTION = "Kitchen tiling in Dublin by GR Tiling. Metro & herringbone splashbacks, wall and floor tiling, utility rooms, neat cuts around units. 15 yrs, fully insured.";
-const PAGE_PATH = "/services/kitchen-tiling-dublin";
+export const PAGE_TITLE = "Kitchen Tiling Dublin | Splashbacks & Floors — GR Tiling";
+export const PAGE_DESCRIPTION = "Kitchen tiling in Dublin by GR Tiling. Metro & herringbone splashbacks, wall and floor tiling, utility rooms, neat cuts around units. 15 yrs, fully insured.";
+export const PAGE_PATH = "/services/kitchen-tiling-dublin";
 
 export const schema = {
   "@context": "https://schema.org",

@@ -15,9 +15,9 @@ import { images } from "@/data/images";
 import { BelowFold } from "@/components/BelowFold";
 import { ReviewsSection } from "@/components/ReviewsSection";
 
-const PAGE_TITLE = "Wet Room Installation Dublin | Tanking Experts";
-const PAGE_DESCRIPTION = "Wet room installation in Dublin done right. Full tanking, level-access drainage, R11 slip-resistant tiles. 15 years, fully insured, honest written quotes. Free survey.";
-const PAGE_PATH = "/services/wet-room-installation-dublin";
+export const PAGE_TITLE = "Wet Room Installation Dublin | Tanking Experts";
+export const PAGE_DESCRIPTION = "Wet room installation in Dublin done right. Full tanking, level-access drainage, R11 slip-resistant tiles. 15 years, fully insured, honest written quotes. Free survey.";
+export const PAGE_PATH = "/services/wet-room-installation-dublin";
 
 export const schema = {
   "@context": "https://schema.org",

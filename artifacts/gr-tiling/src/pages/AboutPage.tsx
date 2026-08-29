@@ -118,10 +118,10 @@ const principles = [
 ];
 
 
-const PAGE_TITLE = "About GR Tiling & Bathroom Renovations Dublin | Gerry";
-const PAGE_DESCRIPTION =
+export const PAGE_TITLE = "About GR Tiling & Bathroom Renovations Dublin | Gerry";
+export const PAGE_DESCRIPTION =
   "Meet Gerry, the fully insured Dublin tiler with 15 years in the trade behind GR Tiling & Bathroom Renovations. Irish owned, 5.0 on Google. Get a written quote.";
-const PAGE_PATH = "/about";
+export const PAGE_PATH = "/about";
 
 export default function AboutPage({ openQuote }: { openQuote: () => void }) {
   useEffect(() => {

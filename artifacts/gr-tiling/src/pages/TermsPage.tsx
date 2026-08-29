@@ -1,9 +1,9 @@
 import { useEffect } from "react";
 import { applyPageSeo, applyJsonLd, SITE_URL } from "@/lib/seo";
 
-const PAGE_TITLE = "Terms & Conditions | GR Tiling & Bathroom Renovations";
-const PAGE_DESCRIPTION = "Terms and conditions for GR Tiling & Bathroom Renovations services in Dublin, Ireland.";
-const PAGE_PATH = "/terms";
+export const PAGE_TITLE = "Terms & Conditions | GR Tiling & Bathroom Renovations";
+export const PAGE_DESCRIPTION = "Terms and conditions for GR Tiling & Bathroom Renovations services in Dublin, Ireland.";
+export const PAGE_PATH = "/terms";
 const LAST_UPDATED = new Date("2026-06-30").toLocaleDateString("en-IE", { day: "numeric", month: "long", year: "numeric" });
 
 export const schema = {

@@ -224,10 +224,10 @@ const areaCards = [
   { icon: <Building2 className="w-6 h-6" />, label: "Residential & Commercial", desc: "Homes, shops, units, offices" },
 ];
 
-const PAGE_TITLE = "Tiling Services Dublin | Fully Insured Tiler — GR Tiling";
-const PAGE_DESCRIPTION =
+export const PAGE_TITLE = "Tiling Services Dublin | Fully Insured Tiler — GR Tiling";
+export const PAGE_DESCRIPTION =
   "Trusted tiling services in Dublin. Supply-and-fit or fit-only, residential and commercial, fully insured, 15 years' experience. Free written quote — call today.";
-const PAGE_PATH = "/services/tiling-services";
+export const PAGE_PATH = "/services/tiling-services";
 
 export default function TilingServicesPage({ openQuote }: { openQuote: () => void }) {
   useEffect(() => {

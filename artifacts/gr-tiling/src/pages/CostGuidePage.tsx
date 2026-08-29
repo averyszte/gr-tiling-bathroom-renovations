@@ -14,9 +14,9 @@ import { TrustStrip } from "@/components/TrustStrip";
 import { BelowFold } from "@/components/BelowFold";
 import { ReviewsSection } from "@/components/ReviewsSection";
 
-const PAGE_TITLE = "Bathroom Renovation Cost Dublin | What Affects It";
-const PAGE_DESCRIPTION = "What affects the cost of a bathroom renovation or tiling job in Dublin? An honest look at the factors that shape your quote — plus a free written quote from Gerry.";
-const PAGE_PATH = "/cost-guide";
+export const PAGE_TITLE = "Bathroom Renovation Cost Dublin | What Affects It";
+export const PAGE_DESCRIPTION = "What affects the cost of a bathroom renovation or tiling job in Dublin? An honest look at the factors that shape your quote — plus a free written quote from Gerry.";
+export const PAGE_PATH = "/cost-guide";
 
 export const schema = {
   "@context": "https://schema.org",

@@ -15,9 +15,9 @@ import { images, gridImages } from "@/data/images";
 import { BelowFold } from "@/components/BelowFold";
 import { ReviewsSection } from "@/components/ReviewsSection";
 
-const PAGE_TITLE = "Tile Repairs Dublin | Regrout, Silicone & Grout Fix";
-const PAGE_DESCRIPTION = "Tile repairs in Dublin by Gerry, 15 years in the trade, fully insured. Regrouting, silicone renewal, cracked & loose tiles, mouldy grout removal. Free written quote.";
-const PAGE_PATH = "/services/tile-repairs-dublin";
+export const PAGE_TITLE = "Tile Repairs Dublin | Regrout, Silicone & Grout Fix";
+export const PAGE_DESCRIPTION = "Tile repairs in Dublin by Gerry, 15 years in the trade, fully insured. Regrouting, silicone renewal, cracked & loose tiles, mouldy grout removal. Free written quote.";
+export const PAGE_PATH = "/services/tile-repairs-dublin";
 
 export const schema = {
   "@context": "https://schema.org",

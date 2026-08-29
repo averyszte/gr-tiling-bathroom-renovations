@@ -12,9 +12,9 @@ process, FAQ, CTA, meta, schema). Implementation is a separate step — see
 
 ## Why the pages were not indexing (diagnosis)
 
-The stack is fine — prerendering (`scripts/prerender.tsx`), edge meta injection
-(`functions/_middleware.js`), sitemap and robots are all correctly set up. This was
-never a framework problem. The causes were:
+The stack is fine — prerendering (`scripts/prerender.tsx`, which also writes each
+page's title, description and canonical), sitemap and robots are all correctly set
+up. This was never a framework problem. The causes were:
 
 1. **Overlapping sibling pages.** `floor-wall-tiling`, `bathroom-tiling` and
    `kitchen-tiling` all covered the same ground; Google indexed one and treated the

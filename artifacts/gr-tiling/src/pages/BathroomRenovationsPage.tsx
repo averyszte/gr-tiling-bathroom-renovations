@@ -202,10 +202,10 @@ const renovationStages = [
   { icon: <ShieldCheck className="w-6 h-6" />, label: "Snagged & Sealed", desc: "Finished, checked, cleaned down" },
 ];
 
-const PAGE_TITLE = "Bathroom Renovations Dublin | One Contractor, Start to Finish";
-const PAGE_DESCRIPTION =
+export const PAGE_TITLE = "Bathroom Renovations Dublin | One Contractor, Start to Finish";
+export const PAGE_DESCRIPTION =
   "Full bathroom renovations in Dublin managed by one contractor start to finish. Strip-out, plumbing, tiling and fit-out. On time, on budget, fully insured.";
-const PAGE_PATH = "/services/bathroom-renovations";
+export const PAGE_PATH = "/services/bathroom-renovations";
 
 export default function BathroomRenovationsPage({ openQuote }: { openQuote: () => void }) {
   useEffect(() => {

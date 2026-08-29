@@ -15,9 +15,9 @@ import { images, gridImages } from "@/data/images";
 import { BelowFold } from "@/components/BelowFold";
 import { ReviewsSection } from "@/components/ReviewsSection";
 
-const PAGE_TITLE = "Floor & Wall Tiling Dublin | GR Tiling — Done Properly";
-const PAGE_DESCRIPTION = "Floor and wall tiling in Dublin done on a sound substrate. Large-format, self-levelling, timber floor prep, 15 years, fully insured. Free written quote.";
-const PAGE_PATH = "/services/floor-wall-tiling-dublin";
+export const PAGE_TITLE = "Floor & Wall Tiling Dublin | GR Tiling — Done Properly";
+export const PAGE_DESCRIPTION = "Floor and wall tiling in Dublin done on a sound substrate. Large-format, self-levelling, timber floor prep, 15 years, fully insured. Free written quote.";
+export const PAGE_PATH = "/services/floor-wall-tiling-dublin";
 
 export const schema = {
   "@context": "https://schema.org",

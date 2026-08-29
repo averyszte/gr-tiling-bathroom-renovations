@@ -1,9 +1,9 @@
 import { useEffect } from "react";
 import { applyPageSeo, applyJsonLd, SITE_URL } from "@/lib/seo";
 
-const PAGE_TITLE = "Privacy Policy | GR Tiling & Bathroom Renovations";
-const PAGE_DESCRIPTION = "Privacy policy for GR Tiling & Bathroom Renovations. How we collect, use, and protect your personal information.";
-const PAGE_PATH = "/privacy-policy";
+export const PAGE_TITLE = "Privacy Policy | GR Tiling & Bathroom Renovations";
+export const PAGE_DESCRIPTION = "Privacy policy for GR Tiling & Bathroom Renovations. How we collect, use, and protect your personal information.";
+export const PAGE_PATH = "/privacy-policy";
 const LAST_UPDATED = new Date("2026-06-30").toLocaleDateString("en-IE", { day: "numeric", month: "long", year: "numeric" });
 
 export const schema = {

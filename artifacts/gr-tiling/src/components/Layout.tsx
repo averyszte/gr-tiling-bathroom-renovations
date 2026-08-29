@@ -85,52 +85,60 @@ export function Header({ openQuote }: { openQuote: () => void }) {
               data-testid="button-hamburger-menu"
               aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
               aria-expanded={mobileMenuOpen}
+              aria-controls="mobile-menu"
             >
               {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
           </div>
         </div>
 
-        {/* Mobile Nav Dropdown */}
-        {mobileMenuOpen && (
-          <div className="md:hidden absolute top-20 left-0 w-full bg-background border-b shadow-lg py-4 px-4 flex flex-col gap-1">
-            <Link href="/" className="text-lg font-medium py-2.5 border-b px-1" onClick={() => setMobileMenuOpen(false)}>Home</Link>
+        {/* Mobile Nav Dropdown.
+            Rendered unconditionally and hidden with CSS rather than mounted on
+            open: conditional mounting kept every one of these links out of the
+            prerendered HTML, so the static response crawlers get had no mobile
+            navigation at all. `hidden` is display:none, so a closed menu is
+            still correctly absent from the accessibility tree. */}
+        <div
+          id="mobile-menu"
+          className={`md:hidden absolute top-20 left-0 w-full bg-background border-b shadow-lg py-4 px-4 flex-col gap-1 ${mobileMenuOpen ? "flex" : "hidden"}`}
+        >
+          <Link href="/" className="text-lg font-medium py-2.5 border-b px-1" onClick={() => setMobileMenuOpen(false)}>Home</Link>
 
-            {/* Mobile Services Accordion */}
-            <div className="border-b">
-              <button
-                className="w-full flex items-center justify-between text-lg font-medium py-2.5 px-1"
-                onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
-                aria-expanded={mobileServicesOpen}
-                aria-haspopup="true"
-                aria-controls="mobile-services-menu"
-              >
-                Services
-                <ChevronDown size={18} className={`transition-transform duration-200 ${mobileServicesOpen ? "rotate-180" : ""}`} />
-              </button>
-              {mobileServicesOpen && (
-                <div id="mobile-services-menu" className="pb-3 pl-2 flex flex-col">
-                  <Link href="/services/bathroom-renovations" className="flex items-center justify-between px-3 py-2.5 text-sm font-semibold text-primary bg-primary/5 hover:bg-primary/10 transition-colors rounded-lg mb-1" onClick={() => { setMobileMenuOpen(false); setMobileServicesOpen(false); }}>Bathroom Renovations <ChevronRight size={13} /></Link>
-                  <div className="pl-3 flex flex-col mb-2">
-                    <Link href="/services/wet-room-installation-dublin" className="text-sm text-muted-foreground py-1.5 px-2 block" onClick={() => { setMobileMenuOpen(false); setMobileServicesOpen(false); }}>Wet Room Installation</Link>
-                    <Link href="/services/accessible-bathroom-dublin" className="text-sm text-muted-foreground py-1.5 px-2 block" onClick={() => { setMobileMenuOpen(false); setMobileServicesOpen(false); }}>Accessible Bathroom</Link>
-                  </div>
-                  <Link href="/services/tiling-services" className="flex items-center justify-between px-3 py-2.5 text-sm font-semibold text-primary bg-primary/5 hover:bg-primary/10 transition-colors rounded-lg mb-1" onClick={() => { setMobileMenuOpen(false); setMobileServicesOpen(false); }}>Tiling Services <ChevronRight size={13} /></Link>
-                  <div className="pl-3 flex flex-col">
-                    <Link href="/services/floor-wall-tiling-dublin" className="text-sm text-muted-foreground py-1.5 px-2 block" onClick={() => { setMobileMenuOpen(false); setMobileServicesOpen(false); }}>Floor & Wall Tiling</Link>
-                    <Link href="/services/bathroom-tiling-dublin" className="text-sm text-muted-foreground py-1.5 px-2 block" onClick={() => { setMobileMenuOpen(false); setMobileServicesOpen(false); }}>Bathroom Tiling</Link>
-                    <Link href="/services/kitchen-tiling-dublin" className="text-sm text-muted-foreground py-1.5 px-2 block" onClick={() => { setMobileMenuOpen(false); setMobileServicesOpen(false); }}>Kitchen Tiling</Link>
-                    <Link href="/services/tile-repairs-dublin" className="text-sm text-muted-foreground py-1.5 px-2 block" onClick={() => { setMobileMenuOpen(false); setMobileServicesOpen(false); }}>Tile Repairs</Link>
-                  </div>
-                </div>
-              )}
+          {/* Mobile Services Accordion */}
+          <div className="border-b">
+            <button
+              className="w-full flex items-center justify-between text-lg font-medium py-2.5 px-1"
+              onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
+              aria-expanded={mobileServicesOpen}
+              aria-haspopup="true"
+              aria-controls="mobile-services-menu"
+            >
+              Services
+              <ChevronDown size={18} className={`transition-transform duration-200 ${mobileServicesOpen ? "rotate-180" : ""}`} />
+            </button>
+            <div
+              id="mobile-services-menu"
+              className={`pb-3 pl-2 flex-col ${mobileServicesOpen ? "flex" : "hidden"}`}
+            >
+              <Link href="/services/bathroom-renovations" className="flex items-center justify-between px-3 py-2.5 text-sm font-semibold text-primary bg-primary/5 hover:bg-primary/10 transition-colors rounded-lg mb-1" onClick={() => { setMobileMenuOpen(false); setMobileServicesOpen(false); }}>Bathroom Renovations <ChevronRight size={13} /></Link>
+              <div className="pl-3 flex flex-col mb-2">
+                <Link href="/services/wet-room-installation-dublin" className="text-sm text-muted-foreground py-1.5 px-2 block" onClick={() => { setMobileMenuOpen(false); setMobileServicesOpen(false); }}>Wet Room Installation</Link>
+                <Link href="/services/accessible-bathroom-dublin" className="text-sm text-muted-foreground py-1.5 px-2 block" onClick={() => { setMobileMenuOpen(false); setMobileServicesOpen(false); }}>Accessible Bathroom</Link>
+              </div>
+              <Link href="/services/tiling-services" className="flex items-center justify-between px-3 py-2.5 text-sm font-semibold text-primary bg-primary/5 hover:bg-primary/10 transition-colors rounded-lg mb-1" onClick={() => { setMobileMenuOpen(false); setMobileServicesOpen(false); }}>Tiling Services <ChevronRight size={13} /></Link>
+              <div className="pl-3 flex flex-col">
+                <Link href="/services/floor-wall-tiling-dublin" className="text-sm text-muted-foreground py-1.5 px-2 block" onClick={() => { setMobileMenuOpen(false); setMobileServicesOpen(false); }}>Floor & Wall Tiling</Link>
+                <Link href="/services/bathroom-tiling-dublin" className="text-sm text-muted-foreground py-1.5 px-2 block" onClick={() => { setMobileMenuOpen(false); setMobileServicesOpen(false); }}>Bathroom Tiling</Link>
+                <Link href="/services/kitchen-tiling-dublin" className="text-sm text-muted-foreground py-1.5 px-2 block" onClick={() => { setMobileMenuOpen(false); setMobileServicesOpen(false); }}>Kitchen Tiling</Link>
+                <Link href="/services/tile-repairs-dublin" className="text-sm text-muted-foreground py-1.5 px-2 block" onClick={() => { setMobileMenuOpen(false); setMobileServicesOpen(false); }}>Tile Repairs</Link>
+              </div>
             </div>
-
-            <Link href="/cost-guide" className="text-lg font-medium py-2.5 border-b px-1" onClick={() => setMobileMenuOpen(false)}>Pricing</Link>
-            <Link href="/about" className="text-lg font-medium py-2.5 border-b px-1" onClick={() => setMobileMenuOpen(false)}>About</Link>
-            <Link href="/contact" className="text-lg font-medium py-2.5 px-1" onClick={() => setMobileMenuOpen(false)}>Contact</Link>
           </div>
-        )}
+
+          <Link href="/cost-guide" className="text-lg font-medium py-2.5 border-b px-1" onClick={() => setMobileMenuOpen(false)}>Pricing</Link>
+          <Link href="/about" className="text-lg font-medium py-2.5 border-b px-1" onClick={() => setMobileMenuOpen(false)}>About</Link>
+          <Link href="/contact" className="text-lg font-medium py-2.5 px-1" onClick={() => setMobileMenuOpen(false)}>Contact</Link>
+        </div>
       </header>
 
       {/* Mobile Sticky Bottom Bar */}

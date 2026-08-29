@@ -88,10 +88,10 @@ const PHONE_DISPLAY = "+353 87 720 9850";
 const PHONE_TEL = "tel:+353877209850";
 const FORM_ID = "quote-form";
 
-const PAGE_TITLE = "Contact GR Tiling & Bathroom Renovations | Free Quote Dublin";
-const PAGE_DESCRIPTION =
+export const PAGE_TITLE = "Contact GR Tiling & Bathroom Renovations | Free Quote Dublin";
+export const PAGE_DESCRIPTION =
   "Contact GR Tiling & Bathroom Renovations for bathroom renovation and tiling quotes in Dublin. Call today or request a free quote online.";
-const PAGE_PATH = "/contact";
+export const PAGE_PATH = "/contact";
 
 const formSchema = z.object({
   name: z.string().min(2, "Name is required"),
